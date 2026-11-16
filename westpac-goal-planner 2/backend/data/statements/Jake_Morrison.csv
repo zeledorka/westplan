@@ -1,0 +1,966 @@
+Date,Account,Description,Category,Type,Debit ($),Credit ($),Balance ($),Essential,Recurring,Transaction ID
+16/11/2025,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,106.60,,"10,659.23",Yes,No,u005-00001
+16/11/2025,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,151.02,,"10,508.21",Yes,No,u005-00002
+16/11/2025,Westpac Choice,EL JANNAH,Eating out,Expense,32.41,,"10,475.80",No,No,u005-00003
+16/11/2025,Westpac Choice,DAN MURPHYS,Entertainment,Expense,55.87,,"10,419.93",No,No,u005-00004
+17/11/2025,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"10,109.93",Yes,Yes,u005-00005
+17/11/2025,Westpac Choice,ROSIES CAFE,Eating out,Expense,17.07,,"10,092.86",No,No,u005-00006
+17/11/2025,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,33.16,,"10,059.70",Yes,No,u005-00007
+18/11/2025,Westpac Choice,BP,Transport,Expense,111.13,,"9,948.57",Yes,No,u005-00008
+18/11/2025,Westpac Choice,JB HI-FI,Shopping,Expense,139.19,,"9,809.38",No,No,u005-00009
+19/11/2025,Westpac Choice,VIC ON THE PARK,Eating out,Expense,20.66,,"9,788.72",No,No,u005-00010
+20/11/2025,Westpac Choice,EL JANNAH,Eating out,Expense,25.28,,"9,763.44",No,No,u005-00011
+21/11/2025,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,60.58,,"9,702.86",Yes,No,u005-00012
+21/11/2025,Westpac Choice,EL JANNAH,Eating out,Expense,16.47,,"9,686.39",No,No,u005-00013
+22/11/2025,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,145.61,,"9,540.78",Yes,No,u005-00014
+22/11/2025,Westpac Choice,UBER *EATS,Eating out,Expense,29.53,,"9,511.25",No,No,u005-00015
+23/11/2025,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,384.98,,"9,126.27",Yes,No,u005-00016
+23/11/2025,Westpac Choice,MCDONALDS,Eating out,Expense,34.73,,"9,091.54",No,No,u005-00017
+23/11/2025,Westpac Choice,TICKETEK,Entertainment,Expense,52.61,,"9,038.93",No,No,u005-00018
+24/11/2025,Westpac Choice,INV 1044 GREENLEAF CAFE FITOUT,Income,Income,,"1,932.15","10,971.08",No,No,u005-00019
+24/11/2025,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"10,661.08",Yes,Yes,u005-00020
+24/11/2025,Westpac Choice,AMPOL,Transport,Expense,91.90,,"10,569.18",Yes,No,u005-00021
+25/11/2025,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,"1,000.00","12,200.00",No,Yes,u005-00022
+25/11/2025,Westpac Choice,TRANSFER TO ESAVER TAX SET-ASIDE,Transfers,Transfer,"1,000.00",,"9,569.18",No,Yes,u005-00023
+26/11/2025,Westpac Choice,AMPOL,Transport,Expense,145.35,,"9,423.83",Yes,No,u005-00024
+26/11/2025,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,65.80,,"9,358.03",Yes,No,u005-00025
+27/11/2025,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,274.66,,"9,083.37",Yes,No,u005-00026
+27/11/2025,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,55.26,,"9,028.11",Yes,No,u005-00027
+27/11/2025,Westpac Choice,ROSIES CAFE,Eating out,Expense,19.37,,"9,008.74",No,No,u005-00028
+28/11/2025,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,67.07,,"8,941.67",Yes,No,u005-00029
+28/11/2025,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,105.69,,"8,835.98",Yes,No,u005-00030
+29/11/2025,Westpac Choice,AMPOL,Transport,Expense,137.47,,"8,698.51",Yes,No,u005-00031
+29/11/2025,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,286.26,,"8,412.25",Yes,No,u005-00032
+29/11/2025,Westpac Choice,VIC ON THE PARK,Eating out,Expense,15.73,,"8,396.52",No,No,u005-00033
+30/11/2025,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,76.14,,"8,320.38",Yes,No,u005-00034
+30/11/2025,Westpac Choice,ROSIES CAFE,Eating out,Expense,34.38,,"8,286.00",No,No,u005-00035
+30/11/2025,Westpac Choice,DAN MURPHYS,Entertainment,Expense,51.22,,"8,234.78",No,No,u005-00036
+01/12/2025,Westpac eSaver,INTEREST PAID,Income,Income,,45.75,"12,245.75",No,Yes,u005-00037
+01/12/2025,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"7,924.78",Yes,Yes,u005-00038
+01/12/2025,Westpac Choice,ANYTIME FITNESS,Health,Expense,64.00,,"7,860.78",No,Yes,u005-00039
+01/12/2025,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,100.99,,"7,759.79",Yes,No,u005-00040
+01/12/2025,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,22.94,,"7,736.85",No,No,u005-00041
+01/12/2025,Westpac Choice,AMAZON AU,Shopping,Expense,56.17,,"7,680.68",No,No,u005-00042
+02/12/2025,Westpac Choice,MCDONALDS,Eating out,Expense,20.37,,"7,660.31",No,No,u005-00043
+03/12/2025,Westpac Choice,QBE PUBLIC LIABILITY INSURANCE,Insurance,Expense,92.00,,"7,568.31",Yes,Yes,u005-00044
+03/12/2025,Westpac Choice,XERO SUBSCRIPTION,Business expenses,Expense,35.00,,"7,533.31",Yes,Yes,u005-00045
+03/12/2025,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,160.93,,"7,372.38",Yes,No,u005-00046
+03/12/2025,Westpac Choice,DAN MURPHYS,Entertainment,Expense,94.96,,"7,277.42",No,No,u005-00047
+04/12/2025,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,99.82,,"7,177.60",Yes,No,u005-00048
+04/12/2025,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,366.90,,"6,810.70",Yes,No,u005-00049
+05/12/2025,Westpac Choice,INV 1049 INNER WEST RENOVATIONS,Income,Income,,"2,041.43","8,852.13",No,No,u005-00050
+05/12/2025,Westpac Choice,UBER *EATS,Eating out,Expense,37.36,,"8,814.77",No,No,u005-00051
+06/12/2025,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"8,789.77",No,Yes,u005-00052
+06/12/2025,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,36.85,,"8,752.92",No,No,u005-00053
+07/12/2025,Westpac Choice,BP,Transport,Expense,101.52,,"8,651.40",Yes,No,u005-00054
+07/12/2025,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,56.86,,"8,594.54",Yes,No,u005-00055
+08/12/2025,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"8,284.54",Yes,Yes,u005-00056
+08/12/2025,Westpac Choice,VIC ON THE PARK,Eating out,Expense,26.33,,"8,258.21",No,No,u005-00057
+09/12/2025,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,69.00,,"8,189.21",Yes,Yes,u005-00058
+09/12/2025,Westpac Choice,MCDONALDS,Eating out,Expense,17.58,,"8,171.63",No,No,u005-00059
+10/12/2025,Westpac Choice,AMPOL,Transport,Expense,104.19,,"8,067.44",Yes,No,u005-00060
+10/12/2025,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,63.20,,"8,004.24",Yes,No,u005-00061
+12/12/2025,Westpac Choice,TOYOTA FINANCE HILUX,Loan repayments,Expense,640.00,,"7,364.24",Yes,Yes,u005-00062
+12/12/2025,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,51.58,,"7,312.66",Yes,No,u005-00063
+12/12/2025,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,34.87,,"7,277.79",No,No,u005-00064
+13/12/2025,Westpac Choice,EL JANNAH,Eating out,Expense,27.18,,"7,250.61",No,No,u005-00065
+13/12/2025,Westpac Choice,THE HENSON,Entertainment,Expense,41.55,,"7,209.06",No,No,u005-00066
+14/12/2025,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,71.28,,"7,137.78",Yes,Yes,u005-00067
+14/12/2025,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"7,123.79",No,Yes,u005-00068
+14/12/2025,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,125.65,,"6,998.14",Yes,No,u005-00069
+14/12/2025,Westpac Choice,ROSIES CAFE,Eating out,Expense,12.00,,"6,986.14",No,No,u005-00070
+14/12/2025,Westpac Choice,DAN MURPHYS,Entertainment,Expense,90.68,,"6,895.46",No,No,u005-00071
+15/12/2025,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"6,585.46",Yes,Yes,u005-00072
+15/12/2025,Westpac Choice,AMPOL,Transport,Expense,107.30,,"6,478.16",Yes,No,u005-00073
+17/12/2025,Westpac Choice,INV 1047 M AND K CONSTRUCTIONS,Income,Income,,"1,994.84","8,473.00",No,No,u005-00074
+17/12/2025,Westpac Choice,INV 1048 GREENLEAF CAFE FITOUT,Income,Income,,"2,197.83","10,670.83",No,No,u005-00075
+17/12/2025,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,288.09,,"10,382.74",Yes,No,u005-00076
+17/12/2025,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,47.29,,"10,335.45",Yes,No,u005-00077
+17/12/2025,Westpac Choice,MCDONALDS,Eating out,Expense,22.59,,"10,312.86",No,No,u005-00078
+18/12/2025,Westpac Choice,BP,Transport,Expense,137.63,,"10,175.23",Yes,No,u005-00079
+18/12/2025,Westpac Choice,ROSIES CAFE,Eating out,Expense,37.62,,"10,137.61",No,No,u005-00080
+19/12/2025,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,59.10,,"10,078.51",Yes,No,u005-00081
+20/12/2025,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,68.65,,"10,009.86",Yes,No,u005-00082
+20/12/2025,Westpac Choice,TICKETEK,Entertainment,Expense,92.07,,"9,917.79",No,No,u005-00083
+21/12/2025,Westpac Choice,ROSIES CAFE,Eating out,Expense,12.68,,"9,905.11",No,No,u005-00084
+21/12/2025,Westpac Choice,BCF,Shopping,Expense,133.19,,"9,771.92",No,No,u005-00085
+22/12/2025,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"9,461.92",Yes,Yes,u005-00086
+22/12/2025,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,336.76,,"9,125.16",Yes,No,u005-00087
+22/12/2025,Westpac Choice,ROSIES CAFE,Eating out,Expense,24.20,,"9,100.96",No,No,u005-00088
+22/12/2025,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,44.36,,"9,056.60",No,No,u005-00089
+23/12/2025,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,211.87,,"8,844.73",Yes,No,u005-00090
+25/12/2025,Westpac Choice,INV 1046 GREENLEAF CAFE FITOUT,Income,Income,,"1,821.88","10,666.61",No,No,u005-00091
+25/12/2025,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,"1,000.00","13,245.75",No,Yes,u005-00092
+25/12/2025,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,367.22,,"10,299.39",Yes,No,u005-00093
+25/12/2025,Westpac Choice,THE HENSON,Entertainment,Expense,71.82,,"10,227.57",No,No,u005-00094
+25/12/2025,Westpac Choice,TRANSFER TO ESAVER TAX SET-ASIDE,Transfers,Transfer,"1,000.00",,"9,227.57",No,Yes,u005-00095
+26/12/2025,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,154.45,,"9,073.12",Yes,No,u005-00096
+27/12/2025,Westpac Choice,VIC ON THE PARK,Eating out,Expense,14.89,,"9,058.23",No,No,u005-00097
+27/12/2025,Westpac Choice,DAN MURPHYS,Entertainment,Expense,78.91,,"8,979.32",No,No,u005-00098
+28/12/2025,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,23.88,,"8,955.44",No,No,u005-00099
+28/12/2025,Westpac Choice,THE HENSON,Entertainment,Expense,57.45,,"8,897.99",No,No,u005-00100
+29/12/2025,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"8,587.99",Yes,Yes,u005-00101
+29/12/2025,Westpac Choice,BP,Transport,Expense,117.39,,"8,470.60",Yes,No,u005-00102
+29/12/2025,Westpac Choice,MCDONALDS,Eating out,Expense,19.44,,"8,451.16",No,No,u005-00103
+30/12/2025,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,128.35,,"8,322.81",Yes,No,u005-00104
+30/12/2025,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,68.57,,"8,254.24",Yes,No,u005-00105
+31/12/2025,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,112.23,,"8,142.01",Yes,No,u005-00106
+31/12/2025,Westpac Choice,REBEL SPORT,Shopping,Expense,104.22,,"8,037.79",No,No,u005-00107
+01/01/2026,Westpac eSaver,INTEREST PAID,Income,Income,,49.67,"13,295.42",No,Yes,u005-00108
+01/01/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,64.00,,"7,973.79",No,Yes,u005-00109
+01/01/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,65.94,,"7,907.85",Yes,No,u005-00110
+01/01/2026,Westpac Choice,BCF,Shopping,Expense,61.21,,"7,846.64",No,No,u005-00111
+03/01/2026,Westpac Choice,QBE PUBLIC LIABILITY INSURANCE,Insurance,Expense,92.00,,"7,754.64",Yes,Yes,u005-00112
+03/01/2026,Westpac Choice,XERO SUBSCRIPTION,Business expenses,Expense,35.00,,"7,719.64",Yes,Yes,u005-00113
+03/01/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,67.03,,"7,652.61",Yes,No,u005-00114
+03/01/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,30.03,,"7,622.58",No,No,u005-00115
+03/01/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,46.04,,"7,576.54",No,No,u005-00116
+04/01/2026,Westpac Choice,UBER *EATS,Eating out,Expense,15.57,,"7,560.97",No,No,u005-00117
+05/01/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"7,250.97",Yes,Yes,u005-00118
+05/01/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,123.92,,"7,127.05",Yes,No,u005-00119
+05/01/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,14.32,,"7,112.73",No,No,u005-00120
+05/01/2026,Westpac Choice,REBEL SPORT,Shopping,Expense,87.16,,"7,025.57",No,No,u005-00121
+06/01/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"7,000.57",No,Yes,u005-00122
+06/01/2026,Westpac Choice,THE HENSON,Entertainment,Expense,57.87,,"6,942.70",No,No,u005-00123
+07/01/2026,Westpac Choice,INV 1050 M AND K CONSTRUCTIONS,Income,Income,,"2,791.62","9,734.32",No,No,u005-00124
+07/01/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,123.06,,"9,611.26",Yes,No,u005-00125
+08/01/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,31.68,,"9,579.58",No,No,u005-00126
+09/01/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,69.00,,"9,510.58",Yes,Yes,u005-00127
+09/01/2026,Westpac Choice,BP,Transport,Expense,107.85,,"9,402.73",Yes,No,u005-00128
+09/01/2026,Westpac Choice,KATHMANDU,Shopping,Expense,160.10,,"9,242.63",No,No,u005-00129
+10/01/2026,Westpac Choice,INV 1052 CASTLE STRATA SERVICES,Income,Income,,"2,429.16","11,671.79",No,No,u005-00130
+10/01/2026,Westpac Choice,AMPOL,Transport,Expense,110.64,,"11,561.15",Yes,No,u005-00131
+10/01/2026,Westpac Choice,THE HENSON,Entertainment,Expense,114.25,,"11,446.90",No,No,u005-00132
+11/01/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,109.20,,"11,337.70",Yes,No,u005-00133
+11/01/2026,Westpac Choice,EL JANNAH,Eating out,Expense,21.96,,"11,315.74",No,No,u005-00134
+11/01/2026,Westpac Choice,KATHMANDU,Shopping,Expense,83.07,,"11,232.67",No,No,u005-00135
+12/01/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"10,922.67",Yes,Yes,u005-00136
+12/01/2026,Westpac Choice,TOYOTA FINANCE HILUX,Loan repayments,Expense,640.00,,"10,282.67",Yes,Yes,u005-00137
+12/01/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,59.56,,"10,223.11",No,No,u005-00138
+13/01/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,177.58,,"10,045.53",Yes,No,u005-00139
+13/01/2026,Westpac Choice,EL JANNAH,Eating out,Expense,19.14,,"10,026.39",No,No,u005-00140
+13/01/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,43.67,,"9,982.72",No,No,u005-00141
+14/01/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,97.54,,"9,885.18",Yes,Yes,u005-00142
+14/01/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"9,871.19",No,Yes,u005-00143
+14/01/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,54.82,,"9,816.37",Yes,No,u005-00144
+15/01/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,24.20,,"9,792.17",No,No,u005-00145
+15/01/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,71.43,,"9,720.74",No,No,u005-00146
+17/01/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,80.34,,"9,640.40",Yes,No,u005-00147
+17/01/2026,Westpac Choice,UBER *EATS,Eating out,Expense,42.91,,"9,597.49",No,No,u005-00148
+18/01/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,32.08,,"9,565.41",No,No,u005-00149
+19/01/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"9,255.41",Yes,Yes,u005-00150
+19/01/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,49.56,,"9,205.85",Yes,No,u005-00151
+19/01/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,15.32,,"9,190.53",No,No,u005-00152
+20/01/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,81.99,,"9,108.54",Yes,No,u005-00153
+20/01/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,65.67,,"9,042.87",Yes,No,u005-00154
+20/01/2026,Westpac Choice,UBER *EATS,Eating out,Expense,37.52,,"9,005.35",No,No,u005-00155
+21/01/2026,Westpac Choice,BP,Transport,Expense,100.50,,"8,904.85",Yes,No,u005-00156
+22/01/2026,Westpac Choice,INV 1051 GREENLEAF CAFE FITOUT,Income,Income,,"2,187.83","11,092.68",No,No,u005-00157
+22/01/2026,Westpac Choice,AMPOL,Transport,Expense,104.94,,"10,987.74",Yes,No,u005-00158
+22/01/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,245.61,,"10,742.13",Yes,No,u005-00159
+22/01/2026,Westpac Choice,MCDONALDS,Eating out,Expense,27.03,,"10,715.10",No,No,u005-00160
+23/01/2026,Westpac Choice,AMPOL,Transport,Expense,100.49,,"10,614.61",Yes,No,u005-00161
+23/01/2026,Westpac Choice,UBER *EATS,Eating out,Expense,21.22,,"10,593.39",No,No,u005-00162
+24/01/2026,Westpac Choice,THE HENSON,Entertainment,Expense,47.72,,"10,545.67",No,No,u005-00163
+24/01/2026,Westpac Choice,JB HI-FI,Shopping,Expense,106.27,,"10,439.40",No,No,u005-00164
+25/01/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,"1,000.00","14,295.42",No,Yes,u005-00165
+25/01/2026,Westpac Choice,UBER *EATS,Eating out,Expense,15.32,,"10,424.08",No,No,u005-00166
+25/01/2026,Westpac Choice,TRANSFER TO ESAVER TAX SET-ASIDE,Transfers,Transfer,"1,000.00",,"9,424.08",No,Yes,u005-00167
+26/01/2026,Westpac Choice,INV 1053 GREENLEAF CAFE FITOUT,Income,Income,,"2,429.72","11,853.80",No,No,u005-00168
+26/01/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"11,543.80",Yes,Yes,u005-00169
+26/01/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,129.89,,"11,413.91",Yes,No,u005-00170
+26/01/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,37.33,,"11,376.58",No,No,u005-00171
+27/01/2026,Westpac Choice,TICKETEK,Entertainment,Expense,51.62,,"11,324.96",No,No,u005-00172
+28/01/2026,Westpac Choice,UBER *EATS,Eating out,Expense,23.45,,"11,301.51",No,No,u005-00173
+28/01/2026,Westpac Choice,TICKETEK,Entertainment,Expense,121.77,,"11,179.74",No,No,u005-00174
+29/01/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,173.67,,"11,006.07",Yes,No,u005-00175
+29/01/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,95.07,,"10,911.00",No,No,u005-00176
+31/01/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,353.23,,"10,557.77",Yes,No,u005-00177
+31/01/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,103.95,,"10,453.82",Yes,No,u005-00178
+31/01/2026,Westpac Choice,THE HENSON,Entertainment,Expense,96.48,,"10,357.34",No,No,u005-00179
+31/01/2026,Westpac Choice,AFTERPAY - TOTAL TOOLS (1/4),Buy Now Pay Later,Expense,97.25,,"10,260.09",No,No,u005-B0001
+01/02/2026,Westpac eSaver,INTEREST PAID,Income,Income,,53.61,"14,349.03",No,Yes,u005-00180
+01/02/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,64.00,,"10,196.09",No,Yes,u005-00181
+01/02/2026,Westpac Choice,AMPOL,Transport,Expense,111.25,,"10,084.84",Yes,No,u005-00182
+01/02/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,317.61,,"9,767.23",Yes,No,u005-00183
+01/02/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,55.73,,"9,711.50",Yes,No,u005-00184
+01/02/2026,Westpac Choice,THE HENSON,Entertainment,Expense,56.61,,"9,654.89",No,No,u005-00185
+02/02/2026,Westpac Choice,INV 1058 INNER WEST RENOVATIONS,Income,Income,,"1,755.25","11,410.14",No,No,u005-00186
+02/02/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"11,100.14",Yes,Yes,u005-00187
+03/02/2026,Westpac Choice,QBE PUBLIC LIABILITY INSURANCE,Insurance,Expense,92.00,,"11,008.14",Yes,Yes,u005-00188
+03/02/2026,Westpac Choice,XERO SUBSCRIPTION,Business expenses,Expense,35.00,,"10,973.14",Yes,Yes,u005-00189
+03/02/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,261.73,,"10,711.41",Yes,No,u005-00190
+03/02/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,28.69,,"10,682.72",No,No,u005-00191
+04/02/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,211.49,,"10,471.23",Yes,No,u005-00192
+04/02/2026,Westpac Choice,MCDONALDS,Eating out,Expense,18.40,,"10,452.83",No,No,u005-00193
+05/02/2026,Westpac Choice,EL JANNAH,Eating out,Expense,12.23,,"10,440.60",No,No,u005-00194
+06/02/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"10,415.60",No,Yes,u005-00195
+06/02/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,217.59,,"10,198.01",Yes,No,u005-00196
+06/02/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,55.51,,"10,142.50",Yes,No,u005-00197
+06/02/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,46.04,,"10,096.46",No,No,u005-00198
+07/02/2026,Westpac Choice,AMPOL,Transport,Expense,130.00,,"9,966.46",Yes,No,u005-00199
+07/02/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,47.59,,"9,918.87",Yes,No,u005-00200
+07/02/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,22.78,,"9,896.09",No,No,u005-00201
+08/02/2026,Westpac Choice,INV 1057 HARBOUR BUILD GROUP,Income,Income,,"1,895.76","11,791.85",No,No,u005-00202
+09/02/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"11,481.85",Yes,Yes,u005-00203
+09/02/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,69.00,,"11,412.85",Yes,Yes,u005-00204
+09/02/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,68.33,,"11,344.52",Yes,No,u005-00205
+10/02/2026,Westpac Choice,BP,Transport,Expense,127.57,,"11,216.95",Yes,No,u005-00206
+10/02/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,189.30,,"11,027.65",Yes,No,u005-00207
+10/02/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,37.42,,"10,990.23",Yes,No,u005-00208
+10/02/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,19.78,,"10,970.45",No,No,u005-00209
+11/02/2026,Westpac Choice,BP,Transport,Expense,103.81,,"10,866.64",Yes,No,u005-00210
+11/02/2026,Westpac Choice,MCDONALDS,Eating out,Expense,30.68,,"10,835.96",No,No,u005-00211
+11/02/2026,Westpac Choice,THE HENSON,Entertainment,Expense,37.61,,"10,798.35",No,No,u005-00212
+12/02/2026,Westpac Choice,TOYOTA FINANCE HILUX,Loan repayments,Expense,640.00,,"10,158.35",Yes,Yes,u005-00213
+12/02/2026,Westpac Choice,KATHMANDU,Shopping,Expense,139.01,,"10,019.34",No,No,u005-00214
+13/02/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,22.25,,"9,997.09",Yes,No,u005-00215
+14/02/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,68.87,,"9,928.22",Yes,Yes,u005-00216
+14/02/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"9,914.23",No,Yes,u005-00217
+14/02/2026,Westpac Choice,AMPOL,Transport,Expense,147.74,,"9,766.49",Yes,No,u005-00218
+14/02/2026,Westpac Choice,MCDONALDS,Eating out,Expense,47.46,,"9,719.03",No,No,u005-00219
+14/02/2026,Westpac Choice,THE HENSON,Entertainment,Expense,123.92,,"9,595.11",No,No,u005-00220
+14/02/2026,Westpac Choice,AFTERPAY - TOTAL TOOLS (2/4),Buy Now Pay Later,Expense,97.25,,"9,497.86",No,Yes,u005-B0002
+15/02/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,43.09,,"9,454.77",Yes,No,u005-00221
+15/02/2026,Westpac Choice,THE HENSON,Entertainment,Expense,91.11,,"9,363.66",No,No,u005-00222
+16/02/2026,Westpac Choice,INV 1054 CASTLE STRATA SERVICES,Income,Income,,"2,425.76","11,789.42",No,No,u005-00223
+16/02/2026,Westpac Choice,INV 1056 GREENLEAF CAFE FITOUT,Income,Income,,"1,793.83","13,583.25",No,No,u005-00224
+16/02/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"13,273.25",Yes,Yes,u005-00225
+16/02/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,205.32,,"13,067.93",Yes,No,u005-00226
+16/02/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,95.92,,"12,972.01",No,No,u005-00227
+17/02/2026,Westpac Choice,BP,Transport,Expense,102.76,,"12,869.25",Yes,No,u005-00228
+18/02/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,119.45,,"12,749.80",Yes,No,u005-00229
+18/02/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,123.14,,"12,626.66",Yes,No,u005-00230
+18/02/2026,Westpac Choice,EL JANNAH,Eating out,Expense,23.76,,"12,602.90",No,No,u005-00231
+19/02/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,22.56,,"12,580.34",No,No,u005-00232
+19/02/2026,Westpac Choice,JB HI-FI,Shopping,Expense,161.58,,"12,418.76",No,No,u005-00233
+20/02/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,123.69,,"12,295.07",Yes,No,u005-00234
+20/02/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,375.63,,"11,919.44",Yes,No,u005-00235
+21/02/2026,Westpac Choice,AMPOL,Transport,Expense,89.35,,"11,830.09",Yes,No,u005-00236
+21/02/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,22.36,,"11,807.73",No,No,u005-00237
+22/02/2026,Westpac Choice,INV 1055 INNER WEST RENOVATIONS,Income,Income,,"1,790.57","13,598.30",No,No,u005-00238
+23/02/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"13,288.30",Yes,Yes,u005-00239
+23/02/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,24.22,,"13,264.08",No,No,u005-00240
+23/02/2026,Westpac Choice,THE HENSON,Entertainment,Expense,60.45,,"13,203.63",No,No,u005-00241
+24/02/2026,Westpac Choice,BP,Transport,Expense,128.06,,"13,075.57",Yes,No,u005-00242
+24/02/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,37.35,,"13,038.22",No,No,u005-00243
+25/02/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,"1,000.00","15,349.03",No,Yes,u005-00244
+25/02/2026,Westpac Choice,MCDONALDS,Eating out,Expense,13.86,,"13,024.36",No,No,u005-00245
+25/02/2026,Westpac Choice,TICKETEK,Entertainment,Expense,72.36,,"12,952.00",No,No,u005-00246
+25/02/2026,Westpac Choice,TRANSFER TO ESAVER TAX SET-ASIDE,Transfers,Transfer,"1,000.00",,"11,952.00",No,Yes,u005-00247
+26/02/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,37.49,,"11,914.51",No,No,u005-00248
+26/02/2026,Westpac Choice,TOYOTA SERVICE CENTRE,Transport,Expense,"2,740.00",,"9,174.51",Yes,No,u005-S0001
+27/02/2026,Westpac Choice,AMPOL,Transport,Expense,141.42,,"9,033.09",Yes,No,u005-00249
+27/02/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,231.01,,"8,802.08",Yes,No,u005-00250
+27/02/2026,Westpac Choice,BCF,Shopping,Expense,162.92,,"8,639.16",No,No,u005-00251
+28/02/2026,Westpac Choice,ATO BAS PAYMENT,Tax,Expense,"4,971.83",,"3,667.33",Yes,Yes,u005-00252
+28/02/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,403.79,,"3,263.54",Yes,No,u005-00253
+28/02/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,61.85,,"3,201.69",Yes,No,u005-00254
+28/02/2026,Westpac Choice,EL JANNAH,Eating out,Expense,20.30,,"3,181.39",No,No,u005-00255
+28/02/2026,Westpac Choice,TICKETEK,Entertainment,Expense,50.65,,"3,130.74",No,No,u005-00256
+28/02/2026,Westpac Choice,AFTERPAY - TOTAL TOOLS (3/4),Buy Now Pay Later,Expense,97.25,,"3,033.49",No,Yes,u005-B0003
+01/03/2026,Westpac eSaver,INTEREST PAID,Income,Income,,57.56,"15,406.59",No,Yes,u005-00257
+01/03/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,64.00,,"2,969.49",No,Yes,u005-00258
+01/03/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,36.66,,"2,932.83",No,No,u005-00259
+01/03/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,66.60,,"2,866.23",No,No,u005-00260
+02/03/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"2,556.23",Yes,Yes,u005-00261
+02/03/2026,Westpac Choice,BP,Transport,Expense,94.42,,"2,461.81",Yes,No,u005-00262
+02/03/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,350.01,,"2,111.80",Yes,No,u005-00263
+02/03/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,44.64,,"2,067.16",No,No,u005-00264
+02/03/2026,Westpac Choice,AMAZON AU,Shopping,Expense,50.80,,"2,016.36",No,No,u005-00265
+03/03/2026,Westpac Choice,QBE PUBLIC LIABILITY INSURANCE,Insurance,Expense,92.00,,"1,924.36",Yes,Yes,u005-00266
+03/03/2026,Westpac Choice,XERO SUBSCRIPTION,Business expenses,Expense,35.00,,"1,889.36",Yes,Yes,u005-00267
+03/03/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,181.02,,"1,708.34",Yes,No,u005-00268
+03/03/2026,Westpac Choice,EL JANNAH,Eating out,Expense,21.49,,"1,686.85",No,No,u005-00269
+04/03/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,82.72,,"1,604.13",Yes,No,u005-00270
+06/03/2026,Westpac Choice,INV 1062 HARBOUR BUILD GROUP,Income,Income,,"1,651.51","3,255.64",No,No,u005-00271
+06/03/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"3,230.64",No,Yes,u005-00272
+06/03/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,58.15,,"3,172.49",Yes,No,u005-00273
+06/03/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,12.09,,"3,160.40",No,No,u005-00274
+07/03/2026,Westpac Choice,INV 1059 INNER WEST RENOVATIONS,Income,Income,,"2,944.92","6,105.32",No,No,u005-00275
+07/03/2026,Westpac Choice,UBER *EATS,Eating out,Expense,43.79,,"6,061.53",No,No,u005-00276
+08/03/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,103.46,,"5,958.07",Yes,No,u005-00277
+08/03/2026,Westpac Choice,EL JANNAH,Eating out,Expense,20.35,,"5,937.72",No,No,u005-00278
+08/03/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,56.77,,"5,880.95",No,No,u005-00279
+09/03/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"5,570.95",Yes,Yes,u005-00280
+09/03/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,69.00,,"5,501.95",Yes,Yes,u005-00281
+09/03/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,58.54,,"5,443.41",No,No,u005-00282
+09/03/2026,Westpac Choice,AMAZON AU,Shopping,Expense,151.09,,"5,292.32",No,No,u005-00283
+10/03/2026,Westpac Choice,BP,Transport,Expense,109.39,,"5,182.93",Yes,No,u005-00284
+11/03/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,100.30,,"5,082.63",Yes,No,u005-00285
+11/03/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,24.57,,"5,058.06",No,No,u005-00286
+12/03/2026,Westpac Choice,TOYOTA FINANCE HILUX,Loan repayments,Expense,640.00,,"4,418.06",Yes,Yes,u005-00287
+12/03/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,134.14,,"4,283.92",Yes,No,u005-00288
+12/03/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,164.35,,"4,119.57",Yes,No,u005-00289
+12/03/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,38.15,,"4,081.42",No,No,u005-00290
+12/03/2026,Westpac Choice,BCF,Shopping,Expense,139.05,,"3,942.37",No,No,u005-00291
+12/03/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,43.46,,"3,898.91",Yes,No,u005-00292
+13/03/2026,Westpac Choice,BP,Transport,Expense,135.42,,"3,763.49",Yes,No,u005-00293
+13/03/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,53.66,,"3,709.83",Yes,No,u005-00294
+13/03/2026,Westpac Choice,MCDONALDS,Eating out,Expense,25.93,,"3,683.90",No,No,u005-00295
+14/03/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,94.22,,"3,589.68",Yes,Yes,u005-00296
+14/03/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"3,575.69",No,Yes,u005-00297
+14/03/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,139.00,,"3,436.69",Yes,No,u005-00298
+14/03/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,61.89,,"3,374.80",Yes,No,u005-00299
+14/03/2026,Westpac Choice,AFTERPAY - TOTAL TOOLS (4/4),Buy Now Pay Later,Expense,97.25,,"3,277.55",No,Yes,u005-B0004
+16/03/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"2,967.55",Yes,Yes,u005-00300
+16/03/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,176.82,,"2,790.73",Yes,No,u005-00301
+16/03/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,28.18,,"2,762.55",No,No,u005-00302
+18/03/2026,Westpac Choice,INV 1060 PRIVATE CLIENT,Income,Income,,"2,478.26","5,240.81",No,No,u005-00303
+19/03/2026,Westpac Choice,INV 1061 HARBOUR BUILD GROUP,Income,Income,,"1,495.76","6,736.57",No,No,u005-00304
+21/03/2026,Westpac Choice,AMPOL,Transport,Expense,115.45,,"6,621.12",Yes,No,u005-00305
+22/03/2026,Westpac Choice,UBER *EATS,Eating out,Expense,35.59,,"6,585.53",No,No,u005-00306
+22/03/2026,Westpac Choice,THE HENSON,Entertainment,Expense,96.33,,"6,489.20",No,No,u005-00307
+23/03/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"6,179.20",Yes,Yes,u005-00308
+23/03/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,292.71,,"5,886.49",Yes,No,u005-00309
+25/03/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,"1,000.00","16,406.59",No,Yes,u005-00310
+25/03/2026,Westpac Choice,AMPOL,Transport,Expense,137.41,,"5,749.08",Yes,No,u005-00311
+25/03/2026,Westpac Choice,TRANSFER TO ESAVER TAX SET-ASIDE,Transfers,Transfer,"1,000.00",,"4,749.08",No,Yes,u005-00312
+26/03/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,97.35,,"4,651.73",Yes,No,u005-00313
+26/03/2026,Westpac Choice,MCDONALDS,Eating out,Expense,13.05,,"4,638.68",No,No,u005-00314
+27/03/2026,Westpac Choice,UBER *EATS,Eating out,Expense,31.98,,"4,606.70",No,No,u005-00315
+27/03/2026,Westpac Choice,TICKETEK,Entertainment,Expense,75.25,,"4,531.45",No,No,u005-00316
+28/03/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,123.37,,"4,408.08",Yes,No,u005-00317
+28/03/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,26.78,,"4,381.30",No,No,u005-00318
+28/03/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,150.00,,"4,231.30",No,Yes,u005-B0013
+29/03/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,227.72,,"4,003.58",Yes,No,u005-00319
+29/03/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,16.49,,"3,987.09",No,No,u005-00320
+29/03/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,28.68,,"3,958.41",No,No,u005-00321
+30/03/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"3,648.41",Yes,Yes,u005-00322
+30/03/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,195.89,,"3,452.52",Yes,No,u005-00323
+31/03/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,97.06,,"3,355.46",Yes,No,u005-00324
+01/04/2026,Westpac eSaver,INTEREST PAID,Income,Income,,61.52,"16,468.11",No,Yes,u005-00325
+01/04/2026,Westpac Choice,INV 1065 HARBOUR BUILD GROUP,Income,Income,,"2,255.40","5,610.86",No,No,u005-00326
+01/04/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,64.00,,"5,546.86",No,Yes,u005-00327
+01/04/2026,Westpac Choice,TICKETEK,Entertainment,Expense,55.33,,"5,491.53",No,No,u005-00328
+03/04/2026,Westpac Choice,QBE PUBLIC LIABILITY INSURANCE,Insurance,Expense,92.00,,"5,399.53",Yes,Yes,u005-00329
+03/04/2026,Westpac Choice,XERO SUBSCRIPTION,Business expenses,Expense,35.00,,"5,364.53",Yes,Yes,u005-00330
+03/04/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,89.10,,"5,275.43",Yes,No,u005-00331
+03/04/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,33.81,,"5,241.62",No,No,u005-00332
+03/04/2026,Westpac Choice,THE HENSON,Entertainment,Expense,87.14,,"5,154.48",No,No,u005-00333
+05/04/2026,Westpac Choice,BCF,Shopping,Expense,92.28,,"5,062.20",No,No,u005-00334
+06/04/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"4,752.20",Yes,Yes,u005-00335
+06/04/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"4,727.20",No,Yes,u005-00336
+06/04/2026,Westpac Choice,UBER *EATS,Eating out,Expense,25.93,,"4,701.27",No,No,u005-00337
+06/04/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,45.88,,"4,655.39",Yes,No,u005-00338
+07/04/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,66.73,,"4,588.66",Yes,No,u005-00339
+07/04/2026,Westpac Choice,REBEL SPORT,Shopping,Expense,87.74,,"4,500.92",No,No,u005-00340
+08/04/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,101.33,,"4,399.59",Yes,No,u005-00341
+08/04/2026,Westpac Choice,UBER *EATS,Eating out,Expense,28.26,,"4,371.33",No,No,u005-00342
+09/04/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,69.00,,"4,302.33",Yes,Yes,u005-00343
+09/04/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,43.37,,"4,258.96",No,No,u005-00344
+11/04/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,79.32,,"4,179.64",Yes,No,u005-00345
+11/04/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,31.67,,"4,147.97",No,No,u005-00346
+11/04/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,150.00,,"3,997.97",No,Yes,u005-B0014
+12/04/2026,Westpac Choice,INV 1066 CASTLE STRATA SERVICES,Income,Income,,"1,792.99","5,790.96",No,No,u005-00347
+12/04/2026,Westpac Choice,TOYOTA FINANCE HILUX,Loan repayments,Expense,640.00,,"5,150.96",Yes,Yes,u005-00348
+12/04/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,415.57,,"4,735.39",Yes,No,u005-00349
+12/04/2026,Westpac Choice,MCDONALDS,Eating out,Expense,38.85,,"4,696.54",No,No,u005-00350
+12/04/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,43.97,,"4,652.57",No,No,u005-00351
+13/04/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"4,342.57",Yes,Yes,u005-00352
+14/04/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,97.24,,"4,245.33",Yes,Yes,u005-00353
+14/04/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"4,231.34",No,Yes,u005-00354
+14/04/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,95.70,,"4,135.64",Yes,No,u005-00355
+14/04/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,27.74,,"4,107.90",No,No,u005-00356
+15/04/2026,Westpac Choice,INV 1064 PRIVATE CLIENT,Income,Income,,"2,730.99","6,838.89",No,No,u005-00357
+15/04/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,44.55,,"6,794.34",No,No,u005-00358
+16/04/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,82.44,,"6,711.90",Yes,No,u005-00359
+17/04/2026,Westpac Choice,BP,Transport,Expense,123.42,,"6,588.48",Yes,No,u005-00360
+17/04/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,95.27,,"6,493.21",Yes,No,u005-00361
+17/04/2026,Westpac Choice,EL JANNAH,Eating out,Expense,43.07,,"6,450.14",No,No,u005-00362
+18/04/2026,Westpac Choice,INV 1063 M AND K CONSTRUCTIONS,Income,Income,,"2,127.51","8,577.65",No,No,u005-00363
+18/04/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,106.97,,"8,470.68",Yes,No,u005-00364
+18/04/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,19.29,,"8,451.39",No,No,u005-00365
+18/04/2026,Westpac Choice,AMAZON AU,Shopping,Expense,76.03,,"8,375.36",No,No,u005-00366
+19/04/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,34.75,,"8,340.61",Yes,No,u005-00367
+19/04/2026,Westpac Choice,UBER *EATS,Eating out,Expense,32.46,,"8,308.15",No,No,u005-00368
+19/04/2026,Westpac Choice,THE HENSON,Entertainment,Expense,36.13,,"8,272.02",No,No,u005-00369
+20/04/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"7,962.02",Yes,Yes,u005-00370
+20/04/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,45.77,,"7,916.25",Yes,No,u005-00371
+20/04/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,18.42,,"7,897.83",No,No,u005-00372
+21/04/2026,Westpac Choice,UBER *EATS,Eating out,Expense,39.43,,"7,858.40",No,No,u005-00373
+23/04/2026,Westpac Choice,UBER *EATS,Eating out,Expense,34.23,,"7,824.17",No,No,u005-00374
+24/04/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,151.71,,"7,672.46",Yes,No,u005-00375
+24/04/2026,Westpac Choice,UBER *EATS,Eating out,Expense,20.05,,"7,652.41",No,No,u005-00376
+24/04/2026,Westpac Choice,JB HI-FI,Shopping,Expense,91.12,,"7,561.29",No,No,u005-00377
+25/04/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,"1,000.00","17,468.11",No,Yes,u005-00378
+25/04/2026,Westpac Choice,UBER *EATS,Eating out,Expense,20.77,,"7,540.52",No,No,u005-00379
+25/04/2026,Westpac Choice,TRANSFER TO ESAVER TAX SET-ASIDE,Transfers,Transfer,"1,000.00",,"6,540.52",No,Yes,u005-00380
+25/04/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,150.00,,"6,390.52",No,Yes,u005-B0015
+26/04/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,343.41,,"6,047.11",Yes,No,u005-00381
+26/04/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,39.19,,"6,007.92",Yes,No,u005-00382
+26/04/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,15.21,,"5,992.71",No,No,u005-00383
+26/04/2026,Westpac Choice,THE HENSON,Entertainment,Expense,56.94,,"5,935.77",No,No,u005-00384
+27/04/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"5,625.77",Yes,Yes,u005-00385
+27/04/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,25.86,,"5,599.91",No,No,u005-00386
+28/04/2026,Westpac Choice,ATO BAS PAYMENT,Tax,Expense,"5,263.93",,335.98,Yes,Yes,u005-00387
+28/04/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,21.59,,314.39,No,No,u005-00388
+29/04/2026,Westpac Choice,EL JANNAH,Eating out,Expense,8.59,,305.80,No,No,u005-00389
+30/04/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,156.41,,149.39,Yes,No,u005-00390
+30/04/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,200.00,349.39,No,No,u005-F0001
+30/04/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,200.00,,"17,268.11",No,No,u005-F0002
+30/04/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,32.84,,316.55,No,No,u005-00391
+01/05/2026,Westpac eSaver,INTEREST PAID,Income,Income,,65.51,"17,333.62",No,Yes,u005-00392
+01/05/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,64.00,,252.55,No,Yes,u005-00393
+01/05/2026,Westpac Choice,EL JANNAH,Eating out,Expense,15.18,,237.37,No,No,u005-00394
+01/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,337.37,No,No,u005-F0003
+01/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"17,233.62",No,No,u005-F0004
+02/05/2026,Westpac Choice,JETSTAR AIRWAYS,Travel,Expense,720.00,,-382.63,No,No,u005-00395
+02/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,700.00,317.37,No,No,u005-F0005
+02/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,700.00,,"16,533.62",No,No,u005-F0006
+02/05/2026,Westpac Choice,BP,Transport,Expense,128.16,,189.21,Yes,No,u005-00396
+02/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,289.21,No,No,u005-F0007
+02/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"16,433.62",No,No,u005-F0008
+02/05/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,27.04,,262.17,No,No,u005-00397
+02/05/2026,Westpac Choice,TICKETEK,Entertainment,Expense,33.49,,228.68,No,No,u005-00398
+02/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,328.68,No,No,u005-F0009
+02/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"16,333.62",No,No,u005-F0010
+03/05/2026,Westpac Choice,QBE PUBLIC LIABILITY INSURANCE,Insurance,Expense,92.00,,236.68,Yes,Yes,u005-00399
+03/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,336.68,No,No,u005-F0011
+03/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"16,233.62",No,No,u005-F0012
+03/05/2026,Westpac Choice,XERO SUBSCRIPTION,Business expenses,Expense,35.00,,301.68,Yes,Yes,u005-00400
+04/05/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,-8.32,Yes,Yes,u005-00401
+04/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,300.00,291.68,No,No,u005-F0013
+04/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,300.00,,"15,933.62",No,No,u005-F0014
+04/05/2026,Westpac Choice,UBER *EATS,Eating out,Expense,34.55,,257.13,No,No,u005-00402
+05/05/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,167.48,,89.65,Yes,No,u005-00403
+05/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,200.00,289.65,No,No,u005-F0015
+05/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,200.00,,"15,733.62",No,No,u005-F0016
+05/05/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,16.96,,272.69,No,No,u005-00404
+06/05/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,247.69,No,Yes,u005-00405
+06/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,347.69,No,No,u005-F0017
+06/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"15,633.62",No,No,u005-F0018
+06/05/2026,Westpac Choice,BOOKING.COM BALI VILLA,Travel,Expense,880.00,,-532.31,No,No,u005-00406
+06/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,800.00,267.69,No,No,u005-F0019
+06/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,800.00,,"14,833.62",No,No,u005-F0020
+06/05/2026,Westpac Choice,MCDONALDS,Eating out,Expense,40.26,,227.43,No,No,u005-00407
+06/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,327.43,No,No,u005-F0021
+06/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"14,733.62",No,No,u005-F0022
+06/05/2026,Westpac Choice,REBEL SPORT,Shopping,Expense,62.66,,264.77,No,No,u005-00408
+08/05/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,50.01,,214.76,Yes,No,u005-00409
+08/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,314.76,No,No,u005-F0023
+08/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"14,633.62",No,No,u005-F0024
+09/05/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,69.00,,245.76,Yes,Yes,u005-00410
+09/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,345.76,No,No,u005-F0025
+09/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"14,533.62",No,No,u005-F0026
+09/05/2026,Westpac Choice,MCDONALDS,Eating out,Expense,33.90,,311.86,No,No,u005-00411
+09/05/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,150.00,,161.86,No,Yes,u005-B0016
+09/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,261.86,No,No,u005-F0027
+09/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"14,433.62",No,No,u005-F0028
+10/05/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,156.39,,105.47,Yes,No,u005-00412
+10/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,200.00,305.47,No,No,u005-F0029
+10/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,200.00,,"14,233.62",No,No,u005-F0030
+10/05/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,93.35,,212.12,Yes,No,u005-00413
+10/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,312.12,No,No,u005-F0031
+10/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"14,133.62",No,No,u005-F0032
+10/05/2026,Westpac Choice,MCDONALDS,Eating out,Expense,10.84,,301.28,No,No,u005-00414
+11/05/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,-8.72,Yes,Yes,u005-00415
+11/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,300.00,291.28,No,No,u005-F0033
+11/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,300.00,,"13,833.62",No,No,u005-F0034
+11/05/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,35.70,,255.58,Yes,No,u005-00416
+11/05/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,34.58,,221.00,No,No,u005-00417
+11/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,321.00,No,No,u005-F0035
+11/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"13,733.62",No,No,u005-F0036
+12/05/2026,Westpac Choice,INV 1069 INNER WEST RENOVATIONS,Income,Income,,"1,944.78","2,265.78",No,No,u005-00418
+12/05/2026,Westpac Choice,INV 1070 PRIVATE CLIENT,Income,Income,,"2,304.49","4,570.27",No,No,u005-00419
+12/05/2026,Westpac Choice,TOYOTA FINANCE HILUX,Loan repayments,Expense,640.00,,"3,930.27",Yes,Yes,u005-00420
+13/05/2026,Westpac Choice,INV 1067 PRIVATE CLIENT,Income,Income,,"2,082.31","6,012.58",No,No,u005-00421
+13/05/2026,Westpac Choice,INV 1068 HARBOUR BUILD GROUP,Income,Income,,"2,292.16","8,304.74",No,No,u005-00422
+13/05/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,343.53,,"7,961.21",Yes,No,u005-00423
+13/05/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,32.58,,"7,928.63",No,No,u005-00424
+13/05/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,48.07,,"7,880.56",No,No,u005-00425
+13/05/2026,Westpac Choice,KATHMANDU,Shopping,Expense,101.66,,"7,778.90",No,No,u005-00426
+14/05/2026,Westpac Choice,INV 1072 HARBOUR BUILD GROUP,Income,Income,,"1,660.08","9,438.98",No,No,u005-00427
+14/05/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,71.76,,"9,367.22",Yes,Yes,u005-00428
+14/05/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"9,353.23",No,Yes,u005-00429
+14/05/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,107.18,,"9,246.05",Yes,No,u005-00430
+14/05/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,33.82,,"9,212.23",No,No,u005-00431
+15/05/2026,Westpac Choice,AMPOL,Transport,Expense,102.10,,"9,110.13",Yes,No,u005-00432
+15/05/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,237.16,,"8,872.97",Yes,No,u005-00433
+15/05/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,45.29,,"8,827.68",Yes,No,u005-00434
+16/05/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,33.45,,"8,794.23",No,No,u005-00435
+17/05/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,234.57,,"8,559.66",Yes,No,u005-00436
+17/05/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,78.70,,"8,480.96",No,No,u005-00437
+17/05/2026,Westpac Choice,JB HI-FI,Shopping,Expense,181.26,,"8,299.70",No,No,u005-00438
+18/05/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"7,989.70",Yes,Yes,u005-00439
+19/05/2026,Westpac Choice,NSW FAIR TRADING LICENCE RENEWAL,Business expenses,Expense,260.00,,"7,729.70",Yes,No,u005-00440
+19/05/2026,Westpac Choice,MCDONALDS,Eating out,Expense,35.05,,"7,694.65",No,No,u005-00441
+20/05/2026,Westpac Choice,BP,Transport,Expense,120.33,,"7,574.32",Yes,No,u005-00442
+20/05/2026,Westpac Choice,EL JANNAH,Eating out,Expense,27.90,,"7,546.42",No,No,u005-00443
+21/05/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,231.55,,"7,314.87",Yes,No,u005-00444
+21/05/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,50.28,,"7,264.59",Yes,No,u005-00445
+21/05/2026,Westpac Choice,KATHMANDU,Shopping,Expense,176.18,,"7,088.41",No,No,u005-00446
+22/05/2026,Westpac Choice,AMPOL,Transport,Expense,98.84,,"6,989.57",Yes,No,u005-00447
+22/05/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,105.74,,"6,883.83",Yes,No,u005-00448
+22/05/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,37.47,,"6,846.36",No,No,u005-00449
+22/05/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,73.89,,"6,772.47",No,No,u005-00450
+23/05/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,96.59,,"6,675.88",Yes,No,u005-00451
+23/05/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,18.89,,"6,656.99",No,No,u005-00452
+23/05/2026,Westpac Choice,THE HENSON,Entertainment,Expense,72.35,,"6,584.64",No,No,u005-00453
+23/05/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,150.00,,"6,434.64",No,Yes,u005-B0017
+24/05/2026,Westpac Choice,EL JANNAH,Eating out,Expense,26.04,,"6,408.60",No,No,u005-00454
+25/05/2026,Westpac Choice,INV 1071 CASTLE STRATA SERVICES,Income,Income,,"1,906.50","8,315.10",No,No,u005-00455
+25/05/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,"1,000.00","14,733.62",No,Yes,u005-00456
+25/05/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"8,005.10",Yes,Yes,u005-00457
+25/05/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,60.70,,"7,944.40",Yes,No,u005-00458
+25/05/2026,Westpac Choice,TRANSFER TO ESAVER TAX SET-ASIDE,Transfers,Transfer,"1,000.00",,"6,944.40",No,Yes,u005-00459
+26/05/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,88.39,,"6,856.01",Yes,No,u005-00460
+27/05/2026,Westpac Choice,AMPOL,Transport,Expense,93.02,,"6,762.99",Yes,No,u005-00461
+28/05/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,167.82,,"6,595.17",Yes,No,u005-00462
+28/05/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,52.15,,"6,543.02",Yes,No,u005-00463
+29/05/2026,Westpac Choice,AMPOL,Transport,Expense,102.48,,"6,440.54",Yes,No,u005-00464
+29/05/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,96.03,,"6,344.51",No,No,u005-00465
+30/05/2026,Westpac Choice,AMPOL,Transport,Expense,111.62,,"6,232.89",Yes,No,u005-00466
+30/05/2026,Westpac Choice,EL JANNAH,Eating out,Expense,21.83,,"6,211.06",No,No,u005-00467
+30/05/2026,Westpac Choice,AFTERPAY - SUPERCHEAP AUTO (1/4),Buy Now Pay Later,Expense,53.50,,"6,157.56",No,No,u005-B0005
+31/05/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,27.91,,"6,129.65",No,No,u005-00468
+31/05/2026,Westpac Choice,AMAZON AU,Shopping,Expense,66.76,,"6,062.89",No,No,u005-00469
+01/06/2026,Westpac eSaver,INTEREST PAID,Income,Income,,69.50,"14,803.12",No,Yes,u005-00470
+01/06/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"5,752.89",Yes,Yes,u005-00471
+01/06/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,64.00,,"5,688.89",No,Yes,u005-00472
+01/06/2026,Westpac Choice,BP,Transport,Expense,107.51,,"5,581.38",Yes,No,u005-00473
+01/06/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,30.07,,"5,551.31",No,No,u005-00474
+02/06/2026,Westpac Choice,UBER *EATS,Eating out,Expense,15.95,,"5,535.36",No,No,u005-00475
+02/06/2026,Westpac Choice,TICKETEK,Entertainment,Expense,78.18,,"5,457.18",No,No,u005-00476
+03/06/2026,Westpac Choice,QBE PUBLIC LIABILITY INSURANCE,Insurance,Expense,92.00,,"5,365.18",Yes,Yes,u005-00477
+03/06/2026,Westpac Choice,XERO SUBSCRIPTION,Business expenses,Expense,35.00,,"5,330.18",Yes,Yes,u005-00478
+03/06/2026,Westpac Choice,TICKETEK,Entertainment,Expense,32.87,,"5,297.31",No,No,u005-00479
+04/06/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,283.43,,"5,013.88",Yes,No,u005-00480
+04/06/2026,Westpac Choice,EL JANNAH,Eating out,Expense,15.93,,"4,997.95",No,No,u005-00481
+05/06/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,207.83,,"4,790.12",Yes,No,u005-00482
+05/06/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,71.46,,"4,718.66",Yes,No,u005-00483
+05/06/2026,Westpac Choice,MARRICKVILLE PHYSIO,Health,Expense,39.33,,"4,679.33",Yes,No,u005-00484
+06/06/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"4,654.33",No,Yes,u005-00485
+06/06/2026,Westpac Choice,BCF,Shopping,Expense,91.60,,"4,562.73",No,No,u005-00486
+06/06/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,59.85,,"4,502.88",No,Yes,u005-B0018
+07/06/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,74.31,,"4,428.57",No,No,u005-00487
+08/06/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"4,118.57",Yes,Yes,u005-00488
+08/06/2026,Westpac Choice,BP,Transport,Expense,105.54,,"4,013.03",Yes,No,u005-00489
+08/06/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,106.65,,"3,906.38",Yes,No,u005-00490
+09/06/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,69.00,,"3,837.38",Yes,Yes,u005-00491
+09/06/2026,Westpac Choice,BP,Transport,Expense,125.31,,"3,712.07",Yes,No,u005-00492
+09/06/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,61.89,,"3,650.18",Yes,No,u005-00493
+09/06/2026,Westpac Choice,REBEL SPORT,Shopping,Expense,171.99,,"3,478.19",No,No,u005-00494
+10/06/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,90.50,,"3,387.69",Yes,No,u005-00495
+10/06/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,21.21,,"3,366.48",No,No,u005-00496
+11/06/2026,Westpac Choice,INV 1073 M AND K CONSTRUCTIONS,Income,Income,,"2,377.92","5,744.40",No,No,u005-00497
+11/06/2026,Westpac Choice,INV 1076 M AND K CONSTRUCTIONS,Income,Income,,"3,062.46","8,806.86",No,No,u005-00498
+11/06/2026,Westpac Choice,THE HENSON,Entertainment,Expense,62.18,,"8,744.68",No,No,u005-00499
+12/06/2026,Westpac Choice,TOYOTA FINANCE HILUX,Loan repayments,Expense,640.00,,"8,104.68",Yes,Yes,u005-00500
+12/06/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,77.23,,"8,027.45",Yes,No,u005-00501
+12/06/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,20.23,,"8,007.22",No,No,u005-00502
+13/06/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,31.60,,"7,975.62",No,No,u005-00503
+13/06/2026,Westpac Choice,TICKETEK,Entertainment,Expense,87.72,,"7,887.90",No,No,u005-00504
+13/06/2026,Westpac Choice,AFTERPAY - SUPERCHEAP AUTO (2/4),Buy Now Pay Later,Expense,53.50,,"7,834.40",No,Yes,u005-B0006
+14/06/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,72.10,,"7,762.30",Yes,Yes,u005-00505
+14/06/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"7,748.31",No,Yes,u005-00506
+14/06/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,114.21,,"7,634.10",Yes,No,u005-00507
+14/06/2026,Westpac Choice,TICKETEK,Entertainment,Expense,52.20,,"7,581.90",No,No,u005-00508
+15/06/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"7,271.90",Yes,Yes,u005-00509
+15/06/2026,Westpac Choice,AMPOL,Transport,Expense,132.46,,"7,139.44",Yes,No,u005-00510
+15/06/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,72.40,,"7,067.04",Yes,No,u005-00511
+15/06/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,28.88,,"7,038.16",No,No,u005-00512
+16/06/2026,Westpac Choice,EL JANNAH,Eating out,Expense,18.74,,"7,019.42",No,No,u005-00513
+17/06/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,121.06,,"6,898.36",Yes,No,u005-00514
+17/06/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,29.85,,"6,868.51",No,No,u005-00515
+17/06/2026,Westpac Choice,AMAZON AU,Shopping,Expense,231.31,,"6,637.20",No,No,u005-00516
+18/06/2026,Westpac Choice,BP,Transport,Expense,135.84,,"6,501.36",Yes,No,u005-00517
+18/06/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,85.69,,"6,415.67",Yes,No,u005-00518
+19/06/2026,Westpac Choice,INV 1075 CASTLE STRATA SERVICES,Income,Income,,"2,092.80","8,508.47",No,No,u005-00519
+19/06/2026,Westpac Choice,AMPOL,Transport,Expense,113.43,,"8,395.04",Yes,No,u005-00520
+20/06/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,128.20,,"8,266.84",Yes,No,u005-00521
+20/06/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,309.48,,"7,957.36",Yes,No,u005-00522
+20/06/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,23.53,,"7,933.83",No,No,u005-00523
+20/06/2026,Westpac Choice,TICKETEK,Entertainment,Expense,95.26,,"7,838.57",No,No,u005-00524
+21/06/2026,Westpac Choice,EL JANNAH,Eating out,Expense,35.67,,"7,802.90",No,No,u005-00525
+21/06/2026,Westpac Choice,THE HENSON,Entertainment,Expense,74.79,,"7,728.11",No,No,u005-00526
+22/06/2026,Westpac Choice,INV 1074 CASTLE STRATA SERVICES,Income,Income,,"1,960.70","9,688.81",No,No,u005-00527
+22/06/2026,Westpac Choice,INV 1077 M AND K CONSTRUCTIONS,Income,Income,,"2,336.07","12,024.88",No,No,u005-00528
+22/06/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"11,714.88",Yes,Yes,u005-00529
+22/06/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,33.23,,"11,681.65",No,No,u005-00530
+24/06/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,119.86,,"11,561.79",Yes,No,u005-00531
+24/06/2026,Westpac Choice,EL JANNAH,Eating out,Expense,25.07,,"11,536.72",No,No,u005-00532
+25/06/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,"1,000.00","15,803.12",No,Yes,u005-00533
+25/06/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,59.38,,"11,477.34",Yes,No,u005-00534
+25/06/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,49.56,,"11,427.78",No,No,u005-00535
+25/06/2026,Westpac Choice,TRANSFER TO ESAVER TAX SET-ASIDE,Transfers,Transfer,"1,000.00",,"10,427.78",No,Yes,u005-00536
+26/06/2026,Westpac Choice,AMPOL,Transport,Expense,105.44,,"10,322.34",Yes,No,u005-00537
+26/06/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,43.25,,"10,279.09",Yes,No,u005-00538
+26/06/2026,Westpac Choice,UBER *EATS,Eating out,Expense,33.84,,"10,245.25",No,No,u005-00539
+27/06/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,161.39,,"10,083.86",Yes,No,u005-00540
+27/06/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,57.07,,"10,026.79",No,No,u005-00541
+27/06/2026,Westpac Choice,REBEL SPORT,Shopping,Expense,148.02,,"9,878.77",No,No,u005-00542
+27/06/2026,Westpac Choice,AFTERPAY - SUPERCHEAP AUTO (3/4),Buy Now Pay Later,Expense,53.50,,"9,825.27",No,Yes,u005-B0007
+28/06/2026,Westpac Choice,BP,Transport,Expense,112.29,,"9,712.98",Yes,No,u005-00543
+28/06/2026,Westpac Choice,UBER *EATS,Eating out,Expense,25.20,,"9,687.78",No,No,u005-00544
+28/06/2026,Westpac Choice,THE HENSON,Entertainment,Expense,62.44,,"9,625.34",No,No,u005-00545
+29/06/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"9,315.34",Yes,Yes,u005-00546
+29/06/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,59.82,,"9,255.52",Yes,No,u005-00547
+29/06/2026,Westpac Choice,MCDONALDS,Eating out,Expense,18.85,,"9,236.67",No,No,u005-00548
+30/06/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,23.07,,"9,213.60",No,No,u005-00549
+01/07/2026,Westpac eSaver,INTEREST PAID,Income,Income,,73.51,"15,876.63",No,Yes,u005-00550
+01/07/2026,Westpac Choice,INV 1079 CASTLE STRATA SERVICES,Income,Income,,"1,498.48","10,712.08",No,No,u005-00551
+01/07/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,64.00,,"10,648.08",No,Yes,u005-00552
+01/07/2026,Westpac Choice,AMPOL,Transport,Expense,131.65,,"10,516.43",Yes,No,u005-00553
+01/07/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,111.87,,"10,404.56",Yes,No,u005-00554
+01/07/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,10.18,,"10,394.38",No,No,u005-00555
+02/07/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,48.38,,"10,346.00",Yes,No,u005-00556
+03/07/2026,Westpac Choice,QBE PUBLIC LIABILITY INSURANCE,Insurance,Expense,92.00,,"10,254.00",Yes,Yes,u005-00557
+03/07/2026,Westpac Choice,XERO SUBSCRIPTION,Business expenses,Expense,35.00,,"10,219.00",Yes,Yes,u005-00558
+03/07/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,98.34,,"10,120.66",Yes,No,u005-00559
+03/07/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,171.75,,"9,948.91",Yes,No,u005-00560
+03/07/2026,Westpac Choice,MCDONALDS,Eating out,Expense,17.27,,"9,931.64",No,No,u005-00561
+03/07/2026,Westpac Choice,AMAZON AU,Shopping,Expense,143.45,,"9,788.19",No,No,u005-00562
+04/07/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,34.90,,"9,753.29",No,No,u005-00563
+04/07/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,71.41,,"9,681.88",No,No,u005-00564
+05/07/2026,Westpac Choice,BP,Transport,Expense,106.80,,"9,575.08",Yes,No,u005-00565
+05/07/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,92.03,,"9,483.05",Yes,No,u005-00566
+05/07/2026,Westpac Choice,MCDONALDS,Eating out,Expense,26.73,,"9,456.32",No,No,u005-00567
+06/07/2026,Westpac Choice,INV 1078 HARBOUR BUILD GROUP,Income,Income,,"2,752.88","12,209.20",No,No,u005-00568
+06/07/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"11,899.20",Yes,Yes,u005-00569
+06/07/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"11,874.20",No,Yes,u005-00570
+06/07/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,91.67,,"11,782.53",Yes,No,u005-00571
+07/07/2026,Westpac Choice,MCDONALDS,Eating out,Expense,26.64,,"11,755.89",No,No,u005-00572
+08/07/2026,Westpac Choice,INV 1082 GREENLEAF CAFE FITOUT,Income,Income,,"2,998.91","14,754.80",No,No,u005-00573
+08/07/2026,Westpac Choice,BP,Transport,Expense,121.71,,"14,633.09",Yes,No,u005-00574
+08/07/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,45.15,,"14,587.94",Yes,No,u005-00575
+08/07/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,22.84,,"14,565.10",No,No,u005-00576
+09/07/2026,Westpac Choice,INV 1080 M AND K CONSTRUCTIONS,Income,Income,,"2,735.48","17,300.58",No,No,u005-00577
+09/07/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,69.00,,"17,231.58",Yes,Yes,u005-00578
+09/07/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,81.14,,"17,150.44",Yes,No,u005-00579
+10/07/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,97.90,,"17,052.54",Yes,No,u005-00580
+11/07/2026,Westpac Choice,MCDONALDS,Eating out,Expense,32.50,,"17,020.04",No,No,u005-00581
+11/07/2026,Westpac Choice,TICKETEK,Entertainment,Expense,56.80,,"16,963.24",No,No,u005-00582
+11/07/2026,Westpac Choice,AFTERPAY - SUPERCHEAP AUTO (4/4),Buy Now Pay Later,Expense,53.50,,"16,909.74",No,Yes,u005-B0008
+12/07/2026,Westpac Choice,TOYOTA FINANCE HILUX,Loan repayments,Expense,640.00,,"16,269.74",Yes,Yes,u005-00583
+12/07/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,324.48,,"15,945.26",Yes,No,u005-00584
+12/07/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,35.26,,"15,910.00",Yes,No,u005-00585
+12/07/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,43.61,,"15,866.39",No,No,u005-00586
+13/07/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"15,556.39",Yes,Yes,u005-00587
+13/07/2026,Westpac Choice,AMPOL,Transport,Expense,138.04,,"15,418.35",Yes,No,u005-00588
+14/07/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,77.21,,"15,341.14",Yes,Yes,u005-00589
+14/07/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"15,327.15",No,Yes,u005-00590
+14/07/2026,Westpac Choice,AMPOL,Transport,Expense,92.45,,"15,234.70",Yes,No,u005-00591
+14/07/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,219.34,,"15,015.36",Yes,No,u005-00592
+14/07/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,64.44,,"14,950.92",Yes,No,u005-00593
+14/07/2026,Westpac Choice,EL JANNAH,Eating out,Expense,32.14,,"14,918.78",No,No,u005-00594
+15/07/2026,Westpac Choice,INV 1081 INNER WEST RENOVATIONS,Income,Income,,"2,158.46","17,077.24",No,No,u005-00595
+15/07/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,36.46,,"17,040.78",Yes,No,u005-00596
+15/07/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,30.31,,"17,010.47",No,No,u005-00597
+16/07/2026,Westpac Choice,AMPOL,Transport,Expense,94.17,,"16,916.30",Yes,No,u005-00598
+17/07/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,64.60,,"16,851.70",Yes,No,u005-00599
+17/07/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,20.19,,"16,831.51",No,No,u005-00600
+17/07/2026,Westpac Choice,REBEL SPORT,Shopping,Expense,144.46,,"16,687.05",No,No,u005-00601
+18/07/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,115.96,,"16,571.09",Yes,No,u005-00602
+18/07/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,279.11,,"16,291.98",Yes,No,u005-00603
+18/07/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,77.44,,"16,214.54",Yes,No,u005-00604
+19/07/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,150.25,,"16,064.29",Yes,No,u005-00605
+20/07/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"15,754.29",Yes,Yes,u005-00606
+20/07/2026,Westpac Choice,AMPOL,Transport,Expense,124.04,,"15,630.25",Yes,No,u005-00607
+20/07/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,218.37,,"15,411.88",Yes,No,u005-00608
+21/07/2026,Westpac Choice,BP,Transport,Expense,111.56,,"15,300.32",Yes,No,u005-00609
+21/07/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,90.40,,"15,209.92",Yes,No,u005-00610
+21/07/2026,Westpac Choice,KATHMANDU,Shopping,Expense,139.12,,"15,070.80",No,No,u005-00611
+22/07/2026,Westpac Choice,AMPOL,Transport,Expense,118.71,,"14,952.09",Yes,No,u005-00612
+22/07/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,114.90,,"14,837.19",Yes,No,u005-00613
+24/07/2026,Westpac Choice,BP,Transport,Expense,110.79,,"14,726.40",Yes,No,u005-00614
+24/07/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,155.51,,"14,570.89",Yes,No,u005-00615
+24/07/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,72.12,,"14,498.77",Yes,No,u005-00616
+25/07/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,"1,000.00","16,876.63",No,Yes,u005-00617
+25/07/2026,Westpac Choice,BP,Transport,Expense,102.84,,"14,395.93",Yes,No,u005-00618
+25/07/2026,Westpac Choice,TRANSFER TO ESAVER TAX SET-ASIDE,Transfers,Transfer,"1,000.00",,"13,395.93",No,Yes,u005-00619
+26/07/2026,Westpac Choice,BP,Transport,Expense,107.15,,"13,288.78",Yes,No,u005-00620
+26/07/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,60.02,,"13,228.76",Yes,No,u005-00621
+26/07/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,28.36,,"13,200.40",No,No,u005-00622
+27/07/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"12,890.40",Yes,Yes,u005-00623
+27/07/2026,Westpac Choice,EL JANNAH,Eating out,Expense,11.95,,"12,878.45",No,No,u005-00624
+28/07/2026,Westpac Choice,ATO BAS PAYMENT,Tax,Expense,"4,395.75",,"8,482.70",Yes,Yes,u005-00625
+28/07/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,49.02,,"8,433.68",Yes,No,u005-00626
+28/07/2026,Westpac Choice,JB HI-FI,Shopping,Expense,102.23,,"8,331.45",No,No,u005-00627
+29/07/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,140.02,,"8,191.43",Yes,No,u005-00628
+30/07/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,302.55,,"7,888.88",Yes,No,u005-00629
+30/07/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,103.20,,"7,785.68",No,No,u005-00630
+30/07/2026,Westpac Choice,JB HI-FI,Shopping,Expense,82.22,,"7,703.46",No,No,u005-00631
+31/07/2026,Westpac Choice,AMPOL,Transport,Expense,110.09,,"7,593.37",Yes,No,u005-00632
+31/07/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,231.29,,"7,362.08",Yes,No,u005-00633
+31/07/2026,Westpac Choice,EL JANNAH,Eating out,Expense,13.45,,"7,348.63",No,No,u005-00634
+01/08/2026,Westpac eSaver,INTEREST PAID,Income,Income,,77.54,"16,954.17",No,Yes,u005-00635
+01/08/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,64.00,,"7,284.63",No,Yes,u005-00636
+01/08/2026,Westpac Choice,BP,Transport,Expense,94.50,,"7,190.13",Yes,No,u005-00637
+01/08/2026,Westpac Choice,UBER *EATS,Eating out,Expense,20.19,,"7,169.94",No,No,u005-00638
+01/08/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,124.99,,"7,044.95",No,No,u005-00639
+01/08/2026,Westpac Choice,MARRICKVILLE PHYSIO,Health,Expense,68.52,,"6,976.43",Yes,No,u005-00640
+02/08/2026,Westpac Choice,INV 1085 GREENLEAF CAFE FITOUT,Income,Income,,"2,653.50","9,629.93",No,No,u005-00641
+02/08/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,73.77,,"9,556.16",Yes,No,u005-00642
+02/08/2026,Westpac Choice,UBER *EATS,Eating out,Expense,19.19,,"9,536.97",No,No,u005-00643
+02/08/2026,Westpac Choice,THE HENSON,Entertainment,Expense,61.63,,"9,475.34",No,No,u005-00644
+02/08/2026,Westpac Choice,KATHMANDU,Shopping,Expense,123.31,,"9,352.03",No,No,u005-00645
+02/08/2026,Westpac Choice,MARRICKVILLE PHYSIO,Health,Expense,75.05,,"9,276.98",Yes,No,u005-00646
+03/08/2026,Westpac Choice,INV 1087 CASTLE STRATA SERVICES,Income,Income,,"2,252.25","11,529.23",No,No,u005-00647
+03/08/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"11,219.23",Yes,Yes,u005-00648
+03/08/2026,Westpac Choice,QBE PUBLIC LIABILITY INSURANCE,Insurance,Expense,92.00,,"11,127.23",Yes,Yes,u005-00649
+03/08/2026,Westpac Choice,XERO SUBSCRIPTION,Business expenses,Expense,35.00,,"11,092.23",Yes,Yes,u005-00650
+03/08/2026,Westpac Choice,AMPOL,Transport,Expense,114.07,,"10,978.16",Yes,No,u005-00651
+03/08/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,241.91,,"10,736.25",Yes,No,u005-00652
+03/08/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,75.03,,"10,661.22",Yes,No,u005-00653
+05/08/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,36.34,,"10,624.88",No,No,u005-00654
+06/08/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"10,599.88",No,Yes,u005-00655
+06/08/2026,Westpac Choice,MCDONALDS,Eating out,Expense,21.58,,"10,578.30",No,No,u005-00656
+07/08/2026,Westpac Choice,TICKETEK,Entertainment,Expense,80.41,,"10,497.89",No,No,u005-00657
+08/08/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,126.91,,"10,370.98",Yes,No,u005-00658
+08/08/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,19.99,,"10,350.99",No,No,u005-00659
+08/08/2026,Westpac Choice,AMAZON AU,Shopping,Expense,86.90,,"10,264.09",No,No,u005-00660
+09/08/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,69.00,,"10,195.09",Yes,Yes,u005-00661
+10/08/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"9,885.09",Yes,Yes,u005-00662
+10/08/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,97.48,,"9,787.61",Yes,No,u005-00663
+10/08/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,204.91,,"9,582.70",Yes,No,u005-00664
+10/08/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,45.86,,"9,536.84",Yes,No,u005-00665
+11/08/2026,Westpac Choice,AMPOL,Transport,Expense,100.64,,"9,436.20",Yes,No,u005-00666
+11/08/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,84.37,,"9,351.83",Yes,No,u005-00667
+11/08/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,114.66,,"9,237.17",Yes,No,u005-00668
+12/08/2026,Westpac Choice,INV 1084 CASTLE STRATA SERVICES,Income,Income,,"1,353.29","10,590.46",No,No,u005-00669
+12/08/2026,Westpac Choice,TOYOTA FINANCE HILUX,Loan repayments,Expense,640.00,,"9,950.46",Yes,Yes,u005-00670
+12/08/2026,Westpac Choice,BP,Transport,Expense,125.40,,"9,825.06",Yes,No,u005-00671
+13/08/2026,Westpac Choice,UBER *EATS,Eating out,Expense,41.34,,"9,783.72",No,No,u005-00672
+13/08/2026,Westpac Choice,THE HENSON,Entertainment,Expense,83.35,,"9,700.37",No,No,u005-00673
+14/08/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,76.12,,"9,624.25",Yes,Yes,u005-00674
+14/08/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"9,610.26",No,Yes,u005-00675
+14/08/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,147.72,,"9,462.54",Yes,No,u005-00676
+14/08/2026,Westpac Choice,MCDONALDS,Eating out,Expense,44.85,,"9,417.69",No,No,u005-00677
+14/08/2026,Westpac Choice,THE HENSON,Entertainment,Expense,91.64,,"9,326.05",No,No,u005-00678
+15/08/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,117.01,,"9,209.04",Yes,No,u005-00679
+15/08/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,34.12,,"9,174.92",No,No,u005-00680
+15/08/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,150.00,,"9,024.92",No,Yes,u005-B0019
+16/08/2026,Westpac Choice,INV 1083 GREENLEAF CAFE FITOUT,Income,Income,,"2,052.80","11,077.72",No,No,u005-00681
+16/08/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,32.87,,"11,044.85",No,No,u005-00682
+16/08/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,105.83,,"10,939.02",No,No,u005-00683
+17/08/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"10,629.02",Yes,Yes,u005-00684
+17/08/2026,Westpac Choice,BP,Transport,Expense,99.09,,"10,529.93",Yes,No,u005-00685
+18/08/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,237.79,,"10,292.14",Yes,No,u005-00686
+19/08/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,18.09,,"10,274.05",No,No,u005-00687
+20/08/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,97.85,,"10,176.20",Yes,No,u005-00688
+20/08/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,171.44,,"10,004.76",Yes,No,u005-00689
+20/08/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,97.25,,"9,907.51",Yes,No,u005-00690
+20/08/2026,Westpac Choice,EL JANNAH,Eating out,Expense,32.57,,"9,874.94",No,No,u005-00691
+21/08/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,136.44,,"9,738.50",Yes,No,u005-00692
+21/08/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,20.32,,"9,718.18",No,No,u005-00693
+22/08/2026,Westpac Choice,EL JANNAH,Eating out,Expense,34.36,,"9,683.82",No,No,u005-00694
+24/08/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"9,373.82",Yes,Yes,u005-00695
+24/08/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,268.95,,"9,104.87",Yes,No,u005-00696
+24/08/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,73.56,,"9,031.31",Yes,No,u005-00697
+24/08/2026,Westpac Choice,UBER *EATS,Eating out,Expense,23.61,,"9,007.70",No,No,u005-00698
+25/08/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,"1,000.00","17,954.17",No,Yes,u005-00699
+25/08/2026,Westpac Choice,AMPOL,Transport,Expense,120.83,,"8,886.87",Yes,No,u005-00700
+25/08/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,145.07,,"8,741.80",Yes,No,u005-00701
+25/08/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,53.60,,"8,688.20",Yes,No,u005-00702
+25/08/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,26.52,,"8,661.68",No,No,u005-00703
+25/08/2026,Westpac Choice,TRANSFER TO ESAVER TAX SET-ASIDE,Transfers,Transfer,"1,000.00",,"7,661.68",No,Yes,u005-00704
+26/08/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,156.28,,"7,505.40",Yes,No,u005-00705
+27/08/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,19.08,,"7,486.32",No,No,u005-00706
+27/08/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,"1,990.00",,"5,496.32",Yes,No,u005-S0002
+28/08/2026,Westpac Choice,INV 1086 HARBOUR BUILD GROUP,Income,Income,,"1,625.74","7,122.06",No,No,u005-00707
+28/08/2026,Westpac Choice,AMPOL,Transport,Expense,121.12,,"7,000.94",Yes,No,u005-00708
+28/08/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,328.96,,"6,671.98",Yes,No,u005-00709
+28/08/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,19.03,,"6,652.95",No,No,u005-00710
+28/08/2026,Westpac Choice,MARRICKVILLE PHYSIO,Health,Expense,47.69,,"6,605.26",Yes,No,u005-00711
+29/08/2026,Westpac Choice,THE HENSON,Entertainment,Expense,74.55,,"6,530.71",No,No,u005-00712
+29/08/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,150.00,,"6,380.71",No,Yes,u005-B0020
+30/08/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,45.93,,"6,334.78",Yes,No,u005-00713
+31/08/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"6,024.78",Yes,Yes,u005-00714
+31/08/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,207.96,,"5,816.82",Yes,No,u005-00715
+01/09/2026,Westpac eSaver,INTEREST PAID,Income,Income,,81.58,"18,035.75",No,Yes,u005-00716
+01/09/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,64.00,,"5,752.82",No,Yes,u005-00717
+01/09/2026,Westpac Choice,UBER *EATS,Eating out,Expense,29.40,,"5,723.42",No,No,u005-00718
+02/09/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,19.27,,"5,704.15",No,No,u005-00719
+03/09/2026,Westpac Choice,QBE PUBLIC LIABILITY INSURANCE,Insurance,Expense,92.00,,"5,612.15",Yes,Yes,u005-00720
+03/09/2026,Westpac Choice,XERO SUBSCRIPTION,Business expenses,Expense,35.00,,"5,577.15",Yes,Yes,u005-00721
+03/09/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,298.42,,"5,278.73",Yes,No,u005-00722
+03/09/2026,Westpac Choice,EL JANNAH,Eating out,Expense,16.66,,"5,262.07",No,No,u005-00723
+04/09/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,13.69,,"5,248.38",No,No,u005-00724
+05/09/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,56.99,,"5,191.39",No,No,u005-00725
+06/09/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"5,166.39",No,Yes,u005-00726
+06/09/2026,Westpac Choice,MCDONALDS,Eating out,Expense,31.20,,"5,135.19",No,No,u005-00727
+07/09/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"4,825.19",Yes,Yes,u005-00728
+07/09/2026,Westpac Choice,AMPOL,Transport,Expense,134.86,,"4,690.33",Yes,No,u005-00729
+07/09/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,75.23,,"4,615.10",Yes,No,u005-00730
+08/09/2026,Westpac Choice,SERVICE NSW VEHICLE REGISTRATION,Transport,Expense,980.00,,"3,635.10",Yes,No,u005-00731
+08/09/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,59.90,,"3,575.20",Yes,No,u005-00732
+08/09/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,25.05,,"3,550.15",No,No,u005-00733
+09/09/2026,Westpac Choice,INV 1089 HARBOUR BUILD GROUP,Income,Income,,"2,544.31","6,094.46",No,No,u005-00734
+09/09/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,69.00,,"6,025.46",Yes,Yes,u005-00735
+09/09/2026,Westpac Choice,BP,Transport,Expense,117.17,,"5,908.29",Yes,No,u005-00736
+09/09/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,68.24,,"5,840.05",Yes,No,u005-00737
+09/09/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,24.55,,"5,815.50",No,No,u005-00738
+10/09/2026,Westpac Choice,THE HENSON,Entertainment,Expense,63.40,,"5,752.10",No,No,u005-00739
+11/09/2026,Westpac Choice,REBEL SPORT,Shopping,Expense,97.48,,"5,654.62",No,No,u005-00740
+12/09/2026,Westpac Choice,TOYOTA FINANCE HILUX,Loan repayments,Expense,640.00,,"5,014.62",Yes,Yes,u005-00741
+12/09/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,267.26,,"4,747.36",Yes,No,u005-00742
+12/09/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,30.47,,"4,716.89",Yes,No,u005-00743
+12/09/2026,Westpac Choice,MCDONALDS,Eating out,Expense,25.44,,"4,691.45",No,No,u005-00744
+12/09/2026,Westpac Choice,AFTERPAY - TOTAL TOOLS (1/4),Buy Now Pay Later,Expense,130.00,,"4,561.45",No,No,u005-B0009
+12/09/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,150.00,,"4,411.45",No,Yes,u005-B0021
+13/09/2026,Westpac Choice,BP,Transport,Expense,106.24,,"4,305.21",Yes,No,u005-00745
+13/09/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,81.24,,"4,223.97",Yes,No,u005-00746
+14/09/2026,Westpac Choice,INV 1090 CASTLE STRATA SERVICES,Income,Income,,"1,682.81","5,906.78",No,No,u005-00747
+14/09/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"5,596.78",Yes,Yes,u005-00748
+14/09/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,94.63,,"5,502.15",Yes,Yes,u005-00749
+14/09/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"5,488.16",No,Yes,u005-00750
+15/09/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,83.85,,"5,404.31",Yes,No,u005-00751
+15/09/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,34.77,,"5,369.54",No,No,u005-00752
+15/09/2026,Westpac Choice,TICKETEK,Entertainment,Expense,105.91,,"5,263.63",No,No,u005-00753
+16/09/2026,Westpac Choice,THE HENSON,Entertainment,Expense,111.35,,"5,152.28",No,No,u005-00754
+17/09/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,94.76,,"5,057.52",Yes,No,u005-00755
+18/09/2026,Westpac Choice,UBER *EATS,Eating out,Expense,21.06,,"5,036.46",No,No,u005-00756
+19/09/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,158.77,,"4,877.69",Yes,No,u005-00757
+20/09/2026,Westpac Choice,AMPOL,Transport,Expense,141.12,,"4,736.57",Yes,No,u005-00758
+20/09/2026,Westpac Choice,EL JANNAH,Eating out,Expense,19.32,,"4,717.25",No,No,u005-00759
+21/09/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"4,407.25",Yes,Yes,u005-00760
+21/09/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,53.28,,"4,353.97",Yes,No,u005-00761
+21/09/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,34.07,,"4,319.90",No,No,u005-00762
+22/09/2026,Westpac Choice,INV 1091 INNER WEST RENOVATIONS,Income,Income,,"1,913.17","6,233.07",No,No,u005-00763
+22/09/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,52.99,,"6,180.08",Yes,No,u005-00764
+22/09/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,9.68,,"6,170.40",No,No,u005-00765
+23/09/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,141.99,,"6,028.41",Yes,No,u005-00766
+23/09/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,58.36,,"5,970.05",Yes,No,u005-00767
+23/09/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,32.95,,"5,937.10",No,No,u005-00768
+24/09/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,134.52,,"5,802.58",Yes,No,u005-00769
+24/09/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,293.16,,"5,509.42",Yes,No,u005-00770
+24/09/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,26.55,,"5,482.87",No,No,u005-00771
+25/09/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,"1,000.00","19,035.75",No,Yes,u005-00772
+25/09/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,81.92,,"5,400.95",Yes,No,u005-00773
+25/09/2026,Westpac Choice,TRANSFER TO ESAVER TAX SET-ASIDE,Transfers,Transfer,"1,000.00",,"4,400.95",No,Yes,u005-00774
+26/09/2026,Westpac Choice,INV 1088 GREENLEAF CAFE FITOUT,Income,Income,,"2,302.75","6,703.70",No,No,u005-00775
+26/09/2026,Westpac Choice,AMPOL,Transport,Expense,104.12,,"6,599.58",Yes,No,u005-00776
+26/09/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,27.05,,"6,572.53",No,No,u005-00777
+26/09/2026,Westpac Choice,AFTERPAY - TOTAL TOOLS (2/4),Buy Now Pay Later,Expense,130.00,,"6,442.53",No,Yes,u005-B0010
+26/09/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,19.95,,"6,422.58",No,Yes,u005-B0022
+27/09/2026,Westpac Choice,INV 1092 CASTLE STRATA SERVICES,Income,Income,,"2,347.48","8,770.06",No,No,u005-00778
+27/09/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,162.22,,"8,607.84",Yes,No,u005-00779
+27/09/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,14.10,,"8,593.74",No,No,u005-00780
+27/09/2026,Westpac Choice,THE HENSON,Entertainment,Expense,82.77,,"8,510.97",No,No,u005-00781
+28/09/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"8,200.97",Yes,Yes,u005-00782
+28/09/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,99.21,,"8,101.76",Yes,No,u005-00783
+28/09/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,59.10,,"8,042.66",Yes,No,u005-00784
+28/09/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,27.03,,"8,015.63",No,No,u005-00785
+01/10/2026,Westpac eSaver,INTEREST PAID,Income,Income,,85.63,"19,121.38",No,Yes,u005-00786
+01/10/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,64.00,,"7,951.63",No,Yes,u005-00787
+03/10/2026,Westpac Choice,INV 1094 GREENLEAF CAFE FITOUT,Income,Income,,"2,921.13","10,872.76",No,No,u005-00788
+03/10/2026,Westpac Choice,INV 1096 CASTLE STRATA SERVICES,Income,Income,,"1,773.02","12,645.78",No,No,u005-00789
+03/10/2026,Westpac Choice,QBE PUBLIC LIABILITY INSURANCE,Insurance,Expense,92.00,,"12,553.78",Yes,Yes,u005-00790
+03/10/2026,Westpac Choice,XERO SUBSCRIPTION,Business expenses,Expense,35.00,,"12,518.78",Yes,Yes,u005-00791
+03/10/2026,Westpac Choice,MCDONALDS,Eating out,Expense,16.91,,"12,501.87",No,No,u005-00792
+04/10/2026,Westpac Choice,BP,Transport,Expense,128.75,,"12,373.12",Yes,No,u005-00793
+04/10/2026,Westpac Choice,EL JANNAH,Eating out,Expense,33.90,,"12,339.22",No,No,u005-00794
+05/10/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"12,029.22",Yes,Yes,u005-00795
+05/10/2026,Westpac Choice,BP,Transport,Expense,98.70,,"11,930.52",Yes,No,u005-00796
+05/10/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,45.55,,"11,884.97",Yes,No,u005-00797
+05/10/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,53.92,,"11,831.05",No,No,u005-00798
+06/10/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"11,806.05",No,Yes,u005-00799
+06/10/2026,Westpac Choice,BP,Transport,Expense,130.47,,"11,675.58",Yes,No,u005-00800
+06/10/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,405.44,,"11,270.14",Yes,No,u005-00801
+06/10/2026,Westpac Choice,UBER *EATS,Eating out,Expense,13.63,,"11,256.51",No,No,u005-00802
+07/10/2026,Westpac Choice,BP,Transport,Expense,118.80,,"11,137.71",Yes,No,u005-00803
+07/10/2026,Westpac Choice,EL JANNAH,Eating out,Expense,39.13,,"11,098.58",No,No,u005-00804
+07/10/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,45.37,,"11,053.21",Yes,No,u005-00805
+08/10/2026,Westpac Choice,INV 1095 M AND K CONSTRUCTIONS,Income,Income,,"2,576.99","13,630.20",No,No,u005-00806
+08/10/2026,Westpac Choice,MCDONALDS,Eating out,Expense,24.45,,"13,605.75",No,No,u005-00807
+09/10/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,69.00,,"13,536.75",Yes,Yes,u005-00808
+09/10/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,22.29,,"13,514.46",No,No,u005-00809
+09/10/2026,Westpac Choice,THE HENSON,Entertainment,Expense,53.62,,"13,460.84",No,No,u005-00810
+10/10/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,45.95,,"13,414.89",No,No,u005-00811
+10/10/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,85.91,,"13,328.98",No,No,u005-00812
+10/10/2026,Westpac Choice,AFTERPAY - TOTAL TOOLS (3/4),Buy Now Pay Later,Expense,130.00,,"13,198.98",No,Yes,u005-B0011
+11/10/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,56.81,,"13,142.17",Yes,No,u005-00813
+11/10/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,17.84,,"13,124.33",No,No,u005-00814
+12/10/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"12,814.33",Yes,Yes,u005-00815
+12/10/2026,Westpac Choice,TOYOTA FINANCE HILUX,Loan repayments,Expense,640.00,,"12,174.33",Yes,Yes,u005-00816
+12/10/2026,Westpac Choice,AMPOL,Transport,Expense,95.48,,"12,078.85",Yes,No,u005-00817
+12/10/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,102.96,,"11,975.89",Yes,No,u005-00818
+12/10/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,14.90,,"11,960.99",No,No,u005-00819
+13/10/2026,Westpac Choice,BP,Transport,Expense,117.42,,"11,843.57",Yes,No,u005-00820
+13/10/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,50.68,,"11,792.89",Yes,No,u005-00821
+14/10/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,91.17,,"11,701.72",Yes,Yes,u005-00822
+14/10/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"11,687.73",No,Yes,u005-00823
+14/10/2026,Westpac Choice,AMPOL,Transport,Expense,107.61,,"11,580.12",Yes,No,u005-00824
+14/10/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,30.62,,"11,549.50",No,No,u005-00825
+15/10/2026,Westpac Choice,BP,Transport,Expense,109.94,,"11,439.56",Yes,No,u005-00826
+16/10/2026,Westpac Choice,EL JANNAH,Eating out,Expense,20.24,,"11,419.32",No,No,u005-00827
+16/10/2026,Westpac Choice,REBEL SPORT,Shopping,Expense,148.20,,"11,271.12",No,No,u005-00828
+17/10/2026,Westpac Choice,INV 1093 PRIVATE CLIENT,Income,Income,,"2,238.27","13,509.39",No,No,u005-00829
+17/10/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,18.82,,"13,490.57",No,No,u005-00830
+17/10/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,125.14,,"13,365.43",No,No,u005-00831
+18/10/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,13.55,,"13,351.88",No,No,u005-00832
+18/10/2026,Westpac Choice,THE HENSON,Entertainment,Expense,81.71,,"13,270.17",No,No,u005-00833
+19/10/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"12,960.17",Yes,Yes,u005-00834
+19/10/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,31.34,,"12,928.83",No,No,u005-00835
+19/10/2026,Westpac Choice,THE HENSON,Entertainment,Expense,116.08,,"12,812.75",No,No,u005-00836
+20/10/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,388.39,,"12,424.36",Yes,No,u005-00837
+20/10/2026,Westpac Choice,MCDONALDS,Eating out,Expense,21.53,,"12,402.83",No,No,u005-00838
+20/10/2026,Westpac Choice,THE HENSON,Entertainment,Expense,99.18,,"12,303.65",No,No,u005-00839
+20/10/2026,Westpac Choice,OBRIEN GLASS,Transport,Expense,620.00,,"11,683.65",Yes,No,u005-S0003
+21/10/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,62.73,,"11,620.92",Yes,No,u005-00840
+21/10/2026,Westpac Choice,UBER *EATS,Eating out,Expense,28.79,,"11,592.13",No,No,u005-00841
+21/10/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,68.19,,"11,523.94",No,No,u005-00842
+22/10/2026,Westpac Choice,UBER *EATS,Eating out,Expense,23.00,,"11,500.94",No,No,u005-00843
+24/10/2026,Westpac Choice,INV 1097 HARBOUR BUILD GROUP,Income,Income,,"2,074.70","13,575.64",No,No,u005-00844
+24/10/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,262.23,,"13,313.41",Yes,No,u005-00845
+24/10/2026,Westpac Choice,EL JANNAH,Eating out,Expense,10.17,,"13,303.24",No,No,u005-00846
+24/10/2026,Westpac Choice,AFTERPAY - TOTAL TOOLS (4/4),Buy Now Pay Later,Expense,130.00,,"13,173.24",No,Yes,u005-B0012
+25/10/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,"1,000.00","20,121.38",No,Yes,u005-00847
+25/10/2026,Westpac Choice,WOOLWORTHS MARRICKVILLE,Groceries,Expense,91.62,,"13,081.62",Yes,No,u005-00848
+25/10/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,30.11,,"13,051.51",No,No,u005-00849
+25/10/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,108.85,,"12,942.66",No,No,u005-00850
+25/10/2026,Westpac Choice,TRANSFER TO ESAVER TAX SET-ASIDE,Transfers,Transfer,"1,000.00",,"11,942.66",No,Yes,u005-00851
+26/10/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"11,632.66",Yes,Yes,u005-00852
+26/10/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,192.95,,"11,439.71",Yes,No,u005-00853
+26/10/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,48.18,,"11,391.53",No,No,u005-00854
+27/10/2026,Westpac Choice,COLES MARRICKVILLE,Groceries,Expense,66.04,,"11,325.49",Yes,No,u005-00855
+27/10/2026,Westpac Choice,UBER *EATS,Eating out,Expense,13.11,,"11,312.38",No,No,u005-00856
+28/10/2026,Westpac Choice,ATO BAS PAYMENT,Tax,Expense,"4,872.76",,"6,439.62",Yes,Yes,u005-00857
+28/10/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,20.41,,"6,419.21",No,No,u005-00858
+28/10/2026,Westpac Choice,HOLEY MOLEY,Entertainment,Expense,71.97,,"6,347.24",No,No,u005-00859
+29/10/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,59.07,,"6,288.17",Yes,No,u005-00860
+29/10/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,37.08,,"6,251.09",No,No,u005-00861
+29/10/2026,Westpac Choice,TICKETEK,Entertainment,Expense,83.36,,"6,167.73",No,No,u005-00862
+30/10/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,46.50,,"6,121.23",Yes,No,u005-00863
+30/10/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,80.49,,"6,040.74",No,No,u005-00864
+31/10/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,64.47,,"5,976.27",Yes,No,u005-00865
+31/10/2026,Westpac Choice,EL JANNAH,Eating out,Expense,44.40,,"5,931.87",No,No,u005-00866
+01/11/2026,Westpac eSaver,INTEREST PAID,Income,Income,,89.71,"20,211.09",No,Yes,u005-00867
+01/11/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,64.00,,"5,867.87",No,Yes,u005-00868
+01/11/2026,Westpac Choice,TOTAL TOOLS,Business expenses,Expense,306.37,,"5,561.50",Yes,No,u005-00869
+01/11/2026,Westpac Choice,MCDONALDS,Eating out,Expense,15.20,,"5,546.30",No,No,u005-00870
+02/11/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"5,236.30",Yes,Yes,u005-00871
+02/11/2026,Westpac Choice,MIDDYS ELECTRICAL,Business expenses,Expense,364.26,,"4,872.04",Yes,No,u005-00872
+02/11/2026,Westpac Choice,UBER *EATS,Eating out,Expense,18.56,,"4,853.48",No,No,u005-00873
+03/11/2026,Westpac Choice,QBE PUBLIC LIABILITY INSURANCE,Insurance,Expense,92.00,,"4,761.48",Yes,Yes,u005-00874
+03/11/2026,Westpac Choice,XERO SUBSCRIPTION,Business expenses,Expense,35.00,,"4,726.48",Yes,Yes,u005-00875
+03/11/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,226.13,,"4,500.35",Yes,No,u005-00876
+04/11/2026,Westpac Choice,EL JANNAH,Eating out,Expense,20.84,,"4,479.51",No,No,u005-00877
+05/11/2026,Westpac Choice,INV 1100 PRIVATE CLIENT,Income,Income,,"1,883.62","6,363.13",No,No,u005-00878
+06/11/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"6,338.13",No,Yes,u005-00879
+06/11/2026,Westpac Choice,BP,Transport,Expense,120.48,,"6,217.65",Yes,No,u005-00880
+06/11/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,38.95,,"6,178.70",No,No,u005-00881
+07/11/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,230.10,,"5,948.60",Yes,No,u005-00882
+07/11/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,28.12,,"5,920.48",No,No,u005-00883
+07/11/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,72.18,,"5,848.30",No,No,u005-00884
+08/11/2026,Westpac Choice,INV 1099 PRIVATE CLIENT,Income,Income,,"1,642.80","7,491.10",No,No,u005-00885
+08/11/2026,Westpac Choice,AMPOL,Transport,Expense,95.87,,"7,395.23",Yes,No,u005-00886
+08/11/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,406.92,,"6,988.31",Yes,No,u005-00887
+09/11/2026,Westpac Choice,INV 1103 GREENLEAF CAFE FITOUT,Income,Income,,"2,542.25","9,530.56",No,No,u005-00888
+09/11/2026,Westpac Choice,RENT SHARE HOUSE MARRICKVILLE,Housing,Expense,310.00,,"9,220.56",Yes,Yes,u005-00889
+09/11/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,69.00,,"9,151.56",Yes,Yes,u005-00890
+10/11/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,248.59,,"8,902.97",Yes,No,u005-00891
+10/11/2026,Westpac Choice,BAKERS DELIGHT,Eating out,Expense,38.37,,"8,864.60",No,No,u005-00892
+11/11/2026,Westpac Choice,SYDNEY TOOLS,Business expenses,Expense,300.82,,"8,563.78",Yes,No,u005-00893
+12/11/2026,Westpac Choice,TOYOTA FINANCE HILUX,Loan repayments,Expense,640.00,,"7,923.78",Yes,Yes,u005-00894
+12/11/2026,Westpac Choice,BUNNINGS TRADE,Business expenses,Expense,356.38,,"7,567.40",Yes,No,u005-00895
+13/11/2026,Westpac Choice,INV 1102 M AND K CONSTRUCTIONS,Income,Income,,"2,883.52","10,450.92",No,No,u005-00896
+13/11/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,23.67,,"10,427.25",No,No,u005-00897
+14/11/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,95.51,,"10,331.74",Yes,Yes,u005-00898
+14/11/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"10,317.75",No,Yes,u005-00899
+14/11/2026,Westpac Choice,ALDI STORES MARRICKVILLE,Groceries,Expense,85.79,,"10,231.96",Yes,No,u005-00900
+14/11/2026,Westpac Choice,ROSIES CAFE,Eating out,Expense,20.32,,"10,211.64",No,No,u005-00901
+14/11/2026,Westpac Choice,THE HENSON,Entertainment,Expense,71.40,,"10,140.24",No,No,u005-00902
+15/11/2026,Westpac Choice,REXEL ELECTRICAL,Business expenses,Expense,230.93,,"9,909.31",Yes,No,u005-00903
+15/11/2026,Westpac Choice,VIC ON THE PARK,Eating out,Expense,24.80,,"9,884.51",No,No,u005-00904

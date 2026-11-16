@@ -16,7 +16,7 @@
         "name": "Westpac Choice",
         "type": "transaction",
         "opening_balance": 850.41,
-        "balance": 3743.9,
+        "balance": 934.4,
         "card_ending": "4471"
       },
       {
@@ -44,8 +44,8 @@
         "account_id": "u002-everyday",
         "name": "Westpac Choice",
         "type": "transaction",
-        "opening_balance": 24279.37,
-        "balance": 3673.64,
+        "opening_balance": 21111.37,
+        "balance": 4155.99,
         "card_ending": "8820"
       },
       {
@@ -53,7 +53,7 @@
         "name": "Westpac eSaver",
         "type": "savings",
         "opening_balance": 42000.0,
-        "balance": 62374.31
+        "balance": 53774.31
       },
       {
         "account_id": "u002-homeloan",
@@ -85,8 +85,8 @@
         "account_id": "u003-everyday",
         "name": "Westpac Choice",
         "type": "transaction",
-        "opening_balance": 6660.53,
-        "balance": 2011.57,
+        "opening_balance": 4200.0,
+        "balance": 1979.64,
         "card_ending": "3056"
       },
       {
@@ -94,7 +94,7 @@
         "name": "Westpac eSaver",
         "type": "savings",
         "opening_balance": 18500.0,
-        "balance": 25498.16
+        "balance": 22198.16
       },
       {
         "account_id": "u003-homeloan",
@@ -120,8 +120,8 @@
         "account_id": "u004-everyday",
         "name": "Westpac Choice",
         "type": "transaction",
-        "opening_balance": 2813.75,
-        "balance": 1662.86,
+        "opening_balance": 2100.0,
+        "balance": 1879.11,
         "card_ending": "1294"
       },
       {
@@ -150,7 +150,7 @@
         "name": "Westpac Choice",
         "type": "transaction",
         "opening_balance": 10765.83,
-        "balance": 11697.31,
+        "balance": 9884.51,
         "card_ending": "6637"
       },
       {
@@ -158,7 +158,7 @@
         "name": "Westpac eSaver",
         "type": "savings",
         "opening_balance": 11200.0,
-        "balance": 24011.09
+        "balance": 20211.09
       }
     ]
   }

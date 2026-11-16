@@ -1,0 +1,733 @@
+Date,Account,Description,Category,Type,Debit ($),Credit ($),Balance ($),Essential,Recurring,Transaction ID
+16/11/2025,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,66.47,,783.94,Yes,No,u001-00001
+16/11/2025,Westpac Choice,MCDONALDS,Eating out,Expense,19.15,,764.79,No,No,u001-00002
+16/11/2025,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,28.15,,736.64,Yes,No,u001-00003
+16/11/2025,Westpac Choice,TICKETEK,Entertainment,Expense,27.18,,709.46,No,No,u001-00004
+17/11/2025,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,479.46,Yes,Yes,u001-00005
+17/11/2025,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,9.99,,469.47,No,Yes,u001-00006
+17/11/2025,Westpac Choice,MCDONALDS,Eating out,Expense,13.53,,455.94,No,No,u001-00007
+18/11/2025,Westpac Choice,MAD MEX,Eating out,Expense,23.70,,432.24,No,No,u001-00008
+19/11/2025,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,414.29,No,Yes,u001-00009
+20/11/2025,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,295.49,709.78,Yes,Yes,u001-00010
+20/11/2025,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,100.00,"1,500.00",No,Yes,u001-00011
+20/11/2025,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,26.32,,683.46,No,No,u001-00012
+20/11/2025,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,100.00,,583.46,No,Yes,u001-00013
+22/11/2025,Westpac Choice,CAMPUS CAFE,Eating out,Expense,21.13,,562.33,No,No,u001-00014
+22/11/2025,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,25.65,,536.68,Yes,No,u001-00015
+23/11/2025,Westpac Choice,BOOST JUICE,Eating out,Expense,14.12,,522.56,No,No,u001-00016
+24/11/2025,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,292.56,Yes,Yes,u001-00017
+24/11/2025,Westpac Choice,COLES NEWTOWN,Groceries,Expense,42.56,,250.00,Yes,No,u001-00018
+25/11/2025,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,610.40,Yes,Yes,u001-00019
+25/11/2025,Westpac Choice,UBER *EATS,Eating out,Expense,21.35,,589.05,No,No,u001-00020
+26/11/2025,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,45.03,,544.02,Yes,No,u001-00021
+27/11/2025,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,365.46,909.48,Yes,Yes,u001-00022
+27/11/2025,Westpac Choice,UBER *EATS,Eating out,Expense,13.37,,896.11,No,No,u001-00023
+29/11/2025,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,33.03,,863.08,Yes,No,u001-00024
+29/11/2025,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,14.44,,848.64,No,No,u001-00025
+29/11/2025,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,14.88,,833.76,No,No,u001-00026
+30/11/2025,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,30.45,,803.31,No,No,u001-00027
+01/12/2025,Westpac eSaver,INTEREST PAID,Income,Income,,5.62,"1,505.62",No,Yes,u001-00028
+01/12/2025,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,573.31,Yes,Yes,u001-00029
+01/12/2025,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,52.97,,520.34,Yes,No,u001-00030
+01/12/2025,Westpac Choice,KMART,Shopping,Expense,30.18,,490.16,No,No,u001-00031
+02/12/2025,Westpac Choice,UBER *EATS,Eating out,Expense,25.17,,464.99,No,No,u001-00032
+03/12/2025,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,447.04,No,Yes,u001-00033
+03/12/2025,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,47.93,,399.11,Yes,No,u001-00034
+03/12/2025,Westpac Choice,UBER *EATS,Eating out,Expense,12.18,,386.93,No,No,u001-00035
+04/12/2025,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,532.38,919.31,Yes,Yes,u001-00036
+05/12/2025,Westpac Choice,AMAYSIM MOBILE,Utilities,Expense,30.00,,889.31,Yes,Yes,u001-00037
+05/12/2025,Westpac Choice,COLES NEWTOWN,Groceries,Expense,45.43,,843.88,Yes,No,u001-00038
+06/12/2025,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,43.63,,800.25,Yes,No,u001-00039
+06/12/2025,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,10.93,,789.32,No,No,u001-00040
+06/12/2025,Westpac Choice,AFTERPAY - THE ICONIC (1/4),Buy Now Pay Later,Expense,34.99,,754.33,No,No,u001-B0001
+07/12/2025,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,33.67,,720.66,Yes,No,u001-00041
+07/12/2025,Westpac Choice,BOOST JUICE,Eating out,Expense,20.69,,699.97,No,No,u001-00042
+08/12/2025,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,469.97,Yes,Yes,u001-00043
+08/12/2025,Westpac Choice,SPOTIFY STUDENT,Subscriptions,Expense,6.99,,462.98,No,Yes,u001-00044
+08/12/2025,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,18.13,,444.85,Yes,No,u001-00045
+09/12/2025,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,805.25,Yes,Yes,u001-00046
+10/12/2025,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,24.89,,780.36,Yes,No,u001-00047
+10/12/2025,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,26.24,,754.12,No,No,u001-00048
+11/12/2025,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,624.52,"1,378.64",Yes,Yes,u001-00049
+11/12/2025,Westpac Choice,COLES NEWTOWN,Groceries,Expense,24.74,,"1,353.90",Yes,No,u001-00050
+11/12/2025,Westpac Choice,BOOST JUICE,Eating out,Expense,24.31,,"1,329.59",No,No,u001-00051
+12/12/2025,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,72.01,,"1,257.58",Yes,Yes,u001-00052
+12/12/2025,Westpac Choice,BOOST JUICE,Eating out,Expense,23.85,,"1,233.73",No,No,u001-00053
+12/12/2025,Westpac Choice,ASOS.COM,Shopping,Expense,47.30,,"1,186.43",No,No,u001-00054
+14/12/2025,Westpac Choice,STEAM GAMES,Entertainment,Expense,18.74,,"1,167.69",No,No,u001-00055
+14/12/2025,Westpac Choice,OFFICEWORKS,Shopping,Expense,42.15,,"1,125.54",No,No,u001-00056
+15/12/2025,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,895.54,Yes,Yes,u001-00057
+15/12/2025,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,25.94,,869.60,Yes,No,u001-00058
+17/12/2025,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,9.99,,859.61,No,Yes,u001-00059
+17/12/2025,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,841.66,No,Yes,u001-00060
+18/12/2025,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,424.10,"1,265.76",Yes,Yes,u001-00061
+18/12/2025,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,32.30,,"1,233.46",No,No,u001-00062
+19/12/2025,Westpac Choice,BOOST JUICE,Eating out,Expense,9.64,,"1,223.82",No,No,u001-00063
+19/12/2025,Westpac Choice,COTTON ON,Shopping,Expense,78.36,,"1,145.46",No,No,u001-00064
+20/12/2025,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,100.00,"1,605.62",No,Yes,u001-00065
+20/12/2025,Westpac Choice,CAMPUS CAFE,Eating out,Expense,11.45,,"1,134.01",No,No,u001-00066
+20/12/2025,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,100.00,,"1,034.01",No,Yes,u001-00067
+20/12/2025,Westpac Choice,AFTERPAY - THE ICONIC (2/4),Buy Now Pay Later,Expense,34.99,,999.02,No,Yes,u001-B0002
+20/12/2025,Westpac Choice,AFTERPAY - KMART (1/4),Buy Now Pay Later,Expense,21.00,,978.02,No,No,u001-B0005
+21/12/2025,Westpac Choice,COLES NEWTOWN,Groceries,Expense,38.75,,939.27,Yes,No,u001-00068
+21/12/2025,Westpac Choice,CAMPUS CAFE,Eating out,Expense,8.52,,930.75,No,No,u001-00069
+21/12/2025,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,46.72,,884.03,No,No,u001-00070
+22/12/2025,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,654.03,Yes,Yes,u001-00071
+22/12/2025,Westpac Choice,MCDONALDS,Eating out,Expense,17.93,,636.10,No,No,u001-00072
+23/12/2025,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,996.50,Yes,Yes,u001-00073
+23/12/2025,Westpac Choice,MCDONALDS,Eating out,Expense,16.89,,979.61,No,No,u001-00074
+24/12/2025,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,22.69,,956.92,Yes,No,u001-00075
+25/12/2025,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,456.02,"1,412.94",Yes,Yes,u001-00076
+25/12/2025,Westpac Choice,CAMPUS CAFE,Eating out,Expense,8.78,,"1,404.16",No,No,u001-00077
+26/12/2025,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,13.66,,"1,390.50",No,No,u001-00078
+27/12/2025,Westpac Choice,MAD MEX,Eating out,Expense,7.48,,"1,383.02",No,No,u001-00079
+28/12/2025,Westpac Choice,MCDONALDS,Eating out,Expense,14.24,,"1,368.78",No,No,u001-00080
+28/12/2025,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,22.86,,"1,345.92",No,No,u001-00081
+29/12/2025,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,115.92",Yes,Yes,u001-00082
+29/12/2025,Westpac Choice,MCDONALDS,Eating out,Expense,11.86,,"1,104.06",No,No,u001-00083
+30/12/2025,Westpac Choice,MAD MEX,Eating out,Expense,18.91,,"1,085.15",No,No,u001-00084
+31/12/2025,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,067.20",No,Yes,u001-00085
+31/12/2025,Westpac Choice,UBER *EATS,Eating out,Expense,17.05,,"1,050.15",No,No,u001-00086
+31/12/2025,Westpac Choice,KMART,Shopping,Expense,41.21,,"1,008.94",No,No,u001-00087
+01/01/2026,Westpac eSaver,INTEREST PAID,Income,Income,,6.02,"1,611.64",No,Yes,u001-00088
+01/01/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,555.99,"1,564.93",Yes,Yes,u001-00089
+01/01/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,48.44,,"1,516.49",Yes,No,u001-00090
+01/01/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,7.66,,"1,508.83",No,No,u001-00091
+03/01/2026,Westpac Choice,MCDONALDS,Eating out,Expense,23.50,,"1,485.33",No,No,u001-00092
+03/01/2026,Westpac Choice,AFTERPAY - THE ICONIC (3/4),Buy Now Pay Later,Expense,34.99,,"1,450.34",No,Yes,u001-B0003
+03/01/2026,Westpac Choice,AFTERPAY - KMART (2/4),Buy Now Pay Later,Expense,21.00,,"1,429.34",No,Yes,u001-B0006
+05/01/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,199.34",Yes,Yes,u001-00093
+05/01/2026,Westpac Choice,AMAYSIM MOBILE,Utilities,Expense,30.00,,"1,169.34",Yes,Yes,u001-00094
+05/01/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,37.10,,"1,132.24",Yes,No,u001-00095
+06/01/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"1,492.64",Yes,Yes,u001-00096
+06/01/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,17.81,,"1,474.83",No,No,u001-00097
+08/01/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,544.22,"2,019.05",Yes,Yes,u001-00098
+08/01/2026,Westpac Choice,SPOTIFY STUDENT,Subscriptions,Expense,6.99,,"2,012.06",No,Yes,u001-00099
+08/01/2026,Westpac Choice,UBER *EATS,Eating out,Expense,15.65,,"1,996.41",No,No,u001-00100
+09/01/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,13.50,,"1,982.91",No,No,u001-00101
+10/01/2026,Westpac Choice,MCDONALDS,Eating out,Expense,13.97,,"1,968.94",No,No,u001-00102
+11/01/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,44.95,,"1,923.99",Yes,No,u001-00103
+11/01/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,23.59,,"1,900.40",No,No,u001-00104
+12/01/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,670.40",Yes,Yes,u001-00105
+12/01/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,76.70,,"1,593.70",Yes,Yes,u001-00106
+12/01/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,41.00,,"1,552.70",Yes,No,u001-00107
+12/01/2026,Westpac Choice,ASOS.COM,Shopping,Expense,39.18,,"1,513.52",No,No,u001-00108
+14/01/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,495.57",No,Yes,u001-00109
+15/01/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,604.24,"2,099.81",Yes,Yes,u001-00110
+15/01/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,43.22,,"2,056.59",Yes,No,u001-00111
+15/01/2026,Westpac Choice,UBER *EATS,Eating out,Expense,13.47,,"2,043.12",No,No,u001-00112
+15/01/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,27.79,,"2,015.33",Yes,No,u001-00113
+17/01/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,9.99,,"2,005.34",No,Yes,u001-00114
+17/01/2026,Westpac Choice,MCDONALDS,Eating out,Expense,16.02,,"1,989.32",No,No,u001-00115
+17/01/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,30.66,,"1,958.66",Yes,No,u001-00116
+17/01/2026,Westpac Choice,AFTERPAY - THE ICONIC (4/4),Buy Now Pay Later,Expense,34.98,,"1,923.68",No,Yes,u001-B0004
+17/01/2026,Westpac Choice,AFTERPAY - KMART (3/4),Buy Now Pay Later,Expense,21.00,,"1,902.68",No,Yes,u001-B0007
+17/01/2026,Westpac Choice,AFTERPAY - SEPHORA (1/4),Buy Now Pay Later,Expense,24.12,,"1,878.56",No,No,u001-B0009
+18/01/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,18.73,,"1,859.83",No,No,u001-00117
+19/01/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,629.83",Yes,Yes,u001-00118
+20/01/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"1,990.23",Yes,Yes,u001-00119
+20/01/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,100.00,"1,711.64",No,Yes,u001-00120
+20/01/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,18.55,,"1,971.68",No,No,u001-00121
+20/01/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,100.00,,"1,871.68",No,Yes,u001-00122
+21/01/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,19.91,,"1,851.77",Yes,No,u001-00123
+21/01/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,9.75,,"1,842.02",No,No,u001-00124
+22/01/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,541.90,"2,383.92",Yes,Yes,u001-00125
+22/01/2026,Westpac Choice,MCDONALDS,Eating out,Expense,23.56,,"2,360.36",No,No,u001-00126
+24/01/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,23.92,,"2,336.44",Yes,No,u001-00127
+25/01/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,27.47,,"2,308.97",Yes,No,u001-00128
+25/01/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,9.13,,"2,299.84",No,No,u001-00129
+26/01/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"2,069.84",Yes,Yes,u001-00130
+26/01/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,41.73,,"2,028.11",Yes,No,u001-00131
+27/01/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,33.67,,"1,994.44",Yes,No,u001-00132
+27/01/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,13.83,,"1,980.61",No,No,u001-00133
+27/01/2026,Westpac Choice,OFFICEWORKS,Shopping,Expense,52.20,,"1,928.41",No,No,u001-00134
+28/01/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,910.46",No,Yes,u001-00135
+28/01/2026,Westpac Choice,UBER *EATS,Eating out,Expense,16.48,,"1,893.98",No,No,u001-00136
+29/01/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,590.26,"2,484.24",Yes,Yes,u001-00137
+29/01/2026,Westpac Choice,MAD MEX,Eating out,Expense,16.73,,"2,467.51",No,No,u001-00138
+31/01/2026,Westpac Choice,MAD MEX,Eating out,Expense,20.45,,"2,447.06",No,No,u001-00139
+31/01/2026,Westpac Choice,AFTERPAY - KMART (4/4),Buy Now Pay Later,Expense,21.00,,"2,426.06",No,Yes,u001-B0008
+31/01/2026,Westpac Choice,AFTERPAY - SEPHORA (2/4),Buy Now Pay Later,Expense,24.12,,"2,401.94",No,Yes,u001-B0010
+01/02/2026,Westpac eSaver,INTEREST PAID,Income,Income,,6.42,"1,718.06",No,Yes,u001-00140
+02/02/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"2,171.94",Yes,Yes,u001-00141
+03/02/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"2,532.34",Yes,Yes,u001-00142
+03/02/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,45.56,,"2,486.78",Yes,No,u001-00143
+04/02/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,14.28,,"2,472.50",No,No,u001-00144
+04/02/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,24.92,,"2,447.58",Yes,No,u001-00145
+05/02/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,600.20,"3,047.78",Yes,Yes,u001-00146
+05/02/2026,Westpac Choice,AMAYSIM MOBILE,Utilities,Expense,30.00,,"3,017.78",Yes,Yes,u001-00147
+05/02/2026,Westpac Choice,MAD MEX,Eating out,Expense,18.61,,"2,999.17",No,No,u001-00148
+05/02/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,31.31,,"2,967.86",Yes,No,u001-00149
+06/02/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,70.08,,"2,897.78",Yes,No,u001-00150
+06/02/2026,Westpac Choice,UBER *EATS,Eating out,Expense,21.11,,"2,876.67",No,No,u001-00151
+07/02/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,30.51,,"2,846.16",Yes,No,u001-00152
+07/02/2026,Westpac Choice,UBER *EATS,Eating out,Expense,15.62,,"2,830.54",No,No,u001-00153
+08/02/2026,Westpac Choice,SPOTIFY STUDENT,Subscriptions,Expense,6.99,,"2,823.55",No,Yes,u001-00154
+08/02/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,17.90,,"2,805.65",No,No,u001-00155
+09/02/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"2,575.65",Yes,Yes,u001-00156
+11/02/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"2,557.70",No,Yes,u001-00157
+11/02/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,17.79,,"2,539.91",No,No,u001-00158
+12/02/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,595.68,"3,135.59",Yes,Yes,u001-00159
+12/02/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,64.79,,"3,070.80",Yes,Yes,u001-00160
+12/02/2026,Westpac Choice,MAD MEX,Eating out,Expense,9.84,,"3,060.96",No,No,u001-00161
+13/02/2026,Westpac Choice,MCDONALDS,Eating out,Expense,12.99,,"3,047.97",No,No,u001-00162
+13/02/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,30.03,,"3,017.94",Yes,No,u001-00163
+13/02/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,24.24,,"2,993.70",No,No,u001-00164
+14/02/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,55.86,,"2,937.84",Yes,No,u001-00165
+14/02/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,16.60,,"2,921.24",No,No,u001-00166
+14/02/2026,Westpac Choice,TICKETEK,Entertainment,Expense,20.04,,"2,901.20",No,No,u001-00167
+14/02/2026,Westpac Choice,AFTERPAY - SEPHORA (3/4),Buy Now Pay Later,Expense,24.12,,"2,877.08",No,Yes,u001-B0011
+16/02/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"2,647.08",Yes,Yes,u001-00168
+17/02/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"3,007.48",Yes,Yes,u001-00169
+17/02/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,9.99,,"2,997.49",No,Yes,u001-00170
+17/02/2026,Westpac Choice,MAD MEX,Eating out,Expense,12.19,,"2,985.30",No,No,u001-00171
+17/02/2026,Westpac Choice,OFFICEWORKS,Shopping,Expense,56.81,,"2,928.49",No,No,u001-00172
+18/02/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,15.10,,"2,913.39",No,No,u001-00173
+18/02/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,26.39,,"2,887.00",Yes,No,u001-00174
+19/02/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,552.15,"3,439.15",Yes,Yes,u001-00175
+19/02/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,33.86,,"3,405.29",Yes,No,u001-00176
+20/02/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,100.00,"1,818.06",No,Yes,u001-00177
+20/02/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,100.00,,"3,305.29",No,Yes,u001-00178
+21/02/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,20.82,,"3,284.47",No,No,u001-00179
+21/02/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,23.56,,"3,260.91",Yes,No,u001-00180
+21/02/2026,Westpac Choice,STEAM GAMES,Entertainment,Expense,44.01,,"3,216.90",No,No,u001-00181
+21/02/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,"3,166.90",No,Yes,u001-B0032
+22/02/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,27.95,,"3,138.95",Yes,No,u001-00182
+22/02/2026,Westpac Choice,MAD MEX,Eating out,Expense,14.29,,"3,124.66",No,No,u001-00183
+23/02/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"2,894.66",Yes,Yes,u001-00184
+23/02/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,60.55,,"2,834.11",Yes,No,u001-00185
+24/02/2026,Westpac Choice,UNI CO-OP BOOKSHOP,Education,Expense,235.39,,"2,598.72",Yes,Yes,u001-00186
+24/02/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,35.21,,"2,563.51",Yes,No,u001-00187
+25/02/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"2,545.56",No,Yes,u001-00188
+26/02/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,460.43,"3,005.99",Yes,Yes,u001-00189
+27/02/2026,Westpac Choice,STEAM GAMES,Entertainment,Expense,21.13,,"2,984.86",No,No,u001-00190
+28/02/2026,Westpac Choice,MAD MEX,Eating out,Expense,15.82,,"2,969.04",No,No,u001-00191
+28/02/2026,Westpac Choice,AFTERPAY - SEPHORA (4/4),Buy Now Pay Later,Expense,24.14,,"2,944.90",No,Yes,u001-B0012
+28/02/2026,Westpac Choice,AFTERPAY - GLUE STORE (1/4),Buy Now Pay Later,Expense,29.75,,"2,915.15",No,No,u001-B0013
+01/03/2026,Westpac eSaver,INTEREST PAID,Income,Income,,6.82,"1,824.88",No,Yes,u001-00192
+01/03/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,35.59,,"2,879.56",Yes,No,u001-00193
+01/03/2026,Westpac Choice,MCDONALDS,Eating out,Expense,17.77,,"2,861.79",No,No,u001-00194
+02/03/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"2,631.79",Yes,Yes,u001-00195
+02/03/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,49.40,,"2,582.39",Yes,No,u001-00196
+03/03/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"2,942.79",Yes,Yes,u001-00197
+04/03/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,30.33,,"2,912.46",Yes,No,u001-00198
+04/03/2026,Westpac Choice,MCDONALDS,Eating out,Expense,19.79,,"2,892.67",No,No,u001-00199
+04/03/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,28.55,,"2,864.12",Yes,No,u001-00200
+04/03/2026,Westpac Choice,COTTON ON,Shopping,Expense,41.38,,"2,822.74",No,No,u001-00201
+05/03/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,385.84,"3,208.58",Yes,Yes,u001-00202
+05/03/2026,Westpac Choice,AMAYSIM MOBILE,Utilities,Expense,30.00,,"3,178.58",Yes,Yes,u001-00203
+05/03/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,20.45,,"3,158.13",No,No,u001-00204
+05/03/2026,Westpac Choice,NEWTOWN VET CLINIC,Health,Expense,680.00,,"2,478.13",Yes,No,u001-S0001
+07/03/2026,Westpac Choice,MCDONALDS,Eating out,Expense,7.40,,"2,470.73",No,No,u001-00205
+07/03/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,28.29,,"2,442.44",Yes,No,u001-00206
+07/03/2026,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,31.89,,"2,410.55",No,No,u001-00207
+07/03/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,"2,360.55",No,Yes,u001-B0033
+08/03/2026,Westpac Choice,SPOTIFY STUDENT,Subscriptions,Expense,6.99,,"2,353.56",No,Yes,u001-00208
+08/03/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,16.70,,"2,336.86",No,No,u001-00209
+09/03/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"2,106.86",Yes,Yes,u001-00210
+11/03/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"2,088.91",No,Yes,u001-00211
+11/03/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,25.07,,"2,063.84",Yes,No,u001-00212
+12/03/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,293.96,"2,357.80",Yes,Yes,u001-00213
+12/03/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,70.73,,"2,287.07",Yes,Yes,u001-00214
+12/03/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,40.47,,"2,246.60",Yes,No,u001-00215
+12/03/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,21.20,,"2,225.40",No,No,u001-00216
+13/03/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,36.15,,"2,189.25",Yes,No,u001-00217
+13/03/2026,Westpac Choice,MAD MEX,Eating out,Expense,11.59,,"2,177.66",No,No,u001-00218
+13/03/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,25.22,,"2,152.44",Yes,No,u001-00219
+14/03/2026,Westpac Choice,UNIVERSITY STUDENT SERVICES FEE,Education,Expense,175.00,,"1,977.44",Yes,No,u001-00220
+14/03/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,21.15,,"1,956.29",Yes,No,u001-00221
+14/03/2026,Westpac Choice,UBER *EATS,Eating out,Expense,14.64,,"1,941.65",No,No,u001-00222
+14/03/2026,Westpac Choice,AFTERPAY - GLUE STORE (2/4),Buy Now Pay Later,Expense,29.75,,"1,911.90",No,Yes,u001-B0014
+15/03/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,11.25,,"1,900.65",No,No,u001-00223
+16/03/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,670.65",Yes,Yes,u001-00224
+16/03/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,60.98,,"1,609.67",Yes,No,u001-00225
+16/03/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,24.58,,"1,585.09",Yes,No,u001-00226
+17/03/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"1,945.49",Yes,Yes,u001-00227
+17/03/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,9.99,,"1,935.50",No,Yes,u001-00228
+18/03/2026,Westpac Choice,MAD MEX,Eating out,Expense,13.71,,"1,921.79",No,No,u001-00229
+19/03/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,422.81,"2,344.60",Yes,Yes,u001-00230
+20/03/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,100.00,"1,924.88",No,Yes,u001-00231
+20/03/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,51.07,,"2,293.53",Yes,No,u001-00232
+20/03/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,100.00,,"2,193.53",No,Yes,u001-00233
+21/03/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,"2,143.53",No,Yes,u001-B0034
+22/03/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,13.94,,"2,129.59",No,No,u001-00234
+23/03/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,899.59",Yes,Yes,u001-00235
+23/03/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,6.71,,"1,892.88",No,No,u001-00236
+25/03/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,874.93",No,Yes,u001-00237
+26/03/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,355.81,"2,230.74",Yes,Yes,u001-00238
+26/03/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,13.91,,"2,216.83",No,No,u001-00239
+26/03/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,31.04,,"2,185.79",Yes,No,u001-00240
+26/03/2026,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,54.61,,"2,131.18",No,No,u001-00241
+26/03/2026,Westpac Choice,KMART,Shopping,Expense,54.16,,"2,077.02",No,No,u001-00242
+27/03/2026,Westpac Choice,MCDONALDS,Eating out,Expense,20.16,,"2,056.86",No,No,u001-00243
+28/03/2026,Westpac Choice,AFTERPAY - GLUE STORE (3/4),Buy Now Pay Later,Expense,29.75,,"2,027.11",No,Yes,u001-B0015
+29/03/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,11.13,,"2,015.98",No,No,u001-00244
+30/03/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,785.98",Yes,Yes,u001-00245
+30/03/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,33.67,,"1,752.31",Yes,No,u001-00246
+30/03/2026,Westpac Choice,MAD MEX,Eating out,Expense,10.66,,"1,741.65",No,No,u001-00247
+31/03/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"2,102.05",Yes,Yes,u001-00248
+31/03/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,60.02,,"2,042.03",Yes,No,u001-00249
+01/04/2026,Westpac eSaver,INTEREST PAID,Income,Income,,7.22,"1,932.10",No,Yes,u001-00250
+02/04/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,422.44,"2,464.47",Yes,Yes,u001-00251
+02/04/2026,Westpac Choice,OFFICEWORKS,Shopping,Expense,25.90,,"2,438.57",No,No,u001-00252
+04/04/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,"2,388.57",No,Yes,u001-B0035
+05/04/2026,Westpac Choice,AMAYSIM MOBILE,Utilities,Expense,30.00,,"2,358.57",Yes,Yes,u001-00253
+05/04/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,33.28,,"2,325.29",Yes,No,u001-00254
+06/04/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"2,095.29",Yes,Yes,u001-00255
+06/04/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,44.56,,"2,050.73",Yes,No,u001-00256
+06/04/2026,Westpac Choice,MAD MEX,Eating out,Expense,7.73,,"2,043.00",No,No,u001-00257
+06/04/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,30.92,,"2,012.08",Yes,No,u001-00258
+07/04/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,34.05,,"1,978.03",Yes,No,u001-00259
+07/04/2026,Westpac Choice,MAD MEX,Eating out,Expense,26.31,,"1,951.72",No,No,u001-00260
+07/04/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,24.93,,"1,926.79",No,No,u001-00261
+08/04/2026,Westpac Choice,SPOTIFY STUDENT,Subscriptions,Expense,6.99,,"1,919.80",No,Yes,u001-00262
+08/04/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,901.85",No,Yes,u001-00263
+08/04/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,14.33,,"1,887.52",No,No,u001-00264
+09/04/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,398.79,"2,286.31",Yes,Yes,u001-00265
+11/04/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,14.08,,"2,272.23",No,No,u001-00266
+11/04/2026,Westpac Choice,TICKETEK,Entertainment,Expense,54.49,,"2,217.74",No,No,u001-00267
+11/04/2026,Westpac Choice,AFTERPAY - GLUE STORE (4/4),Buy Now Pay Later,Expense,29.75,,"2,187.99",No,Yes,u001-B0016
+11/04/2026,Westpac Choice,AFTERPAY - CULTURE KINGS (1/4),Buy Now Pay Later,Expense,42.25,,"2,145.74",No,No,u001-B0017
+12/04/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,55.51,,"2,090.23",Yes,Yes,u001-00268
+12/04/2026,Westpac Choice,UBER *EATS,Eating out,Expense,15.58,,"2,074.65",No,No,u001-00269
+13/04/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,844.65",Yes,Yes,u001-00270
+13/04/2026,Westpac Choice,UBER *EATS,Eating out,Expense,13.16,,"1,831.49",No,No,u001-00271
+13/04/2026,Westpac Choice,COTTON ON,Shopping,Expense,31.45,,"1,800.04",No,No,u001-00272
+14/04/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"2,160.44",Yes,Yes,u001-00273
+14/04/2026,Westpac Choice,MCDONALDS,Eating out,Expense,10.54,,"2,149.90",No,No,u001-00274
+14/04/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,29.59,,"2,120.31",Yes,No,u001-00275
+15/04/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,40.86,,"2,079.45",Yes,No,u001-00276
+16/04/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,397.74,"2,477.19",Yes,Yes,u001-00277
+16/04/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,19.80,,"2,457.39",No,No,u001-00278
+17/04/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,9.99,,"2,447.40",No,Yes,u001-00279
+18/04/2026,Westpac Choice,MAD MEX,Eating out,Expense,18.84,,"2,428.56",No,No,u001-00280
+18/04/2026,Westpac Choice,UNIQLO,Shopping,Expense,47.15,,"2,381.41",No,No,u001-00281
+18/04/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,39.90,,"2,341.51",No,Yes,u001-B0036
+19/04/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,52.83,,"2,288.68",Yes,No,u001-00282
+20/04/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,100.00,"2,032.10",No,Yes,u001-00283
+20/04/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"2,058.68",Yes,Yes,u001-00284
+20/04/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,19.14,,"2,039.54",No,No,u001-00285
+20/04/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,100.00,,"1,939.54",No,Yes,u001-00286
+21/04/2026,Westpac Choice,MCDONALDS,Eating out,Expense,21.06,,"1,918.48",No,No,u001-00287
+21/04/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,27.18,,"1,891.30",Yes,No,u001-00288
+21/04/2026,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,26.75,,"1,864.55",No,No,u001-00289
+22/04/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,846.60",No,Yes,u001-00290
+22/04/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,46.87,,"1,799.73",Yes,No,u001-00291
+22/04/2026,Westpac Choice,MCDONALDS,Eating out,Expense,18.64,,"1,781.09",No,No,u001-00292
+23/04/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,312.12,"2,093.21",Yes,Yes,u001-00293
+25/04/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,15.73,,"2,077.48",No,No,u001-00294
+25/04/2026,Westpac Choice,AFTERPAY - CULTURE KINGS (2/4),Buy Now Pay Later,Expense,42.25,,"2,035.23",No,Yes,u001-B0018
+26/04/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,12.49,,"2,022.74",No,No,u001-00295
+26/04/2026,Westpac Choice,PRICELINE PHARMACY,Health,Expense,13.51,,"2,009.23",Yes,No,u001-00296
+27/04/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,779.23",Yes,Yes,u001-00297
+28/04/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"2,139.63",Yes,Yes,u001-00298
+28/04/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,18.05,,"2,121.58",No,No,u001-00299
+30/04/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,319.65,"2,441.23",Yes,Yes,u001-00300
+30/04/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,54.44,,"2,386.79",Yes,No,u001-00301
+30/04/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,20.08,,"2,366.71",No,No,u001-00302
+01/05/2026,Westpac eSaver,INTEREST PAID,Income,Income,,7.62,"2,039.72",No,Yes,u001-00303
+02/05/2026,Westpac Choice,UBER *EATS,Eating out,Expense,21.42,,"2,345.29",No,No,u001-00304
+02/05/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,31.75,,"2,313.54",Yes,No,u001-00305
+03/05/2026,Westpac Choice,MCDONALDS,Eating out,Expense,11.36,,"2,302.18",No,No,u001-00306
+04/05/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"2,072.18",Yes,Yes,u001-00307
+04/05/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,12.80,,"2,059.38",No,No,u001-00308
+05/05/2026,Westpac Choice,AMAYSIM MOBILE,Utilities,Expense,30.00,,"2,029.38",Yes,Yes,u001-00309
+05/05/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,13.01,,"2,016.37",No,No,u001-00310
+05/05/2026,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,39.89,,"1,976.48",No,No,u001-00311
+06/05/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,958.53",No,Yes,u001-00312
+06/05/2026,Westpac Choice,MAD MEX,Eating out,Expense,14.50,,"1,944.03",No,No,u001-00313
+07/05/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,452.58,"2,396.61",Yes,Yes,u001-00314
+07/05/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,37.99,,"2,358.62",Yes,No,u001-00315
+08/05/2026,Westpac Choice,SPOTIFY STUDENT,Subscriptions,Expense,6.99,,"2,351.63",No,Yes,u001-00316
+09/05/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,32.13,,"2,319.50",Yes,No,u001-00317
+09/05/2026,Westpac Choice,STEAM GAMES,Entertainment,Expense,38.27,,"2,281.23",No,No,u001-00318
+09/05/2026,Westpac Choice,AFTERPAY - CULTURE KINGS (3/4),Buy Now Pay Later,Expense,42.25,,"2,238.98",No,Yes,u001-B0019
+10/05/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,27.22,,"2,211.76",Yes,No,u001-00319
+10/05/2026,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,49.09,,"2,162.67",No,No,u001-00320
+11/05/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,932.67",Yes,Yes,u001-00321
+12/05/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"2,293.07",Yes,Yes,u001-00322
+12/05/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,57.80,,"2,235.27",Yes,Yes,u001-00323
+12/05/2026,Westpac Choice,MAD MEX,Eating out,Expense,12.87,,"2,222.40",No,No,u001-00324
+13/05/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,45.29,,"2,177.11",Yes,No,u001-00325
+13/05/2026,Westpac Choice,MAD MEX,Eating out,Expense,18.99,,"2,158.12",No,No,u001-00326
+14/05/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,443.35,"2,601.47",Yes,Yes,u001-00327
+15/05/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,52.46,,"2,549.01",Yes,No,u001-00328
+15/05/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,31.61,,"2,517.40",No,No,u001-00329
+15/05/2026,Westpac Choice,COTTON ON,Shopping,Expense,100.17,,"2,417.23",No,No,u001-00330
+16/05/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,38.58,,"2,378.65",Yes,No,u001-00331
+16/05/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,26.40,,"2,352.25",Yes,No,u001-00332
+16/05/2026,Westpac Choice,TICKETEK,Entertainment,Expense,39.55,,"2,312.70",No,No,u001-00333
+17/05/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,9.99,,"2,302.71",No,Yes,u001-00334
+17/05/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,13.90,,"2,288.81",No,No,u001-00335
+18/05/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"2,058.81",Yes,Yes,u001-00336
+18/05/2026,Westpac Choice,ASOS.COM,Shopping,Expense,47.38,,"2,011.43",No,No,u001-00337
+20/05/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,100.00,"2,139.72",No,Yes,u001-00338
+20/05/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,993.48",No,Yes,u001-00339
+20/05/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,25.13,,"1,968.35",No,No,u001-00340
+20/05/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,28.93,,"1,939.42",Yes,No,u001-00341
+20/05/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,100.00,,"1,839.42",No,Yes,u001-00342
+21/05/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,420.69,"2,260.11",Yes,Yes,u001-00343
+21/05/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,52.16,,"2,207.95",Yes,No,u001-00344
+21/05/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,12.94,,"2,195.01",No,No,u001-00345
+21/05/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,36.12,,"2,158.89",Yes,No,u001-00346
+22/05/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,22.62,,"2,136.27",No,No,u001-00347
+23/05/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,11.47,,"2,124.80",No,No,u001-00348
+23/05/2026,Westpac Choice,TICKETEK,Entertainment,Expense,44.16,,"2,080.64",No,No,u001-00349
+23/05/2026,Westpac Choice,AFTERPAY - CULTURE KINGS (4/4),Buy Now Pay Later,Expense,42.25,,"2,038.39",No,Yes,u001-B0020
+24/05/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,11.06,,"2,027.33",No,No,u001-00350
+24/05/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,55.86,,"1,971.47",No,No,u001-00351
+25/05/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,741.47",Yes,Yes,u001-00352
+25/05/2026,Westpac Choice,MCDONALDS,Eating out,Expense,21.35,,"1,720.12",No,No,u001-00353
+26/05/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"2,080.52",Yes,Yes,u001-00354
+27/05/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,34.90,,"2,045.62",Yes,No,u001-00355
+27/05/2026,Westpac Choice,MCDONALDS,Eating out,Expense,16.54,,"2,029.08",No,No,u001-00356
+28/05/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,456.19,"2,485.27",Yes,Yes,u001-00357
+28/05/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,36.52,,"2,448.75",Yes,No,u001-00358
+29/05/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,42.44,,"2,406.31",Yes,No,u001-00359
+29/05/2026,Westpac Choice,MAD MEX,Eating out,Expense,10.29,,"2,396.02",No,No,u001-00360
+30/05/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,43.25,,"2,352.77",Yes,No,u001-00361
+30/05/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,17.83,,"2,334.94",No,No,u001-00362
+31/05/2026,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,23.28,,"2,311.66",No,No,u001-00363
+01/06/2026,Westpac eSaver,INTEREST PAID,Income,Income,,8.02,"2,147.74",No,Yes,u001-00364
+01/06/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"2,081.66",Yes,Yes,u001-00365
+01/06/2026,Westpac Choice,UNIQLO,Shopping,Expense,41.09,,"2,040.57",No,No,u001-00366
+02/06/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,16.20,,"2,024.37",No,No,u001-00367
+02/06/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,21.76,,"2,002.61",Yes,No,u001-00368
+03/06/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,984.66",No,Yes,u001-00369
+03/06/2026,Westpac Choice,ASOS.COM,Shopping,Expense,93.96,,"1,890.70",No,No,u001-00370
+04/06/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,367.48,"2,258.18",Yes,Yes,u001-00371
+04/06/2026,Westpac Choice,MCDONALDS,Eating out,Expense,14.24,,"2,243.94",No,No,u001-00372
+04/06/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,24.60,,"2,219.34",Yes,No,u001-00373
+05/06/2026,Westpac Choice,AMAYSIM MOBILE,Utilities,Expense,30.00,,"2,189.34",Yes,Yes,u001-00374
+05/06/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,30.44,,"2,158.90",Yes,No,u001-00375
+06/06/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,28.09,,"2,130.81",Yes,No,u001-00376
+06/06/2026,Westpac Choice,AFTERPAY - THE ICONIC (1/4),Buy Now Pay Later,Expense,46.75,,"2,084.06",No,No,u001-B0021
+06/06/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,"2,034.06",No,Yes,u001-B0037
+08/06/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,804.06",Yes,Yes,u001-00377
+08/06/2026,Westpac Choice,SPOTIFY STUDENT,Subscriptions,Expense,6.99,,"1,797.07",No,Yes,u001-00378
+08/06/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,13.40,,"1,783.67",No,No,u001-00379
+09/06/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"2,144.07",Yes,Yes,u001-00380
+09/06/2026,Westpac Choice,TICKETEK,Entertainment,Expense,35.16,,"2,108.91",No,No,u001-00381
+10/06/2026,Westpac Choice,MAD MEX,Eating out,Expense,23.16,,"2,085.75",No,No,u001-00382
+10/06/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,18.34,,"2,067.41",Yes,No,u001-00383
+11/06/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,287.68,"2,355.09",Yes,Yes,u001-00384
+11/06/2026,Westpac Choice,MCDONALDS,Eating out,Expense,12.23,,"2,342.86",No,No,u001-00385
+12/06/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,67.29,,"2,275.57",Yes,Yes,u001-00386
+12/06/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,13.71,,"2,261.86",No,No,u001-00387
+13/06/2026,Westpac Choice,MAD MEX,Eating out,Expense,24.59,,"2,237.27",No,No,u001-00388
+13/06/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,58.30,,"2,178.97",No,No,u001-00389
+15/06/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,948.97",Yes,Yes,u001-00390
+15/06/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,52.26,,"1,896.71",Yes,No,u001-00391
+15/06/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,16.89,,"1,879.82",No,No,u001-00392
+15/06/2026,Westpac Choice,UNIQLO,Shopping,Expense,36.35,,"1,843.47",No,No,u001-00393
+16/06/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,69.09,,"1,774.38",Yes,No,u001-00394
+16/06/2026,Westpac Choice,UBER *EATS,Eating out,Expense,19.38,,"1,755.00",No,No,u001-00395
+17/06/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,9.99,,"1,745.01",No,Yes,u001-00396
+17/06/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,727.06",No,Yes,u001-00397
+17/06/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,47.39,,"1,679.67",Yes,No,u001-00398
+17/06/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,12.26,,"1,667.41",No,No,u001-00399
+18/06/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,335.87,"2,003.28",Yes,Yes,u001-00400
+18/06/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,42.79,,"1,960.49",Yes,No,u001-00401
+18/06/2026,Westpac Choice,UBER *EATS,Eating out,Expense,16.67,,"1,943.82",No,No,u001-00402
+19/06/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,19.04,,"1,924.78",No,No,u001-00403
+20/06/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,100.00,"2,247.74",No,Yes,u001-00404
+20/06/2026,Westpac Choice,UBER *EATS,Eating out,Expense,21.80,,"1,902.98",No,No,u001-00405
+20/06/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,100.00,,"1,802.98",No,Yes,u001-00406
+20/06/2026,Westpac Choice,AFTERPAY - THE ICONIC (2/4),Buy Now Pay Later,Expense,46.75,,"1,756.23",No,Yes,u001-B0022
+20/06/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,"1,706.23",No,Yes,u001-B0038
+21/06/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,19.90,,"1,686.33",Yes,No,u001-00407
+21/06/2026,Westpac Choice,MAD MEX,Eating out,Expense,9.35,,"1,676.98",No,No,u001-00408
+21/06/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,27.78,,"1,649.20",Yes,No,u001-00409
+22/06/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,419.20",Yes,Yes,u001-00410
+22/06/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,42.09,,"1,377.11",Yes,No,u001-00411
+23/06/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"1,737.51",Yes,Yes,u001-00412
+24/06/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,16.03,,"1,721.48",No,No,u001-00413
+25/06/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,375.48,"2,096.96",Yes,Yes,u001-00414
+25/06/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,11.64,,"2,085.32",No,No,u001-00415
+26/06/2026,Westpac Choice,MCDONALDS,Eating out,Expense,12.64,,"2,072.68",No,No,u001-00416
+27/06/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,15.56,,"2,057.12",No,No,u001-00417
+27/06/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,30.82,,"2,026.30",Yes,No,u001-00418
+27/06/2026,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,53.63,,"1,972.67",No,No,u001-00419
+28/06/2026,Westpac Choice,UBER *EATS,Eating out,Expense,15.77,,"1,956.90",No,No,u001-00420
+28/06/2026,Westpac Choice,OFFICEWORKS,Shopping,Expense,26.30,,"1,930.60",No,No,u001-00421
+29/06/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,700.60",Yes,Yes,u001-00422
+29/06/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,11.31,,"1,689.29",No,No,u001-00423
+30/06/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,59.70,,"1,629.59",Yes,No,u001-00424
+01/07/2026,Westpac eSaver,INTEREST PAID,Income,Income,,8.43,"2,256.17",No,Yes,u001-00425
+01/07/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,611.64",No,Yes,u001-00426
+01/07/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,39.76,,"1,571.88",Yes,No,u001-00427
+01/07/2026,Westpac Choice,MAD MEX,Eating out,Expense,16.19,,"1,555.69",No,No,u001-00428
+02/07/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,327.06,"1,882.75",Yes,Yes,u001-00429
+02/07/2026,Westpac Choice,UBER *EATS,Eating out,Expense,11.22,,"1,871.53",No,No,u001-00430
+04/07/2026,Westpac Choice,MCDONALDS,Eating out,Expense,22.46,,"1,849.07",No,No,u001-00431
+04/07/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,48.59,,"1,800.48",No,No,u001-00432
+04/07/2026,Westpac Choice,AFTERPAY - THE ICONIC (3/4),Buy Now Pay Later,Expense,46.75,,"1,753.73",No,Yes,u001-B0023
+04/07/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,"1,703.73",No,Yes,u001-B0039
+05/07/2026,Westpac Choice,AMAYSIM MOBILE,Utilities,Expense,30.00,,"1,673.73",Yes,Yes,u001-00433
+05/07/2026,Westpac Choice,MCDONALDS,Eating out,Expense,26.43,,"1,647.30",No,No,u001-00434
+06/07/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,417.30",Yes,Yes,u001-00435
+06/07/2026,Westpac Choice,UBER *EATS,Eating out,Expense,15.73,,"1,401.57",No,No,u001-00436
+07/07/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"1,761.97",Yes,Yes,u001-00437
+08/07/2026,Westpac Choice,SPOTIFY STUDENT,Subscriptions,Expense,6.99,,"1,754.98",No,Yes,u001-00438
+08/07/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,22.85,,"1,732.13",No,No,u001-00439
+09/07/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,357.23,"2,089.36",Yes,Yes,u001-00440
+09/07/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,43.37,,"2,045.99",Yes,No,u001-00441
+09/07/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,14.40,,"2,031.59",No,No,u001-00442
+10/07/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,12.68,,"2,018.91",No,No,u001-00443
+12/07/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,76.92,,"1,941.99",Yes,Yes,u001-00444
+12/07/2026,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,25.59,,"1,916.40",No,No,u001-00445
+12/07/2026,Westpac Choice,PRICELINE PHARMACY,Health,Expense,22.46,,"1,893.94",Yes,No,u001-00446
+13/07/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,663.94",Yes,Yes,u001-00447
+13/07/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,12.78,,"1,651.16",No,No,u001-00448
+13/07/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,35.29,,"1,615.87",Yes,No,u001-00449
+14/07/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,23.56,,"1,592.31",No,No,u001-00450
+14/07/2026,Westpac Choice,UBREAKIFIX SYDNEY,Shopping,Expense,329.00,,"1,263.31",Yes,No,u001-S0002
+15/07/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,245.36",No,Yes,u001-00451
+16/07/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,433.71,"1,679.07",Yes,Yes,u001-00452
+16/07/2026,Westpac Choice,UBER *EATS,Eating out,Expense,14.16,,"1,664.91",No,No,u001-00453
+16/07/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,31.29,,"1,633.62",Yes,No,u001-00454
+17/07/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,9.99,,"1,623.63",No,Yes,u001-00455
+18/07/2026,Westpac Choice,AFTERPAY - THE ICONIC (4/4),Buy Now Pay Later,Expense,46.75,,"1,576.88",No,Yes,u001-B0024
+18/07/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,"1,526.88",No,Yes,u001-B0040
+19/07/2026,Westpac Choice,UBER *EATS,Eating out,Expense,25.71,,"1,501.17",No,No,u001-00456
+20/07/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,100.00,"2,356.17",No,Yes,u001-00457
+20/07/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,271.17",Yes,Yes,u001-00458
+20/07/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,20.66,,"1,250.51",No,No,u001-00459
+20/07/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,100.00,,"1,150.51",No,Yes,u001-00460
+21/07/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"1,510.91",Yes,Yes,u001-00461
+21/07/2026,Westpac Choice,MAD MEX,Eating out,Expense,25.31,,"1,485.60",No,No,u001-00462
+22/07/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,28.48,,"1,457.12",Yes,No,u001-00463
+23/07/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,402.23,"1,859.35",Yes,Yes,u001-00464
+23/07/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,9.64,,"1,849.71",Yes,No,u001-00465
+24/07/2026,Westpac Choice,UNI CO-OP BOOKSHOP,Education,Expense,237.44,,"1,612.27",Yes,Yes,u001-00466
+24/07/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,42.56,,"1,569.71",Yes,No,u001-00467
+25/07/2026,Westpac Choice,MCDONALDS,Eating out,Expense,20.68,,"1,549.03",No,No,u001-00468
+27/07/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,319.03",Yes,Yes,u001-00469
+27/07/2026,Westpac Choice,TICKETEK,Entertainment,Expense,28.06,,"1,290.97",No,No,u001-00470
+28/07/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,14.09,,"1,276.88",No,No,u001-00471
+28/07/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,36.75,,"1,240.13",Yes,No,u001-00472
+29/07/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,222.18",No,Yes,u001-00473
+30/07/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,379.13,"1,601.31",Yes,Yes,u001-00474
+31/07/2026,Westpac Choice,MCDONALDS,Eating out,Expense,23.41,,"1,577.90",No,No,u001-00475
+01/08/2026,Westpac eSaver,INTEREST PAID,Income,Income,,8.84,"2,365.01",No,Yes,u001-00476
+01/08/2026,Westpac Choice,MAD MEX,Eating out,Expense,13.10,,"1,564.80",No,No,u001-00477
+01/08/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,"1,514.80",No,Yes,u001-B0041
+02/08/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,31.21,,"1,483.59",Yes,No,u001-00478
+02/08/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,19.04,,"1,464.55",No,No,u001-00479
+02/08/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,25.94,,"1,438.61",Yes,No,u001-00480
+03/08/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,208.61",Yes,Yes,u001-00481
+03/08/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,14.46,,"1,194.15",No,No,u001-00482
+04/08/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"1,554.55",Yes,Yes,u001-00483
+05/08/2026,Westpac Choice,AMAYSIM MOBILE,Utilities,Expense,30.00,,"1,524.55",Yes,Yes,u001-00484
+05/08/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,14.55,,"1,510.00",No,No,u001-00485
+06/08/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,278.26,"1,788.26",Yes,Yes,u001-00486
+06/08/2026,Westpac Choice,MAD MEX,Eating out,Expense,16.34,,"1,771.92",No,No,u001-00487
+07/08/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,58.98,,"1,712.94",Yes,No,u001-00488
+07/08/2026,Westpac Choice,MAD MEX,Eating out,Expense,17.26,,"1,695.68",No,No,u001-00489
+07/08/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,30.80,,"1,664.88",Yes,No,u001-00490
+08/08/2026,Westpac Choice,SPOTIFY STUDENT,Subscriptions,Expense,6.99,,"1,657.89",No,Yes,u001-00491
+08/08/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,47.64,,"1,610.25",Yes,No,u001-00492
+08/08/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,22.65,,"1,587.60",No,No,u001-00493
+08/08/2026,Westpac Choice,AFTERPAY - JB HI-FI (1/4),Buy Now Pay Later,Expense,57.25,,"1,530.35",No,No,u001-B0025
+10/08/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,300.35",Yes,Yes,u001-00494
+10/08/2026,Westpac Choice,UBER *EATS,Eating out,Expense,11.94,,"1,288.41",No,No,u001-00495
+11/08/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,27.34,,"1,261.07",Yes,No,u001-00496
+12/08/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,74.78,,"1,186.29",Yes,Yes,u001-00497
+12/08/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,"1,168.34",No,Yes,u001-00498
+12/08/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,11.57,,"1,156.77",No,No,u001-00499
+13/08/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,403.48,"1,560.25",Yes,Yes,u001-00500
+13/08/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,44.42,,"1,515.83",Yes,No,u001-00501
+13/08/2026,Westpac Choice,MCDONALDS,Eating out,Expense,8.36,,"1,507.47",No,No,u001-00502
+14/08/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,11.01,,"1,496.46",No,No,u001-00503
+14/08/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,25.93,,"1,470.53",Yes,No,u001-00504
+14/08/2026,Westpac Choice,PRICELINE PHARMACY,Health,Expense,16.65,,"1,453.88",Yes,No,u001-00505
+15/08/2026,Westpac Choice,MCDONALDS,Eating out,Expense,11.37,,"1,442.51",No,No,u001-00506
+15/08/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,24.42,,"1,418.09",No,No,u001-00507
+15/08/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,"1,368.09",No,Yes,u001-B0042
+16/08/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,55.02,,"1,313.07",Yes,No,u001-00508
+16/08/2026,Westpac Choice,MAD MEX,Eating out,Expense,12.69,,"1,300.38",No,No,u001-00509
+17/08/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,070.38",Yes,Yes,u001-00510
+17/08/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,9.99,,"1,060.39",No,Yes,u001-00511
+17/08/2026,Westpac Choice,MCDONALDS,Eating out,Expense,20.22,,"1,040.17",No,No,u001-00512
+18/08/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"1,400.57",Yes,Yes,u001-00513
+18/08/2026,Westpac Choice,MAD MEX,Eating out,Expense,9.60,,"1,390.97",No,No,u001-00514
+20/08/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,340.10,"1,731.07",Yes,Yes,u001-00515
+20/08/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,100.00,"2,465.01",No,Yes,u001-00516
+20/08/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,33.18,,"1,697.89",Yes,No,u001-00517
+20/08/2026,Westpac Choice,PRICELINE PHARMACY,Health,Expense,16.36,,"1,681.53",Yes,No,u001-00518
+20/08/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,100.00,,"1,581.53",No,Yes,u001-00519
+21/08/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,67.71,,"1,513.82",Yes,No,u001-00520
+22/08/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,52.70,,"1,461.12",No,No,u001-00521
+22/08/2026,Westpac Choice,AFTERPAY - JB HI-FI (2/4),Buy Now Pay Later,Expense,57.25,,"1,403.87",No,Yes,u001-B0026
+23/08/2026,Westpac Choice,MAD MEX,Eating out,Expense,18.00,,"1,385.87",No,No,u001-00522
+23/08/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,27.69,,"1,358.18",Yes,No,u001-00523
+23/08/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,14.03,,"1,344.15",Yes,No,u001-00524
+24/08/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,114.15",Yes,Yes,u001-00525
+24/08/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,22.12,,"1,092.03",Yes,No,u001-00526
+24/08/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,12.79,,"1,079.24",No,No,u001-00527
+25/08/2026,Westpac Choice,BOOST JUICE,Eating out,Expense,21.82,,"1,057.42",No,No,u001-00528
+25/08/2026,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,58.14,,999.28,No,No,u001-00529
+25/08/2026,Westpac Choice,KMART,Shopping,Expense,44.96,,954.32,No,No,u001-00530
+26/08/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,936.37,No,Yes,u001-00531
+27/08/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,350.80,"1,287.17",Yes,Yes,u001-00532
+27/08/2026,Westpac Choice,UBER *EATS,Eating out,Expense,9.59,,"1,277.58",No,No,u001-00533
+29/08/2026,Westpac Choice,UBER *EATS,Eating out,Expense,14.47,,"1,263.11",No,No,u001-00534
+29/08/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,32.56,,"1,230.55",Yes,No,u001-00535
+29/08/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,"1,180.55",No,Yes,u001-B0043
+30/08/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,40.69,,"1,139.86",Yes,No,u001-00536
+31/08/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,909.86,Yes,Yes,u001-00537
+31/08/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,47.73,,862.13,Yes,No,u001-00538
+31/08/2026,Westpac Choice,MAD MEX,Eating out,Expense,12.70,,849.43,No,No,u001-00539
+01/09/2026,Westpac eSaver,INTEREST PAID,Income,Income,,9.24,"2,474.25",No,Yes,u001-00540
+01/09/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"1,209.83",Yes,Yes,u001-00541
+01/09/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,33.99,,"1,175.84",Yes,No,u001-00542
+01/09/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,14.41,,"1,161.43",No,No,u001-00543
+01/09/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,31.90,,"1,129.53",Yes,No,u001-00544
+01/09/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,34.32,,"1,095.21",No,No,u001-00545
+03/09/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,346.53,"1,441.74",Yes,Yes,u001-00546
+04/09/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,34.93,,"1,406.81",Yes,No,u001-00547
+05/09/2026,Westpac Choice,AMAYSIM MOBILE,Utilities,Expense,30.00,,"1,376.81",Yes,Yes,u001-00548
+05/09/2026,Westpac Choice,AFTERPAY - JB HI-FI (3/4),Buy Now Pay Later,Expense,57.25,,"1,319.56",No,Yes,u001-B0027
+06/09/2026,Westpac Choice,MAD MEX,Eating out,Expense,12.33,,"1,307.23",No,No,u001-00549
+07/09/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,"1,077.23",Yes,Yes,u001-00550
+07/09/2026,Westpac Choice,MAD MEX,Eating out,Expense,19.97,,"1,057.26",No,No,u001-00551
+08/09/2026,Westpac Choice,SPOTIFY STUDENT,Subscriptions,Expense,6.99,,"1,050.27",No,Yes,u001-00552
+08/09/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,40.26,,"1,010.01",Yes,No,u001-00553
+09/09/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,992.06,No,Yes,u001-00554
+09/09/2026,Westpac Choice,MAD MEX,Eating out,Expense,18.70,,973.36,No,No,u001-00555
+10/09/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,380.64,"1,354.00",Yes,Yes,u001-00556
+10/09/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,17.90,,"1,336.10",No,No,u001-00557
+11/09/2026,Westpac Choice,UBER *EATS,Eating out,Expense,8.83,,"1,327.27",No,No,u001-00558
+11/09/2026,Westpac Choice,OFFICEWORKS,Shopping,Expense,41.68,,"1,285.59",No,No,u001-00559
+12/09/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,65.12,,"1,220.47",Yes,Yes,u001-00560
+12/09/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,30.61,,"1,189.86",Yes,No,u001-00561
+12/09/2026,Westpac Choice,MCDONALDS,Eating out,Expense,12.88,,"1,176.98",No,No,u001-00562
+12/09/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,"1,126.98",No,Yes,u001-B0044
+13/09/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,27.96,,"1,099.02",Yes,No,u001-00563
+13/09/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,22.73,,"1,076.29",Yes,No,u001-00564
+13/09/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,20.47,,"1,055.82",No,No,u001-00565
+14/09/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,825.82,Yes,Yes,u001-00566
+15/09/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,"1,186.22",Yes,Yes,u001-00567
+15/09/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,17.48,,"1,168.74",No,No,u001-00568
+15/09/2026,Westpac Choice,KMART,Shopping,Expense,81.10,,"1,087.64",No,No,u001-00569
+17/09/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,364.72,"1,452.36",Yes,Yes,u001-00570
+17/09/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,9.99,,"1,442.37",No,Yes,u001-00571
+17/09/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,33.48,,"1,408.89",Yes,No,u001-00572
+18/09/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,23.50,,"1,385.39",Yes,No,u001-00573
+18/09/2026,Westpac Choice,STEAM GAMES,Entertainment,Expense,29.46,,"1,355.93",No,No,u001-00574
+19/09/2026,Westpac Choice,MAD MEX,Eating out,Expense,14.74,,"1,341.19",No,No,u001-00575
+19/09/2026,Westpac Choice,UNIQLO,Shopping,Expense,55.15,,"1,286.04",No,No,u001-00576
+19/09/2026,Westpac Choice,AFTERPAY - JB HI-FI (4/4),Buy Now Pay Later,Expense,57.25,,"1,228.79",No,Yes,u001-B0028
+20/09/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,100.00,"2,574.25",No,Yes,u001-00577
+20/09/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,100.00,,"1,128.79",No,Yes,u001-00578
+21/09/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,898.79,Yes,Yes,u001-00579
+21/09/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,60.81,,837.98,Yes,No,u001-00580
+22/09/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,51.55,,786.43,Yes,No,u001-00581
+23/09/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,768.48,No,Yes,u001-00582
+23/09/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,15.65,,752.83,No,No,u001-00583
+23/09/2026,Westpac Choice,OFFICEWORKS,Shopping,Expense,57.66,,695.17,No,No,u001-00584
+24/09/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,295.00,990.17,Yes,Yes,u001-00585
+25/09/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,28.54,,961.63,Yes,No,u001-00586
+25/09/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,11.10,,950.53,No,No,u001-00587
+25/09/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,24.54,,925.99,Yes,No,u001-00588
+26/09/2026,Westpac Choice,MCDONALDS,Eating out,Expense,13.79,,912.20,No,No,u001-00589
+26/09/2026,Westpac Choice,UNIQLO,Shopping,Expense,40.87,,871.33,No,No,u001-00590
+26/09/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,821.33,No,Yes,u001-B0045
+28/09/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,591.33,Yes,Yes,u001-00591
+29/09/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,951.73,Yes,Yes,u001-00592
+29/09/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,8.82,,942.91,No,No,u001-00593
+29/09/2026,Westpac Choice,KMART,Shopping,Expense,38.37,,904.54,No,No,u001-00594
+01/10/2026,Westpac eSaver,INTEREST PAID,Income,Income,,9.65,"2,583.90",No,Yes,u001-00595
+01/10/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,366.16,"1,270.70",Yes,Yes,u001-00596
+01/10/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,60.71,,"1,209.99",Yes,No,u001-00597
+01/10/2026,Westpac Choice,UBER *EATS,Eating out,Expense,12.75,,"1,197.24",No,No,u001-00598
+02/10/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,14.85,,"1,182.39",No,No,u001-00599
+03/10/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,35.34,,"1,147.05",Yes,No,u001-00600
+03/10/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,9.96,,"1,137.09",No,No,u001-00601
+03/10/2026,Westpac Choice,TICKETEK,Entertainment,Expense,49.32,,"1,087.77",No,No,u001-00602
+04/10/2026,Westpac Choice,UBER *EATS,Eating out,Expense,19.84,,"1,067.93",No,No,u001-00603
+04/10/2026,Westpac Choice,STEAM GAMES,Entertainment,Expense,27.35,,"1,040.58",No,No,u001-00604
+05/10/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,810.58,Yes,Yes,u001-00605
+05/10/2026,Westpac Choice,AMAYSIM MOBILE,Utilities,Expense,30.00,,780.58,Yes,Yes,u001-00606
+05/10/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,24.84,,755.74,No,No,u001-00607
+06/10/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,34.97,,720.77,Yes,No,u001-00608
+06/10/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,8.18,,712.59,No,No,u001-00609
+06/10/2026,Westpac Choice,ASOS.COM,Shopping,Expense,39.99,,672.60,No,No,u001-00610
+07/10/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,654.65,No,Yes,u001-00611
+07/10/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,27.30,,627.35,Yes,No,u001-00612
+07/10/2026,Westpac Choice,MAD MEX,Eating out,Expense,25.78,,601.57,No,No,u001-00613
+08/10/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,410.65,"1,012.22",Yes,Yes,u001-00614
+08/10/2026,Westpac Choice,SPOTIFY STUDENT,Subscriptions,Expense,6.99,,"1,005.23",No,Yes,u001-00615
+08/10/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,15.37,,989.86,No,No,u001-00616
+10/10/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,25.99,,963.87,Yes,No,u001-00617
+10/10/2026,Westpac Choice,AFTERPAY - THE ICONIC (1/4),Buy Now Pay Later,Expense,39.50,,924.37,No,No,u001-B0029
+10/10/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,50.00,,874.37,No,Yes,u001-B0046
+11/10/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,9.36,,865.01,No,No,u001-00618
+11/10/2026,Westpac Choice,KMART,Shopping,Expense,104.27,,760.74,No,No,u001-00619
+12/10/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,530.74,Yes,Yes,u001-00620
+12/10/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,54.20,,476.54,Yes,Yes,u001-00621
+12/10/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,11.88,,464.66,No,No,u001-00622
+13/10/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,825.06,Yes,Yes,u001-00623
+13/10/2026,Westpac Choice,UBER *EATS,Eating out,Expense,11.19,,813.87,No,No,u001-00624
+13/10/2026,Westpac Choice,STEAM GAMES,Entertainment,Expense,58.10,,755.77,No,No,u001-00625
+14/10/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,23.79,,731.98,No,No,u001-00626
+15/10/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,383.28,"1,115.26",Yes,Yes,u001-00627
+15/10/2026,Westpac Choice,WOOLWORTHS NEWTOWN,Groceries,Expense,47.81,,"1,067.45",Yes,No,u001-00628
+15/10/2026,Westpac Choice,KMART,Shopping,Expense,91.02,,976.43,No,No,u001-00629
+16/10/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,11.47,,964.96,No,No,u001-00630
+17/10/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,9.99,,954.97,No,Yes,u001-00631
+17/10/2026,Westpac Choice,MAD MEX,Eating out,Expense,13.62,,941.35,No,No,u001-00632
+18/10/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,28.46,,912.89,Yes,No,u001-00633
+19/10/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,682.89,Yes,Yes,u001-00634
+19/10/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,27.72,,655.17,Yes,No,u001-00635
+20/10/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,100.00,"2,683.90",No,Yes,u001-00636
+20/10/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,13.01,,642.16,No,No,u001-00637
+20/10/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,100.00,,542.16,No,Yes,u001-00638
+21/10/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,524.21,No,Yes,u001-00639
+21/10/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,16.24,,507.97,No,No,u001-00640
+22/10/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,363.36,871.33,Yes,Yes,u001-00641
+22/10/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,23.95,,847.38,Yes,No,u001-00642
+22/10/2026,Westpac Choice,MAD MEX,Eating out,Expense,27.24,,820.14,No,No,u001-00643
+23/10/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,63.10,,757.04,Yes,No,u001-00644
+23/10/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,15.13,,741.91,No,No,u001-00645
+24/10/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,54.00,,687.91,Yes,No,u001-00646
+24/10/2026,Westpac Choice,AFTERPAY - THE ICONIC (2/4),Buy Now Pay Later,Expense,39.50,,648.41,No,Yes,u001-B0030
+24/10/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,29.75,,618.66,No,Yes,u001-B0047
+25/10/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,26.81,,591.85,Yes,No,u001-00647
+26/10/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,361.85,Yes,Yes,u001-00648
+27/10/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,722.25,Yes,Yes,u001-00649
+27/10/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,7.72,,714.53,No,No,u001-00650
+27/10/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,50.82,,663.71,No,No,u001-00651
+27/10/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,11.63,,652.08,Yes,No,u001-00652
+28/10/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,33.79,,618.29,Yes,No,u001-00653
+29/10/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,441.06,"1,059.35",Yes,Yes,u001-00654
+29/10/2026,Westpac Choice,COLES NEWTOWN,Groceries,Expense,24.62,,"1,034.73",Yes,No,u001-00655
+30/10/2026,Westpac Choice,UBER *EATS,Eating out,Expense,18.10,,"1,016.63",No,No,u001-00656
+30/10/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,26.28,,990.35,Yes,No,u001-00657
+31/10/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,21.53,,968.82,Yes,No,u001-00658
+31/10/2026,Westpac Choice,GUZMAN Y GOMEZ,Eating out,Expense,20.83,,947.99,No,No,u001-00659
+31/10/2026,Westpac Choice,EVENT CINEMAS,Entertainment,Expense,33.49,,914.50,No,No,u001-00660
+01/11/2026,Westpac eSaver,INTEREST PAID,Income,Income,,10.06,"2,693.96",No,Yes,u001-00661
+02/11/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,684.50,Yes,Yes,u001-00662
+02/11/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,28.42,,656.08,Yes,No,u001-00663
+02/11/2026,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,40.82,,615.26,No,No,u001-00664
+03/11/2026,Westpac Choice,UBER *EATS,Eating out,Expense,8.99,,606.27,No,No,u001-00665
+04/11/2026,Westpac Choice,ANYTIME FITNESS,Health,Expense,17.95,,588.32,No,Yes,u001-00666
+05/11/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,320.95,909.27,Yes,Yes,u001-00667
+05/11/2026,Westpac Choice,AMAYSIM MOBILE,Utilities,Expense,30.00,,879.27,Yes,Yes,u001-00668
+06/11/2026,Westpac Choice,ALDI STORES NEWTOWN,Groceries,Expense,67.05,,812.22,Yes,No,u001-00669
+06/11/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,13.98,,798.24,No,No,u001-00670
+07/11/2026,Westpac Choice,MCDONALDS,Eating out,Expense,10.17,,788.07,No,No,u001-00671
+07/11/2026,Westpac Choice,AFTERPAY - THE ICONIC (3/4),Buy Now Pay Later,Expense,39.50,,748.57,No,Yes,u001-B0031
+08/11/2026,Westpac Choice,SPOTIFY STUDENT,Subscriptions,Expense,6.99,,741.58,No,Yes,u001-00672
+08/11/2026,Westpac Choice,THE COURTHOUSE HOTEL,Entertainment,Expense,32.48,,709.10,No,No,u001-00673
+09/11/2026,Westpac Choice,RENT SHARE HOUSE NEWTOWN,Housing,Expense,230.00,,479.10,Yes,Yes,u001-00674
+10/11/2026,Westpac Choice,CENTRELINK YOUTH ALLOWANCE,Income,Income,,360.40,839.50,Yes,Yes,u001-00675
+10/11/2026,Westpac Choice,MAD MEX,Eating out,Expense,12.51,,826.99,No,No,u001-00676
+10/11/2026,Westpac Choice,COTTON ON,Shopping,Expense,65.76,,761.23,No,No,u001-00677
+12/11/2026,Westpac Choice,BEAN SCENE CAFE WAGES,Income,Income,,350.39,"1,111.62",Yes,Yes,u001-00678
+12/11/2026,Westpac Choice,SPLIT BILLS POWER AND INTERNET,Utilities,Expense,69.38,,"1,042.24",Yes,Yes,u001-00679
+13/11/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,13.06,,"1,029.18",No,No,u001-00680
+13/11/2026,Westpac Choice,OFFICEWORKS,Shopping,Expense,57.37,,971.81,No,No,u001-00681
+14/11/2026,Westpac Choice,MAD MEX,Eating out,Expense,12.76,,959.05,No,No,u001-00682
+15/11/2026,Westpac Choice,CAMPUS CAFE,Eating out,Expense,24.65,,934.40,No,No,u001-00683

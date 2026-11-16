@@ -42,14 +42,15 @@ Fictional data only. This is a hackathon prototype, not a Westpac product.
 
 Five fictional customers, each with one year of transactions (16 Nov 2025 to 15 Nov 2026).
 
+- `statements/<First>_<Last>.csv` **the example data**: one statement per customer with Type, Essential and Recurring columns
+- `import_statements.py` rebuilds the JSON below and `frontend/src/data/mockUsers.json` from the statements
 - `mock_users.json` profiles, demo logins and accounts
 - `mock_transactions.json` every transaction, flat list with `user_id`, `account_id`, `category`, `type`, `essential`, `recurring`, `balance_after`
-- `statements/<username>.csv` the same data as one CSV statement per customer
-- `generate_mock_data.py` regenerates all of the above and `frontend/src/data/mockUsers.json`
+- `generate_mock_data.py` the original random generator the statements started from. Running it overwrites the JSON with generated data, so run `import_statements.py` afterwards to restore the example data.
 
 ```bash
 cd backend/data
-python generate_mock_data.py
+python import_statements.py   # after editing a statement
 ```
 
 | Username | Password | Who |
@@ -67,9 +68,14 @@ The sign-in screen is a demo-only plain-text check against these mock users. Tap
 Standard library only (Python 3.9+). Formulas and detector rules are documented at the top of
 `savings.py` and `shocks.py`; every threshold is a keyword argument.
 
+Shock types: large single spend, burst, category spike, recurring bill change, new merchant
+with a big amount, runway (bills due before next pay), overdraft, savings drawdown (topping up
+the everyday account from savings) and buy-now-pay-later stacking (3+ plans at once, or
+repayments over 10% of a month's income).
+
 ```python
-from finstats import load_transactions, savings_capacity, detect_all_shocks
-txns = load_transactions("data/mock_transactions.json", user_id="u003")
+from finstats import load_statement_csv, savings_capacity, detect_all_shocks
+txns = load_statement_csv("data/statements/David_Kowalski.csv")
 cap = savings_capacity(txns)       # cap.comfortable, cap.stretch, plus C, sigma_W, the W series...
 shocks = detect_all_shocks(txns)   # list[Shock] with type, date, amount, score, message
 ```
@@ -80,13 +86,13 @@ python -m finstats                     # demo over all five mock users
 python -m unittest discover tests -v   # tests
 ```
 
-`generate_mock_data.py` plants one shock per customer (fixed values, no extra randomness), and
-`tests/test_finstats.py` checks each one is detected:
+The example statements include planted shock events (transaction IDs like `u003-S0001`).
+`tests/test_finstats.py` checks every one is flagged by at least one detector:
 
-| Customer | Shock | Planted event |
+| Customer | Planted events | Flagged as |
 |---|---|---|
-| mia.tran | Burst | 22 Aug 2026: nine small online charges in one day (skimmed card) |
-| priya.sharma | Recurring bill change | From Jul 2026: home loan repayment $7,200 to $7,992 (+11%) |
-| david.kowalski | Large single spend | 3 Sep 2026: $3,450 gearbox rebuild at his usual mechanic |
-| margaret.obrien | New merchant, big amount | 10 Jun 2026: $2,850 at a dental implant clinic |
-| jake.morrison | Category spike | Week of 10 Aug 2026: $2,140 of tools over five purchases |
+| Mia Tran | Vet $680 (5 Mar), phone repair $329 (14 Jul) | New merchant; large single spend + new merchant |
+| Priya Sharma | Emergency dentist $1,850 (9 Feb), car repair $2,380 (18 Jun), plumber $2,150 (3 Sep) | New merchant; large single spend + new merchant; new merchant |
+| David Kowalski | Vet $1,240 (2 Apr), car service $1,860 (12 Aug) | Large single spend + new merchant (both) |
+| Margaret O'Brien | Fridge $1,095 (20 Jan), dentist $740 (8 Jul) | New merchant; large single spend + new merchant |
+| Jake Morrison | Car service $2,740 (26 Feb), tools $1,990 (27 Aug), windscreen $620 (20 Oct) | Large single spend + new merchant; large single spend; large single spend + new merchant |
