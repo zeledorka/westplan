@@ -9,7 +9,7 @@
    {
     "id": "u001-everyday",
     "name": "Westpac Choice",
-    "balance": 3856.0,
+    "balance": 3743.9,
     "kind": "cash",
     "cardEnding": "4471"
    },
@@ -28,7 +28,7 @@
   },
   "categoriesTotal": 972.34,
   "netWorth": {
-   "assets": 6549.96,
+   "assets": 6437.86,
    "liabilities": 0
   },
   "recent": [
@@ -104,7 +104,7 @@
    {
     "id": "u002-everyday",
     "name": "Westpac Choice",
-    "balance": 4465.64,
+    "balance": 3673.64,
     "kind": "cash",
     "cardEnding": "8820"
    },
@@ -132,12 +132,12 @@
   ],
   "cashFlow": {
    "since": "01 Nov",
-   "expenses": 15754.76,
+   "expenses": 16546.76,
    "income": 8433.03
   },
-  "categoriesTotal": 15754.76,
+  "categoriesTotal": 16546.76,
   "netWorth": {
-   "assets": 2216839.95,
+   "assets": 2216047.95,
    "liabilities": 1324750.0
   },
   "recent": [
@@ -213,7 +213,7 @@
    {
     "id": "u003-everyday",
     "name": "Westpac Choice",
-    "balance": 3001.04,
+    "balance": 2011.57,
     "kind": "cash",
     "cardEnding": "3056"
    },
@@ -239,7 +239,7 @@
   },
   "categoriesTotal": 4555.84,
   "netWorth": {
-   "assets": 808499.2,
+   "assets": 807509.73,
    "liabilities": 402700.0
   },
   "recent": [
@@ -315,7 +315,7 @@
    {
     "id": "u004-everyday",
     "name": "Westpac Choice",
-    "balance": 3799.11,
+    "balance": 1662.86,
     "kind": "cash",
     "cardEnding": "1294"
    },
@@ -334,7 +334,7 @@
   },
   "categoriesTotal": 1440.0,
   "netWorth": {
-   "assets": 21123.5,
+   "assets": 18987.25,
    "liabilities": 0
   },
   "recent": [
@@ -410,7 +410,7 @@
    {
     "id": "u005-everyday",
     "name": "Westpac Choice",
-    "balance": 13837.31,
+    "balance": 11697.31,
     "kind": "cash",
     "cardEnding": "6637"
    },
@@ -429,7 +429,7 @@
   },
   "categoriesTotal": 4999.55,
   "netWorth": {
-   "assets": 37848.4,
+   "assets": 35708.4,
    "liabilities": 0
   },
   "recent": [

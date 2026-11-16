@@ -61,3 +61,32 @@ python generate_mock_data.py
 | jake.morrison | Sparky#2026 | Electrician with an ABN, 29, share house |
 
 The sign-in screen is a demo-only plain-text check against these mock users. Tap a user on that screen to fill in their details. The profile icon signs out.
+
+## backend/finstats/ (savings and shock helpers)
+
+Standard library only (Python 3.9+). Formulas and detector rules are documented at the top of
+`savings.py` and `shocks.py`; every threshold is a keyword argument.
+
+```python
+from finstats import load_transactions, savings_capacity, detect_all_shocks
+txns = load_transactions("data/mock_transactions.json", user_id="u003")
+cap = savings_capacity(txns)       # cap.comfortable, cap.stretch, plus C, sigma_W, the W series...
+shocks = detect_all_shocks(txns)   # list[Shock] with type, date, amount, score, message
+```
+
+```bash
+cd backend
+python -m finstats                     # demo over all five mock users
+python -m unittest discover tests -v   # tests
+```
+
+`generate_mock_data.py` plants one shock per customer (fixed values, no extra randomness), and
+`tests/test_finstats.py` checks each one is detected:
+
+| Customer | Shock | Planted event |
+|---|---|---|
+| mia.tran | Burst | 22 Aug 2026: nine small online charges in one day (skimmed card) |
+| priya.sharma | Recurring bill change | From Jul 2026: home loan repayment $7,200 to $7,992 (+11%) |
+| david.kowalski | Large single spend | 3 Sep 2026: $3,450 gearbox rebuild at his usual mechanic |
+| margaret.obrien | New merchant, big amount | 10 Jun 2026: $2,850 at a dental implant clinic |
+| jake.morrison | Category spike | Week of 10 Aug 2026: $2,140 of tools over five purchases |
