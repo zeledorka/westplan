@@ -90,3 +90,59 @@ python -m unittest discover tests -v   # tests
 | david.kowalski | Large single spend | 3 Sep 2026: $3,450 gearbox rebuild at his usual mechanic |
 | margaret.obrien | New merchant, big amount | 10 Jun 2026: $2,850 at a dental implant clinic |
 | jake.morrison | Category spike | Week of 10 Aug 2026: $2,140 of tools over five purchases |
+
+## Financial insights and Gemini-ready context
+
+The additive insights foundation preserves the existing savings and shock APIs. It provides
+account-scoped recurring estimates, financial summaries, causal/deduplicated shock events,
+explicit reserve handling, allowlisted model input and read-only contribution calculations.
+It does not call Gemini or implement the independent Safety Checker.
+
+See [backend/docs/planning-foundation.md](backend/docs/planning-foundation.md) for interfaces,
+privacy/timing semantics, the original zero-capacity investigation and integration limits.
+
+```bash
+cd backend
+python -m unittest discover tests -v
+python -m planning.demo examples
+```
+
+[Normal example](backend/examples/normal.json) and
+[paid veterinary emergency example](backend/examples/vet_paid.json) share one synthetic ledger.
+Additional examples cover the pre-event date, an unpaid bill and an anticipated expense.
+The original five customers and React placeholder remain unchanged.
+
+## Expanded banking features and persisted goal review
+
+The next phase adds budgets, a reconciled 7/14/30-day bill calendar, savings review evidence,
+personalised insights, customer-scoped SQLite feedback/corrections and explicit goal proposal
+approval. Simulated subscription states and four constrained read-only search templates are
+also available through `planning.service.BankingService`.
+
+See [backend/docs/banking-phase2.md](backend/docs/banking-phase2.md) for public interfaces,
+state transitions, model schema 1.1, privacy boundaries and the remaining React/API handoff.
+Run `python -m planning.banking_demo examples` from `backend` to regenerate the existing-persona
+internal banking and Gemini-context examples. No Gemini call or full Safety Checker is included.
+
+## Run the integrated banking app
+
+The React screens now use the local FastAPI service and existing SQLite-backed banking
+facade. See [backend/docs/frontend-integration.md](backend/docs/frontend-integration.md)
+for setup, all REST endpoints, customer/scenario isolation, test coverage and AI boundaries.
+
+```bash
+# From repository root, terminal 1 (activate .venv first)
+python -m pip install -r "westpac-goal-planner 2/backend/requirements.txt"
+cd "westpac-goal-planner 2/backend"
+python -m uvicorn api:app --host 127.0.0.1 --port 8000
+
+# Terminal 2
+cd "westpac-goal-planner 2/frontend"
+npm install --cache .runtime/npm-cache
+npm run dev
+```
+
+Open http://localhost:5173, select a synthetic customer, then use the labelled Demo Scenario
+Selector to demonstrate the normal, paid-vet or unpaid-vet shared ledger. Mock selection is
+not production authentication. Gemini and the independent checker are not connected; the
+UI offers manual goal changes and does not bypass validation for AI proposals.

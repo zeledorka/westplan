@@ -1,5 +1,5 @@
 import Icon, { BrandMark } from './Icon.jsx'
-import { money, useBank } from '../data/mockBank.js'
+import { money, useBank, day } from '../data/mockBank.js'
 
 export const TABS = [
   { id: 'home', label: 'Home' },
@@ -114,7 +114,7 @@ export function Bar({ label, value, pct, color }) {
 }
 
 export function MoneyTools({ onOpenGoals }) {
-  const { cashFlow, categoriesTotal } = useBank()
+  const { cashFlow, categoriesTotal, openTool } = useBank()
   const max = Math.max(cashFlow.expenses, cashFlow.income, 1)
   return (
     <div className="grid2">
@@ -125,26 +125,26 @@ export function MoneyTools({ onOpenGoals }) {
       </button>
       <div className="card tool">
         <span className="eyebrow">Cash flow</span>
-        <b className="big">{money(cashFlow.income - cashFlow.expenses)}</b>
-        <p className="muted small">Since {cashFlow.since} from<br />All accounts</p>
+        <b className="big">{money(cashFlow.net)}</b>
+        <p className="muted small">Since {day(cashFlow.since)} from<br />All accounts</p>
         <Bar label="Expenses" value={cashFlow.expenses} pct={cashFlow.expenses / max * 100} color="#991ad6" />
         <Bar label="Income" value={cashFlow.income} pct={cashFlow.income / max * 100} color="#181b25" />
       </div>
-      <div className="card tool">
+      <button className="card tool" onClick={() => openTool('spending')}>
         <span className="eyebrow">Categories</span>
         <b className="big">{money(categoriesTotal)}</b>
-        <p className="muted small">Since {cashFlow.since} from<br />All accounts</p>
-      </div>
-      <div className="card tool">
+        <p className="muted small">Since {day(cashFlow.since)} from<br />All accounts</p>
+      </button>
+      <button className="card tool" onClick={() => openTool('bills')}>
         <span className="eyebrow">Bills calendar</span>
         <Icon name="calendar" size={44} color="var(--navy)" strokeWidth={1.400} />
         <p className="muted">Add, track and review your bills</p>
-      </div>
-      <div className="card tool">
+      </button>
+      <button className="card tool" onClick={() => openTool('budgets')}>
         <span className="eyebrow">Budget</span>
         <Icon name="tools" size={44} color="var(--navy)" strokeWidth={1.400} />
         <p className="muted">Track and plan your spending</p>
-      </div>
+      </button>
     </div>
   )
 }

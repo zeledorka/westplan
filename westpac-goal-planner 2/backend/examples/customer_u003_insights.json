@@ -1,0 +1,1783 @@
+{
+  "as_of": "2026-11-15",
+  "balances": [
+    {
+      "account_id": "u003-everyday",
+      "balance": 2011.57,
+      "designation_shortfall": 0,
+      "goal_available": 0.0,
+      "kind": "transaction",
+      "observed_on": "2026-11-15",
+      "protected": 0.0
+    },
+    {
+      "account_id": "u003-homeloan",
+      "balance": -402700.0,
+      "designation_shortfall": 0,
+      "goal_available": 0.0,
+      "kind": "loan",
+      "observed_on": "2026-11-15",
+      "protected": 0.0
+    },
+    {
+      "account_id": "u003-savings",
+      "balance": 25498.16,
+      "designation_shortfall": 0,
+      "goal_available": 0.0,
+      "kind": "savings",
+      "observed_on": "2026-11-15",
+      "protected": 0.0
+    }
+  ],
+  "bills_calendar": {
+    "as_of": "2026-11-15",
+    "assumption": "Overdue unpaid obligations included; estimated dates are not confirmed contracts.",
+    "items": [
+      {
+        "account_id": "u003-everyday",
+        "already_paid": true,
+        "amount_basis": "observed_posting",
+        "bill_id": "paid-u003-00509",
+        "category": "Utilities",
+        "confidence": "moderate",
+        "confirmed": false,
+        "date_kind": "observed_posting",
+        "essential": true,
+        "expected_amount": 226.02,
+        "expected_date": "2026-09-25",
+        "frequency": "other",
+        "merchant": "SYDNEY WATER",
+        "period_days": 92,
+        "recurrence_source": "source_flagged",
+        "source": "posted_transaction",
+        "status": "paid",
+        "subscription_id": "f7d1763442d8c0c32f1e"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": true,
+        "amount_basis": "observed_posting",
+        "bill_id": "paid-u003-00551",
+        "category": "Insurance",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "observed_posting",
+        "essential": true,
+        "expected_amount": 186.0,
+        "expected_date": "2026-10-19",
+        "frequency": "monthly",
+        "merchant": "AAMI HOME AND CAR INSURANCE",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "posted_transaction",
+        "status": "paid",
+        "subscription_id": "8d54cb529111da499bd3"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": true,
+        "amount_basis": "observed_posting",
+        "bill_id": "paid-u003-00555",
+        "category": "Utilities",
+        "confidence": "moderate",
+        "confirmed": false,
+        "date_kind": "observed_posting",
+        "essential": true,
+        "expected_amount": 345.04,
+        "expected_date": "2026-10-21",
+        "frequency": "other",
+        "merchant": "ORIGIN ENERGY",
+        "period_days": 91,
+        "recurrence_source": "source_flagged",
+        "source": "posted_transaction",
+        "status": "paid",
+        "subscription_id": "81b0bd48a707c06281ca"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": true,
+        "amount_basis": "observed_posting",
+        "bill_id": "paid-u003-00570",
+        "category": "Entertainment",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "observed_posting",
+        "essential": false,
+        "expected_amount": 95.0,
+        "expected_date": "2026-11-01",
+        "frequency": "monthly",
+        "merchant": "GLENMORE GOLF CLUB MEMBERSHIP",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "posted_transaction",
+        "status": "paid",
+        "subscription_id": "ce95249fd33324581f35"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": true,
+        "amount_basis": "observed_posting",
+        "bill_id": "paid-u003-00571",
+        "category": "Insurance",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "observed_posting",
+        "essential": true,
+        "expected_amount": 168.0,
+        "expected_date": "2026-11-02",
+        "frequency": "monthly",
+        "merchant": "HCF HEALTH INSURANCE",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "posted_transaction",
+        "status": "paid",
+        "subscription_id": "14d27b0fa9eb30d7b28e"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": true,
+        "amount_basis": "observed_posting",
+        "bill_id": "paid-u003-00574",
+        "category": "Loan repayments",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "observed_posting",
+        "essential": true,
+        "expected_amount": 2650.0,
+        "expected_date": "2026-11-05",
+        "frequency": "monthly",
+        "merchant": "HOME LOAN REPAYMENT",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "posted_transaction",
+        "status": "paid",
+        "subscription_id": "c53a946a2782dcf0b66d"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": true,
+        "amount_basis": "observed_posting",
+        "bill_id": "paid-u003-00576",
+        "category": "Subscriptions",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "observed_posting",
+        "essential": false,
+        "expected_amount": 25.0,
+        "expected_date": "2026-11-06",
+        "frequency": "monthly",
+        "merchant": "KAYO SPORTS",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "posted_transaction",
+        "status": "paid",
+        "subscription_id": "84ee1f2417ca8a5f39a3"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": true,
+        "amount_basis": "observed_posting",
+        "bill_id": "paid-u003-00580",
+        "category": "Utilities",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "observed_posting",
+        "essential": true,
+        "expected_amount": 79.99,
+        "expected_date": "2026-11-08",
+        "frequency": "monthly",
+        "merchant": "TPG INTERNET",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "posted_transaction",
+        "status": "paid",
+        "subscription_id": "3350d0cbe1f2ac022431"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": true,
+        "amount_basis": "observed_posting",
+        "bill_id": "paid-u003-00581",
+        "category": "Utilities",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "observed_posting",
+        "essential": true,
+        "expected_amount": 55.0,
+        "expected_date": "2026-11-08",
+        "frequency": "monthly",
+        "merchant": "OPTUS MOBILE",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "posted_transaction",
+        "status": "paid",
+        "subscription_id": "0b9a4fefcd89b4acd60e"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": true,
+        "amount_basis": "observed_posting",
+        "bill_id": "paid-u003-00585",
+        "category": "Subscriptions",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "observed_posting",
+        "essential": false,
+        "expected_amount": 18.99,
+        "expected_date": "2026-11-10",
+        "frequency": "monthly",
+        "merchant": "NETFLIX COM",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "posted_transaction",
+        "status": "paid",
+        "subscription_id": "448e5d5b93d349b180a6"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": true,
+        "amount_basis": "observed_posting",
+        "bill_id": "paid-u003-00589",
+        "category": "Housing",
+        "confidence": "moderate",
+        "confirmed": false,
+        "date_kind": "observed_posting",
+        "essential": true,
+        "expected_amount": 520.0,
+        "expected_date": "2026-11-12",
+        "frequency": "other",
+        "merchant": "PENRITH CITY COUNCIL RATES",
+        "period_days": 92,
+        "recurrence_source": "source_flagged",
+        "source": "posted_transaction",
+        "status": "paid",
+        "subscription_id": "3b6d59bfddfb46a93ed2"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": true,
+        "amount_basis": "observed_posting",
+        "bill_id": "paid-u003-00590",
+        "category": "Subscriptions",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "observed_posting",
+        "essential": false,
+        "expected_amount": 13.99,
+        "expected_date": "2026-11-14",
+        "frequency": "monthly",
+        "merchant": "SPOTIFY",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "posted_transaction",
+        "status": "paid",
+        "subscription_id": "c1eccebf701925ee076e"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": false,
+        "amount_basis": "recent_median",
+        "bill_id": "657411aa7bf3aa7cf61b",
+        "category": "Insurance",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "estimated",
+        "essential": true,
+        "expected_amount": 186.0,
+        "expected_date": "2026-11-19",
+        "frequency": "monthly",
+        "merchant": "AAMI HOME AND CAR INSURANCE",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "recurring_estimate",
+        "status": "upcoming",
+        "subscription_id": "8d54cb529111da499bd3"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": false,
+        "amount_basis": "recent_median",
+        "bill_id": "2eb27e3e7ca30bbc774e",
+        "category": "Entertainment",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "estimated",
+        "essential": false,
+        "expected_amount": 95.0,
+        "expected_date": "2026-12-02",
+        "frequency": "monthly",
+        "merchant": "GLENMORE GOLF CLUB MEMBERSHIP",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "recurring_estimate",
+        "status": "upcoming",
+        "subscription_id": "ce95249fd33324581f35"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": false,
+        "amount_basis": "recent_median",
+        "bill_id": "eca6f6d65846509d7000",
+        "category": "Insurance",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "estimated",
+        "essential": true,
+        "expected_amount": 168.0,
+        "expected_date": "2026-12-03",
+        "frequency": "monthly",
+        "merchant": "HCF HEALTH INSURANCE",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "recurring_estimate",
+        "status": "upcoming",
+        "subscription_id": "14d27b0fa9eb30d7b28e"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": false,
+        "amount_basis": "recent_median",
+        "bill_id": "20bbfa53f2a4b03cd489",
+        "category": "Loan repayments",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "estimated",
+        "essential": true,
+        "expected_amount": 2650.0,
+        "expected_date": "2026-12-06",
+        "frequency": "monthly",
+        "merchant": "HOME LOAN REPAYMENT",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "recurring_estimate",
+        "status": "upcoming",
+        "subscription_id": "c53a946a2782dcf0b66d"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": false,
+        "amount_basis": "recent_median",
+        "bill_id": "53b9614a9c8d71b2b7d8",
+        "category": "Subscriptions",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "estimated",
+        "essential": false,
+        "expected_amount": 25.0,
+        "expected_date": "2026-12-07",
+        "frequency": "monthly",
+        "merchant": "KAYO SPORTS",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "recurring_estimate",
+        "status": "upcoming",
+        "subscription_id": "84ee1f2417ca8a5f39a3"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": false,
+        "amount_basis": "recent_median",
+        "bill_id": "7ab3cbfc41e5a4497f8a",
+        "category": "Utilities",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "estimated",
+        "essential": true,
+        "expected_amount": 55.0,
+        "expected_date": "2026-12-09",
+        "frequency": "monthly",
+        "merchant": "OPTUS MOBILE",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "recurring_estimate",
+        "status": "upcoming",
+        "subscription_id": "0b9a4fefcd89b4acd60e"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": false,
+        "amount_basis": "recent_median",
+        "bill_id": "a383eb488ee4bf1abf9c",
+        "category": "Utilities",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "estimated",
+        "essential": true,
+        "expected_amount": 79.99,
+        "expected_date": "2026-12-09",
+        "frequency": "monthly",
+        "merchant": "TPG INTERNET",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "recurring_estimate",
+        "status": "upcoming",
+        "subscription_id": "3350d0cbe1f2ac022431"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": false,
+        "amount_basis": "recent_median",
+        "bill_id": "48af5ac47360f7fdefbd",
+        "category": "Subscriptions",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "estimated",
+        "essential": false,
+        "expected_amount": 18.99,
+        "expected_date": "2026-12-11",
+        "frequency": "monthly",
+        "merchant": "NETFLIX COM",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "recurring_estimate",
+        "status": "upcoming",
+        "subscription_id": "448e5d5b93d349b180a6"
+      },
+      {
+        "account_id": "u003-everyday",
+        "already_paid": false,
+        "amount_basis": "recent_median",
+        "bill_id": "d642528a6fc1487ea882",
+        "category": "Subscriptions",
+        "confidence": "higher",
+        "confirmed": false,
+        "date_kind": "estimated",
+        "essential": false,
+        "expected_amount": 13.99,
+        "expected_date": "2026-12-15",
+        "frequency": "monthly",
+        "merchant": "SPOTIFY",
+        "period_days": 31,
+        "recurrence_source": "source_flagged",
+        "source": "recurring_estimate",
+        "status": "upcoming",
+        "subscription_id": "c1eccebf701925ee076e"
+      }
+    ],
+    "summary_days": {
+      "14": {
+        "anticipated": 0,
+        "confirmed_due": 0,
+        "estimated_due": 186.0,
+        "total_expected": 186.0
+      },
+      "30": {
+        "anticipated": 0,
+        "confirmed_due": 0,
+        "estimated_due": 3291.97,
+        "total_expected": 3291.97
+      },
+      "7": {
+        "anticipated": 0,
+        "confirmed_due": 0,
+        "estimated_due": 186.0,
+        "total_expected": 186.0
+      }
+    }
+  },
+  "budgets": {
+    "approaching_threshold": 0.8,
+    "as_of": "2026-11-15",
+    "assumption": "Monthly budget remaining is not available cash.",
+    "categories": [
+      {
+        "category": "Eating out",
+        "discretionary_spent": 96.26,
+        "essential_spent": 0,
+        "monthly_limit": 250.0,
+        "protected": false,
+        "remaining": 153.74,
+        "remaining_is_cash_available": false,
+        "source": "demo_default",
+        "spent": 96.26,
+        "status": "within_limit",
+        "upcoming_obligations_this_month": 0
+      },
+      {
+        "category": "Entertainment",
+        "discretionary_spent": 219.23,
+        "essential_spent": 0,
+        "monthly_limit": null,
+        "protected": false,
+        "remaining": null,
+        "remaining_is_cash_available": false,
+        "source": "unset",
+        "spent": 219.23,
+        "status": "unbudgeted",
+        "upcoming_obligations_this_month": 0
+      },
+      {
+        "category": "Groceries",
+        "discretionary_spent": 0,
+        "essential_spent": 386.64,
+        "monthly_limit": null,
+        "protected": false,
+        "remaining": null,
+        "remaining_is_cash_available": false,
+        "source": "unset",
+        "spent": 386.64,
+        "status": "unbudgeted",
+        "upcoming_obligations_this_month": 0
+      },
+      {
+        "category": "Housing",
+        "discretionary_spent": 0,
+        "essential_spent": 520.0,
+        "monthly_limit": null,
+        "protected": false,
+        "remaining": null,
+        "remaining_is_cash_available": false,
+        "source": "unset",
+        "spent": 520.0,
+        "status": "unbudgeted",
+        "upcoming_obligations_this_month": 0
+      },
+      {
+        "category": "Insurance",
+        "discretionary_spent": 0,
+        "essential_spent": 168.0,
+        "monthly_limit": null,
+        "protected": false,
+        "remaining": null,
+        "remaining_is_cash_available": false,
+        "source": "unset",
+        "spent": 168.0,
+        "status": "unbudgeted",
+        "upcoming_obligations_this_month": 186.0
+      },
+      {
+        "category": "Loan repayments",
+        "discretionary_spent": 0,
+        "essential_spent": 2650.0,
+        "monthly_limit": null,
+        "protected": false,
+        "remaining": null,
+        "remaining_is_cash_available": false,
+        "source": "unset",
+        "spent": 2650.0,
+        "status": "unbudgeted",
+        "upcoming_obligations_this_month": 0
+      },
+      {
+        "category": "Shopping",
+        "discretionary_spent": 180.17,
+        "essential_spent": 0,
+        "monthly_limit": null,
+        "protected": false,
+        "remaining": null,
+        "remaining_is_cash_available": false,
+        "source": "unset",
+        "spent": 180.17,
+        "status": "unbudgeted",
+        "upcoming_obligations_this_month": 0
+      },
+      {
+        "category": "Subscriptions",
+        "discretionary_spent": 57.98,
+        "essential_spent": 0,
+        "monthly_limit": null,
+        "protected": false,
+        "remaining": null,
+        "remaining_is_cash_available": false,
+        "source": "unset",
+        "spent": 57.98,
+        "status": "unbudgeted",
+        "upcoming_obligations_this_month": 0
+      },
+      {
+        "category": "Transport",
+        "discretionary_spent": 0,
+        "essential_spent": 142.57,
+        "monthly_limit": null,
+        "protected": false,
+        "remaining": null,
+        "remaining_is_cash_available": false,
+        "source": "unset",
+        "spent": 142.57,
+        "status": "unbudgeted",
+        "upcoming_obligations_this_month": 0
+      },
+      {
+        "category": "Utilities",
+        "discretionary_spent": 0,
+        "essential_spent": 134.99,
+        "monthly_limit": null,
+        "protected": false,
+        "remaining": null,
+        "remaining_is_cash_available": false,
+        "source": "unset",
+        "spent": 134.99,
+        "status": "unbudgeted",
+        "upcoming_obligations_this_month": 0
+      }
+    ],
+    "month": "2026-11"
+  },
+  "cashflow": {
+    "average_surplus": 177.75,
+    "month_to_date_net": -1370.58,
+    "monthly": [
+      {
+        "discretionary": 1574.28,
+        "essential": 4570.04,
+        "income": 6251.25,
+        "month": "2025-12",
+        "net": 106.93
+      },
+      {
+        "discretionary": 1143.44,
+        "essential": 5051.46,
+        "income": 9343.39,
+        "month": "2026-01",
+        "net": 3148.49
+      },
+      {
+        "discretionary": 1307.26,
+        "essential": 5223.51,
+        "income": 6255.54,
+        "month": "2026-02",
+        "net": -275.23
+      },
+      {
+        "discretionary": 1203.84,
+        "essential": 5050.47,
+        "income": 6257.7,
+        "month": "2026-03",
+        "net": 3.39
+      },
+      {
+        "discretionary": 1198.15,
+        "essential": 5112.36,
+        "income": 6259.87,
+        "month": "2026-04",
+        "net": -50.64
+      },
+      {
+        "discretionary": 1128.24,
+        "essential": 4881.96,
+        "income": 6262.04,
+        "month": "2026-05",
+        "net": 251.84
+      },
+      {
+        "discretionary": 926.54,
+        "essential": 5876.59,
+        "income": 6264.22,
+        "month": "2026-06",
+        "net": -538.91
+      },
+      {
+        "discretionary": 1396.23,
+        "essential": 4664.29,
+        "income": 6266.42,
+        "month": "2026-07",
+        "net": 205.9
+      },
+      {
+        "discretionary": 1149.04,
+        "essential": 5191.34,
+        "income": 9358.61,
+        "month": "2026-08",
+        "net": 3018.23
+      },
+      {
+        "discretionary": 1436.34,
+        "essential": 8355.32,
+        "income": 6270.82,
+        "month": "2026-09",
+        "net": -3520.84
+      },
+      {
+        "discretionary": 1127.75,
+        "essential": 5539.24,
+        "income": 6273.04,
+        "month": "2026-10",
+        "net": -393.95
+      }
+    ],
+    "runway": {
+      "account_id": "u003-everyday",
+      "balance": 2011.57,
+      "below_default_buffer": false,
+      "buffer": 200,
+      "payday": "2026-11-21",
+      "projected_balance": 1825.57,
+      "recurring_bills_due": 186.0,
+      "window_end": "2026-11-20"
+    },
+    "savings_capacity": {
+      "centre": 106.56,
+      "comfortable": 0.0,
+      "ewma_w": 106.56,
+      "income_cap": 2047.17,
+      "mean_discretionary": 1235.56,
+      "mean_income": 6823.9,
+      "mean_w": 252.3,
+      "params": {
+        "alpha": 0.2,
+        "ddof": 1,
+        "ewma_span": 6,
+        "gamma": 0.3,
+        "window": 3
+      },
+      "sigma_w": 531.89,
+      "stretch": 0.0
+    }
+  },
+  "currency": "AUD",
+  "income": {
+    "change_vs_earlier_months": 655.77,
+    "confidence": "higher",
+    "confidence_basis": "History length and monthly variability; not a calibrated probability.",
+    "irregular_monthly_observed": 0.0,
+    "monthly_average": 6823.9,
+    "recent_three_month_average": 7300.82,
+    "regular_monthly_estimate": 6823.9,
+    "variability_cv": 0.1831
+  },
+  "observation": {
+    "complete_months": 11,
+    "first": "2025-11-16",
+    "last": "2026-11-15",
+    "transactions": 592
+  },
+  "opportunities": [
+    {
+      "assumption": "Review opportunity only; reducibility and cancellation terms unknown.",
+      "category": "Eating out",
+      "guaranteed_savings": 0,
+      "kind": "discretionary_review",
+      "observed_monthly_spend": 428.58,
+      "potentially_reducible_recurring_monthly": 0
+    },
+    {
+      "assumption": "Review opportunity only; reducibility and cancellation terms unknown.",
+      "category": "Entertainment",
+      "guaranteed_savings": 0,
+      "kind": "discretionary_review",
+      "observed_monthly_spend": 336.46,
+      "potentially_reducible_recurring_monthly": 93.28
+    },
+    {
+      "assumption": "Review opportunity only; reducibility and cancellation terms unknown.",
+      "category": "Shopping",
+      "guaranteed_savings": 0,
+      "kind": "discretionary_review",
+      "observed_monthly_spend": 412.53,
+      "potentially_reducible_recurring_monthly": 0
+    },
+    {
+      "assumption": "Review opportunity only; reducibility and cancellation terms unknown.",
+      "category": "Subscriptions",
+      "guaranteed_savings": 0,
+      "kind": "discretionary_review",
+      "observed_monthly_spend": 57.98,
+      "potentially_reducible_recurring_monthly": 56.93
+    }
+  ],
+  "personalised_insights": [
+    {
+      "actionable": false,
+      "category": "Groceries",
+      "confidence": "moderate",
+      "explanation": "Groceries spending increased compared with earlier complete months.",
+      "insight_id": "7b01a98df9c17af8d4dd75b4",
+      "observation_period": {
+        "end": "2026-11-15",
+        "start": "2025-11-16"
+      },
+      "severity": "info",
+      "type": "spending_increase",
+      "values": {
+        "monthly_average": 957.18,
+        "recent_change": 295.95
+      }
+    },
+    {
+      "actionable": false,
+      "category": "Shopping",
+      "confidence": "moderate",
+      "explanation": "Shopping spending increased compared with earlier complete months.",
+      "insight_id": "ce2d64c51a41891b6c9a30c1",
+      "observation_period": {
+        "end": "2026-11-15",
+        "start": "2025-11-16"
+      },
+      "severity": "info",
+      "type": "spending_increase",
+      "values": {
+        "monthly_average": 412.53,
+        "recent_change": 89.33
+      }
+    },
+    {
+      "actionable": false,
+      "category": "Utilities",
+      "confidence": "moderate",
+      "explanation": "Utilities spending increased compared with earlier complete months.",
+      "insight_id": "292bb096a1f5742b5c644fd3",
+      "observation_period": {
+        "end": "2026-11-15",
+        "start": "2025-11-16"
+      },
+      "severity": "info",
+      "type": "spending_increase",
+      "values": {
+        "monthly_average": 372.34,
+        "recent_change": 118.46
+      }
+    },
+    {
+      "actionable": true,
+      "category": "Transport",
+      "confidence": "moderate",
+      "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
+      "insight_id": "45c9905515dc5ad481541736",
+      "observation_period": {
+        "end": "2026-11-15",
+        "start": "2025-11-16"
+      },
+      "severity": "advisory",
+      "type": "unusual_expense",
+      "values": {
+        "detector_count": 1,
+        "event_amount": 378.86,
+        "event_date": "2026-03-02"
+      }
+    },
+    {
+      "actionable": true,
+      "category": "Health",
+      "confidence": "moderate",
+      "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
+      "insight_id": "2da6bf25a402e27e24a59673",
+      "observation_period": {
+        "end": "2026-11-15",
+        "start": "2025-11-16"
+      },
+      "severity": "advisory",
+      "type": "unusual_expense",
+      "values": {
+        "detector_count": 1,
+        "event_amount": 120.45,
+        "event_date": "2026-03-23"
+      }
+    },
+    {
+      "actionable": true,
+      "category": "Entertainment",
+      "confidence": "moderate",
+      "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
+      "insight_id": "fd1cc0138cc117d21a40266c",
+      "observation_period": {
+        "end": "2026-11-15",
+        "start": "2025-11-16"
+      },
+      "severity": "advisory",
+      "type": "unusual_expense",
+      "values": {
+        "detector_count": 1,
+        "event_amount": 175.87,
+        "event_date": "2026-04-29"
+      }
+    },
+    {
+      "actionable": true,
+      "category": "Transport",
+      "confidence": "moderate",
+      "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
+      "insight_id": "71175d1f2f4cf5dc8a7dbf41",
+      "observation_period": {
+        "end": "2026-11-15",
+        "start": "2025-11-16"
+      },
+      "severity": "advisory",
+      "type": "unusual_expense",
+      "values": {
+        "detector_count": 2,
+        "event_amount": 890.0,
+        "event_date": "2026-06-17"
+      }
+    },
+    {
+      "actionable": true,
+      "category": "Transport",
+      "confidence": "moderate",
+      "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
+      "insight_id": "b3e24f6d7684c11951a4259f",
+      "observation_period": {
+        "end": "2026-11-15",
+        "start": "2025-11-16"
+      },
+      "severity": "advisory",
+      "type": "unusual_expense",
+      "values": {
+        "detector_count": 1,
+        "event_amount": 3450.0,
+        "event_date": "2026-09-03"
+      }
+    },
+    {
+      "actionable": true,
+      "category": "Eating out",
+      "confidence": "limited",
+      "explanation": "Observed discretionary Eating out spending offers an area to review; no saving is guaranteed.",
+      "insight_id": "ef4e8eb46aa21c1d0f230d5d",
+      "observation_period": {
+        "end": "2026-11-15",
+        "start": "2025-11-16"
+      },
+      "severity": "info",
+      "type": "savings_review",
+      "values": {
+        "observed_monthly_spend": 428.58,
+        "requires_confirmation": true
+      }
+    },
+    {
+      "actionable": true,
+      "category": "Shopping",
+      "confidence": "limited",
+      "explanation": "Observed discretionary Shopping spending offers an area to review; no saving is guaranteed.",
+      "insight_id": "7ed33547cfb31e419c1d87b0",
+      "observation_period": {
+        "end": "2026-11-15",
+        "start": "2025-11-16"
+      },
+      "severity": "info",
+      "type": "savings_review",
+      "values": {
+        "observed_monthly_spend": 412.53,
+        "requires_confirmation": true
+      }
+    },
+    {
+      "actionable": true,
+      "category": "Subscriptions",
+      "confidence": "limited",
+      "explanation": "Observed discretionary Subscriptions spending offers an area to review; no saving is guaranteed.",
+      "insight_id": "1a55da7c4d71f2312f8de4b8",
+      "observation_period": {
+        "end": "2026-11-15",
+        "start": "2025-11-16"
+      },
+      "severity": "info",
+      "type": "savings_review",
+      "values": {
+        "observed_monthly_spend": 57.98,
+        "requires_confirmation": true
+      }
+    }
+  ],
+  "recurring": [
+    {
+      "account_id": "u003-everyday",
+      "amount_basis": "recent_median",
+      "category": "Insurance",
+      "confirmed_contract": false,
+      "essential": true,
+      "last_observed": "2026-10-19",
+      "merchant": "AAMI HOME AND CAR INSURANCE",
+      "next_expected": "2026-11-19",
+      "observations": 12,
+      "period_days": 31,
+      "recurrence": "source_flagged",
+      "typical_amount": 186.0,
+      "upcoming_dates": [
+        "2026-11-19"
+      ]
+    },
+    {
+      "account_id": "u003-everyday",
+      "amount_basis": "recent_median",
+      "category": "Entertainment",
+      "confirmed_contract": false,
+      "essential": false,
+      "last_observed": "2026-11-01",
+      "merchant": "GLENMORE GOLF CLUB MEMBERSHIP",
+      "next_expected": "2026-12-02",
+      "observations": 12,
+      "period_days": 31,
+      "recurrence": "source_flagged",
+      "typical_amount": 95.0,
+      "upcoming_dates": [
+        "2026-12-02"
+      ]
+    },
+    {
+      "account_id": "u003-everyday",
+      "amount_basis": "recent_median",
+      "category": "Insurance",
+      "confirmed_contract": false,
+      "essential": true,
+      "last_observed": "2026-11-02",
+      "merchant": "HCF HEALTH INSURANCE",
+      "next_expected": "2026-12-03",
+      "observations": 12,
+      "period_days": 31,
+      "recurrence": "source_flagged",
+      "typical_amount": 168.0,
+      "upcoming_dates": [
+        "2026-12-03"
+      ]
+    },
+    {
+      "account_id": "u003-everyday",
+      "amount_basis": "recent_median",
+      "category": "Loan repayments",
+      "confirmed_contract": false,
+      "essential": true,
+      "last_observed": "2026-11-05",
+      "merchant": "HOME LOAN REPAYMENT",
+      "next_expected": "2026-12-06",
+      "observations": 12,
+      "period_days": 31,
+      "recurrence": "source_flagged",
+      "typical_amount": 2650.0,
+      "upcoming_dates": [
+        "2026-12-06"
+      ]
+    },
+    {
+      "account_id": "u003-everyday",
+      "amount_basis": "recent_median",
+      "category": "Subscriptions",
+      "confirmed_contract": false,
+      "essential": false,
+      "last_observed": "2026-11-06",
+      "merchant": "KAYO SPORTS",
+      "next_expected": "2026-12-07",
+      "observations": 12,
+      "period_days": 31,
+      "recurrence": "source_flagged",
+      "typical_amount": 25.0,
+      "upcoming_dates": [
+        "2026-12-07"
+      ]
+    },
+    {
+      "account_id": "u003-everyday",
+      "amount_basis": "recent_median",
+      "category": "Utilities",
+      "confirmed_contract": false,
+      "essential": true,
+      "last_observed": "2026-11-08",
+      "merchant": "TPG INTERNET",
+      "next_expected": "2026-12-09",
+      "observations": 12,
+      "period_days": 31,
+      "recurrence": "source_flagged",
+      "typical_amount": 79.99,
+      "upcoming_dates": [
+        "2026-12-09"
+      ]
+    },
+    {
+      "account_id": "u003-everyday",
+      "amount_basis": "recent_median",
+      "category": "Utilities",
+      "confirmed_contract": false,
+      "essential": true,
+      "last_observed": "2026-11-08",
+      "merchant": "OPTUS MOBILE",
+      "next_expected": "2026-12-09",
+      "observations": 12,
+      "period_days": 31,
+      "recurrence": "source_flagged",
+      "typical_amount": 55.0,
+      "upcoming_dates": [
+        "2026-12-09"
+      ]
+    },
+    {
+      "account_id": "u003-everyday",
+      "amount_basis": "recent_median",
+      "category": "Subscriptions",
+      "confirmed_contract": false,
+      "essential": false,
+      "last_observed": "2026-11-10",
+      "merchant": "NETFLIX COM",
+      "next_expected": "2026-12-11",
+      "observations": 12,
+      "period_days": 31,
+      "recurrence": "source_flagged",
+      "typical_amount": 18.99,
+      "upcoming_dates": [
+        "2026-12-11"
+      ]
+    },
+    {
+      "account_id": "u003-everyday",
+      "amount_basis": "recent_median",
+      "category": "Subscriptions",
+      "confirmed_contract": false,
+      "essential": false,
+      "last_observed": "2026-11-14",
+      "merchant": "SPOTIFY",
+      "next_expected": "2026-12-15",
+      "observations": 12,
+      "period_days": 31,
+      "recurrence": "source_flagged",
+      "typical_amount": 13.99,
+      "upcoming_dates": [
+        "2026-12-15"
+      ]
+    },
+    {
+      "account_id": "u003-everyday",
+      "amount_basis": "recent_median",
+      "category": "Utilities",
+      "confirmed_contract": false,
+      "essential": true,
+      "last_observed": "2026-09-25",
+      "merchant": "SYDNEY WATER",
+      "next_expected": null,
+      "observations": 4,
+      "period_days": 92,
+      "recurrence": "source_flagged",
+      "typical_amount": 239.51,
+      "upcoming_dates": []
+    },
+    {
+      "account_id": "u003-everyday",
+      "amount_basis": "recent_median",
+      "category": "Utilities",
+      "confirmed_contract": false,
+      "essential": true,
+      "last_observed": "2026-10-21",
+      "merchant": "ORIGIN ENERGY",
+      "next_expected": null,
+      "observations": 4,
+      "period_days": 91,
+      "recurrence": "source_flagged",
+      "typical_amount": 433.3,
+      "upcoming_dates": []
+    },
+    {
+      "account_id": "u003-everyday",
+      "amount_basis": "recent_median",
+      "category": "Housing",
+      "confirmed_contract": false,
+      "essential": true,
+      "last_observed": "2026-11-12",
+      "merchant": "PENRITH CITY COUNCIL RATES",
+      "next_expected": null,
+      "observations": 4,
+      "period_days": 92,
+      "recurrence": "source_flagged",
+      "typical_amount": 520.0,
+      "upcoming_dates": []
+    }
+  ],
+  "savings_finder": [
+    {
+      "assumption": "Review opportunity only; reducibility and cancellation terms unknown.",
+      "category": "Eating out",
+      "confidence": "limited",
+      "essential": false,
+      "evidence": {
+        "monthly_discretionary": 428.58
+      },
+      "guaranteed_savings": 0,
+      "kind": "discretionary_review",
+      "monthly_savings_range": {
+        "maximum": 0,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 428.58,
+      "opportunity_id": "dfcc790dbb071210ecff",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "No reduction assumed without review."
+    },
+    {
+      "assumption": "Review opportunity only; reducibility and cancellation terms unknown.",
+      "category": "Entertainment",
+      "confidence": "limited",
+      "essential": false,
+      "evidence": {
+        "monthly_discretionary": 336.46
+      },
+      "guaranteed_savings": 0,
+      "kind": "discretionary_review",
+      "monthly_savings_range": {
+        "maximum": 0,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 336.46,
+      "opportunity_id": "ac6ca0e41a4ed76d7e6c",
+      "potentially_reducible_recurring_monthly": 93.28,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "No reduction assumed without review."
+    },
+    {
+      "assumption": "Review opportunity only; reducibility and cancellation terms unknown.",
+      "category": "Shopping",
+      "confidence": "limited",
+      "essential": false,
+      "evidence": {
+        "monthly_discretionary": 412.53
+      },
+      "guaranteed_savings": 0,
+      "kind": "discretionary_review",
+      "monthly_savings_range": {
+        "maximum": 0,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 412.53,
+      "opportunity_id": "558b01ac11c257e82e90",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "No reduction assumed without review."
+    },
+    {
+      "assumption": "Review opportunity only; reducibility and cancellation terms unknown.",
+      "category": "Subscriptions",
+      "confidence": "limited",
+      "essential": false,
+      "evidence": {
+        "monthly_discretionary": 57.98
+      },
+      "guaranteed_savings": 0,
+      "kind": "discretionary_review",
+      "monthly_savings_range": {
+        "maximum": 0,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 57.98,
+      "opportunity_id": "7285d71846724963daf2",
+      "potentially_reducible_recurring_monthly": 56.93,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "No reduction assumed without review."
+    },
+    {
+      "assumption": "Conditional review only; opportunities overlap and must not be added together.",
+      "category": "Eating out",
+      "confidence": "moderate",
+      "essential": false,
+      "evidence": {
+        "minimum_observed": 269.87,
+        "monthly_average": 428.58,
+        "months": 11
+      },
+      "guaranteed_savings": 0,
+      "kind": "consistent_discretionary_spending",
+      "monthly_savings_range": {
+        "maximum": 158.71,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 158.71,
+      "opportunity_id": "4c97c84aa1f103f69764",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+    },
+    {
+      "assumption": "Conditional review only; opportunities overlap and must not be added together.",
+      "category": "Eating out",
+      "confidence": "moderate",
+      "essential": false,
+      "evidence": {
+        "minimum_observed": 269.87,
+        "monthly_average": 428.58,
+        "monthly_std": 119.4,
+        "months": 11
+      },
+      "guaranteed_savings": 0,
+      "kind": "variable_discretionary_spending",
+      "monthly_savings_range": {
+        "maximum": 158.71,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 158.71,
+      "opportunity_id": "2df5a1b2b02274179a42",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+    },
+    {
+      "assumption": "Conditional review only; opportunities overlap and must not be added together.",
+      "category": "Entertainment",
+      "confidence": "moderate",
+      "essential": false,
+      "evidence": {
+        "minimum_observed": 139.48,
+        "monthly_average": 336.46,
+        "months": 11
+      },
+      "guaranteed_savings": 0,
+      "kind": "consistent_discretionary_spending",
+      "monthly_savings_range": {
+        "maximum": 196.98,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 196.98,
+      "opportunity_id": "90ec4bf39603c397acda",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+    },
+    {
+      "assumption": "Conditional review only; opportunities overlap and must not be added together.",
+      "category": "Entertainment",
+      "confidence": "moderate",
+      "essential": false,
+      "evidence": {
+        "minimum_observed": 139.48,
+        "monthly_average": 336.46,
+        "monthly_std": 130.67,
+        "months": 11
+      },
+      "guaranteed_savings": 0,
+      "kind": "variable_discretionary_spending",
+      "monthly_savings_range": {
+        "maximum": 196.98,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 196.98,
+      "opportunity_id": "94db78f959f8ebffb88d",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+    },
+    {
+      "assumption": "Conditional review only; opportunities overlap and must not be added together.",
+      "category": "Shopping",
+      "confidence": "moderate",
+      "essential": false,
+      "evidence": {
+        "minimum_observed": 133.38,
+        "monthly_average": 412.53,
+        "months": 11
+      },
+      "guaranteed_savings": 0,
+      "kind": "consistent_discretionary_spending",
+      "monthly_savings_range": {
+        "maximum": 279.15,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 279.15,
+      "opportunity_id": "1870d28f72655bc0a9f4",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+    },
+    {
+      "assumption": "Conditional review only; opportunities overlap and must not be added together.",
+      "category": "Shopping",
+      "confidence": "moderate",
+      "essential": false,
+      "evidence": {
+        "minimum_observed": 133.38,
+        "monthly_average": 412.53,
+        "monthly_std": 181.2,
+        "months": 11
+      },
+      "guaranteed_savings": 0,
+      "kind": "variable_discretionary_spending",
+      "monthly_savings_range": {
+        "maximum": 279.15,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 279.15,
+      "opportunity_id": "7a4e1d00c66a923b390c",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+    },
+    {
+      "assumption": "Conditional review only; opportunities overlap and must not be added together.",
+      "category": "Entertainment",
+      "confidence": "moderate",
+      "essential": false,
+      "evidence": {
+        "observations": 12,
+        "period_days": 31,
+        "typical_payment": 95.0
+      },
+      "guaranteed_savings": 0,
+      "kind": "recurring_discretionary_review",
+      "monthly_savings_range": {
+        "maximum": 93.28,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 93.28,
+      "opportunity_id": "5ac749f7d953eac04df2",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+    },
+    {
+      "assumption": "Conditional review only; opportunities overlap and must not be added together.",
+      "category": "Subscriptions",
+      "confidence": "moderate",
+      "essential": false,
+      "evidence": {
+        "observations": 12,
+        "period_days": 31,
+        "typical_payment": 25.0
+      },
+      "guaranteed_savings": 0,
+      "kind": "recurring_discretionary_review",
+      "monthly_savings_range": {
+        "maximum": 24.55,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 24.55,
+      "opportunity_id": "163770949690b7eab037",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+    },
+    {
+      "assumption": "Conditional review only; opportunities overlap and must not be added together.",
+      "category": "Subscriptions",
+      "confidence": "moderate",
+      "essential": false,
+      "evidence": {
+        "observations": 12,
+        "period_days": 31,
+        "typical_payment": 18.99
+      },
+      "guaranteed_savings": 0,
+      "kind": "recurring_discretionary_review",
+      "monthly_savings_range": {
+        "maximum": 18.65,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 18.65,
+      "opportunity_id": "f1f28e66f404b12e03d9",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+    },
+    {
+      "assumption": "Conditional review only; opportunities overlap and must not be added together.",
+      "category": "Subscriptions",
+      "confidence": "moderate",
+      "essential": false,
+      "evidence": {
+        "observations": 12,
+        "period_days": 31,
+        "typical_payment": 13.99
+      },
+      "guaranteed_savings": 0,
+      "kind": "recurring_discretionary_review",
+      "monthly_savings_range": {
+        "maximum": 13.74,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 13.74,
+      "opportunity_id": "e43fe6337e2cc4568e01",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+    },
+    {
+      "assumption": "Conditional review only; opportunities overlap and must not be added together.",
+      "category": "Subscriptions",
+      "confidence": "limited",
+      "essential": false,
+      "evidence": {
+        "distinct_series": 3,
+        "overlap_confirmed": false
+      },
+      "guaranteed_savings": 0,
+      "kind": "possible_service_overlap",
+      "monthly_savings_range": {
+        "maximum": 13.74,
+        "minimum": 0
+      },
+      "observed_monthly_spend": 13.74,
+      "opportunity_id": "6c7cc1fa533c081c7b22",
+      "potentially_reducible_recurring_monthly": 0,
+      "protected": false,
+      "requires_confirmation": true,
+      "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+    }
+  ],
+  "shocks": [
+    {
+      "categories": [
+        "Transport"
+      ],
+      "classification": "unusual_posted_spending",
+      "confirmed_hardship": false,
+      "date": "2026-03-02",
+      "detectors": [
+        "category_spike"
+      ],
+      "event_amount": 378.86,
+      "event_ref": "5344a0fc7559209a",
+      "evidence": [
+        {
+          "detector": "category_spike",
+          "score": 4.06,
+          "score_is_unbounded": false
+        }
+      ],
+      "impact": {
+        "additional_future_debit": 0,
+        "already_in_balance": true,
+        "observed_expense": 378.86,
+        "projected_buffer_shortfall": null,
+        "savings_capacity_effect": "Included only when event month is complete; no extra subtraction."
+      },
+      "observed_on": "2026-03-08",
+      "severity": "review",
+      "status": "posted",
+      "transaction_ids": [
+        "u003-00177",
+        "u003-00180",
+        "u003-00183",
+        "u003-00188",
+        "u003-00193"
+      ],
+      "uncertainty": "Statistical anomaly does not establish necessity, surprise, fraud or hardship.",
+      "unexpected_confirmed": false
+    },
+    {
+      "categories": [
+        "Health"
+      ],
+      "classification": "unusual_posted_spending",
+      "confirmed_hardship": false,
+      "date": "2026-03-23",
+      "detectors": [
+        "category_spike"
+      ],
+      "event_amount": 120.45,
+      "event_ref": "7908fa7776bbd618",
+      "evidence": [
+        {
+          "detector": "category_spike",
+          "score": 5.9,
+          "score_is_unbounded": false
+        }
+      ],
+      "impact": {
+        "additional_future_debit": 0,
+        "already_in_balance": true,
+        "observed_expense": 120.45,
+        "projected_buffer_shortfall": null,
+        "savings_capacity_effect": "Included only when event month is complete; no extra subtraction."
+      },
+      "observed_on": "2026-03-29",
+      "severity": "review",
+      "status": "posted",
+      "transaction_ids": [
+        "u003-00214",
+        "u003-00215"
+      ],
+      "uncertainty": "Statistical anomaly does not establish necessity, surprise, fraud or hardship.",
+      "unexpected_confirmed": false
+    },
+    {
+      "categories": [
+        "Entertainment"
+      ],
+      "classification": "unusual_posted_spending",
+      "confirmed_hardship": false,
+      "date": "2026-04-29",
+      "detectors": [
+        "category_spike"
+      ],
+      "event_amount": 175.87,
+      "event_ref": "0a61ddc4b9189311",
+      "evidence": [
+        {
+          "detector": "category_spike",
+          "score": 4.5,
+          "score_is_unbounded": false
+        }
+      ],
+      "impact": {
+        "additional_future_debit": 0,
+        "already_in_balance": true,
+        "observed_expense": 175.87,
+        "projected_buffer_shortfall": null,
+        "savings_capacity_effect": "Included only when event month is complete; no extra subtraction."
+      },
+      "observed_on": "2026-05-03",
+      "severity": "review",
+      "status": "posted",
+      "transaction_ids": [
+        "u003-00269",
+        "u003-00276"
+      ],
+      "uncertainty": "Statistical anomaly does not establish necessity, surprise, fraud or hardship.",
+      "unexpected_confirmed": false
+    },
+    {
+      "categories": [
+        "Transport"
+      ],
+      "classification": "unusual_posted_spending",
+      "confirmed_hardship": false,
+      "date": "2026-06-17",
+      "detectors": [
+        "large_single_spend",
+        "new_merchant_big_amount"
+      ],
+      "event_amount": 890.0,
+      "event_ref": "71216ee1a594e16f",
+      "evidence": [
+        {
+          "detector": "new_merchant_big_amount",
+          "score": 2.97,
+          "score_is_unbounded": false
+        },
+        {
+          "detector": "large_single_spend",
+          "score": 53.34,
+          "score_is_unbounded": false
+        }
+      ],
+      "impact": {
+        "additional_future_debit": 0,
+        "already_in_balance": true,
+        "observed_expense": 890.0,
+        "projected_buffer_shortfall": null,
+        "savings_capacity_effect": "Included only when event month is complete; no extra subtraction."
+      },
+      "observed_on": "2026-06-17",
+      "severity": "review",
+      "status": "posted",
+      "transaction_ids": [
+        "u003-00350"
+      ],
+      "uncertainty": "Statistical anomaly does not establish necessity, surprise, fraud or hardship.",
+      "unexpected_confirmed": false
+    },
+    {
+      "categories": [
+        "Transport"
+      ],
+      "classification": "unusual_posted_spending",
+      "confirmed_hardship": false,
+      "date": "2026-09-03",
+      "detectors": [
+        "large_single_spend"
+      ],
+      "event_amount": 3450.0,
+      "event_ref": "7b238366c3464f35",
+      "evidence": [
+        {
+          "detector": "large_single_spend",
+          "score": 178.46,
+          "score_is_unbounded": false
+        }
+      ],
+      "impact": {
+        "additional_future_debit": 0,
+        "already_in_balance": true,
+        "observed_expense": 3450.0,
+        "projected_buffer_shortfall": null,
+        "savings_capacity_effect": "Included only when event month is complete; no extra subtraction."
+      },
+      "observed_on": "2026-09-03",
+      "severity": "review",
+      "status": "posted",
+      "transaction_ids": [
+        "u003-00475"
+      ],
+      "uncertainty": "Statistical anomaly does not establish necessity, surprise, fraud or hardship.",
+      "unexpected_confirmed": false
+    }
+  ],
+  "spending": {
+    "categories": [
+      {
+        "category": "Eating out",
+        "monthly_discretionary": 428.58,
+        "monthly_total": 428.58,
+        "recent_change": 8.76
+      },
+      {
+        "category": "Entertainment",
+        "monthly_discretionary": 336.46,
+        "monthly_total": 336.46,
+        "recent_change": -216.68
+      },
+      {
+        "category": "Groceries",
+        "monthly_discretionary": 0.0,
+        "monthly_total": 957.18,
+        "recent_change": 295.95
+      },
+      {
+        "category": "Health",
+        "monthly_discretionary": 0.0,
+        "monthly_total": 88.4,
+        "recent_change": 10.09
+      },
+      {
+        "category": "Housing",
+        "monthly_discretionary": 0.0,
+        "monthly_total": 141.82,
+        "recent_change": -156.0
+      },
+      {
+        "category": "Insurance",
+        "monthly_discretionary": 0.0,
+        "monthly_total": 354.0,
+        "recent_change": 0.0
+      },
+      {
+        "category": "Loan repayments",
+        "monthly_discretionary": 0.0,
+        "monthly_total": 2650.0,
+        "recent_change": 0.0
+      },
+      {
+        "category": "Shopping",
+        "monthly_discretionary": 412.53,
+        "monthly_total": 412.53,
+        "recent_change": 89.33
+      },
+      {
+        "category": "Subscriptions",
+        "monthly_discretionary": 57.98,
+        "monthly_total": 57.98,
+        "recent_change": -0.0
+      },
+      {
+        "category": "Transport",
+        "monthly_discretionary": 0.0,
+        "monthly_total": 846.86,
+        "recent_change": -126.99
+      },
+      {
+        "category": "Utilities",
+        "monthly_discretionary": 0.0,
+        "monthly_total": 372.34,
+        "recent_change": 118.46
+      }
+    ],
+    "monthly_discretionary": 1235.56,
+    "monthly_essential": 5410.6
+  },
+  "uncertainty": [
+    "Complete months inferred from transaction boundary dates, not statement coverage.",
+    "Recurring dates/amounts and regular income are estimates from observed history.",
+    "Source recurring flags are not confirmation of a contract.",
+    "Runway includes recurring bills only; excludes ordinary future spending and uncertain income.",
+    "Savings capacity excludes the incomplete current month and is not a liquidity guarantee.",
+    "Savings balances are unavailable for goals unless explicitly designated.",
+    "Loan balances and protected reserves require dated external snapshots."
+  ]
+}
