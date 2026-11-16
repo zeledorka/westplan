@@ -1,0 +1,498 @@
+[
+ {
+  "id": "u001",
+  "username": "mia.tran",
+  "password": "Student#2026",
+  "firstName": "Mia",
+  "persona": "University student with a part-time cafe job",
+  "accounts": [
+   {
+    "id": "u001-everyday",
+    "name": "Westpac Choice",
+    "balance": 3856.0,
+    "kind": "cash",
+    "cardEnding": "4471"
+   },
+   {
+    "id": "u001-savings",
+    "name": "Westpac eSaver",
+    "balance": 2693.96,
+    "kind": "cash",
+    "cardEnding": null
+   }
+  ],
+  "cashFlow": {
+   "since": "01 Nov",
+   "expenses": 972.34,
+   "income": 1041.8
+  },
+  "categoriesTotal": 972.34,
+  "netWorth": {
+   "assets": 6549.96,
+   "liabilities": 0
+  },
+  "recent": [
+   {
+    "date": "2026-11-15",
+    "description": "CAMPUS CAFE",
+    "amount": -24.65
+   },
+   {
+    "date": "2026-11-14",
+    "description": "MAD MEX",
+    "amount": -12.76
+   },
+   {
+    "date": "2026-11-13",
+    "description": "OFFICEWORKS",
+    "amount": -57.37
+   },
+   {
+    "date": "2026-11-13",
+    "description": "CAMPUS CAFE",
+    "amount": -13.06
+   },
+   {
+    "date": "2026-11-12",
+    "description": "SPLIT BILLS POWER AND INTERNET",
+    "amount": -69.38
+   },
+   {
+    "date": "2026-11-12",
+    "description": "BEAN SCENE CAFE WAGES",
+    "amount": 350.39
+   },
+   {
+    "date": "2026-11-10",
+    "description": "COTTON ON",
+    "amount": -65.76
+   },
+   {
+    "date": "2026-11-10",
+    "description": "MAD MEX",
+    "amount": -12.51
+   },
+   {
+    "date": "2026-11-10",
+    "description": "CENTRELINK YOUTH ALLOWANCE",
+    "amount": 360.4
+   },
+   {
+    "date": "2026-11-09",
+    "description": "RENT SHARE HOUSE NEWTOWN",
+    "amount": -230.0
+   },
+   {
+    "date": "2026-11-08",
+    "description": "THE COURTHOUSE HOTEL",
+    "amount": -32.48
+   },
+   {
+    "date": "2026-11-08",
+    "description": "SPOTIFY STUDENT",
+    "amount": -6.99
+   }
+  ]
+ },
+ {
+  "id": "u002",
+  "username": "priya.sharma",
+  "password": "Clinic#2026",
+  "firstName": "Priya",
+  "persona": "High-income business owner with a home loan, a business loan and two children",
+  "accounts": [
+   {
+    "id": "u002-everyday",
+    "name": "Westpac Choice",
+    "balance": 4465.64,
+    "kind": "cash",
+    "cardEnding": "8820"
+   },
+   {
+    "id": "u002-savings",
+    "name": "Westpac eSaver",
+    "balance": 62374.31,
+    "kind": "cash",
+    "cardEnding": null
+   },
+   {
+    "id": "u002-homeloan",
+    "name": "Rocket Repay Home Loan",
+    "balance": -1148300.0,
+    "kind": "loan",
+    "cardEnding": null
+   },
+   {
+    "id": "u002-bizloan",
+    "name": "Business Loan",
+    "balance": -176450.0,
+    "kind": "loan",
+    "cardEnding": null
+   }
+  ],
+  "cashFlow": {
+   "since": "01 Nov",
+   "expenses": 15754.76,
+   "income": 8433.03
+  },
+  "categoriesTotal": 15754.76,
+  "netWorth": {
+   "assets": 2216839.95,
+   "liabilities": 1324750.0
+  },
+  "recent": [
+   {
+    "date": "2026-11-15",
+    "description": "AMPOL",
+    "amount": -68.31
+   },
+   {
+    "date": "2026-11-14",
+    "description": "TICKETMASTER",
+    "amount": -89.4
+   },
+   {
+    "date": "2026-11-14",
+    "description": "COLES MOSMAN",
+    "amount": -69.72
+   },
+   {
+    "date": "2026-11-14",
+    "description": "MOSMAN COUNCIL RATES",
+    "amount": -780.0
+   },
+   {
+    "date": "2026-11-13",
+    "description": "AMAZON AU",
+    "amount": -259.63
+   },
+   {
+    "date": "2026-11-13",
+    "description": "COLES MOSMAN",
+    "amount": -219.53
+   },
+   {
+    "date": "2026-11-13",
+    "description": "APPLE.COM/BILL",
+    "amount": -4.49
+   },
+   {
+    "date": "2026-11-12",
+    "description": "BP",
+    "amount": -113.16
+   },
+   {
+    "date": "2026-11-11",
+    "description": "COLES MOSMAN",
+    "amount": -124.65
+   },
+   {
+    "date": "2026-11-11",
+    "description": "SPOTIFY FAMILY",
+    "amount": -23.99
+   },
+   {
+    "date": "2026-11-11",
+    "description": "F45 TRAINING",
+    "amount": -68.0
+   },
+   {
+    "date": "2026-11-10",
+    "description": "AMPOL",
+    "amount": -68.41
+   }
+  ]
+ },
+ {
+  "id": "u003",
+  "username": "david.kowalski",
+  "password": "Fairway#2026",
+  "firstName": "David",
+  "persona": "Middle-income earner with a modest mortgage and no children",
+  "accounts": [
+   {
+    "id": "u003-everyday",
+    "name": "Westpac Choice",
+    "balance": 3001.04,
+    "kind": "cash",
+    "cardEnding": "3056"
+   },
+   {
+    "id": "u003-savings",
+    "name": "Westpac eSaver",
+    "balance": 25498.16,
+    "kind": "cash",
+    "cardEnding": null
+   },
+   {
+    "id": "u003-homeloan",
+    "name": "Rocket Repay Home Loan",
+    "balance": -402700.0,
+    "kind": "loan",
+    "cardEnding": null
+   }
+  ],
+  "cashFlow": {
+   "since": "01 Nov",
+   "expenses": 4555.84,
+   "income": 3185.26
+  },
+  "categoriesTotal": 4555.84,
+  "netWorth": {
+   "assets": 808499.2,
+   "liabilities": 402700.0
+  },
+  "recent": [
+   {
+    "date": "2026-11-15",
+    "description": "THE RED COW HOTEL",
+    "amount": -39.74
+   },
+   {
+    "date": "2026-11-14",
+    "description": "GOLF PRO SHOP",
+    "amount": -52.57
+   },
+   {
+    "date": "2026-11-14",
+    "description": "SPOTIFY",
+    "amount": -13.99
+   },
+   {
+    "date": "2026-11-12",
+    "description": "PENRITH CITY COUNCIL RATES",
+    "amount": -520.0
+   },
+   {
+    "date": "2026-11-11",
+    "description": "7-ELEVEN FUEL",
+    "amount": -78.01
+   },
+   {
+    "date": "2026-11-11",
+    "description": "COLES PENRITH",
+    "amount": -77.12
+   },
+   {
+    "date": "2026-11-10",
+    "description": "OPORTO",
+    "amount": -65.35
+   },
+   {
+    "date": "2026-11-10",
+    "description": "NETFLIX.COM",
+    "amount": -18.99
+   },
+   {
+    "date": "2026-11-09",
+    "description": "LINKT TOLLS",
+    "amount": -64.56
+   },
+   {
+    "date": "2026-11-09",
+    "description": "WOOLWORTHS PENRITH",
+    "amount": -75.59
+   },
+   {
+    "date": "2026-11-08",
+    "description": "ALDI STORES PENRITH",
+    "amount": -98.12
+   },
+   {
+    "date": "2026-11-08",
+    "description": "OPTUS MOBILE",
+    "amount": -55.0
+   }
+  ]
+ },
+ {
+  "id": "u004",
+  "username": "margaret.obrien",
+  "password": "Garden#2026",
+  "firstName": "Margaret",
+  "persona": "Age pensioner who rents and owns no property",
+  "accounts": [
+   {
+    "id": "u004-everyday",
+    "name": "Westpac Choice",
+    "balance": 3799.11,
+    "kind": "cash",
+    "cardEnding": "1294"
+   },
+   {
+    "id": "u004-savings",
+    "name": "Westpac eSaver",
+    "balance": 17324.39,
+    "kind": "cash",
+    "cardEnding": null
+   }
+  ],
+  "cashFlow": {
+   "since": "01 Nov",
+   "expenses": 1440.0,
+   "income": 1647.44
+  },
+  "categoriesTotal": 1440.0,
+  "netWorth": {
+   "assets": 21123.5,
+   "liabilities": 0
+  },
+  "recent": [
+   {
+    "date": "2026-11-15",
+    "description": "AUSTRALIANSUPER PENSION PAYMENT",
+    "amount": 250.0
+   },
+   {
+    "date": "2026-11-14",
+    "description": "CHEMIST WAREHOUSE",
+    "amount": -22.46
+   },
+   {
+    "date": "2026-11-13",
+    "description": "LINCRAFT",
+    "amount": -29.93
+   },
+   {
+    "date": "2026-11-12",
+    "description": "WOOLWORTHS GOSFORD",
+    "amount": -67.74
+   },
+   {
+    "date": "2026-11-11",
+    "description": "ALDI STORES GOSFORD",
+    "amount": -48.03
+   },
+   {
+    "date": "2026-11-11",
+    "description": "SALVATION ARMY DONATION",
+    "amount": -20.0
+   },
+   {
+    "date": "2026-11-10",
+    "description": "SPOTLIGHT",
+    "amount": -18.18
+   },
+   {
+    "date": "2026-11-10",
+    "description": "IGA GOSFORD",
+    "amount": -34.29
+   },
+   {
+    "date": "2026-11-10",
+    "description": "GOSFORD RSL BINGO",
+    "amount": -15.0
+   },
+   {
+    "date": "2026-11-09",
+    "description": "TERRYWHITE CHEMMART",
+    "amount": -26.35
+   },
+   {
+    "date": "2026-11-09",
+    "description": "WOOLWORTHS GOSFORD",
+    "amount": -57.88
+   },
+   {
+    "date": "2026-11-08",
+    "description": "CHEMIST WAREHOUSE",
+    "amount": -26.71
+   }
+  ]
+ },
+ {
+  "id": "u005",
+  "username": "jake.morrison",
+  "password": "Sparky#2026",
+  "firstName": "Jake",
+  "persona": "Self-employed electrician with an ABN, living in a share house",
+  "accounts": [
+   {
+    "id": "u005-everyday",
+    "name": "Westpac Choice",
+    "balance": 13837.31,
+    "kind": "cash",
+    "cardEnding": "6637"
+   },
+   {
+    "id": "u005-savings",
+    "name": "Westpac eSaver",
+    "balance": 24011.09,
+    "kind": "cash",
+    "cardEnding": null
+   }
+  ],
+  "cashFlow": {
+   "since": "01 Nov",
+   "expenses": 4999.55,
+   "income": 9041.9
+  },
+  "categoriesTotal": 4999.55,
+  "netWorth": {
+   "assets": 37848.4,
+   "liabilities": 0
+  },
+  "recent": [
+   {
+    "date": "2026-11-15",
+    "description": "VIC ON THE PARK",
+    "amount": -24.8
+   },
+   {
+    "date": "2026-11-15",
+    "description": "REXEL ELECTRICAL",
+    "amount": -230.93
+   },
+   {
+    "date": "2026-11-14",
+    "description": "THE HENSON",
+    "amount": -71.4
+   },
+   {
+    "date": "2026-11-14",
+    "description": "ROSIES CAFE",
+    "amount": -20.32
+   },
+   {
+    "date": "2026-11-14",
+    "description": "ALDI STORES MARRICKVILLE",
+    "amount": -85.79
+   },
+   {
+    "date": "2026-11-14",
+    "description": "SPOTIFY",
+    "amount": -13.99
+   },
+   {
+    "date": "2026-11-14",
+    "description": "SPLIT BILLS POWER AND INTERNET",
+    "amount": -95.51
+   },
+   {
+    "date": "2026-11-13",
+    "description": "VIC ON THE PARK",
+    "amount": -23.67
+   },
+   {
+    "date": "2026-11-13",
+    "description": "INV 1102 M AND K CONSTRUCTIONS",
+    "amount": 2883.52
+   },
+   {
+    "date": "2026-11-12",
+    "description": "BUNNINGS TRADE",
+    "amount": -356.38
+   },
+   {
+    "date": "2026-11-12",
+    "description": "TOYOTA FINANCE HILUX",
+    "amount": -640.0
+   },
+   {
+    "date": "2026-11-11",
+    "description": "SYDNEY TOOLS",
+    "amount": -300.82
+   }
+  ]
+ }
+]

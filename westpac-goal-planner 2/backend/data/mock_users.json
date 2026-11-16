@@ -1,0 +1,165 @@
+[
+  {
+    "user_id": "u001",
+    "username": "mia.tran",
+    "password": "Student#2026",
+    "first_name": "Mia",
+    "last_name": "Tran",
+    "age": 20,
+    "persona": "University student with a part-time cafe job",
+    "employment": "Casual, part-time",
+    "household": "Share house, renting a room",
+    "property_value": 0,
+    "accounts": [
+      {
+        "account_id": "u001-everyday",
+        "name": "Westpac Choice",
+        "type": "transaction",
+        "opening_balance": 850.41,
+        "balance": 3856.0,
+        "card_ending": "4471"
+      },
+      {
+        "account_id": "u001-savings",
+        "name": "Westpac eSaver",
+        "type": "savings",
+        "opening_balance": 1400.0,
+        "balance": 2693.96
+      }
+    ]
+  },
+  {
+    "user_id": "u002",
+    "username": "priya.sharma",
+    "password": "Clinic#2026",
+    "first_name": "Priya",
+    "last_name": "Sharma",
+    "age": 44,
+    "persona": "High-income business owner with a home loan, a business loan and two children",
+    "employment": "Director, own physiotherapy practice",
+    "household": "Home owner, two children (9 and 12)",
+    "property_value": 2150000,
+    "accounts": [
+      {
+        "account_id": "u002-everyday",
+        "name": "Westpac Choice",
+        "type": "transaction",
+        "opening_balance": 21111.37,
+        "balance": 4465.64,
+        "card_ending": "8820"
+      },
+      {
+        "account_id": "u002-savings",
+        "name": "Westpac eSaver",
+        "type": "savings",
+        "opening_balance": 42000.0,
+        "balance": 62374.31
+      },
+      {
+        "account_id": "u002-homeloan",
+        "name": "Rocket Repay Home Loan",
+        "type": "loan",
+        "balance": -1148300.0
+      },
+      {
+        "account_id": "u002-bizloan",
+        "name": "Business Loan",
+        "type": "loan",
+        "balance": -176450.0
+      }
+    ]
+  },
+  {
+    "user_id": "u003",
+    "username": "david.kowalski",
+    "password": "Fairway#2026",
+    "first_name": "David",
+    "last_name": "Kowalski",
+    "age": 47,
+    "persona": "Middle-income earner with a modest mortgage and no children",
+    "employment": "Full-time operations coordinator",
+    "household": "Home owner, lives alone",
+    "property_value": 780000,
+    "accounts": [
+      {
+        "account_id": "u003-everyday",
+        "name": "Westpac Choice",
+        "type": "transaction",
+        "opening_balance": 4200.0,
+        "balance": 3001.04,
+        "card_ending": "3056"
+      },
+      {
+        "account_id": "u003-savings",
+        "name": "Westpac eSaver",
+        "type": "savings",
+        "opening_balance": 18500.0,
+        "balance": 25498.16
+      },
+      {
+        "account_id": "u003-homeloan",
+        "name": "Rocket Repay Home Loan",
+        "type": "loan",
+        "balance": -402700.0
+      }
+    ]
+  },
+  {
+    "user_id": "u004",
+    "username": "margaret.obrien",
+    "password": "Garden#2026",
+    "first_name": "Margaret",
+    "last_name": "O'Brien",
+    "age": 72,
+    "persona": "Age pensioner who rents and owns no property",
+    "employment": "Retired, Age Pension plus a small super pension",
+    "household": "Renting a unit, lives alone",
+    "property_value": 0,
+    "accounts": [
+      {
+        "account_id": "u004-everyday",
+        "name": "Westpac Choice",
+        "type": "transaction",
+        "opening_balance": 2100.0,
+        "balance": 3799.11,
+        "card_ending": "1294"
+      },
+      {
+        "account_id": "u004-savings",
+        "name": "Westpac eSaver",
+        "type": "savings",
+        "opening_balance": 14800.0,
+        "balance": 17324.39
+      }
+    ]
+  },
+  {
+    "user_id": "u005",
+    "username": "jake.morrison",
+    "password": "Sparky#2026",
+    "first_name": "Jake",
+    "last_name": "Morrison",
+    "age": 29,
+    "persona": "Self-employed electrician with an ABN, living in a share house",
+    "employment": "Sole trader, irregular invoice income",
+    "household": "Share house, renting a room",
+    "property_value": 0,
+    "accounts": [
+      {
+        "account_id": "u005-everyday",
+        "name": "Westpac Choice",
+        "type": "transaction",
+        "opening_balance": 10765.83,
+        "balance": 13837.31,
+        "card_ending": "6637"
+      },
+      {
+        "account_id": "u005-savings",
+        "name": "Westpac eSaver",
+        "type": "savings",
+        "opening_balance": 11200.0,
+        "balance": 24011.09
+      }
+    ]
+  }
+]
