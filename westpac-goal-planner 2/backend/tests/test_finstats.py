@@ -8,10 +8,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from finstats import (  # noqa: E402
-    MonthlyFlow, ShockType, Transaction, check_runway, detect_all_shocks, detect_bursts,
+    MonthlyFlow, ShockType, Transaction, bnpl_plans, check_runway, detect_all_shocks,
+    detect_bnpl_stacking, detect_bursts, detect_overdrafts, detect_savings_drawdowns,
     detect_category_spikes, detect_large_single_spends, detect_new_merchant_big_amount,
     detect_recurring_bill_changes, detect_recurring_series, detect_runway_shocks, ewma,
-    load_transactions, mad, median, modified_z, monthly_flows, normalize_merchant, rolling_mean,
+    load_statement_csv, mad, median, modified_z, monthly_flows, normalize_merchant, rolling_mean,
     savings_capacity_from_flows,
 )
 
@@ -197,45 +198,117 @@ class ShockTests(unittest.TestCase):
         self.assertIn(ShockType.RUNWAY, {s.type for s in shocks})
 
 
-MOCK = Path(__file__).resolve().parent.parent / "data" / "mock_transactions.json"
+class CashflowStressTests(unittest.TestCase):
+    def test_overdraft_one_alert_per_episode(self):
+        rows = [(1, -100, 300), (2, -400, -100), (2, 200, 100), (3, -150, -50), (3, 100, 50),
+                (10, 2000, 2050), (11, -2100, -50)]
+        txns = [T(D0 + timedelta(d), a, desc=f"ROW {chr(65 + i)}", kind="transfer" if a > 0 else None, bal=b)
+                for i, (d, a, b) in enumerate(rows)]
+        shocks = detect_overdrafts(txns)
+        # day 3 dip is the same episode (balance never recovered by $500); day 11 is a new one
+        self.assertEqual([s.date for s in shocks], [D0 + timedelta(2), D0 + timedelta(11)])
+        self.assertTrue(shocks[0].details["covered_same_day"])
+        self.assertFalse(shocks[1].details["covered_same_day"])
+
+    def test_savings_drawdown_episodes(self):
+        spend = [T(D0 + timedelta(d), -20, desc="SHOP") for d in range(40)]
+        top = [(1, 100), (2, 100), (30, 150), (31, 200)]   # 2 x $100 is below floor and count
+        moves = [T(D0 + timedelta(d), a, "Transfers", "TRANSFER FROM ESAVER", kind="transfer") for d, a in top]
+        moves.append(T(D0 + timedelta(5), 999, "Transfers", "TRANSFER FROM CHOICE", kind="transfer", acct="sav"))
+        shocks = detect_savings_drawdowns(spend + moves)
+        self.assertEqual([(s.date, s.amount) for s in shocks], [(D0 + timedelta(31), 350)])
+
+    def test_bnpl_plans_and_stacking(self):
+        def ap(shop, k, d):
+            return T(D0 + timedelta(d), -25, "Buy Now Pay Later", f"AFTERPAY - {shop} ({k}/4)")
+        txns = [ap("ONE", k, 14 * (k - 1)) for k in range(1, 5)]          # days 0-42
+        txns += [ap("TWO", k, 10 + 14 * (k - 1)) for k in range(1, 5)]    # days 10-52
+        txns += [ap("THREE", k, 42 + 14 * (k - 1)) for k in range(1, 3)]  # starts day 42, ONE ends day 42
+        txns += [ap("FOUR", k, 50 + 14 * (k - 1)) for k in range(1, 3)]   # TWO, THREE, FOUR active
+        txns.append(T(D0, 5000, "Income", "PAY"))
+        plans = bnpl_plans(txns)
+        self.assertEqual([(p.key, p.instalments) for p in plans][:2], [("AFTERPAY ONE", 4), ("AFTERPAY TWO", 4)])
+        self.assertEqual(plans[0].end, D0 + timedelta(42))
+        stacked = [s for s in detect_bnpl_stacking(txns, max_income_share=None)]
+        self.assertEqual([s.date for s in stacked], [D0 + timedelta(50)])
+
+    def test_bnpl_income_share(self):
+        txns = [T(D0, 1000, "Income", "PAY"), T(D0 + timedelta(1), -60, "Buy Now Pay Later", "ZIP PAY AUTO REPAYMENT"),
+                T(D0 + timedelta(15), -60, "Buy Now Pay Later", "ZIP PAY AUTO REPAYMENT")]
+        shocks = detect_bnpl_stacking(txns)
+        self.assertEqual([(s.details["rule"], s.amount) for s in shocks], [("income_share", 120)])
 
 
-@unittest.skipUnless(MOCK.exists(), "mock data not generated")
-class InjectedShockTests(unittest.TestCase):
-    """generate_mock_data.py plants one shock per customer; each must be detected on its day,
-    by the right detector, pointing at the planted transactions."""
+STATEMENTS = Path(__file__).resolve().parent.parent / "data" / "statements"
+EXAMPLE_FILES = ["Mia_Tran", "Priya_Sharma", "David_Kowalski", "Margaret_Obrien", "Jake_Morrison"]
 
-    EXPECTED = {
-        "u001": (ShockType.BURST, date(2026, 8, 22), "PAYPAL *GAMEKEYS"),
-        "u002": (ShockType.RECURRING_BILL_CHANGE, date(2026, 7, 3), "HOME LOAN REPAYMENT"),
-        "u003": (ShockType.LARGE_SINGLE_SPEND, date(2026, 9, 3), "ULTRA TUNE CAR SERVICE"),
-        "u004": (ShockType.NEW_MERCHANT_BIG_AMOUNT, date(2026, 6, 10), "CENTRAL COAST DENTAL IMPLANTS"),
-        "u005": (ShockType.CATEGORY_SPIKE, date(2026, 8, 10), "SYDNEY TOOLS"),
-    }
+
+@unittest.skipUnless(all((STATEMENTS / f"{n}.csv").exists() for n in EXAMPLE_FILES), "example statements missing")
+class ExampleStatementTests(unittest.TestCase):
+    """The example statements carry planted shock events (transaction IDs like u003-S0001).
+    Every planted event must be flagged by at least one detector, and every customer must
+    have at least one shock."""
 
     @classmethod
     def setUpClass(cls):
-        cls.txns = {uid: load_transactions(MOCK, uid) for uid in cls.EXPECTED}
-        cls.shocks = {uid: detect_all_shocks(t) for uid, t in cls.txns.items()}
+        cls.txns = {n: load_statement_csv(STATEMENTS / f"{n}.csv") for n in EXAMPLE_FILES}
+        cls.shocks = {n: detect_all_shocks(t) for n, t in cls.txns.items()}
 
-    def test_each_injected_shock_is_detected(self):
-        for uid, (kind, day, desc) in self.EXPECTED.items():
-            with self.subTest(uid=uid, kind=kind):
-                by_id = {t.transaction_id: t for t in self.txns[uid]}
-                hits = [s for s in self.shocks[uid] if s.type == kind and s.date == day]
-                self.assertEqual(len(hits), 1, f"{uid}: no {kind} on {day}")
-                self.assertIn(desc, {by_id[i].description for i in hits[0].transaction_ids})
+    def test_full_layout_parsed(self):
+        mia = self.txns["Mia_Tran"]
+        self.assertEqual({t.account_id for t in mia}, {"u001-everyday", "u001-savings"})
+        rent = next(t for t in mia if t.description.startswith("RENT"))
+        self.assertEqual((rent.amount, rent.type, rent.essential, rent.recurring), (-230.0, "expense", True, True))
+        pay = next(t for t in mia if t.description == "BEAN SCENE CAFE WAGES")
+        self.assertEqual((pay.type, pay.amount > 0), ("income", True))
 
-    def test_home_loan_rise_flagged_once(self):
-        loan = [s for s in self.shocks["u002"] if s.type == ShockType.RECURRING_BILL_CHANGE
-                and s.details["merchant"] == "HOME LOAN REPAYMENT"]
-        self.assertEqual([s.date for s in loan], [date(2026, 7, 3)])
+    def test_every_customer_has_a_shock(self):
+        for name, shocks in self.shocks.items():
+            with self.subTest(name=name):
+                self.assertGreater(len(shocks), 0)
 
-    def test_noise_stays_low(self):
-        # a year of transactions should produce a handful of alerts per person, not dozens
-        for uid, shocks in self.shocks.items():
-            with self.subTest(uid=uid):
-                self.assertLessEqual(len(shocks), 15)
+    def test_every_planted_event_is_flagged(self):
+        for name, txns in self.txns.items():
+            flagged = {i for s in self.shocks[name] for i in s.transaction_ids}
+            planted = [t for t in txns if "-S" in t.transaction_id]
+            self.assertTrue(planted, f"{name}: no planted events in the statement")
+            for t in planted:
+                with self.subTest(name=name, event=t.description):
+                    self.assertIn(t.transaction_id, flagged)
+
+    def test_separate_bnpl_plans_are_not_a_price_change(self):
+        # two Afterpay plans at THE ICONIC (Dec-Jan at $34.99, Jun-Jul at $46.75) are separate runs
+        changes = [s for s in self.shocks["Mia_Tran"] if s.type == ShockType.RECURRING_BILL_CHANGE
+                   and "ICONIC" in s.details["merchant"]]
+        self.assertEqual(changes, [])
+
+    def of_type(self, name, kind):
+        return [s for s in self.shocks[name] if s.type == kind]
+
+    def test_overdrafts_match_negative_balances(self):
+        expect = {"Priya_Sharma": [date(2026, 7, 10), date(2026, 10, 3)],
+                  "David_Kowalski": [date(2026, 8, 12), date(2026, 11, 5)],
+                  "Jake_Morrison": [date(2026, 5, 2)],       # four dips in one week, one episode
+                  "Mia_Tran": [], "Margaret_Obrien": []}
+        for name, days in expect.items():
+            with self.subTest(name=name):
+                self.assertEqual([s.date for s in self.of_type(name, ShockType.OVERDRAFT)], days)
+
+    def test_savings_drawdowns(self):
+        david = self.of_type("David_Kowalski", ShockType.SAVINGS_DRAWDOWN)
+        self.assertEqual([(s.date, s.amount) for s in david],
+                         [(date(2026, 8, 12), 2100), (date(2026, 11, 5), 400)])
+        self.assertEqual(self.of_type("Mia_Tran", ShockType.SAVINGS_DRAWDOWN), [])
+
+    def test_bnpl_income_share_for_student(self):
+        mia = self.of_type("Mia_Tran", ShockType.BNPL_STACKING)
+        self.assertEqual([(s.date.strftime("%Y-%m"), s.details["rule"]) for s in mia], [("2026-08", "income_share")])
+
+    def test_noise_stays_reasonable(self):
+        # about two alerts a month at most, not dozens
+        for name, shocks in self.shocks.items():
+            with self.subTest(name=name):
+                self.assertLessEqual(len(shocks), 24)
 
 
 if __name__ == "__main__":

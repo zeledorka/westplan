@@ -103,11 +103,6 @@ def smoothed_net(net: list[float], window: int = 3) -> list[float]:
     return rolling_mean(net, window)
 
 
-def centre(w: list[float], ewma_span: float = 6) -> float:
-    """C = min(EWMA(W), mean(W))."""
-    return min(ewma(w, span=ewma_span), mean(w))
-
-
 def savings_capacity(txns: Iterable[Transaction], gamma: float = 0.30, alpha: float = 0.20,
                      window: int = 3, ewma_span: float = 6, ddof: int = 1,
                      complete_months_only: bool = True,

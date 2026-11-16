@@ -1,4 +1,4 @@
-"""Transaction model, loaders for the mock data, and merchant normalisation."""
+"""Transaction model, loaders for the example data, and merchant normalisation."""
 from __future__ import annotations
 
 import csv
@@ -8,12 +8,6 @@ from dataclasses import dataclass
 from datetime import date, datetime
 from pathlib import Path
 from typing import Iterable
-
-# Used only when loading CSV statements, which carry no essential flag or type.
-DEFAULT_ESSENTIAL_CATEGORIES = frozenset({
-    "Groceries", "Housing", "Utilities", "Insurance", "Health", "Transport",
-    "Loan repayments", "Kids", "Education", "Tax", "Business expenses",
-})
 
 
 @dataclass(frozen=True)
@@ -43,10 +37,6 @@ class Transaction:
         """Positive dollars spent (0 for money in)."""
         return -self.amount if self.amount < 0 else 0.0
 
-    @property
-    def merchant(self) -> str:
-        return normalize_merchant(self.description)
-
     @classmethod
     def from_dict(cls, d: dict) -> "Transaction":
         dt = d["date"]
@@ -75,30 +65,49 @@ def load_transactions(path: str | Path, user_id: str | None = None) -> list[Tran
     return sort_transactions(txns)
 
 
-def load_statement_csv(path: str | Path,
-                       essential_categories: Iterable[str] = DEFAULT_ESSENTIAL_CATEGORIES) -> list[Transaction]:
-    """Load a statements/<username>.csv file. Type and essential are inferred from the category."""
-    essential_categories = set(essential_categories)
-    out = []
-    with open(path, encoding="utf-8", newline="") as f:
-        for i, r in enumerate(csv.DictReader(f)):
-            debit = float(r["Debit Amount"] or 0)
-            credit = float(r["Credit Amount"] or 0)
-            amount = credit - debit
-            cat = r.get("Categories", "")
-            kind = "transfer" if cat == "Transfers" else "income" if amount > 0 else "expense"
-            out.append(Transaction(
-                date=datetime.strptime(r["Date"], "%d/%m/%Y").date(),
-                description=r["Narrative"],
-                amount=amount,
-                category=cat,
-                type=kind,
-                essential=kind == "expense" and cat in essential_categories,
-                balance_after=float(r["Balance"]) if r.get("Balance") else None,
-                account_id=r.get("Bank Account", ""),
-                transaction_id=f"csv-{i:05d}",
-            ))
-    return sort_transactions(out)
+STATEMENT_COLUMNS = ("Date", "Account", "Description", "Category", "Type", "Debit ($)", "Credit ($)",
+                     "Balance ($)", "Essential", "Recurring", "Transaction ID")
+ACCOUNT_SUFFIX = {"Westpac Choice": "everyday", "Westpac eSaver": "savings"}
+
+
+def load_statement_csv(path: str | Path) -> list[Transaction]:
+    """Load a statements/<First>_<Last>.csv file, sorted by date (same-day rows keep file order).
+
+    Columns: see STATEMENT_COLUMNS. Amounts may contain thousands separators ("1,234.56").
+    user_id comes from the Transaction ID prefix ("u003-00001" -> "u003") and account_id is
+    "<user_id>-everyday" / "<user_id>-savings" (see ACCOUNT_SUFFIX).
+    """
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        reader = csv.DictReader(f)
+        missing = set(STATEMENT_COLUMNS) - set(reader.fieldnames or ())
+        if missing:
+            raise ValueError(f"{path}: not a statement CSV, missing columns {sorted(missing)}")
+        return sort_transactions(_from_row(r) for r in reader)
+
+
+def _money(s: str) -> float:
+    s = (s or "").replace(",", "").replace("$", "").strip()
+    return float(s) if s else 0.0
+
+
+def _from_row(r: dict) -> Transaction:
+    tid = r["Transaction ID"].strip()
+    uid = tid.split("-")[0]
+    acct = r["Account"].strip()
+    suffix = ACCOUNT_SUFFIX.get(acct, acct.lower().replace(" ", "-"))
+    return Transaction(
+        date=datetime.strptime(r["Date"].strip(), "%d/%m/%Y").date(),
+        description=r["Description"].strip(),
+        amount=round(_money(r["Credit ($)"]) - _money(r["Debit ($)"]), 2),
+        category=r["Category"].strip(),
+        type=r["Type"].strip().lower(),
+        essential=r.get("Essential", "").strip().lower() == "yes",
+        recurring=r.get("Recurring", "").strip().lower() == "yes",
+        balance_after=_money(r["Balance ($)"]) if r.get("Balance ($)", "").strip() else None,
+        account_id=f"{uid}-{suffix}",
+        user_id=uid,
+        transaction_id=tid,
+    )
 
 
 def sort_transactions(txns: Iterable[Transaction]) -> list[Transaction]:

@@ -1,0 +1,633 @@
+Date,Account,Description,Category,Type,Debit ($),Credit ($),Balance ($),Essential,Recurring,Transaction ID
+16/11/2025,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,58.59,,"4,141.41",No,No,u003-00001
+17/11/2025,Westpac Choice,LINKT TOLLS,Transport,Expense,49.44,,"4,091.97",Yes,No,u003-00002
+18/11/2025,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,500.00,"19,000.00",No,Yes,u003-00003
+18/11/2025,Westpac Choice,OPORTO,Eating out,Expense,32.20,,"4,059.77",No,No,u003-00004
+18/11/2025,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,500.00,,"3,559.77",No,Yes,u003-00005
+19/11/2025,Westpac Choice,AAMI HOME AND CAR INSURANCE,Insurance,Expense,186.00,,"3,373.77",Yes,Yes,u003-00006
+19/11/2025,Westpac Choice,OPORTO,Eating out,Expense,42.89,,"3,330.88",No,No,u003-00007
+20/11/2025,Westpac Choice,THAI ORCHID,Eating out,Expense,42.35,,"3,288.53",No,No,u003-00008
+21/11/2025,Westpac Choice,AMPOL,Transport,Expense,91.88,,"3,196.65",Yes,No,u003-00009
+21/11/2025,Westpac Choice,BCF,Shopping,Expense,72.96,,"3,123.69",No,No,u003-00010
+22/11/2025,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","6,213.69",Yes,Yes,u003-00011
+23/11/2025,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,126.49,,"6,087.20",Yes,No,u003-00012
+23/11/2025,Westpac Choice,UBER *EATS,Eating out,Expense,45.88,,"6,041.32",No,No,u003-00013
+23/11/2025,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,38.69,,"6,002.63",Yes,No,u003-00014
+25/11/2025,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,129.53,,"5,873.10",Yes,No,u003-00015
+25/11/2025,Westpac Choice,THAI ORCHID,Eating out,Expense,25.65,,"5,847.45",No,No,u003-00016
+27/11/2025,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,39.03,,"5,808.42",No,No,u003-00017
+28/11/2025,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,91.61,,"5,716.81",Yes,No,u003-00018
+29/11/2025,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,150.47,,"5,566.34",Yes,No,u003-00019
+30/11/2025,Westpac Choice,COLES PENRITH,Groceries,Expense,101.77,,"5,464.57",Yes,No,u003-00020
+01/12/2025,Westpac eSaver,INTEREST PAID,Income,Income,,71.25,"19,071.25",No,Yes,u003-00021
+01/12/2025,Westpac Choice,GLENMORE GOLF CLUB MEMBERSHIP,Entertainment,Expense,95.00,,"5,369.57",No,Yes,u003-00022
+01/12/2025,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,66.93,,"5,302.64",Yes,No,u003-00023
+02/12/2025,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,168.00,,"5,134.64",Yes,Yes,u003-00024
+02/12/2025,Westpac Choice,COLES PENRITH,Groceries,Expense,93.49,,"5,041.15",Yes,No,u003-00025
+02/12/2025,Westpac Choice,UBER *EATS,Eating out,Expense,26.27,,"5,014.88",No,No,u003-00026
+03/12/2025,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,79.36,,"4,935.52",Yes,No,u003-00027
+05/12/2025,Westpac Choice,HOME LOAN REPAYMENT,Loan repayments,Expense,"2,650.00",,"2,285.52",Yes,Yes,u003-00028
+05/12/2025,Westpac Choice,JB HI-FI,Shopping,Expense,89.40,,"2,196.12",No,No,u003-00029
+06/12/2025,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","5,286.12",Yes,Yes,u003-00030
+06/12/2025,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"5,261.12",No,Yes,u003-00031
+08/12/2025,Westpac Choice,TPG INTERNET,Utilities,Expense,79.99,,"5,181.13",Yes,Yes,u003-00032
+08/12/2025,Westpac Choice,OPTUS MOBILE,Utilities,Expense,55.00,,"5,126.13",Yes,Yes,u003-00033
+08/12/2025,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,71.57,,"5,054.56",Yes,No,u003-00034
+08/12/2025,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,32.04,,"5,022.52",No,No,u003-00035
+10/12/2025,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,18.99,,"5,003.53",No,Yes,u003-00036
+10/12/2025,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,71.20,,"4,932.33",No,No,u003-00037
+11/12/2025,Westpac Choice,THAI ORCHID,Eating out,Expense,42.86,,"4,889.47",No,No,u003-00038
+11/12/2025,Westpac Choice,SUPERCHEAP AUTO,Shopping,Expense,201.72,,"4,687.75",No,No,u003-00039
+12/12/2025,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,57.29,,"4,630.46",Yes,No,u003-00040
+13/12/2025,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,43.53,,"4,586.93",Yes,No,u003-00041
+14/12/2025,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"4,572.94",No,Yes,u003-00042
+14/12/2025,Westpac Choice,THAI ORCHID,Eating out,Expense,48.36,,"4,524.58",No,No,u003-00043
+14/12/2025,Westpac Choice,PENRITH MEDICAL CENTRE,Health,Expense,52.64,,"4,471.94",Yes,No,u003-00044
+16/12/2025,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,70.30,,"4,401.64",Yes,No,u003-00045
+16/12/2025,Westpac Choice,LINKT TOLLS,Transport,Expense,46.28,,"4,355.36",Yes,No,u003-00046
+17/12/2025,Westpac Choice,THAI ORCHID,Eating out,Expense,24.90,,"4,330.46",No,No,u003-00047
+17/12/2025,Westpac Choice,JB HI-FI,Shopping,Expense,100.76,,"4,229.70",No,No,u003-00048
+18/12/2025,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,500.00,"19,571.25",No,Yes,u003-00049
+18/12/2025,Westpac Choice,COLES PENRITH,Groceries,Expense,83.75,,"4,145.95",Yes,No,u003-00050
+18/12/2025,Westpac Choice,UBER *EATS,Eating out,Expense,45.02,,"4,100.93",No,No,u003-00051
+18/12/2025,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,64.46,,"4,036.47",No,No,u003-00052
+18/12/2025,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,500.00,,"3,536.47",No,Yes,u003-00053
+19/12/2025,Westpac Choice,AAMI HOME AND CAR INSURANCE,Insurance,Expense,186.00,,"3,350.47",Yes,Yes,u003-00054
+19/12/2025,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,33.16,,"3,317.31",No,No,u003-00055
+20/12/2025,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","6,407.31",Yes,Yes,u003-00056
+20/12/2025,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,56.56,,"6,350.75",No,No,u003-00057
+21/12/2025,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,32.58,,"6,318.17",No,No,u003-00058
+21/12/2025,Westpac Choice,SUPERCHEAP AUTO,Shopping,Expense,172.34,,"6,145.83",No,No,u003-00059
+22/12/2025,Westpac Choice,OPORTO,Eating out,Expense,51.80,,"6,094.03",No,No,u003-00060
+23/12/2025,Westpac Choice,LINKT TOLLS,Transport,Expense,65.17,,"6,028.86",Yes,No,u003-00061
+24/12/2025,Westpac Choice,THAI ORCHID,Eating out,Expense,67.03,,"5,961.83",No,No,u003-00062
+24/12/2025,Westpac Choice,AMPOL,Transport,Expense,92.20,,"5,869.63",Yes,No,u003-00063
+25/12/2025,Westpac Choice,SYDNEY WATER,Utilities,Expense,250.70,,"5,618.93",Yes,Yes,u003-00064
+25/12/2025,Westpac Choice,GOLF PRO SHOP,Entertainment,Expense,62.16,,"5,556.77",No,No,u003-00065
+26/12/2025,Westpac Choice,COLES PENRITH,Groceries,Expense,116.38,,"5,440.39",Yes,No,u003-00066
+26/12/2025,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,37.15,,"5,403.24",No,No,u003-00067
+27/12/2025,Westpac Choice,AMPOL,Transport,Expense,87.65,,"5,315.59",Yes,No,u003-00068
+28/12/2025,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,43.22,,"5,272.37",Yes,No,u003-00069
+28/12/2025,Westpac Choice,GOLF PRO SHOP,Entertainment,Expense,47.55,,"5,224.82",No,No,u003-00070
+29/12/2025,Westpac Choice,OPORTO,Eating out,Expense,47.66,,"5,177.16",No,No,u003-00071
+30/12/2025,Westpac Choice,COLES PENRITH,Groceries,Expense,110.59,,"5,066.57",Yes,No,u003-00072
+30/12/2025,Westpac Choice,THAI ORCHID,Eating out,Expense,66.32,,"5,000.25",No,No,u003-00073
+01/01/2026,Westpac eSaver,INTEREST PAID,Income,Income,,73.39,"19,644.64",No,Yes,u003-00074
+01/01/2026,Westpac Choice,GLENMORE GOLF CLUB MEMBERSHIP,Entertainment,Expense,95.00,,"4,905.25",No,Yes,u003-00075
+01/01/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,51.77,,"4,853.48",Yes,No,u003-00076
+02/01/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,168.00,,"4,685.48",Yes,Yes,u003-00077
+02/01/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,39.55,,"4,645.93",Yes,No,u003-00078
+02/01/2026,Westpac Choice,GOLF PRO SHOP,Entertainment,Expense,55.63,,"4,590.30",No,No,u003-00079
+03/01/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","7,680.30",Yes,Yes,u003-00080
+03/01/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,108.59,,"7,571.71",Yes,No,u003-00081
+03/01/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,33.29,,"7,538.42",No,No,u003-00082
+04/01/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,73.65,,"7,464.77",Yes,No,u003-00083
+04/01/2026,Westpac Choice,OPORTO,Eating out,Expense,36.66,,"7,428.11",No,No,u003-00084
+04/01/2026,Westpac Choice,AMPOL,Transport,Expense,80.57,,"7,347.54",Yes,No,u003-00085
+05/01/2026,Westpac Choice,HOME LOAN REPAYMENT,Loan repayments,Expense,"2,650.00",,"4,697.54",Yes,Yes,u003-00086
+05/01/2026,Westpac Choice,JB HI-FI,Shopping,Expense,89.02,,"4,608.52",No,No,u003-00087
+05/01/2026,Westpac Choice,GOLF PRO SHOP,Entertainment,Expense,104.56,,"4,503.96",No,No,u003-00088
+06/01/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"4,478.96",No,Yes,u003-00089
+06/01/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,61.58,,"4,417.38",Yes,No,u003-00090
+07/01/2026,Westpac Choice,UBER *EATS,Eating out,Expense,43.04,,"4,374.34",No,No,u003-00091
+08/01/2026,Westpac Choice,TPG INTERNET,Utilities,Expense,79.99,,"4,294.35",Yes,Yes,u003-00092
+08/01/2026,Westpac Choice,OPTUS MOBILE,Utilities,Expense,55.00,,"4,239.35",Yes,Yes,u003-00093
+08/01/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,127.54,,"4,111.81",Yes,No,u003-00094
+08/01/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,54.09,,"4,057.72",Yes,No,u003-00095
+09/01/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,78.02,,"3,979.70",Yes,No,u003-00096
+10/01/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,18.99,,"3,960.71",No,Yes,u003-00097
+10/01/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,94.38,,"3,866.33",Yes,No,u003-00098
+11/01/2026,Westpac Choice,PENRITH MEDICAL CENTRE,Health,Expense,33.04,,"3,833.29",Yes,No,u003-00099
+13/01/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,56.04,,"3,777.25",Yes,No,u003-00100
+13/01/2026,Westpac Choice,KMART,Shopping,Expense,173.62,,"3,603.63",No,No,u003-00101
+14/01/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"3,589.64",No,Yes,u003-00102
+17/01/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","6,679.64",Yes,Yes,u003-00103
+17/01/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,63.00,,"6,616.64",Yes,No,u003-00104
+17/01/2026,Westpac Choice,BUNNINGS,Shopping,Expense,75.82,,"6,540.82",No,No,u003-00105
+17/01/2026,Westpac Choice,HOYTS,Entertainment,Expense,56.05,,"6,484.77",No,No,u003-00106
+18/01/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,500.00,"20,144.64",No,Yes,u003-00107
+18/01/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,48.35,,"6,436.42",Yes,No,u003-00108
+18/01/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,500.00,,"5,936.42",No,Yes,u003-00109
+19/01/2026,Westpac Choice,AAMI HOME AND CAR INSURANCE,Insurance,Expense,186.00,,"5,750.42",Yes,Yes,u003-00110
+19/01/2026,Westpac Choice,HOYTS,Entertainment,Expense,30.73,,"5,719.69",No,No,u003-00111
+20/01/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,85.29,,"5,634.40",Yes,No,u003-00112
+21/01/2026,Westpac Choice,ORIGIN ENERGY,Utilities,Expense,412.75,,"5,221.65",Yes,Yes,u003-00113
+21/01/2026,Westpac Choice,UBER *EATS,Eating out,Expense,28.12,,"5,193.53",No,No,u003-00114
+22/01/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,139.46,,"5,054.07",Yes,No,u003-00115
+23/01/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,59.83,,"4,994.24",No,No,u003-00116
+24/01/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,147.84,,"4,846.40",Yes,No,u003-00117
+24/01/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,53.86,,"4,792.54",No,No,u003-00118
+28/01/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,82.54,,"4,710.00",Yes,No,u003-00119
+28/01/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,36.00,,"4,674.00",No,No,u003-00120
+29/01/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,45.14,,"4,628.86",No,No,u003-00121
+31/01/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","7,718.86",Yes,Yes,u003-00122
+31/01/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,74.42,,"7,644.44",Yes,No,u003-00123
+31/01/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,69.09,,"7,575.35",No,No,u003-00124
+01/02/2026,Westpac eSaver,INTEREST PAID,Income,Income,,75.54,"20,220.18",No,Yes,u003-00125
+01/02/2026,Westpac Choice,GLENMORE GOLF CLUB MEMBERSHIP,Entertainment,Expense,95.00,,"7,480.35",No,Yes,u003-00126
+01/02/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,56.09,,"7,424.26",No,No,u003-00127
+01/02/2026,Westpac Choice,AMPOL,Transport,Expense,53.84,,"7,370.42",Yes,No,u003-00128
+02/02/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,168.00,,"7,202.42",Yes,Yes,u003-00129
+02/02/2026,Westpac Choice,AMPOL,Transport,Expense,95.61,,"7,106.81",Yes,No,u003-00130
+03/02/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,52.50,,"7,054.31",Yes,No,u003-00131
+03/02/2026,Westpac Choice,KMART,Shopping,Expense,87.49,,"6,966.82",No,No,u003-00132
+04/02/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,141.75,,"6,825.07",Yes,No,u003-00133
+04/02/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,69.34,,"6,755.73",Yes,No,u003-00134
+04/02/2026,Westpac Choice,JB HI-FI,Shopping,Expense,142.42,,"6,613.31",No,No,u003-00135
+05/02/2026,Westpac Choice,HOME LOAN REPAYMENT,Loan repayments,Expense,"2,650.00",,"3,963.31",Yes,Yes,u003-00136
+05/02/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,81.01,,"3,882.30",Yes,No,u003-00137
+05/02/2026,Westpac Choice,UBER *EATS,Eating out,Expense,27.73,,"3,854.57",No,No,u003-00138
+05/02/2026,Westpac Choice,BCF,Shopping,Expense,126.07,,"3,728.50",No,No,u003-00139
+05/02/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,26.88,,"3,701.62",Yes,No,u003-00140
+06/02/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"3,676.62",No,Yes,u003-00141
+06/02/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,71.81,,"3,604.81",Yes,No,u003-00142
+07/02/2026,Westpac Choice,OPORTO,Eating out,Expense,58.68,,"3,546.13",No,No,u003-00143
+07/02/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,79.05,,"3,467.08",No,No,u003-00144
+08/02/2026,Westpac Choice,TPG INTERNET,Utilities,Expense,79.99,,"3,387.09",Yes,Yes,u003-00145
+08/02/2026,Westpac Choice,OPTUS MOBILE,Utilities,Expense,55.00,,"3,332.09",Yes,Yes,u003-00146
+10/02/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,18.99,,"3,313.10",No,Yes,u003-00147
+11/02/2026,Westpac Choice,GOLF PRO SHOP,Entertainment,Expense,82.07,,"3,231.03",No,No,u003-00148
+12/02/2026,Westpac Choice,PENRITH CITY COUNCIL RATES,Housing,Expense,520.00,,"2,711.03",Yes,Yes,u003-00149
+12/02/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,102.45,,"2,608.58",Yes,No,u003-00150
+12/02/2026,Westpac Choice,OPORTO,Eating out,Expense,45.09,,"2,563.49",No,No,u003-00151
+14/02/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","5,653.49",Yes,Yes,u003-00152
+14/02/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"5,639.50",No,Yes,u003-00153
+14/02/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,105.46,,"5,534.04",Yes,No,u003-00154
+14/02/2026,Westpac Choice,OPORTO,Eating out,Expense,22.90,,"5,511.14",No,No,u003-00155
+15/02/2026,Westpac Choice,SPECSAVERS,Health,Expense,71.29,,"5,439.85",Yes,No,u003-00156
+16/02/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,92.17,,"5,347.68",Yes,No,u003-00157
+17/02/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,59.20,,"5,288.48",Yes,No,u003-00158
+18/02/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,500.00,"20,720.18",No,Yes,u003-00159
+18/02/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,69.26,,"5,219.22",Yes,No,u003-00160
+18/02/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,500.00,,"4,719.22",No,Yes,u003-00161
+19/02/2026,Westpac Choice,AAMI HOME AND CAR INSURANCE,Insurance,Expense,186.00,,"4,533.22",Yes,Yes,u003-00162
+19/02/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,66.84,,"4,466.38",No,No,u003-00163
+20/02/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,106.53,,"4,359.85",Yes,No,u003-00164
+21/02/2026,Westpac Choice,AFTERPAY - REBEL SPORT (1/4),Buy Now Pay Later,Expense,64.75,,"4,295.10",No,No,u003-B0001
+22/02/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,124.99,,"4,170.11",Yes,No,u003-00165
+22/02/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,101.32,,"4,068.79",Yes,No,u003-00166
+24/02/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,62.42,,"4,006.37",Yes,No,u003-00167
+25/02/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,76.69,,"3,929.68",Yes,No,u003-00168
+26/02/2026,Westpac Choice,BCF,Shopping,Expense,166.90,,"3,762.78",No,No,u003-00169
+27/02/2026,Westpac Choice,SUPERCHEAP AUTO,Shopping,Expense,110.10,,"3,652.68",No,No,u003-00170
+28/02/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","6,742.68",Yes,Yes,u003-00171
+28/02/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,82.85,,"6,659.83",No,No,u003-00172
+01/03/2026,Westpac eSaver,INTEREST PAID,Income,Income,,77.70,"20,797.88",No,Yes,u003-00173
+01/03/2026,Westpac Choice,GLENMORE GOLF CLUB MEMBERSHIP,Entertainment,Expense,95.00,,"6,564.83",No,Yes,u003-00174
+01/03/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,54.38,,"6,510.45",No,No,u003-00175
+02/03/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,168.00,,"6,342.45",Yes,Yes,u003-00176
+02/03/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,91.12,,"6,251.33",Yes,No,u003-00177
+03/03/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,95.71,,"6,155.62",Yes,No,u003-00178
+03/03/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,42.61,,"6,113.01",No,No,u003-00179
+03/03/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,58.77,,"6,054.24",Yes,No,u003-00180
+03/03/2026,Westpac Choice,JB HI-FI,Shopping,Expense,109.54,,"5,944.70",No,No,u003-00181
+05/03/2026,Westpac Choice,HOME LOAN REPAYMENT,Loan repayments,Expense,"2,650.00",,"3,294.70",Yes,Yes,u003-00182
+05/03/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,81.87,,"3,212.83",Yes,No,u003-00183
+06/03/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"3,187.83",No,Yes,u003-00184
+06/03/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,95.85,,"3,091.98",Yes,No,u003-00185
+06/03/2026,Westpac Choice,BCF,Shopping,Expense,146.64,,"2,945.34",No,No,u003-00186
+07/03/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,35.49,,"2,909.85",No,No,u003-00187
+07/03/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,66.76,,"2,843.09",Yes,No,u003-00188
+07/03/2026,Westpac Choice,KMART,Shopping,Expense,52.84,,"2,790.25",No,No,u003-00189
+07/03/2026,Westpac Choice,AFTERPAY - REBEL SPORT (2/4),Buy Now Pay Later,Expense,64.75,,"2,725.50",No,Yes,u003-B0002
+08/03/2026,Westpac Choice,TPG INTERNET,Utilities,Expense,79.99,,"2,645.51",Yes,Yes,u003-00190
+08/03/2026,Westpac Choice,OPTUS MOBILE,Utilities,Expense,55.00,,"2,590.51",Yes,Yes,u003-00191
+08/03/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,89.21,,"2,501.30",Yes,No,u003-00192
+08/03/2026,Westpac Choice,AMPOL,Transport,Expense,80.34,,"2,420.96",Yes,No,u003-00193
+09/03/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,151.70,,"2,269.26",Yes,No,u003-00194
+09/03/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,26.23,,"2,243.03",No,No,u003-00195
+10/03/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,18.99,,"2,224.04",No,Yes,u003-00196
+10/03/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,85.66,,"2,138.38",Yes,No,u003-00197
+11/03/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,59.89,,"2,078.49",Yes,No,u003-00198
+11/03/2026,Westpac Choice,SUPERCHEAP AUTO,Shopping,Expense,78.02,,"2,000.47",No,No,u003-00199
+13/03/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,60.85,,"1,939.62",No,No,u003-00200
+14/03/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","5,029.62",Yes,Yes,u003-00201
+14/03/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"5,015.63",No,Yes,u003-00202
+15/03/2026,Westpac Choice,AMPOL,Transport,Expense,48.91,,"4,966.72",Yes,No,u003-00203
+17/03/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,61.61,,"4,905.11",Yes,No,u003-00204
+17/03/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,46.61,,"4,858.50",No,No,u003-00205
+18/03/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,500.00,"21,297.88",No,Yes,u003-00206
+18/03/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,20.59,,"4,837.91",No,No,u003-00207
+18/03/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,500.00,,"4,337.91",No,Yes,u003-00208
+19/03/2026,Westpac Choice,AAMI HOME AND CAR INSURANCE,Insurance,Expense,186.00,,"4,151.91",Yes,Yes,u003-00209
+19/03/2026,Westpac Choice,SPECSAVERS,Health,Expense,32.17,,"4,119.74",Yes,No,u003-00210
+20/03/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,87.87,,"4,031.87",Yes,No,u003-00211
+21/03/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,72.18,,"3,959.69",No,No,u003-00212
+21/03/2026,Westpac Choice,AFTERPAY - REBEL SPORT (3/4),Buy Now Pay Later,Expense,64.75,,"3,894.94",No,Yes,u003-B0003
+22/03/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,40.71,,"3,854.23",Yes,No,u003-00213
+23/03/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,51.35,,"3,802.88",Yes,No,u003-00214
+24/03/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,69.10,,"3,733.78",Yes,No,u003-00215
+25/03/2026,Westpac Choice,SYDNEY WATER,Utilities,Expense,239.51,,"3,494.27",Yes,Yes,u003-00216
+25/03/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,91.43,,"3,402.84",Yes,No,u003-00217
+25/03/2026,Westpac Choice,OPORTO,Eating out,Expense,51.40,,"3,351.44",No,No,u003-00218
+26/03/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,25.19,,"3,326.25",No,No,u003-00219
+27/03/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,64.74,,"3,261.51",Yes,No,u003-00220
+28/03/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","6,351.51",Yes,Yes,u003-00221
+28/03/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,125.51,,"6,226.00",Yes,No,u003-00222
+29/03/2026,Westpac Choice,UBER *EATS,Eating out,Expense,62.11,,"6,163.89",No,No,u003-00223
+29/03/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,41.69,,"6,122.20",Yes,No,u003-00224
+29/03/2026,Westpac Choice,KMART,Shopping,Expense,166.18,,"5,956.02",No,No,u003-00225
+01/04/2026,Westpac eSaver,INTEREST PAID,Income,Income,,79.87,"21,377.75",No,Yes,u003-00226
+01/04/2026,Westpac Choice,GLENMORE GOLF CLUB MEMBERSHIP,Entertainment,Expense,95.00,,"5,861.02",No,Yes,u003-00227
+01/04/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,96.78,,"5,764.24",Yes,No,u003-00228
+01/04/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,55.20,,"5,709.04",No,No,u003-00229
+02/04/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,168.00,,"5,541.04",Yes,Yes,u003-00230
+02/04/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,74.86,,"5,466.18",Yes,No,u003-00231
+02/04/2026,Westpac Choice,NORTHSIDE VET HOSPITAL,Health,Expense,"1,240.00",,"4,226.18",Yes,No,u003-S0001
+03/04/2026,Westpac Choice,UBER *EATS,Eating out,Expense,34.30,,"4,191.88",No,No,u003-00232
+04/04/2026,Westpac Choice,AFTERPAY - REBEL SPORT (4/4),Buy Now Pay Later,Expense,64.75,,"4,127.13",No,Yes,u003-B0004
+05/04/2026,Westpac Choice,HOME LOAN REPAYMENT,Loan repayments,Expense,"2,650.00",,"1,477.13",Yes,Yes,u003-00233
+06/04/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"1,452.13",No,Yes,u003-00234
+07/04/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,94.05,,"1,358.08",Yes,No,u003-00235
+08/04/2026,Westpac Choice,TPG INTERNET,Utilities,Expense,79.99,,"1,278.09",Yes,Yes,u003-00236
+08/04/2026,Westpac Choice,OPTUS MOBILE,Utilities,Expense,55.00,,"1,223.09",Yes,Yes,u003-00237
+08/04/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,104.38,,"1,118.71",Yes,No,u003-00238
+08/04/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,17.65,,"1,101.06",No,No,u003-00239
+09/04/2026,Westpac Choice,OPORTO,Eating out,Expense,39.45,,"1,061.61",No,No,u003-00240
+10/04/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,18.99,,"1,042.62",No,Yes,u003-00241
+10/04/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,86.68,,955.94,Yes,No,u003-00242
+10/04/2026,Westpac Choice,OPORTO,Eating out,Expense,32.97,,922.97,No,No,u003-00243
+10/04/2026,Westpac Choice,HOYTS,Entertainment,Expense,52.04,,870.93,No,No,u003-00244
+11/04/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","3,960.93",Yes,Yes,u003-00245
+13/04/2026,Westpac Choice,GOLF PRO SHOP,Entertainment,Expense,54.82,,"3,906.11",No,No,u003-00246
+14/04/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"3,892.12",No,Yes,u003-00247
+15/04/2026,Westpac Choice,ULTRA TUNE CAR SERVICE,Transport,Expense,480.00,,"3,412.12",Yes,Yes,u003-00248
+15/04/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,117.44,,"3,294.68",Yes,No,u003-00249
+16/04/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,72.12,,"3,222.56",Yes,No,u003-00250
+17/04/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,67.27,,"3,155.29",Yes,No,u003-00251
+17/04/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,44.64,,"3,110.65",No,No,u003-00252
+18/04/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,500.00,"21,877.75",No,Yes,u003-00253
+18/04/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,43.73,,"3,066.92",Yes,No,u003-00254
+18/04/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,500.00,,"2,566.92",No,Yes,u003-00255
+19/04/2026,Westpac Choice,AAMI HOME AND CAR INSURANCE,Insurance,Expense,186.00,,"2,380.92",Yes,Yes,u003-00256
+19/04/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,42.91,,"2,338.01",No,No,u003-00257
+20/04/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,106.70,,"2,231.31",Yes,No,u003-00258
+21/04/2026,Westpac Choice,ORIGIN ENERGY,Utilities,Expense,433.30,,"1,798.01",Yes,Yes,u003-00259
+21/04/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,56.91,,"1,741.10",No,No,u003-00260
+22/04/2026,Westpac Choice,JB HI-FI,Shopping,Expense,128.02,,"1,613.08",No,No,u003-00261
+24/04/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,31.93,,"1,581.15",No,No,u003-00262
+24/04/2026,Westpac Choice,HOYTS,Entertainment,Expense,99.51,,"1,481.64",No,No,u003-00263
+25/04/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","4,571.64",Yes,Yes,u003-00264
+25/04/2026,Westpac Choice,KMART,Shopping,Expense,216.39,,"4,355.25",No,No,u003-00265
+25/04/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,63.33,,"4,291.92",No,No,u003-00266
+26/04/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,47.57,,"4,244.35",Yes,No,u003-00267
+27/04/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,86.08,,"4,158.27",Yes,No,u003-00268
+29/04/2026,Westpac Choice,HOYTS,Entertainment,Expense,75.10,,"4,083.17",No,No,u003-00269
+30/04/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,62.41,,"4,020.76",Yes,No,u003-00270
+01/05/2026,Westpac eSaver,INTEREST PAID,Income,Income,,82.04,"21,959.79",No,Yes,u003-00271
+01/05/2026,Westpac Choice,GLENMORE GOLF CLUB MEMBERSHIP,Entertainment,Expense,95.00,,"3,925.76",No,Yes,u003-00272
+01/05/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,106.02,,"3,819.74",Yes,No,u003-00273
+02/05/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,168.00,,"3,651.74",Yes,Yes,u003-00274
+02/05/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,88.88,,"3,562.86",Yes,No,u003-00275
+02/05/2026,Westpac Choice,HOYTS,Entertainment,Expense,100.77,,"3,462.09",No,No,u003-00276
+02/05/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,100.00,,"3,362.09",No,Yes,u003-B0011
+03/05/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,71.85,,"3,290.24",Yes,No,u003-00277
+05/05/2026,Westpac Choice,HOME LOAN REPAYMENT,Loan repayments,Expense,"2,650.00",,640.24,Yes,Yes,u003-00278
+05/05/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,43.34,,596.90,Yes,No,u003-00279
+05/05/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,33.62,,563.28,No,No,u003-00280
+06/05/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,538.28,No,Yes,u003-00281
+07/05/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,59.23,,479.05,No,No,u003-00282
+07/05/2026,Westpac Choice,AMPOL,Transport,Expense,57.81,,421.24,Yes,No,u003-00283
+07/05/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,49.51,,371.73,No,No,u003-00284
+08/05/2026,Westpac Choice,TPG INTERNET,Utilities,Expense,79.99,,291.74,Yes,Yes,u003-00285
+08/05/2026,Westpac Choice,OPTUS MOBILE,Utilities,Expense,55.00,,236.74,Yes,Yes,u003-00286
+08/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,336.74,No,No,u003-F0001
+08/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"21,859.79",No,No,u003-F0002
+08/05/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,52.88,,283.86,No,No,u003-00287
+08/05/2026,Westpac Choice,AMPOL,Transport,Expense,39.25,,244.61,Yes,No,u003-00288
+08/05/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,344.61,No,No,u003-F0003
+08/05/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"21,759.79",No,No,u003-F0004
+09/05/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","3,434.61",Yes,Yes,u003-00289
+10/05/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,18.99,,"3,415.62",No,Yes,u003-00290
+10/05/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,69.95,,"3,345.67",No,No,u003-00291
+10/05/2026,Westpac Choice,BUNNINGS,Shopping,Expense,69.99,,"3,275.68",No,No,u003-00292
+11/05/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,90.13,,"3,185.55",Yes,No,u003-00293
+12/05/2026,Westpac Choice,PENRITH CITY COUNCIL RATES,Housing,Expense,520.00,,"2,665.55",Yes,Yes,u003-00294
+12/05/2026,Westpac Choice,AMPOL,Transport,Expense,66.11,,"2,599.44",Yes,No,u003-00295
+13/05/2026,Westpac Choice,UBER *EATS,Eating out,Expense,66.57,,"2,532.87",No,No,u003-00296
+13/05/2026,Westpac Choice,AMPOL,Transport,Expense,59.46,,"2,473.41",Yes,No,u003-00297
+14/05/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"2,459.42",No,Yes,u003-00298
+14/05/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,90.79,,"2,368.63",Yes,No,u003-00299
+14/05/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,24.97,,"2,343.66",No,No,u003-00300
+15/05/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,61.69,,"2,281.97",Yes,No,u003-00301
+15/05/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,58.87,,"2,223.10",No,No,u003-00302
+16/05/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,100.00,,"2,123.10",No,Yes,u003-B0012
+17/05/2026,Westpac Choice,UBER *EATS,Eating out,Expense,48.92,,"2,074.18",No,No,u003-00303
+18/05/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,500.00,"22,259.79",No,Yes,u003-00304
+18/05/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,500.00,,"1,574.18",No,Yes,u003-00305
+19/05/2026,Westpac Choice,AAMI HOME AND CAR INSURANCE,Insurance,Expense,186.00,,"1,388.18",Yes,Yes,u003-00306
+19/05/2026,Westpac Choice,OPORTO,Eating out,Expense,50.94,,"1,337.24",No,No,u003-00307
+20/05/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,79.59,,"1,257.65",Yes,No,u003-00308
+23/05/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","4,347.65",Yes,Yes,u003-00309
+23/05/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,48.40,,"4,299.25",Yes,No,u003-00310
+23/05/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,68.03,,"4,231.22",Yes,No,u003-00311
+25/05/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,94.63,,"4,136.59",Yes,No,u003-00312
+26/05/2026,Westpac Choice,HOYTS,Entertainment,Expense,41.53,,"4,095.06",No,No,u003-00313
+27/05/2026,Westpac Choice,BCF,Shopping,Expense,63.39,,"4,031.67",No,No,u003-00314
+28/05/2026,Westpac Choice,GOLF PRO SHOP,Entertainment,Expense,86.99,,"3,944.68",No,No,u003-00315
+29/05/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,43.00,,"3,901.68",No,No,u003-00316
+30/05/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,54.13,,"3,847.55",No,No,u003-00317
+30/05/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,100.00,,"3,747.55",No,Yes,u003-B0013
+31/05/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,156.99,,"3,590.56",Yes,No,u003-00318
+01/06/2026,Westpac eSaver,INTEREST PAID,Income,Income,,84.22,"22,344.01",No,Yes,u003-00319
+01/06/2026,Westpac Choice,GLENMORE GOLF CLUB MEMBERSHIP,Entertainment,Expense,95.00,,"3,495.56",No,Yes,u003-00320
+02/06/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,168.00,,"3,327.56",Yes,Yes,u003-00321
+02/06/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,22.67,,"3,304.89",No,No,u003-00322
+03/06/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,118.88,,"3,186.01",Yes,No,u003-00323
+03/06/2026,Westpac Choice,UBER *EATS,Eating out,Expense,39.27,,"3,146.74",No,No,u003-00324
+03/06/2026,Westpac Choice,AMPOL,Transport,Expense,53.15,,"3,093.59",Yes,No,u003-00325
+03/06/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,60.13,,"3,033.46",No,No,u003-00326
+04/06/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,77.32,,"2,956.14",No,No,u003-00327
+05/06/2026,Westpac Choice,HOME LOAN REPAYMENT,Loan repayments,Expense,"2,650.00",,306.14,Yes,Yes,u003-00328
+06/06/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","3,396.14",Yes,Yes,u003-00329
+06/06/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"3,371.14",No,Yes,u003-00330
+06/06/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,119.43,,"3,251.71",Yes,No,u003-00331
+06/06/2026,Westpac Choice,PENRITH MEDICAL CENTRE,Health,Expense,90.97,,"3,160.74",Yes,No,u003-00332
+07/06/2026,Westpac Choice,AMPOL,Transport,Expense,65.70,,"3,095.04",Yes,No,u003-00333
+07/06/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,55.44,,"3,039.60",No,No,u003-00334
+08/06/2026,Westpac Choice,TPG INTERNET,Utilities,Expense,79.99,,"2,959.61",Yes,Yes,u003-00335
+08/06/2026,Westpac Choice,OPTUS MOBILE,Utilities,Expense,55.00,,"2,904.61",Yes,Yes,u003-00336
+08/06/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,140.61,,"2,764.00",Yes,No,u003-00337
+08/06/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,56.05,,"2,707.95",Yes,No,u003-00338
+09/06/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,131.49,,"2,576.46",Yes,No,u003-00339
+09/06/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,83.88,,"2,492.58",Yes,No,u003-00340
+10/06/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,18.99,,"2,473.59",No,Yes,u003-00341
+11/06/2026,Westpac Choice,OPORTO,Eating out,Expense,44.92,,"2,428.67",No,No,u003-00342
+12/06/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,21.61,,"2,407.06",No,No,u003-00343
+13/06/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,83.10,,"2,323.96",Yes,No,u003-00344
+13/06/2026,Westpac Choice,UBER *EATS,Eating out,Expense,53.61,,"2,270.35",No,No,u003-00345
+13/06/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,100.00,,"2,170.35",No,Yes,u003-B0014
+14/06/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"2,156.36",No,Yes,u003-00346
+14/06/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,75.93,,"2,080.43",Yes,No,u003-00347
+16/06/2026,Westpac Choice,OPORTO,Eating out,Expense,30.99,,"2,049.44",No,No,u003-00348
+16/06/2026,Westpac Choice,PENRITH MEDICAL CENTRE,Health,Expense,44.59,,"2,004.85",Yes,No,u003-00349
+17/06/2026,Westpac Choice,SERVICE NSW VEHICLE REGISTRATION,Transport,Expense,890.00,,"1,114.85",Yes,No,u003-00350
+17/06/2026,Westpac Choice,OPORTO,Eating out,Expense,71.85,,"1,043.00",No,No,u003-00351
+17/06/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,53.20,,989.80,Yes,No,u003-00352
+18/06/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,500.00,"22,844.01",No,Yes,u003-00353
+18/06/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,139.90,,849.90,Yes,No,u003-00354
+18/06/2026,Westpac Choice,AMPOL,Transport,Expense,76.45,,773.45,Yes,No,u003-00355
+18/06/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,500.00,,273.45,No,Yes,u003-00356
+19/06/2026,Westpac Choice,AAMI HOME AND CAR INSURANCE,Insurance,Expense,186.00,,87.45,Yes,Yes,u003-00357
+19/06/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,200.00,287.45,No,No,u003-F0005
+19/06/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,200.00,,"22,644.01",No,No,u003-F0006
+20/06/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","3,377.45",Yes,Yes,u003-00358
+20/06/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,54.84,,"3,322.61",Yes,No,u003-00359
+20/06/2026,Westpac Choice,JB HI-FI,Shopping,Expense,77.23,,"3,245.38",No,No,u003-00360
+24/06/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,85.06,,"3,160.32",Yes,No,u003-00361
+25/06/2026,Westpac Choice,SYDNEY WATER,Utilities,Expense,260.63,,"2,899.69",Yes,Yes,u003-00362
+25/06/2026,Westpac Choice,JB HI-FI,Shopping,Expense,76.51,,"2,823.18",No,No,u003-00363
+27/06/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,58.53,,"2,764.65",Yes,No,u003-00364
+27/06/2026,Westpac Choice,UBER *EATS,Eating out,Expense,36.82,,"2,727.83",No,No,u003-00365
+27/06/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,35.24,,"2,692.59",No,No,u003-00366
+27/06/2026,Westpac Choice,AFTERPAY - JB HI-FI (1/4),Buy Now Pay Later,Expense,112.25,,"2,580.34",No,No,u003-B0005
+27/06/2026,Westpac Choice,ZIP PAY AUTO REPAYMENT,Buy Now Pay Later,Expense,18.90,,"2,561.44",No,Yes,u003-B0015
+28/06/2026,Westpac Choice,OPORTO,Eating out,Expense,69.95,,"2,491.49",No,No,u003-00367
+29/06/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,55.21,,"2,436.28",Yes,No,u003-00368
+01/07/2026,Westpac eSaver,INTEREST PAID,Income,Income,,86.42,"22,730.43",No,Yes,u003-00369
+01/07/2026,Westpac Choice,GLENMORE GOLF CLUB MEMBERSHIP,Entertainment,Expense,95.00,,"2,341.28",No,Yes,u003-00370
+01/07/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,115.67,,"2,225.61",Yes,No,u003-00371
+01/07/2026,Westpac Choice,AMPOL,Transport,Expense,63.34,,"2,162.27",Yes,No,u003-00372
+02/07/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,168.00,,"1,994.27",Yes,Yes,u003-00373
+02/07/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,109.57,,"1,884.70",Yes,No,u003-00374
+02/07/2026,Westpac Choice,OPORTO,Eating out,Expense,69.15,,"1,815.55",No,No,u003-00375
+03/07/2026,Westpac Choice,SUPERCHEAP AUTO,Shopping,Expense,83.06,,"1,732.49",No,No,u003-00376
+04/07/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","4,822.49",Yes,Yes,u003-00377
+04/07/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,60.72,,"4,761.77",No,No,u003-00378
+05/07/2026,Westpac Choice,HOME LOAN REPAYMENT,Loan repayments,Expense,"2,650.00",,"2,111.77",Yes,Yes,u003-00379
+05/07/2026,Westpac Choice,OPORTO,Eating out,Expense,47.25,,"2,064.52",No,No,u003-00380
+06/07/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"2,039.52",No,Yes,u003-00381
+06/07/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,34.09,,"2,005.43",No,No,u003-00382
+06/07/2026,Westpac Choice,KMART,Shopping,Expense,41.68,,"1,963.75",No,No,u003-00383
+06/07/2026,Westpac Choice,GOLF PRO SHOP,Entertainment,Expense,77.68,,"1,886.07",No,No,u003-00384
+07/07/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,60.22,,"1,825.85",No,No,u003-00385
+07/07/2026,Westpac Choice,HOYTS,Entertainment,Expense,73.20,,"1,752.65",No,No,u003-00386
+08/07/2026,Westpac Choice,TPG INTERNET,Utilities,Expense,79.99,,"1,672.66",Yes,Yes,u003-00387
+08/07/2026,Westpac Choice,OPTUS MOBILE,Utilities,Expense,55.00,,"1,617.66",Yes,Yes,u003-00388
+08/07/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,28.85,,"1,588.81",No,No,u003-00389
+09/07/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,44.61,,"1,544.20",No,No,u003-00390
+10/07/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,18.99,,"1,525.21",No,Yes,u003-00391
+11/07/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,44.32,,"1,480.89",Yes,No,u003-00392
+11/07/2026,Westpac Choice,HOYTS,Entertainment,Expense,52.16,,"1,428.73",No,No,u003-00393
+11/07/2026,Westpac Choice,AFTERPAY - JB HI-FI (2/4),Buy Now Pay Later,Expense,112.25,,"1,316.48",No,Yes,u003-B0006
+12/07/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,36.15,,"1,280.33",No,No,u003-00394
+13/07/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,37.57,,"1,242.76",No,No,u003-00395
+14/07/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"1,228.77",No,Yes,u003-00396
+16/07/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,92.80,,"1,135.97",Yes,No,u003-00397
+17/07/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,89.52,,"1,046.45",Yes,No,u003-00398
+17/07/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,42.12,,"1,004.33",No,No,u003-00399
+18/07/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","4,094.33",Yes,Yes,u003-00400
+18/07/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,500.00,"23,230.43",No,Yes,u003-00401
+18/07/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,39.32,,"4,055.01",No,No,u003-00402
+18/07/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,500.00,,"3,555.01",No,Yes,u003-00403
+19/07/2026,Westpac Choice,AAMI HOME AND CAR INSURANCE,Insurance,Expense,186.00,,"3,369.01",Yes,Yes,u003-00404
+21/07/2026,Westpac Choice,ORIGIN ENERGY,Utilities,Expense,442.94,,"2,926.07",Yes,Yes,u003-00405
+22/07/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,68.34,,"2,857.73",Yes,No,u003-00406
+23/07/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,133.37,,"2,724.36",Yes,No,u003-00407
+23/07/2026,Westpac Choice,OPORTO,Eating out,Expense,33.72,,"2,690.64",No,No,u003-00408
+23/07/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,100.72,,"2,589.92",No,No,u003-00409
+24/07/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,72.59,,"2,517.33",Yes,No,u003-00410
+24/07/2026,Westpac Choice,OPORTO,Eating out,Expense,41.03,,"2,476.30",No,No,u003-00411
+24/07/2026,Westpac Choice,PENRITH MEDICAL CENTRE,Health,Expense,20.18,,"2,456.12",Yes,No,u003-00412
+25/07/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,115.99,,"2,340.13",Yes,No,u003-00413
+25/07/2026,Westpac Choice,GOLF PRO SHOP,Entertainment,Expense,72.96,,"2,267.17",No,No,u003-00414
+25/07/2026,Westpac Choice,AFTERPAY - JB HI-FI (3/4),Buy Now Pay Later,Expense,112.25,,"2,154.92",No,Yes,u003-B0007
+26/07/2026,Westpac Choice,BCF,Shopping,Expense,98.65,,"2,056.27",No,No,u003-00415
+28/07/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,17.15,,"2,039.12",No,No,u003-00416
+29/07/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,77.40,,"1,961.72",Yes,No,u003-00417
+29/07/2026,Westpac Choice,AMPOL,Transport,Expense,79.27,,"1,882.45",Yes,No,u003-00418
+30/07/2026,Westpac Choice,UBER *EATS,Eating out,Expense,51.19,,"1,831.26",No,No,u003-00419
+01/08/2026,Westpac eSaver,INTEREST PAID,Income,Income,,88.61,"23,319.04",No,Yes,u003-00420
+01/08/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","4,921.26",Yes,Yes,u003-00421
+01/08/2026,Westpac Choice,GLENMORE GOLF CLUB MEMBERSHIP,Entertainment,Expense,95.00,,"4,826.26",No,Yes,u003-00422
+01/08/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,63.14,,"4,763.12",Yes,No,u003-00423
+01/08/2026,Westpac Choice,OPORTO,Eating out,Expense,34.57,,"4,728.55",No,No,u003-00424
+02/08/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,168.00,,"4,560.55",Yes,Yes,u003-00425
+02/08/2026,Westpac Choice,AMPOL,Transport,Expense,68.00,,"4,492.55",Yes,No,u003-00426
+02/08/2026,Westpac Choice,GOLF PRO SHOP,Entertainment,Expense,49.29,,"4,443.26",No,No,u003-00427
+03/08/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,75.30,,"4,367.96",Yes,No,u003-00428
+03/08/2026,Westpac Choice,SPECSAVERS,Health,Expense,63.27,,"4,304.69",Yes,No,u003-00429
+05/08/2026,Westpac Choice,HOME LOAN REPAYMENT,Loan repayments,Expense,"2,650.00",,"1,654.69",Yes,Yes,u003-00430
+05/08/2026,Westpac Choice,AMPOL,Transport,Expense,96.88,,"1,557.81",Yes,No,u003-00431
+06/08/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,"1,532.81",No,Yes,u003-00432
+06/08/2026,Westpac Choice,SUPERCHEAP AUTO,Shopping,Expense,111.54,,"1,421.27",No,No,u003-00433
+07/08/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,92.25,,"1,329.02",Yes,No,u003-00434
+08/08/2026,Westpac Choice,TPG INTERNET,Utilities,Expense,79.99,,"1,249.03",Yes,Yes,u003-00435
+08/08/2026,Westpac Choice,OPTUS MOBILE,Utilities,Expense,55.00,,"1,194.03",Yes,Yes,u003-00436
+08/08/2026,Westpac Choice,UBER *EATS,Eating out,Expense,35.59,,"1,158.44",No,No,u003-00437
+08/08/2026,Westpac Choice,AFTERPAY - JB HI-FI (4/4),Buy Now Pay Later,Expense,112.25,,"1,046.19",No,Yes,u003-B0008
+09/08/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,82.21,,963.98,Yes,No,u003-00438
+09/08/2026,Westpac Choice,AMPOL,Transport,Expense,70.11,,893.87,Yes,No,u003-00439
+09/08/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,61.70,,832.17,No,No,u003-00440
+10/08/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,18.99,,813.18,No,Yes,u003-00441
+11/08/2026,Westpac Choice,BUNNINGS,Shopping,Expense,131.66,,681.52,No,No,u003-00442
+12/08/2026,Westpac Choice,PENRITH CITY COUNCIL RATES,Housing,Expense,520.00,,161.52,Yes,Yes,u003-00443
+12/08/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,261.52,No,No,u003-F0007
+12/08/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"23,219.04",No,No,u003-F0008
+12/08/2026,Westpac Choice,AMPOL,Transport,Expense,63.21,,198.31,Yes,No,u003-00444
+12/08/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,298.31,No,No,u003-F0009
+12/08/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"23,119.04",No,No,u003-F0010
+12/08/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,84.89,,213.42,Yes,No,u003-00445
+12/08/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,313.42,No,No,u003-F0011
+12/08/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"23,019.04",No,No,u003-F0012
+12/08/2026,Westpac Choice,MIDAS AUTO SERVICE,Transport,Expense,"1,860.00",,"-1,546.58",Yes,No,u003-S0002
+12/08/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,"1,800.00",253.42,No,No,u003-F0013
+12/08/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,"1,800.00",,"21,219.04",No,No,u003-F0014
+14/08/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,239.43,No,Yes,u003-00446
+14/08/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,339.43,No,No,u003-F0015
+14/08/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"21,119.04",No,No,u003-F0016
+14/08/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,144.30,,195.13,Yes,No,u003-00447
+14/08/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,295.13,No,No,u003-F0017
+14/08/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"21,019.04",No,No,u003-F0018
+15/08/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","3,385.13",Yes,Yes,u003-00448
+15/08/2026,Westpac Choice,OPORTO,Eating out,Expense,67.79,,"3,317.34",No,No,u003-00449
+16/08/2026,Westpac Choice,KMART,Shopping,Expense,37.86,,"3,279.48",No,No,u003-00450
+17/08/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,81.89,,"3,197.59",Yes,No,u003-00451
+18/08/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,500.00,"21,519.04",No,Yes,u003-00452
+18/08/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,500.00,,"2,697.59",No,Yes,u003-00453
+19/08/2026,Westpac Choice,AAMI HOME AND CAR INSURANCE,Insurance,Expense,186.00,,"2,511.59",Yes,Yes,u003-00454
+19/08/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,84.69,,"2,426.90",Yes,No,u003-00455
+21/08/2026,Westpac Choice,OPORTO,Eating out,Expense,39.24,,"2,387.66",No,No,u003-00456
+22/08/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,79.47,,"2,308.19",Yes,No,u003-00457
+22/08/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,51.16,,"2,257.03",No,No,u003-00458
+24/08/2026,Westpac Choice,SPECSAVERS,Health,Expense,70.39,,"2,186.64",Yes,No,u003-00459
+25/08/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,37.08,,"2,149.56",No,No,u003-00460
+27/08/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,154.03,,"1,995.53",Yes,No,u003-00461
+27/08/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,55.60,,"1,939.93",No,No,u003-00462
+27/08/2026,Westpac Choice,KMART,Shopping,Expense,121.13,,"1,818.80",No,No,u003-00463
+28/08/2026,Westpac Choice,AMPOL,Transport,Expense,75.70,,"1,743.10",Yes,No,u003-00464
+29/08/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","4,833.10",Yes,Yes,u003-00465
+30/08/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,82.62,,"4,750.48",Yes,No,u003-00466
+30/08/2026,Westpac Choice,KMART,Shopping,Expense,119.08,,"4,631.40",No,No,u003-00467
+31/08/2026,Westpac Choice,DAN MURPHYS,Entertainment,Expense,42.77,,"4,588.63",No,No,u003-00468
+01/09/2026,Westpac eSaver,INTEREST PAID,Income,Income,,90.82,"21,609.86",No,Yes,u003-00469
+01/09/2026,Westpac Choice,GLENMORE GOLF CLUB MEMBERSHIP,Entertainment,Expense,95.00,,"4,493.63",No,Yes,u003-00470
+02/09/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,168.00,,"4,325.63",Yes,Yes,u003-00471
+02/09/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,150.94,,"4,174.69",Yes,No,u003-00472
+02/09/2026,Westpac Choice,KMART,Shopping,Expense,148.43,,"4,026.26",No,No,u003-00473
+03/09/2026,Westpac Choice,UBER *EATS,Eating out,Expense,60.51,,"3,965.75",No,No,u003-00474
+04/09/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,143.62,,"3,822.13",Yes,No,u003-00475
+04/09/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,76.76,,"3,745.37",No,No,u003-00476
+05/09/2026,Westpac Choice,HOME LOAN REPAYMENT,Loan repayments,Expense,"2,650.00",,"1,095.37",Yes,Yes,u003-00477
+05/09/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,90.66,,"1,004.71",Yes,No,u003-00478
+05/09/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,64.03,,940.68,No,No,u003-00479
+05/09/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,88.70,,851.98,Yes,No,u003-00480
+06/09/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,826.98,No,Yes,u003-00481
+06/09/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,98.12,,728.86,No,No,u003-00482
+07/09/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,36.05,,692.81,No,No,u003-00483
+08/09/2026,Westpac Choice,TPG INTERNET,Utilities,Expense,79.99,,612.82,Yes,Yes,u003-00484
+08/09/2026,Westpac Choice,OPTUS MOBILE,Utilities,Expense,55.00,,557.82,Yes,Yes,u003-00485
+08/09/2026,Westpac Choice,UBER *EATS,Eating out,Expense,42.48,,515.34,No,No,u003-00486
+08/09/2026,Westpac Choice,KMART,Shopping,Expense,197.16,,318.18,No,No,u003-00487
+09/09/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,118.19,,199.99,Yes,No,u003-00488
+09/09/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,299.99,No,No,u003-F0019
+09/09/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"21,509.86",No,No,u003-F0020
+10/09/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,18.99,,281.00,No,Yes,u003-00489
+11/09/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,96.26,,184.74,Yes,No,u003-00490
+11/09/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,100.00,284.74,No,No,u003-F0021
+11/09/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,100.00,,"21,409.86",No,No,u003-F0022
+12/09/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","3,374.74",Yes,Yes,u003-00491
+12/09/2026,Westpac Choice,UBER *EATS,Eating out,Expense,44.55,,"3,330.19",No,No,u003-00492
+13/09/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,35.54,,"3,294.65",No,No,u003-00493
+13/09/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,81.07,,"3,213.58",Yes,No,u003-00494
+14/09/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"3,199.59",No,Yes,u003-00495
+15/09/2026,Westpac Choice,UBER *EATS,Eating out,Expense,59.81,,"3,139.78",No,No,u003-00496
+15/09/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,40.58,,"3,099.20",Yes,No,u003-00497
+16/09/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,35.71,,"3,063.49",No,No,u003-00498
+17/09/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,44.77,,"3,018.72",Yes,No,u003-00499
+18/09/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,500.00,"21,909.86",No,Yes,u003-00500
+18/09/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,500.00,,"2,518.72",No,Yes,u003-00501
+19/09/2026,Westpac Choice,AAMI HOME AND CAR INSURANCE,Insurance,Expense,186.00,,"2,332.72",Yes,Yes,u003-00502
+19/09/2026,Westpac Choice,BUNNINGS,Shopping,Expense,126.80,,"2,205.92",No,No,u003-00503
+20/09/2026,Westpac Choice,BCF,Shopping,Expense,106.61,,"2,099.31",No,No,u003-00504
+23/09/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,93.67,,"2,005.64",Yes,No,u003-00505
+24/09/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,82.06,,"1,923.58",Yes,No,u003-00506
+24/09/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,55.82,,"1,867.76",Yes,No,u003-00507
+25/09/2026,Westpac Choice,SYDNEY WATER,Utilities,Expense,226.02,,"1,641.74",Yes,Yes,u003-00508
+25/09/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,80.38,,"1,561.36",Yes,No,u003-00509
+25/09/2026,Westpac Choice,UBER *EATS,Eating out,Expense,65.60,,"1,495.76",No,No,u003-00510
+26/09/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","4,585.76",Yes,Yes,u003-00511
+26/09/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,122.32,,"4,463.44",Yes,No,u003-00512
+26/09/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,44.80,,"4,418.64",No,No,u003-00513
+26/09/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,47.65,,"4,370.99",Yes,No,u003-00514
+27/09/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,113.48,,"4,257.51",Yes,No,u003-00515
+27/09/2026,Westpac Choice,UBER *EATS,Eating out,Expense,40.40,,"4,217.11",No,No,u003-00516
+30/09/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,90.14,,"4,126.97",Yes,No,u003-00517
+01/10/2026,Westpac eSaver,INTEREST PAID,Income,Income,,93.04,"22,002.90",No,Yes,u003-00518
+01/10/2026,Westpac Choice,GLENMORE GOLF CLUB MEMBERSHIP,Entertainment,Expense,95.00,,"4,031.97",No,Yes,u003-00519
+01/10/2026,Westpac Choice,OPORTO,Eating out,Expense,45.13,,"3,986.84",No,No,u003-00520
+02/10/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,168.00,,"3,818.84",Yes,Yes,u003-00521
+02/10/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,138.25,,"3,680.59",Yes,No,u003-00522
+03/10/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,66.94,,"3,613.65",Yes,No,u003-00523
+04/10/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,24.38,,"3,589.27",No,No,u003-00524
+05/10/2026,Westpac Choice,HOME LOAN REPAYMENT,Loan repayments,Expense,"2,650.00",,939.27,Yes,Yes,u003-00525
+06/10/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,914.27,No,Yes,u003-00526
+07/10/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,58.98,,855.29,Yes,No,u003-00527
+07/10/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,33.35,,821.94,No,No,u003-00528
+08/10/2026,Westpac Choice,TPG INTERNET,Utilities,Expense,79.99,,741.95,Yes,Yes,u003-00529
+08/10/2026,Westpac Choice,OPTUS MOBILE,Utilities,Expense,55.00,,686.95,Yes,Yes,u003-00530
+08/10/2026,Westpac Choice,AMPOL,Transport,Expense,39.24,,647.71,Yes,No,u003-00531
+09/10/2026,Westpac Choice,JB HI-FI,Shopping,Expense,226.29,,421.42,No,No,u003-00532
+10/10/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","3,511.42",Yes,Yes,u003-00533
+10/10/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,18.99,,"3,492.43",No,Yes,u003-00534
+10/10/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,67.66,,"3,424.77",Yes,No,u003-00535
+10/10/2026,Westpac Choice,UBER *EATS,Eating out,Expense,65.54,,"3,359.23",No,No,u003-00536
+11/10/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,44.48,,"3,314.75",No,No,u003-00537
+12/10/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,39.08,,"3,275.67",No,No,u003-00538
+12/10/2026,Westpac Choice,PENRITH MEDICAL CENTRE,Health,Expense,39.98,,"3,235.69",Yes,No,u003-00539
+13/10/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,98.30,,"3,137.39",Yes,No,u003-00540
+13/10/2026,Westpac Choice,BUNNINGS,Shopping,Expense,130.43,,"3,006.96",No,No,u003-00541
+14/10/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"2,992.97",No,Yes,u003-00542
+15/10/2026,Westpac Choice,ULTRA TUNE CAR SERVICE,Transport,Expense,480.00,,"2,512.97",Yes,Yes,u003-00543
+15/10/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,52.26,,"2,460.71",No,No,u003-00544
+15/10/2026,Westpac Choice,BUNNINGS,Shopping,Expense,137.02,,"2,323.69",No,No,u003-00545
+16/10/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,81.95,,"2,241.74",Yes,No,u003-00546
+18/10/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,500.00,"22,502.90",No,Yes,u003-00547
+18/10/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,77.97,,"2,163.77",Yes,No,u003-00548
+18/10/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,500.00,,"1,663.77",No,Yes,u003-00549
+19/10/2026,Westpac Choice,AAMI HOME AND CAR INSURANCE,Insurance,Expense,186.00,,"1,477.77",Yes,Yes,u003-00550
+19/10/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,133.92,,"1,343.85",Yes,No,u003-00551
+19/10/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,68.43,,"1,275.42",Yes,No,u003-00552
+20/10/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,87.65,,"1,187.77",Yes,No,u003-00553
+21/10/2026,Westpac Choice,ORIGIN ENERGY,Utilities,Expense,345.04,,842.73,Yes,Yes,u003-00554
+21/10/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,65.39,,777.34,No,No,u003-00555
+22/10/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,159.32,,618.02,Yes,No,u003-00556
+22/10/2026,Westpac Choice,OPORTO,Eating out,Expense,42.87,,575.15,No,No,u003-00557
+22/10/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,56.09,,519.06,Yes,No,u003-00558
+23/10/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,53.52,,465.54,Yes,No,u003-00559
+24/10/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","3,555.54",Yes,Yes,u003-00560
+24/10/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,95.14,,"3,460.40",Yes,No,u003-00561
+25/10/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,62.87,,"3,397.53",Yes,No,u003-00562
+25/10/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,57.59,,"3,339.94",Yes,No,u003-00563
+28/10/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,47.88,,"3,292.06",Yes,No,u003-00564
+29/10/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,83.53,,"3,208.53",Yes,No,u003-00565
+29/10/2026,Westpac Choice,PENRITH RSL BISTRO,Eating out,Expense,38.27,,"3,170.26",No,No,u003-00566
+31/10/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,30.28,,"3,139.98",No,No,u003-00567
+01/11/2026,Westpac eSaver,INTEREST PAID,Income,Income,,95.26,"22,598.16",No,Yes,u003-00568
+01/11/2026,Westpac Choice,GLENMORE GOLF CLUB MEMBERSHIP,Entertainment,Expense,95.00,,"3,044.98",No,Yes,u003-00569
+01/11/2026,Westpac Choice,AFTERPAY - MYER (1/4),Buy Now Pay Later,Expense,47.25,,"2,997.73",No,No,u003-B0009
+02/11/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,168.00,,"2,829.73",Yes,Yes,u003-00570
+02/11/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,78.33,,"2,751.40",Yes,No,u003-00571
+03/11/2026,Westpac Choice,BUNNINGS,Shopping,Expense,180.17,,"2,571.23",No,No,u003-00572
+05/11/2026,Westpac Choice,HOME LOAN REPAYMENT,Loan repayments,Expense,"2,650.00",,-78.77,Yes,Yes,u003-00573
+05/11/2026,Westpac Choice,TRANSFER FROM ESAVER,Transfers,Transfer,,400.00,321.23,No,No,u003-F0023
+05/11/2026,Westpac eSaver,TRANSFER TO CHOICE,Transfers,Transfer,400.00,,"22,198.16",No,No,u003-F0024
+05/11/2026,Westpac Choice,THAI ORCHID,Eating out,Expense,30.91,,290.32,No,No,u003-00574
+06/11/2026,Westpac Choice,KAYO SPORTS,Subscriptions,Expense,25.00,,265.32,No,Yes,u003-00575
+07/11/2026,Westpac Choice,HARLAN LOGISTICS PAYROLL,Income,Income,,"3,090.00","3,355.32",Yes,Yes,u003-00576
+07/11/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,57.48,,"3,297.84",Yes,No,u003-00577
+07/11/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,31.92,,"3,265.92",No,No,u003-00578
+08/11/2026,Westpac Choice,TPG INTERNET,Utilities,Expense,79.99,,"3,185.93",Yes,Yes,u003-00579
+08/11/2026,Westpac Choice,OPTUS MOBILE,Utilities,Expense,55.00,,"3,130.93",Yes,Yes,u003-00580
+08/11/2026,Westpac Choice,ALDI STORES PENRITH,Groceries,Expense,98.12,,"3,032.81",Yes,No,u003-00581
+09/11/2026,Westpac Choice,WOOLWORTHS PENRITH,Groceries,Expense,75.59,,"2,957.22",Yes,No,u003-00582
+09/11/2026,Westpac Choice,LINKT TOLLS,Transport,Expense,64.56,,"2,892.66",Yes,No,u003-00583
+10/11/2026,Westpac Choice,NETFLIX.COM,Subscriptions,Expense,18.99,,"2,873.67",No,Yes,u003-00584
+10/11/2026,Westpac Choice,OPORTO,Eating out,Expense,65.35,,"2,808.32",No,No,u003-00585
+11/11/2026,Westpac Choice,COLES PENRITH,Groceries,Expense,77.12,,"2,731.20",Yes,No,u003-00586
+11/11/2026,Westpac Choice,7-ELEVEN FUEL,Transport,Expense,78.01,,"2,653.19",Yes,No,u003-00587
+12/11/2026,Westpac Choice,PENRITH CITY COUNCIL RATES,Housing,Expense,520.00,,"2,133.19",Yes,Yes,u003-00588
+14/11/2026,Westpac Choice,SPOTIFY,Subscriptions,Expense,13.99,,"2,119.20",No,Yes,u003-00589
+14/11/2026,Westpac Choice,GOLF PRO SHOP,Entertainment,Expense,52.57,,"2,066.63",No,No,u003-00590
+15/11/2026,Westpac Choice,THE RED COW HOTEL,Entertainment,Expense,39.74,,"2,026.89",No,No,u003-00591
+15/11/2026,Westpac Choice,AFTERPAY - MYER (2/4),Buy Now Pay Later,Expense,47.25,,"1,979.64",No,Yes,u003-B0010

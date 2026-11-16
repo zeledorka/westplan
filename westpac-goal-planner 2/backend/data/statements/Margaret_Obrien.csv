@@ -1,0 +1,572 @@
+Date,Account,Description,Category,Type,Debit ($),Credit ($),Balance ($),Essential,Recurring,Transaction ID
+16/11/2025,Westpac Choice,IGA GOSFORD,Groceries,Expense,24.64,,"2,075.36",Yes,No,u004-00001
+16/11/2025,Westpac Choice,MUFFIN BREAK,Eating out,Expense,20.61,,"2,054.75",No,No,u004-00002
+17/11/2025,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,16.12,,"2,038.63",Yes,No,u004-00003
+18/11/2025,Westpac Choice,NRMA CONTENTS INSURANCE,Insurance,Expense,38.00,,"2,000.63",Yes,Yes,u004-00004
+18/11/2025,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,985.63",No,Yes,u004-00005
+19/11/2025,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,291.40","3,277.03",Yes,Yes,u004-00006
+20/11/2025,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"2,697.03",Yes,Yes,u004-00007
+20/11/2025,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,11.70,,"2,685.33",Yes,No,u004-00008
+21/11/2025,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,150.00,"14,950.00",No,Yes,u004-00009
+21/11/2025,Westpac Choice,IGA GOSFORD,Groceries,Expense,44.01,,"2,641.32",Yes,No,u004-00010
+21/11/2025,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,150.00,,"2,491.32",No,Yes,u004-00011
+22/11/2025,Westpac Choice,IGA GOSFORD,Groceries,Expense,39.54,,"2,451.78",Yes,No,u004-00012
+24/11/2025,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,31.12,,"2,420.66",Yes,No,u004-00013
+25/11/2025,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"2,405.66",No,Yes,u004-00014
+25/11/2025,Westpac Choice,COLES GOSFORD,Groceries,Expense,73.54,,"2,332.12",Yes,No,u004-00015
+27/11/2025,Westpac Choice,MILLERS,Shopping,Expense,42.77,,"2,289.35",No,No,u004-00016
+28/11/2025,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,48.08,,"2,241.27",Yes,No,u004-00017
+29/11/2025,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,15.90,,"2,225.37",No,No,u004-00018
+30/11/2025,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,23.09,,"2,202.28",Yes,No,u004-00019
+30/11/2025,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,15.31,,"2,186.97",No,No,u004-00020
+01/12/2025,Westpac eSaver,INTEREST PAID,Income,Income,,56.06,"15,006.06",No,Yes,u004-00021
+02/12/2025,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,142.00,,"2,044.97",Yes,Yes,u004-00022
+02/12/2025,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"2,029.97",No,Yes,u004-00023
+03/12/2025,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,291.40","3,321.37",Yes,Yes,u004-00024
+03/12/2025,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,37.88,,"3,283.49",Yes,No,u004-00025
+03/12/2025,Westpac Choice,NEWSAGENCY,Entertainment,Expense,35.71,,"3,247.78",No,No,u004-00026
+04/12/2025,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"2,667.78",Yes,Yes,u004-00027
+05/12/2025,Westpac Choice,COLES GOSFORD,Groceries,Expense,77.80,,"2,589.98",Yes,No,u004-00028
+06/12/2025,Westpac Choice,LINCRAFT,Entertainment,Expense,22.07,,"2,567.91",No,No,u004-00029
+07/12/2025,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,45.00,,"2,522.91",Yes,Yes,u004-00030
+07/12/2025,Westpac Choice,BELONG INTERNET,Utilities,Expense,60.00,,"2,462.91",Yes,Yes,u004-00031
+09/12/2025,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"2,447.91",No,Yes,u004-00032
+09/12/2025,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,71.28,,"2,376.63",Yes,No,u004-00033
+09/12/2025,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,30.59,,"2,346.04",Yes,No,u004-00034
+11/12/2025,Westpac Choice,SALVATION ARMY DONATION,Donations,Expense,20.00,,"2,326.04",No,Yes,u004-00035
+11/12/2025,Westpac Choice,COLES GOSFORD,Groceries,Expense,59.14,,"2,266.90",Yes,No,u004-00036
+11/12/2025,Westpac Choice,DYMOCKS,Shopping,Expense,68.48,,"2,198.42",No,No,u004-00037
+12/12/2025,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,51.75,,"2,146.67",Yes,No,u004-00038
+13/12/2025,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,12.63,,"2,134.04",Yes,No,u004-00039
+14/12/2025,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,28.18,,"2,105.86",Yes,No,u004-00040
+15/12/2025,Westpac Choice,AUSTRALIANSUPER PENSION PAYMENT,Income,Income,,250.00,"2,355.86",Yes,Yes,u004-00041
+15/12/2025,Westpac Choice,CENTRAL COAST PODIATRY,Health,Expense,58.99,,"2,296.87",Yes,No,u004-00042
+15/12/2025,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,12.69,,"2,284.18",Yes,No,u004-00043
+16/12/2025,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"2,269.18",No,Yes,u004-00044
+16/12/2025,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,65.01,,"2,204.17",Yes,No,u004-00045
+16/12/2025,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,24.66,,"2,179.51",Yes,No,u004-00046
+17/12/2025,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,291.40","3,470.91",Yes,Yes,u004-00047
+18/12/2025,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"2,890.91",Yes,Yes,u004-00048
+18/12/2025,Westpac Choice,NRMA CONTENTS INSURANCE,Insurance,Expense,38.00,,"2,852.91",Yes,Yes,u004-00049
+18/12/2025,Westpac Choice,COLES GOSFORD,Groceries,Expense,59.69,,"2,793.22",Yes,No,u004-00050
+18/12/2025,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,21.35,,"2,771.87",No,No,u004-00051
+19/12/2025,Westpac Choice,IGA GOSFORD,Groceries,Expense,38.78,,"2,733.09",Yes,No,u004-00052
+19/12/2025,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,23.78,,"2,709.31",Yes,No,u004-00053
+19/12/2025,Westpac Choice,NEWSAGENCY,Entertainment,Expense,36.39,,"2,672.92",No,No,u004-00054
+20/12/2025,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,16.13,,"2,656.79",No,No,u004-00055
+21/12/2025,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,150.00,"15,156.06",No,Yes,u004-00056
+21/12/2025,Westpac Choice,COLES GOSFORD,Groceries,Expense,90.61,,"2,566.18",Yes,No,u004-00057
+21/12/2025,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,150.00,,"2,416.18",No,Yes,u004-00058
+23/12/2025,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"2,401.18",No,Yes,u004-00059
+23/12/2025,Westpac Choice,DYMOCKS,Shopping,Expense,68.22,,"2,332.96",No,No,u004-00060
+25/12/2025,Westpac Choice,COLES GOSFORD,Groceries,Expense,62.82,,"2,270.14",Yes,No,u004-00061
+26/12/2025,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,65.95,,"2,204.19",Yes,No,u004-00062
+27/12/2025,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,28.92,,"2,175.27",Yes,No,u004-00063
+28/12/2025,Westpac Choice,COLES GOSFORD,Groceries,Expense,62.46,,"2,112.81",Yes,No,u004-00064
+28/12/2025,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,25.62,,"2,087.19",No,No,u004-00065
+29/12/2025,Westpac Choice,COLES GOSFORD,Groceries,Expense,70.19,,"2,017.00",Yes,No,u004-00066
+30/12/2025,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"2,002.00",No,Yes,u004-00067
+30/12/2025,Westpac Choice,IGA GOSFORD,Groceries,Expense,43.06,,"1,958.94",Yes,No,u004-00068
+31/12/2025,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,291.40","3,250.34",Yes,Yes,u004-00069
+31/12/2025,Westpac Choice,COLES GOSFORD,Groceries,Expense,52.28,,"3,198.06",Yes,No,u004-00070
+01/01/2026,Westpac eSaver,INTEREST PAID,Income,Income,,56.84,"15,212.90",No,Yes,u004-00071
+01/01/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"2,618.06",Yes,Yes,u004-00072
+01/01/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,53.37,,"2,564.69",Yes,No,u004-00073
+01/01/2026,Westpac Choice,MUFFIN BREAK,Eating out,Expense,21.20,,"2,543.49",No,No,u004-00074
+02/01/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,142.00,,"2,401.49",Yes,Yes,u004-00075
+02/01/2026,Westpac Choice,EVENT CINEMAS SENIORS,Entertainment,Expense,36.56,,"2,364.93",No,No,u004-00076
+03/01/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,30.10,,"2,334.83",Yes,No,u004-00077
+03/01/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,20.89,,"2,313.94",No,No,u004-00078
+03/01/2026,Westpac Choice,MILLERS,Shopping,Expense,23.99,,"2,289.95",No,No,u004-00079
+04/01/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,57.73,,"2,232.22",Yes,No,u004-00080
+04/01/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,26.59,,"2,205.63",No,No,u004-00081
+05/01/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,27.07,,"2,178.56",Yes,No,u004-00082
+05/01/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,13.16,,"2,165.40",No,No,u004-00083
+06/01/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"2,150.40",No,Yes,u004-00084
+06/01/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,39.80,,"2,110.60",Yes,No,u004-00085
+06/01/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,19.87,,"2,090.73",Yes,No,u004-00086
+06/01/2026,Westpac Choice,DYMOCKS,Shopping,Expense,38.38,,"2,052.35",No,No,u004-00087
+07/01/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,45.00,,"2,007.35",Yes,Yes,u004-00088
+07/01/2026,Westpac Choice,BELONG INTERNET,Utilities,Expense,60.00,,"1,947.35",Yes,Yes,u004-00089
+07/01/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,48.89,,"1,898.46",Yes,No,u004-00090
+08/01/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,13.69,,"1,884.77",Yes,No,u004-00091
+08/01/2026,Westpac Choice,GOSFORD FAMILY PRACTICE,Health,Expense,56.56,,"1,828.21",Yes,No,u004-00092
+10/01/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,38.60,,"1,789.61",Yes,No,u004-00093
+11/01/2026,Westpac Choice,SALVATION ARMY DONATION,Donations,Expense,20.00,,"1,769.61",No,Yes,u004-00094
+12/01/2026,Westpac Choice,EVENT CINEMAS SENIORS,Entertainment,Expense,15.99,,"1,753.62",No,No,u004-00095
+13/01/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,738.62",No,Yes,u004-00096
+13/01/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,57.22,,"1,681.40",Yes,No,u004-00097
+14/01/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,291.40","2,972.80",Yes,Yes,u004-00098
+14/01/2026,Westpac Choice,FISH AND CHIPS CO,Eating out,Expense,21.43,,"2,951.37",No,No,u004-00099
+15/01/2026,Westpac Choice,AUSTRALIANSUPER PENSION PAYMENT,Income,Income,,250.00,"3,201.37",Yes,Yes,u004-00100
+15/01/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"2,621.37",Yes,Yes,u004-00101
+15/01/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,18.37,,"2,603.00",No,No,u004-00102
+15/01/2026,Westpac Choice,13CABS,Transport,Expense,12.99,,"2,590.01",Yes,No,u004-00103
+16/01/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,14.26,,"2,575.75",No,No,u004-00104
+17/01/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,42.02,,"2,533.73",Yes,No,u004-00105
+17/01/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,8.69,,"2,525.04",Yes,No,u004-00106
+18/01/2026,Westpac Choice,NRMA CONTENTS INSURANCE,Insurance,Expense,38.00,,"2,487.04",Yes,Yes,u004-00107
+18/01/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,47.67,,"2,439.37",Yes,No,u004-00108
+19/01/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,44.98,,"2,394.39",Yes,No,u004-00109
+20/01/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"2,379.39",No,Yes,u004-00110
+20/01/2026,Westpac Choice,HARVEY NORMAN FRIDGE,Shopping,Expense,"1,095.00",,"1,284.39",Yes,No,u004-S0001
+21/01/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,150.00,"15,362.90",No,Yes,u004-00111
+21/01/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,14.93,,"1,269.46",Yes,No,u004-00112
+21/01/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,150.00,,"1,119.46",No,Yes,u004-00113
+22/01/2026,Westpac Choice,FISH AND CHIPS CO,Eating out,Expense,9.71,,"1,109.75",No,No,u004-00114
+23/01/2026,Westpac Choice,ENERGYAUSTRALIA,Utilities,Expense,296.01,,813.74,Yes,Yes,u004-00115
+23/01/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,44.35,,769.39,Yes,No,u004-00116
+24/01/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,25.90,,743.49,Yes,No,u004-00117
+25/01/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,81.64,,661.85,Yes,No,u004-00118
+25/01/2026,Westpac Choice,13CABS,Transport,Expense,11.09,,650.76,Yes,No,u004-00119
+26/01/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,89.57,,561.19,Yes,No,u004-00120
+27/01/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,546.19,No,Yes,u004-00121
+27/01/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,21.96,,524.23,Yes,No,u004-00122
+28/01/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,291.40","1,815.63",Yes,Yes,u004-00123
+28/01/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,45.24,,"1,770.39",Yes,No,u004-00124
+28/01/2026,Westpac Choice,13CABS,Transport,Expense,16.57,,"1,753.82",Yes,No,u004-00125
+29/01/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,173.82",Yes,Yes,u004-00126
+29/01/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,46.33,,"1,127.49",Yes,No,u004-00127
+29/01/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,8.45,,"1,119.04",Yes,No,u004-00128
+30/01/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,59.52,,"1,059.52",Yes,No,u004-00129
+31/01/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,87.86,,971.66,Yes,No,u004-00130
+01/02/2026,Westpac eSaver,INTEREST PAID,Income,Income,,57.61,"15,420.51",No,Yes,u004-00131
+01/02/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,40.81,,930.85,Yes,No,u004-00132
+01/02/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,19.74,,911.11,Yes,No,u004-00133
+01/02/2026,Westpac Choice,13CABS,Transport,Expense,3.61,,907.50,Yes,No,u004-00134
+02/02/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,142.00,,765.50,Yes,Yes,u004-00135
+03/02/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,750.50,No,Yes,u004-00136
+03/02/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,53.29,,697.21,Yes,No,u004-00137
+05/02/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,52.31,,644.90,Yes,No,u004-00138
+05/02/2026,Westpac Choice,GOSFORD FAMILY PRACTICE,Health,Expense,89.69,,555.21,Yes,No,u004-00139
+06/02/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,86.63,,468.58,Yes,No,u004-00140
+06/02/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,14.17,,454.41,No,No,u004-00141
+07/02/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,45.00,,409.41,Yes,Yes,u004-00142
+07/02/2026,Westpac Choice,BELONG INTERNET,Utilities,Expense,60.00,,349.41,Yes,Yes,u004-00143
+07/02/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,13.66,,335.75,No,No,u004-00144
+07/02/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,5.28,,330.47,Yes,No,u004-00145
+08/02/2026,Westpac Choice,LINCRAFT,Entertainment,Expense,32.54,,297.93,No,No,u004-00146
+10/02/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,282.93,No,Yes,u004-00147
+11/02/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,291.40","1,574.33",Yes,Yes,u004-00148
+11/02/2026,Westpac Choice,SALVATION ARMY DONATION,Donations,Expense,20.00,,"1,554.33",No,Yes,u004-00149
+11/02/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,70.19,,"1,484.14",Yes,No,u004-00150
+12/02/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,904.14,Yes,Yes,u004-00151
+13/02/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,69.21,,834.93,Yes,No,u004-00152
+15/02/2026,Westpac Choice,AUSTRALIANSUPER PENSION PAYMENT,Income,Income,,250.00,"1,084.93",Yes,Yes,u004-00153
+15/02/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,64.98,,"1,019.95",Yes,No,u004-00154
+15/02/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,13.83,,"1,006.12",Yes,No,u004-00155
+15/02/2026,Westpac Choice,LINCRAFT,Entertainment,Expense,25.15,,980.97,No,No,u004-00156
+17/02/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,965.97,No,Yes,u004-00157
+17/02/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,45.93,,920.04,Yes,No,u004-00158
+17/02/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,19.72,,900.32,No,No,u004-00159
+18/02/2026,Westpac Choice,NRMA CONTENTS INSURANCE,Insurance,Expense,38.00,,862.32,Yes,Yes,u004-00160
+18/02/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,39.14,,823.18,Yes,No,u004-00161
+18/02/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,24.80,,798.38,Yes,No,u004-00162
+19/02/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,39.44,,758.94,Yes,No,u004-00163
+20/02/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,26.00,,732.94,Yes,No,u004-00164
+21/02/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,150.00,"15,570.51",No,Yes,u004-00165
+21/02/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,88.62,,644.32,Yes,No,u004-00166
+21/02/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,20.78,,623.54,Yes,No,u004-00167
+21/02/2026,Westpac Choice,MUFFIN BREAK,Eating out,Expense,20.19,,603.35,No,No,u004-00168
+21/02/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,150.00,,453.35,No,Yes,u004-00169
+22/02/2026,Westpac Choice,FISH AND CHIPS CO,Eating out,Expense,12.47,,440.88,No,No,u004-00170
+23/02/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,70.22,,370.66,Yes,No,u004-00171
+24/02/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,355.66,No,Yes,u004-00172
+24/02/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,35.37,,320.29,Yes,No,u004-00173
+25/02/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,291.40","1,611.69",Yes,Yes,u004-00174
+25/02/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,88.72,,"1,522.97",Yes,No,u004-00175
+26/02/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,942.97,Yes,Yes,u004-00176
+26/02/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,9.71,,933.26,Yes,No,u004-00177
+28/02/2026,Westpac Choice,SPOTLIGHT,Shopping,Expense,19.70,,913.56,No,No,u004-00178
+01/03/2026,Westpac eSaver,INTEREST PAID,Income,Income,,58.39,"15,628.90",No,Yes,u004-00179
+02/03/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,142.00,,771.56,Yes,Yes,u004-00180
+03/03/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,756.56,No,Yes,u004-00181
+05/03/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,66.51,,690.05,Yes,No,u004-00182
+05/03/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,17.94,,672.11,No,No,u004-00183
+05/03/2026,Westpac Choice,BIG W,Shopping,Expense,73.59,,598.52,No,No,u004-00184
+06/03/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,54.44,,544.08,Yes,No,u004-00185
+07/03/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,45.00,,499.08,Yes,Yes,u004-00186
+07/03/2026,Westpac Choice,BELONG INTERNET,Utilities,Expense,60.00,,439.08,Yes,Yes,u004-00187
+07/03/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,46.84,,392.24,Yes,No,u004-00188
+07/03/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,9.49,,382.75,Yes,No,u004-00189
+09/03/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,46.72,,336.03,Yes,No,u004-00190
+09/03/2026,Westpac Choice,LINCRAFT,Entertainment,Expense,17.70,,318.33,No,No,u004-00191
+10/03/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,303.33,No,Yes,u004-00192
+11/03/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,291.40","1,594.73",Yes,Yes,u004-00193
+11/03/2026,Westpac Choice,SALVATION ARMY DONATION,Donations,Expense,20.00,,"1,574.73",No,Yes,u004-00194
+11/03/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,30.67,,"1,544.06",Yes,No,u004-00195
+12/03/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,964.06,Yes,Yes,u004-00196
+12/03/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,63.84,,900.22,Yes,No,u004-00197
+12/03/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,12.56,,887.66,No,No,u004-00198
+13/03/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,10.41,,877.25,Yes,No,u004-00199
+13/03/2026,Westpac Choice,DYMOCKS,Shopping,Expense,86.01,,791.24,No,No,u004-00200
+14/03/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,14.92,,776.32,No,No,u004-00201
+14/03/2026,Westpac Choice,DYMOCKS,Shopping,Expense,47.82,,728.50,No,No,u004-00202
+15/03/2026,Westpac Choice,AUSTRALIANSUPER PENSION PAYMENT,Income,Income,,250.00,978.50,Yes,Yes,u004-00203
+15/03/2026,Westpac Choice,LINCRAFT,Entertainment,Expense,24.16,,954.34,No,No,u004-00204
+16/03/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,35.47,,918.87,Yes,No,u004-00205
+17/03/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,903.87,No,Yes,u004-00206
+17/03/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,53.16,,850.71,Yes,No,u004-00207
+17/03/2026,Westpac Choice,NEWSAGENCY,Entertainment,Expense,15.41,,835.30,No,No,u004-00208
+18/03/2026,Westpac Choice,NRMA CONTENTS INSURANCE,Insurance,Expense,38.00,,797.30,Yes,Yes,u004-00209
+19/03/2026,Westpac Choice,13CABS,Transport,Expense,8.07,,789.23,Yes,No,u004-00210
+20/03/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,21.75,,767.48,Yes,No,u004-00211
+20/03/2026,Westpac Choice,GOSFORD FAMILY PRACTICE,Health,Expense,36.17,,731.31,Yes,No,u004-00212
+20/03/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,12.91,,718.40,No,No,u004-00213
+21/03/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,150.00,"15,778.90",No,Yes,u004-00214
+21/03/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,79.27,,639.13,Yes,No,u004-00215
+21/03/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,18.05,,621.08,Yes,No,u004-00216
+21/03/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,150.00,,471.08,No,Yes,u004-00217
+22/03/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,22.42,,448.66,Yes,No,u004-00218
+22/03/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,8.41,,440.25,Yes,No,u004-00219
+23/03/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,69.47,,370.78,Yes,No,u004-00220
+23/03/2026,Westpac Choice,13CABS,Transport,Expense,12.00,,358.78,Yes,No,u004-00221
+23/03/2026,Westpac Choice,LINCRAFT,Entertainment,Expense,34.12,,324.66,No,No,u004-00222
+24/03/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,309.66,No,Yes,u004-00223
+24/03/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,58.77,,250.89,Yes,No,u004-00224
+25/03/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","1,562.95",Yes,Yes,u004-00225
+25/03/2026,Westpac Choice,13CABS,Transport,Expense,7.75,,"1,555.20",Yes,No,u004-00226
+26/03/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,975.20,Yes,Yes,u004-00227
+26/03/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,27.72,,947.48,Yes,No,u004-00228
+28/03/2026,Westpac Choice,FISH AND CHIPS CO,Eating out,Expense,15.87,,931.61,No,No,u004-00229
+28/03/2026,Westpac Choice,LINCRAFT,Entertainment,Expense,20.14,,911.47,No,No,u004-00230
+29/03/2026,Westpac Choice,OPSM,Health,Expense,44.01,,867.46,Yes,No,u004-00231
+30/03/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,85.74,,781.72,Yes,No,u004-00232
+31/03/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,766.72,No,Yes,u004-00233
+01/04/2026,Westpac eSaver,INTEREST PAID,Income,Income,,59.17,"15,838.07",No,Yes,u004-00234
+01/04/2026,Westpac Choice,MILLERS,Shopping,Expense,63.93,,702.79,No,No,u004-00235
+02/04/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,142.00,,560.79,Yes,Yes,u004-00236
+03/04/2026,Westpac Choice,EVENT CINEMAS SENIORS,Entertainment,Expense,26.14,,534.65,No,No,u004-00237
+07/04/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,45.00,,489.65,Yes,Yes,u004-00238
+07/04/2026,Westpac Choice,BELONG INTERNET,Utilities,Expense,60.00,,429.65,Yes,Yes,u004-00239
+07/04/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,414.65,No,Yes,u004-00240
+08/04/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","1,726.71",Yes,Yes,u004-00241
+08/04/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,53.41,,"1,673.30",Yes,No,u004-00242
+09/04/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,093.30",Yes,Yes,u004-00243
+09/04/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,32.73,,"1,060.57",Yes,No,u004-00244
+09/04/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,16.81,,"1,043.76",No,No,u004-00245
+10/04/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,76.21,,967.55,Yes,No,u004-00246
+11/04/2026,Westpac Choice,SALVATION ARMY DONATION,Donations,Expense,20.00,,947.55,No,Yes,u004-00247
+11/04/2026,Westpac Choice,13CABS,Transport,Expense,12.44,,935.11,Yes,No,u004-00248
+12/04/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,25.39,,909.72,Yes,No,u004-00249
+13/04/2026,Westpac Choice,LINCRAFT,Entertainment,Expense,20.82,,888.90,No,No,u004-00250
+14/04/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,873.90,No,Yes,u004-00251
+15/04/2026,Westpac Choice,AUSTRALIANSUPER PENSION PAYMENT,Income,Income,,250.00,"1,123.90",Yes,Yes,u004-00252
+15/04/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,80.93,,"1,042.97",Yes,No,u004-00253
+15/04/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,24.91,,"1,018.06",Yes,No,u004-00254
+15/04/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,17.42,,"1,000.64",No,No,u004-00255
+15/04/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,13.49,,987.15,Yes,No,u004-00256
+15/04/2026,Westpac Choice,EVENT CINEMAS SENIORS,Entertainment,Expense,22.49,,964.66,No,No,u004-00257
+17/04/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,41.17,,923.49,Yes,No,u004-00258
+18/04/2026,Westpac Choice,NRMA CONTENTS INSURANCE,Insurance,Expense,38.00,,885.49,Yes,Yes,u004-00259
+20/04/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,51.95,,833.54,Yes,No,u004-00260
+21/04/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,150.00,"15,988.07",No,Yes,u004-00261
+21/04/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,818.54,No,Yes,u004-00262
+21/04/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,150.00,,668.54,No,Yes,u004-00263
+22/04/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","1,980.60",Yes,Yes,u004-00264
+22/04/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,40.81,,"1,939.79",Yes,No,u004-00265
+23/04/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,359.79",Yes,Yes,u004-00266
+23/04/2026,Westpac Choice,ENERGYAUSTRALIA,Utilities,Expense,256.20,,"1,103.59",Yes,Yes,u004-00267
+23/04/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,7.17,,"1,096.42",Yes,No,u004-00268
+24/04/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,58.70,,"1,037.72",Yes,No,u004-00269
+26/04/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,22.58,,"1,015.14",Yes,No,u004-00270
+28/04/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,000.14",No,Yes,u004-00271
+28/04/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,55.18,,944.96,Yes,No,u004-00272
+01/05/2026,Westpac eSaver,INTEREST PAID,Income,Income,,59.96,"16,048.03",No,Yes,u004-00273
+01/05/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,29.42,,915.54,Yes,No,u004-00274
+01/05/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,16.77,,898.77,Yes,No,u004-00275
+02/05/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,142.00,,756.77,Yes,Yes,u004-00276
+02/05/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,40.87,,715.90,Yes,No,u004-00277
+02/05/2026,Westpac Choice,AFTERPAY - BIG W (1/4),Buy Now Pay Later,Expense,21.25,,694.65,No,No,u004-B0001
+03/05/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,30.77,,663.88,Yes,No,u004-00278
+03/05/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,17.46,,646.42,No,No,u004-00279
+05/05/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,631.42,No,Yes,u004-00280
+06/05/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","1,943.48",Yes,Yes,u004-00281
+07/05/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,363.48",Yes,Yes,u004-00282
+07/05/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,45.00,,"1,318.48",Yes,Yes,u004-00283
+07/05/2026,Westpac Choice,BELONG INTERNET,Utilities,Expense,60.00,,"1,258.48",Yes,Yes,u004-00284
+07/05/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,60.55,,"1,197.93",Yes,No,u004-00285
+11/05/2026,Westpac Choice,SALVATION ARMY DONATION,Donations,Expense,20.00,,"1,177.93",No,Yes,u004-00286
+11/05/2026,Westpac Choice,OPSM,Health,Expense,40.84,,"1,137.09",Yes,No,u004-00287
+12/05/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,122.09",No,Yes,u004-00288
+12/05/2026,Westpac Choice,SPOTLIGHT,Shopping,Expense,49.07,,"1,073.02",No,No,u004-00289
+13/05/2026,Westpac Choice,LINCRAFT,Entertainment,Expense,11.32,,"1,061.70",No,No,u004-00290
+15/05/2026,Westpac Choice,AUSTRALIANSUPER PENSION PAYMENT,Income,Income,,250.00,"1,311.70",Yes,Yes,u004-00291
+15/05/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,67.65,,"1,244.05",Yes,No,u004-00292
+16/05/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,20.51,,"1,223.54",Yes,No,u004-00293
+16/05/2026,Westpac Choice,13CABS,Transport,Expense,5.57,,"1,217.97",Yes,No,u004-00294
+16/05/2026,Westpac Choice,AFTERPAY - BIG W (2/4),Buy Now Pay Later,Expense,21.25,,"1,196.72",No,Yes,u004-B0002
+17/05/2026,Westpac Choice,CENTRAL COAST PODIATRY,Health,Expense,35.39,,"1,161.33",Yes,No,u004-00295
+18/05/2026,Westpac Choice,NRMA CONTENTS INSURANCE,Insurance,Expense,38.00,,"1,123.33",Yes,Yes,u004-00296
+18/05/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,82.90,,"1,040.43",Yes,No,u004-00297
+19/05/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,025.43",No,Yes,u004-00298
+19/05/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,13.83,,"1,011.60",Yes,No,u004-00299
+20/05/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","2,323.66",Yes,Yes,u004-00300
+21/05/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,150.00,"16,198.03",No,Yes,u004-00301
+21/05/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,743.66",Yes,Yes,u004-00302
+21/05/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,51.06,,"1,692.60",Yes,No,u004-00303
+21/05/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,24.62,,"1,667.98",Yes,No,u004-00304
+21/05/2026,Westpac Choice,FISH AND CHIPS CO,Eating out,Expense,17.54,,"1,650.44",No,No,u004-00305
+21/05/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,150.00,,"1,500.44",No,Yes,u004-00306
+22/05/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,16.10,,"1,484.34",No,No,u004-00307
+23/05/2026,Westpac Choice,13CABS,Transport,Expense,8.78,,"1,475.56",Yes,No,u004-00308
+26/05/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,460.56",No,Yes,u004-00309
+26/05/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,8.49,,"1,452.07",No,No,u004-00310
+26/05/2026,Westpac Choice,MILLERS,Shopping,Expense,33.91,,"1,418.16",No,No,u004-00311
+27/05/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,30.12,,"1,388.04",Yes,No,u004-00312
+28/05/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,17.56,,"1,370.48",Yes,No,u004-00313
+29/05/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,53.98,,"1,316.50",Yes,No,u004-00314
+29/05/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,22.74,,"1,293.76",Yes,No,u004-00315
+30/05/2026,Westpac Choice,AFTERPAY - BIG W (3/4),Buy Now Pay Later,Expense,21.25,,"1,272.51",No,Yes,u004-B0003
+01/06/2026,Westpac eSaver,INTEREST PAID,Income,Income,,60.74,"16,258.77",No,Yes,u004-00316
+01/06/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,8.88,,"1,263.63",Yes,No,u004-00317
+02/06/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,142.00,,"1,121.63",Yes,Yes,u004-00318
+02/06/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,106.63",No,Yes,u004-00319
+03/06/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","2,418.69",Yes,Yes,u004-00320
+04/06/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,838.69",Yes,Yes,u004-00321
+04/06/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,63.22,,"1,775.47",Yes,No,u004-00322
+07/06/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,45.00,,"1,730.47",Yes,Yes,u004-00323
+07/06/2026,Westpac Choice,BELONG INTERNET,Utilities,Expense,60.00,,"1,670.47",Yes,Yes,u004-00324
+07/06/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,20.27,,"1,650.20",Yes,No,u004-00325
+08/06/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,67.79,,"1,582.41",Yes,No,u004-00326
+09/06/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,567.41",No,Yes,u004-00327
+09/06/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,54.99,,"1,512.42",Yes,No,u004-00328
+09/06/2026,Westpac Choice,13CABS,Transport,Expense,16.55,,"1,495.87",Yes,No,u004-00329
+11/06/2026,Westpac Choice,SALVATION ARMY DONATION,Donations,Expense,20.00,,"1,475.87",No,Yes,u004-00330
+11/06/2026,Westpac Choice,FISH AND CHIPS CO,Eating out,Expense,14.27,,"1,461.60",No,No,u004-00331
+13/06/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,42.60,,"1,419.00",Yes,No,u004-00332
+13/06/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,24.60,,"1,394.40",Yes,No,u004-00333
+13/06/2026,Westpac Choice,AFTERPAY - BIG W (4/4),Buy Now Pay Later,Expense,21.25,,"1,373.15",No,Yes,u004-B0004
+14/06/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,76.69,,"1,296.46",Yes,No,u004-00334
+15/06/2026,Westpac Choice,AUSTRALIANSUPER PENSION PAYMENT,Income,Income,,250.00,"1,546.46",Yes,Yes,u004-00335
+15/06/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,70.25,,"1,476.21",Yes,No,u004-00336
+15/06/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,21.83,,"1,454.38",No,No,u004-00337
+15/06/2026,Westpac Choice,MILLERS,Shopping,Expense,66.64,,"1,387.74",No,No,u004-00338
+16/06/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,372.74",No,Yes,u004-00339
+16/06/2026,Westpac Choice,GOSFORD FAMILY PRACTICE,Health,Expense,59.76,,"1,312.98",Yes,No,u004-00340
+17/06/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","2,625.04",Yes,Yes,u004-00341
+17/06/2026,Westpac Choice,MUFFIN BREAK,Eating out,Expense,10.09,,"2,614.95",No,No,u004-00342
+18/06/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"2,034.95",Yes,Yes,u004-00343
+18/06/2026,Westpac Choice,NRMA CONTENTS INSURANCE,Insurance,Expense,38.00,,"1,996.95",Yes,Yes,u004-00344
+18/06/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,72.43,,"1,924.52",Yes,No,u004-00345
+19/06/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,42.55,,"1,881.97",Yes,No,u004-00346
+19/06/2026,Westpac Choice,13CABS,Transport,Expense,6.70,,"1,875.27",Yes,No,u004-00347
+20/06/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,25.14,,"1,850.13",No,No,u004-00348
+21/06/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,150.00,"16,408.77",No,Yes,u004-00349
+21/06/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,150.00,,"1,700.13",No,Yes,u004-00350
+22/06/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,35.65,,"1,664.48",Yes,No,u004-00351
+23/06/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,649.48",No,Yes,u004-00352
+23/06/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,57.20,,"1,592.28",Yes,No,u004-00353
+23/06/2026,Westpac Choice,SPOTLIGHT,Shopping,Expense,74.33,,"1,517.95",No,No,u004-00354
+23/06/2026,Westpac Choice,LINCRAFT,Entertainment,Expense,12.19,,"1,505.76",No,No,u004-00355
+25/06/2026,Westpac Choice,SPOTLIGHT,Shopping,Expense,67.26,,"1,438.50",No,No,u004-00356
+26/06/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,50.92,,"1,387.58",Yes,No,u004-00357
+29/06/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,30.46,,"1,357.12",Yes,No,u004-00358
+29/06/2026,Westpac Choice,EVENT CINEMAS SENIORS,Entertainment,Expense,21.43,,"1,335.69",No,No,u004-00359
+30/06/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,320.69",No,Yes,u004-00360
+30/06/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,57.47,,"1,263.22",Yes,No,u004-00361
+30/06/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,15.37,,"1,247.85",No,No,u004-00362
+01/07/2026,Westpac eSaver,INTEREST PAID,Income,Income,,61.53,"16,470.30",No,Yes,u004-00363
+01/07/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","2,559.91",Yes,Yes,u004-00364
+02/07/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,979.91",Yes,Yes,u004-00365
+02/07/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,142.00,,"1,837.91",Yes,Yes,u004-00366
+04/07/2026,Westpac Choice,13CABS,Transport,Expense,18.72,,"1,819.19",Yes,No,u004-00367
+05/07/2026,Westpac Choice,13CABS,Transport,Expense,9.12,,"1,810.07",Yes,No,u004-00368
+06/07/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,60.01,,"1,750.06",Yes,No,u004-00369
+06/07/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,25.23,,"1,724.83",Yes,No,u004-00370
+06/07/2026,Westpac Choice,FISH AND CHIPS CO,Eating out,Expense,28.88,,"1,695.95",No,No,u004-00371
+06/07/2026,Westpac Choice,13CABS,Transport,Expense,16.02,,"1,679.93",Yes,No,u004-00372
+07/07/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,45.00,,"1,634.93",Yes,Yes,u004-00373
+07/07/2026,Westpac Choice,BELONG INTERNET,Utilities,Expense,60.00,,"1,574.93",Yes,Yes,u004-00374
+07/07/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,559.93",No,Yes,u004-00375
+07/07/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,64.87,,"1,495.06",Yes,No,u004-00376
+08/07/2026,Westpac Choice,GOSFORD DENTAL,Health,Expense,740.00,,755.06,Yes,No,u004-S0002
+09/07/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,44.64,,710.42,Yes,No,u004-00377
+09/07/2026,Westpac Choice,13CABS,Transport,Expense,19.82,,690.60,Yes,No,u004-00378
+10/07/2026,Westpac Choice,NEWSAGENCY,Entertainment,Expense,24.16,,666.44,No,No,u004-00379
+11/07/2026,Westpac Choice,SALVATION ARMY DONATION,Donations,Expense,20.00,,646.44,No,Yes,u004-00380
+11/07/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,50.53,,595.91,Yes,No,u004-00381
+11/07/2026,Westpac Choice,FISH AND CHIPS CO,Eating out,Expense,20.35,,575.56,No,No,u004-00382
+12/07/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,76.78,,498.78,Yes,No,u004-00383
+13/07/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,17.53,,481.25,Yes,No,u004-00384
+14/07/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,466.25,No,Yes,u004-00385
+15/07/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","1,778.31",Yes,Yes,u004-00386
+15/07/2026,Westpac Choice,AUSTRALIANSUPER PENSION PAYMENT,Income,Income,,250.00,"2,028.31",Yes,Yes,u004-00387
+15/07/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,37.01,,"1,991.30",Yes,No,u004-00388
+15/07/2026,Westpac Choice,13CABS,Transport,Expense,10.04,,"1,981.26",Yes,No,u004-00389
+16/07/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,401.26",Yes,Yes,u004-00390
+18/07/2026,Westpac Choice,NRMA CONTENTS INSURANCE,Insurance,Expense,38.00,,"1,363.26",Yes,Yes,u004-00391
+18/07/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,43.65,,"1,319.61",Yes,No,u004-00392
+19/07/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,15.83,,"1,303.78",Yes,No,u004-00393
+19/07/2026,Westpac Choice,MILLERS,Shopping,Expense,51.78,,"1,252.00",No,No,u004-00394
+21/07/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,150.00,"16,620.30",No,Yes,u004-00395
+21/07/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,237.00",No,Yes,u004-00396
+21/07/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,150.00,,"1,087.00",No,Yes,u004-00397
+23/07/2026,Westpac Choice,ENERGYAUSTRALIA,Utilities,Expense,264.79,,822.21,Yes,Yes,u004-00398
+23/07/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,30.85,,791.36,Yes,No,u004-00399
+23/07/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,10.12,,781.24,Yes,No,u004-00400
+24/07/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,75.84,,705.40,Yes,No,u004-00401
+25/07/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,26.55,,678.85,No,No,u004-00402
+27/07/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,20.56,,658.29,Yes,No,u004-00403
+27/07/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,18.39,,639.90,Yes,No,u004-00404
+28/07/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,624.90,No,Yes,u004-00405
+28/07/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,32.49,,592.41,Yes,No,u004-00406
+29/07/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","1,904.47",Yes,Yes,u004-00407
+29/07/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,57.03,,"1,847.44",Yes,No,u004-00408
+30/07/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,267.44",Yes,Yes,u004-00409
+30/07/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,33.03,,"1,234.41",Yes,No,u004-00410
+01/08/2026,Westpac eSaver,INTEREST PAID,Income,Income,,62.33,"16,682.63",No,Yes,u004-00411
+02/08/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,142.00,,"1,092.41",Yes,Yes,u004-00412
+03/08/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,59.11,,"1,033.30",Yes,No,u004-00413
+04/08/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,018.30",No,Yes,u004-00414
+04/08/2026,Westpac Choice,THE COFFEE CLUB,Eating out,Expense,6.93,,"1,011.37",No,No,u004-00415
+04/08/2026,Westpac Choice,DYMOCKS,Shopping,Expense,27.82,,983.55,No,No,u004-00416
+05/08/2026,Westpac Choice,OPSM,Health,Expense,74.82,,908.73,Yes,No,u004-00417
+05/08/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,5.29,,903.44,Yes,No,u004-00418
+06/08/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,53.30,,850.14,Yes,No,u004-00419
+07/08/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,45.00,,805.14,Yes,Yes,u004-00420
+07/08/2026,Westpac Choice,BELONG INTERNET,Utilities,Expense,60.00,,745.14,Yes,Yes,u004-00421
+07/08/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,32.61,,712.53,Yes,No,u004-00422
+07/08/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,17.19,,695.34,No,No,u004-00423
+08/08/2026,Westpac Choice,OPSM,Health,Expense,59.65,,635.69,Yes,No,u004-00424
+10/08/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,41.04,,594.65,Yes,No,u004-00425
+11/08/2026,Westpac Choice,SALVATION ARMY DONATION,Donations,Expense,20.00,,574.65,No,Yes,u004-00426
+11/08/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,559.65,No,Yes,u004-00427
+12/08/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","1,871.71",Yes,Yes,u004-00428
+12/08/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,9.15,,"1,862.56",Yes,No,u004-00429
+13/08/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,282.56",Yes,Yes,u004-00430
+15/08/2026,Westpac Choice,AUSTRALIANSUPER PENSION PAYMENT,Income,Income,,250.00,"1,532.56",Yes,Yes,u004-00431
+15/08/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,40.64,,"1,491.92",Yes,No,u004-00432
+16/08/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,10.22,,"1,481.70",Yes,No,u004-00433
+17/08/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,51.06,,"1,430.64",Yes,No,u004-00434
+17/08/2026,Westpac Choice,MUFFIN BREAK,Eating out,Expense,28.18,,"1,402.46",No,No,u004-00435
+18/08/2026,Westpac Choice,NRMA CONTENTS INSURANCE,Insurance,Expense,38.00,,"1,364.46",Yes,Yes,u004-00436
+18/08/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,349.46",No,Yes,u004-00437
+18/08/2026,Westpac Choice,CENTRAL COAST PODIATRY,Health,Expense,49.16,,"1,300.30",Yes,No,u004-00438
+19/08/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,63.30,,"1,237.00",Yes,No,u004-00439
+19/08/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,23.98,,"1,213.02",Yes,No,u004-00440
+21/08/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,150.00,"16,832.63",No,Yes,u004-00441
+21/08/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,69.90,,"1,143.12",Yes,No,u004-00442
+21/08/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,150.00,,993.12,No,Yes,u004-00443
+22/08/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,85.68,,907.44,Yes,No,u004-00444
+22/08/2026,Westpac Choice,FISH AND CHIPS CO,Eating out,Expense,23.27,,884.17,No,No,u004-00445
+23/08/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,54.06,,830.11,Yes,No,u004-00446
+24/08/2026,Westpac Choice,13CABS,Transport,Expense,6.79,,823.32,Yes,No,u004-00447
+25/08/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,808.32,No,Yes,u004-00448
+25/08/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,59.30,,749.02,Yes,No,u004-00449
+25/08/2026,Westpac Choice,MUFFIN BREAK,Eating out,Expense,11.65,,737.37,No,No,u004-00450
+26/08/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","2,049.43",Yes,Yes,u004-00451
+27/08/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,469.43",Yes,Yes,u004-00452
+27/08/2026,Westpac Choice,AUSTRALIA POST,Shopping,Expense,31.66,,"1,437.77",No,No,u004-00453
+28/08/2026,Westpac Choice,13CABS,Transport,Expense,15.76,,"1,422.01",Yes,No,u004-00454
+30/08/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,59.38,,"1,362.63",Yes,No,u004-00455
+30/08/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,33.40,,"1,329.23",Yes,No,u004-00456
+31/08/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,36.89,,"1,292.34",Yes,No,u004-00457
+01/09/2026,Westpac eSaver,INTEREST PAID,Income,Income,,63.12,"16,895.75",No,Yes,u004-00458
+01/09/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,277.34",No,Yes,u004-00459
+01/09/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,70.45,,"1,206.89",Yes,No,u004-00460
+01/09/2026,Westpac Choice,MUFFIN BREAK,Eating out,Expense,20.74,,"1,186.15",No,No,u004-00461
+02/09/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,142.00,,"1,044.15",Yes,Yes,u004-00462
+03/09/2026,Westpac Choice,MUFFIN BREAK,Eating out,Expense,19.34,,"1,024.81",No,No,u004-00463
+03/09/2026,Westpac Choice,13CABS,Transport,Expense,7.51,,"1,017.30",Yes,No,u004-00464
+06/09/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,28.51,,988.79,Yes,No,u004-00465
+07/09/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,45.00,,943.79,Yes,Yes,u004-00466
+07/09/2026,Westpac Choice,BELONG INTERNET,Utilities,Expense,60.00,,883.79,Yes,Yes,u004-00467
+07/09/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,73.06,,810.73,Yes,No,u004-00468
+08/09/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,795.73,No,Yes,u004-00469
+08/09/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,18.76,,776.97,Yes,No,u004-00470
+08/09/2026,Westpac Choice,13CABS,Transport,Expense,8.95,,768.02,Yes,No,u004-00471
+09/09/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,312.06","2,080.08",Yes,Yes,u004-00472
+09/09/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,14.85,,"2,065.23",No,No,u004-00473
+10/09/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,485.23",Yes,Yes,u004-00474
+10/09/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,61.18,,"1,424.05",Yes,No,u004-00475
+10/09/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,16.12,,"1,407.93",Yes,No,u004-00476
+10/09/2026,Westpac Choice,FISH AND CHIPS CO,Eating out,Expense,10.27,,"1,397.66",No,No,u004-00477
+11/09/2026,Westpac Choice,SALVATION ARMY DONATION,Donations,Expense,20.00,,"1,377.66",No,Yes,u004-00478
+14/09/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,50.19,,"1,327.47",Yes,No,u004-00479
+15/09/2026,Westpac Choice,AUSTRALIANSUPER PENSION PAYMENT,Income,Income,,250.00,"1,577.47",Yes,Yes,u004-00480
+15/09/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,562.47",No,Yes,u004-00481
+15/09/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,76.54,,"1,485.93",Yes,No,u004-00482
+17/09/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,74.80,,"1,411.13",Yes,No,u004-00483
+17/09/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,15.10,,"1,396.03",Yes,No,u004-00484
+18/09/2026,Westpac Choice,NRMA CONTENTS INSURANCE,Insurance,Expense,38.00,,"1,358.03",Yes,Yes,u004-00485
+20/09/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,33.12,,"1,324.91",Yes,No,u004-00486
+20/09/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,29.16,,"1,295.75",No,No,u004-00487
+21/09/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,150.00,"17,045.75",No,Yes,u004-00488
+21/09/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,59.95,,"1,235.80",Yes,No,u004-00489
+21/09/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,25.73,,"1,210.07",Yes,No,u004-00490
+21/09/2026,Westpac Choice,GOSFORD RSL BISTRO,Eating out,Expense,12.67,,"1,197.40",No,No,u004-00491
+21/09/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,150.00,,"1,047.40",No,Yes,u004-00492
+22/09/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,032.40",No,Yes,u004-00493
+23/09/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,332.72","2,365.12",Yes,Yes,u004-00494
+23/09/2026,Westpac Choice,13CABS,Transport,Expense,6.31,,"2,358.81",Yes,No,u004-00495
+24/09/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,778.81",Yes,Yes,u004-00496
+24/09/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,44.57,,"1,734.24",Yes,No,u004-00497
+26/09/2026,Westpac Choice,DYMOCKS,Shopping,Expense,30.75,,"1,703.49",No,No,u004-00498
+27/09/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,38.71,,"1,664.78",Yes,No,u004-00499
+29/09/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,649.78",No,Yes,u004-00500
+29/09/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,33.31,,"1,616.47",Yes,No,u004-00501
+01/10/2026,Westpac eSaver,INTEREST PAID,Income,Income,,63.92,"17,109.67",No,Yes,u004-00502
+01/10/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,70.09,,"1,546.38",Yes,No,u004-00503
+02/10/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,142.00,,"1,404.38",Yes,Yes,u004-00504
+02/10/2026,Westpac Choice,OPSM,Health,Expense,43.82,,"1,360.56",Yes,No,u004-00505
+03/10/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,31.83,,"1,328.73",Yes,No,u004-00506
+03/10/2026,Westpac Choice,CENTRAL COAST PODIATRY,Health,Expense,66.43,,"1,262.30",Yes,No,u004-00507
+03/10/2026,Westpac Choice,NEWSAGENCY,Entertainment,Expense,23.58,,"1,238.72",No,No,u004-00508
+04/10/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,16.09,,"1,222.63",Yes,No,u004-00509
+06/10/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,207.63",No,Yes,u004-00510
+07/10/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,332.72","2,540.35",Yes,Yes,u004-00511
+07/10/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,45.00,,"2,495.35",Yes,Yes,u004-00512
+07/10/2026,Westpac Choice,BELONG INTERNET,Utilities,Expense,60.00,,"2,435.35",Yes,Yes,u004-00513
+08/10/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"1,855.35",Yes,Yes,u004-00514
+08/10/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,67.75,,"1,787.60",Yes,No,u004-00515
+11/10/2026,Westpac Choice,SALVATION ARMY DONATION,Donations,Expense,20.00,,"1,767.60",No,Yes,u004-00516
+11/10/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,38.52,,"1,729.08",Yes,No,u004-00517
+13/10/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,714.08",No,Yes,u004-00518
+13/10/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,43.77,,"1,670.31",Yes,No,u004-00519
+13/10/2026,Westpac Choice,NEWSAGENCY,Entertainment,Expense,21.05,,"1,649.26",No,No,u004-00520
+14/10/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,54.67,,"1,594.59",Yes,No,u004-00521
+15/10/2026,Westpac Choice,AUSTRALIANSUPER PENSION PAYMENT,Income,Income,,250.00,"1,844.59",Yes,Yes,u004-00522
+17/10/2026,Westpac Choice,FISH AND CHIPS CO,Eating out,Expense,9.29,,"1,835.30",No,No,u004-00523
+17/10/2026,Westpac Choice,NEWSAGENCY,Entertainment,Expense,24.66,,"1,810.64",No,No,u004-00524
+18/10/2026,Westpac Choice,NRMA CONTENTS INSURANCE,Insurance,Expense,38.00,,"1,772.64",Yes,Yes,u004-00525
+18/10/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,45.92,,"1,726.72",Yes,No,u004-00526
+20/10/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,711.72",No,Yes,u004-00527
+21/10/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,332.72","3,044.44",Yes,Yes,u004-00528
+21/10/2026,Westpac eSaver,TRANSFER FROM CHOICE,Transfers,Transfer,,150.00,"17,259.67",No,Yes,u004-00529
+21/10/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,74.62,,"2,969.82",Yes,No,u004-00530
+21/10/2026,Westpac Choice,TRANSPORT FOR NSW OPAL,Transport,Expense,17.91,,"2,951.91",Yes,No,u004-00531
+21/10/2026,Westpac Choice,TRANSFER TO ESAVER,Transfers,Transfer,150.00,,"2,801.91",No,Yes,u004-00532
+22/10/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"2,221.91",Yes,Yes,u004-00533
+22/10/2026,Westpac Choice,13CABS,Transport,Expense,11.82,,"2,210.09",Yes,No,u004-00534
+23/10/2026,Westpac Choice,ENERGYAUSTRALIA,Utilities,Expense,318.51,,"1,891.58",Yes,Yes,u004-00535
+25/10/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,56.07,,"1,835.51",Yes,No,u004-00536
+25/10/2026,Westpac Choice,13CABS,Transport,Expense,14.10,,"1,821.41",Yes,No,u004-00537
+26/10/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,26.07,,"1,795.34",Yes,No,u004-00538
+27/10/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,780.34",No,Yes,u004-00539
+27/10/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,15.29,,"1,765.05",Yes,No,u004-00540
+31/10/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,28.66,,"1,736.39",Yes,No,u004-00541
+01/11/2026,Westpac eSaver,INTEREST PAID,Income,Income,,64.72,"17,324.39",No,Yes,u004-00542
+02/11/2026,Westpac Choice,HCF HEALTH INSURANCE,Insurance,Expense,142.00,,"1,594.39",Yes,Yes,u004-00543
+02/11/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,41.23,,"1,553.16",Yes,No,u004-00544
+03/11/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,538.16",No,Yes,u004-00545
+03/11/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,93.67,,"1,444.49",Yes,No,u004-00546
+04/11/2026,Westpac Choice,CENTRELINK AGE PENSION,Income,Income,,"1,332.72","2,777.21",Yes,Yes,u004-00547
+04/11/2026,Westpac Choice,COLES GOSFORD,Groceries,Expense,39.74,,"2,737.47",Yes,No,u004-00548
+05/11/2026,Westpac Choice,RENT RAY WHITE PROPERTY MGMT,Housing,Expense,580.00,,"2,157.47",Yes,Yes,u004-00549
+05/11/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,53.83,,"2,103.64",Yes,No,u004-00550
+06/11/2026,Westpac Choice,13CABS,Transport,Expense,2.96,,"2,100.68",Yes,No,u004-00551
+07/11/2026,Westpac Choice,TELSTRA MOBILE,Utilities,Expense,45.00,,"2,055.68",Yes,Yes,u004-00552
+07/11/2026,Westpac Choice,BELONG INTERNET,Utilities,Expense,60.00,,"1,995.68",Yes,Yes,u004-00553
+08/11/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,26.71,,"1,968.97",Yes,No,u004-00554
+09/11/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,57.88,,"1,911.09",Yes,No,u004-00555
+09/11/2026,Westpac Choice,TERRYWHITE CHEMMART,Health,Expense,26.35,,"1,884.74",Yes,No,u004-00556
+10/11/2026,Westpac Choice,GOSFORD RSL BINGO,Entertainment,Expense,15.00,,"1,869.74",No,Yes,u004-00557
+10/11/2026,Westpac Choice,IGA GOSFORD,Groceries,Expense,34.29,,"1,835.45",Yes,No,u004-00558
+10/11/2026,Westpac Choice,SPOTLIGHT,Shopping,Expense,18.18,,"1,817.27",No,No,u004-00559
+11/11/2026,Westpac Choice,SALVATION ARMY DONATION,Donations,Expense,20.00,,"1,797.27",No,Yes,u004-00560
+11/11/2026,Westpac Choice,ALDI STORES GOSFORD,Groceries,Expense,48.03,,"1,749.24",Yes,No,u004-00561
+12/11/2026,Westpac Choice,WOOLWORTHS GOSFORD,Groceries,Expense,67.74,,"1,681.50",Yes,No,u004-00562
+13/11/2026,Westpac Choice,LINCRAFT,Entertainment,Expense,29.93,,"1,651.57",No,No,u004-00563
+14/11/2026,Westpac Choice,CHEMIST WAREHOUSE,Health,Expense,22.46,,"1,629.11",Yes,No,u004-00564
+15/11/2026,Westpac Choice,AUSTRALIANSUPER PENSION PAYMENT,Income,Income,,250.00,"1,879.11",Yes,Yes,u004-00565

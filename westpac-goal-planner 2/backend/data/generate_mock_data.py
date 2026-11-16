@@ -1,5 +1,9 @@
 """Generate five synthetic customers with one year of transactions each.
 
+NOTE: the example data is now statements/<First>_<Last>.csv, loaded by import_statements.py.
+This generator made the original base data. Running it overwrites the JSON files, so run
+import_statements.py afterwards to put the example data back.
+
 Everything here is invented. Re-run to regenerate (output is identical each time for the same SEED):
 
     python generate_mock_data.py
@@ -70,13 +74,6 @@ class Ledger:
                     m = f"{m} {SUBURB[self.uid]}"
                 self.add(d, m, -amt, category, essential)
 
-    # --- injected shocks (fixed values, no RNG use, so the rest of the data is unchanged) ---
-    def reprice(self, desc, from_date, amount):
-        """Change a recurring charge's amount from from_date onward (e.g. a rate rise)."""
-        for r in self.rows:
-            if r["description"] == desc and r["date"] >= from_date:
-                r["amount"] = round(amount, 2)
-
     def save(self, day, amount, label="TRANSFER TO ESAVER"):
         y, m = START.year, START.month
         while date(y, m, 1) <= END:
@@ -108,11 +105,6 @@ def mia(L):  # student, part-time job
     L.spend("Shopping", ["KMART", "COTTON ON", "UNIQLO", "ASOS.COM", "OFFICEWORKS"], 0.5, 15, 110, december=1.6)
     L.spend("Health", ["CHEMIST WAREHOUSE", "PRICELINE PHARMACY"], 0.15, 8, 35, True)
     L.save(20, 100)
-    # SHOCK (burst): card details skimmed, nine small online charges in one day
-    for desc, amt in [("PAYPAL *GAMEKEYS", 4.99), ("PAYPAL *GAMEKEYS", 9.99), ("APPLE.COM/BILL", 1.49),
-                      ("GOOGLE *TEMU", 12.40), ("GOOGLE *TEMU", 18.75), ("PAYPAL *VPNSHIELD", 7.99),
-                      ("STEAM GAMES", 14.50), ("ASOS.COM", 22.00), ("PAYPAL *GAMEKEYS", 19.99)]:
-        L.add(date(2026, 8, 22), desc, -amt, "Shopping")
 
 
 def priya(L):  # high income, business owner, home loan + business loan, two kids
@@ -147,8 +139,6 @@ def priya(L):  # high income, business owner, home loan + business loan, two kid
     L.spend("Health", ["MOSMAN PHARMACY", "FAMILY DENTAL CARE", "MEDICAL CENTRE GAP FEE"], 0.4, 25, 180, True)
     L.spend("Entertainment", ["TICKETMASTER", "HOYTS", "DAN MURPHYS", "TARONGA ZOO"], 0.6, 30, 220, weekend=1.6)
     L.save(16, 1500)
-    # SHOCK (recurring bill change): variable-rate rise lifts the home loan repayment 11% from July
-    L.reprice("HOME LOAN REPAYMENT", date(2026, 7, 1), -7992)
 
 
 def david(L):  # middle income, smaller mortgage, no kids
@@ -173,8 +163,6 @@ def david(L):  # middle income, smaller mortgage, no kids
     L.spend("Entertainment", ["DAN MURPHYS", "THE RED COW HOTEL", "GOLF PRO SHOP", "HOYTS"], 0.7, 20, 120, weekend=1.7)
     L.spend("Health", ["CHEMIST WAREHOUSE", "PENRITH MEDICAL CENTRE", "SPECSAVERS"], 0.25, 15, 120, True)
     L.save(18, 500)
-    # SHOCK (large single spend): gearbox rebuild at his usual mechanic
-    L.add(date(2026, 9, 3), "ULTRA TUNE CAR SERVICE", -3450, "Transport", True)
 
 
 def margaret(L):  # age pensioner, renting
@@ -198,8 +186,6 @@ def margaret(L):  # age pensioner, renting
     L.spend("Shopping", ["BIG W", "SPOTLIGHT", "MILLERS", "AUSTRALIA POST", "DYMOCKS"], 0.35, 12, 90, december=2.2)
     L.spend("Entertainment", ["EVENT CINEMAS SENIORS", "LINCRAFT", "NEWSAGENCY"], 0.3, 8, 45)
     L.save(21, 150)
-    # SHOCK (new merchant, big amount): first visit to a dental implant clinic
-    L.add(date(2026, 6, 10), "CENTRAL COAST DENTAL IMPLANTS", -2850, "Health", True)
 
 
 def jake(L):  # sole-trader electrician with an ABN, share house
@@ -233,10 +219,6 @@ def jake(L):  # sole-trader electrician with an ABN, share house
     L.spend("Shopping", ["REBEL SPORT", "JB HI-FI", "BCF", "KATHMANDU", "AMAZON AU"], 0.6, 30, 240, december=1.4)
     L.spend("Health", ["CHEMIST WAREHOUSE", "MARRICKVILLE PHYSIO"], 0.15, 12, 95, True)
     L.save(25, 1000, "TRANSFER TO ESAVER TAX SET-ASIDE")
-    # SHOCK (category spike): tools and gear for a big commercial job, spread over one week
-    for day, desc, amt in [(10, "SYDNEY TOOLS", 445), (11, "MIDDYS ELECTRICAL", 430), (12, "TOTAL TOOLS", 460),
-                           (13, "REXEL ELECTRICAL", 415), (14, "BUNNINGS TRADE", 390)]:
-        L.add(date(2026, 8, day), desc, -amt, "Business expenses", True)
 
 
 USERS = [

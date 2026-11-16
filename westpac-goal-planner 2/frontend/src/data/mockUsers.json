@@ -9,7 +9,7 @@
    {
     "id": "u001-everyday",
     "name": "Westpac Choice",
-    "balance": 3743.9,
+    "balance": 934.4,
     "kind": "cash",
     "cardEnding": "4471"
    },
@@ -23,12 +23,12 @@
   ],
   "cashFlow": {
    "since": "01 Nov",
-   "expenses": 972.34,
+   "expenses": 1011.84,
    "income": 1041.8
   },
-  "categoriesTotal": 972.34,
+  "categoriesTotal": 1011.84,
   "netWorth": {
-   "assets": 6437.86,
+   "assets": 3628.36,
    "liabilities": 0
   },
   "recent": [
@@ -104,14 +104,14 @@
    {
     "id": "u002-everyday",
     "name": "Westpac Choice",
-    "balance": 3673.64,
+    "balance": 4155.99,
     "kind": "cash",
     "cardEnding": "8820"
    },
    {
     "id": "u002-savings",
     "name": "Westpac eSaver",
-    "balance": 62374.31,
+    "balance": 53774.31,
     "kind": "cash",
     "cardEnding": null
    },
@@ -132,12 +132,12 @@
   ],
   "cashFlow": {
    "since": "01 Nov",
-   "expenses": 16546.76,
+   "expenses": 15880.41,
    "income": 8433.03
   },
-  "categoriesTotal": 16546.76,
+  "categoriesTotal": 15880.41,
   "netWorth": {
-   "assets": 2216047.95,
+   "assets": 2207930.3,
    "liabilities": 1324750.0
   },
   "recent": [
@@ -145,6 +145,16 @@
     "date": "2026-11-15",
     "description": "AMPOL",
     "amount": -68.31
+   },
+   {
+    "date": "2026-11-14",
+    "description": "ZIP PAY AUTO REPAYMENT",
+    "amount": -59.65
+   },
+   {
+    "date": "2026-11-14",
+    "description": "AFTERPAY - BIG W (3/4)",
+    "amount": -66.0
    },
    {
     "date": "2026-11-14",
@@ -190,16 +200,6 @@
     "date": "2026-11-11",
     "description": "SPOTIFY FAMILY",
     "amount": -23.99
-   },
-   {
-    "date": "2026-11-11",
-    "description": "F45 TRAINING",
-    "amount": -68.0
-   },
-   {
-    "date": "2026-11-10",
-    "description": "AMPOL",
-    "amount": -68.41
    }
   ]
  },
@@ -213,14 +213,14 @@
    {
     "id": "u003-everyday",
     "name": "Westpac Choice",
-    "balance": 2011.57,
+    "balance": 1979.64,
     "kind": "cash",
     "cardEnding": "3056"
    },
    {
     "id": "u003-savings",
     "name": "Westpac eSaver",
-    "balance": 25498.16,
+    "balance": 22198.16,
     "kind": "cash",
     "cardEnding": null
    },
@@ -234,15 +234,20 @@
   ],
   "cashFlow": {
    "since": "01 Nov",
-   "expenses": 4555.84,
+   "expenses": 4650.34,
    "income": 3185.26
   },
-  "categoriesTotal": 4555.84,
+  "categoriesTotal": 4650.34,
   "netWorth": {
-   "assets": 807509.73,
+   "assets": 804177.8,
    "liabilities": 402700.0
   },
   "recent": [
+   {
+    "date": "2026-11-15",
+    "description": "AFTERPAY - MYER (2/4)",
+    "amount": -47.25
+   },
    {
     "date": "2026-11-15",
     "description": "THE RED COW HOTEL",
@@ -297,11 +302,6 @@
     "date": "2026-11-08",
     "description": "ALDI STORES PENRITH",
     "amount": -98.12
-   },
-   {
-    "date": "2026-11-08",
-    "description": "OPTUS MOBILE",
-    "amount": -55.0
    }
   ]
  },
@@ -315,7 +315,7 @@
    {
     "id": "u004-everyday",
     "name": "Westpac Choice",
-    "balance": 1662.86,
+    "balance": 1879.11,
     "kind": "cash",
     "cardEnding": "1294"
    },
@@ -334,7 +334,7 @@
   },
   "categoriesTotal": 1440.0,
   "netWorth": {
-   "assets": 18987.25,
+   "assets": 19203.5,
    "liabilities": 0
   },
   "recent": [
@@ -410,14 +410,14 @@
    {
     "id": "u005-everyday",
     "name": "Westpac Choice",
-    "balance": 11697.31,
+    "balance": 9884.51,
     "kind": "cash",
     "cardEnding": "6637"
    },
    {
     "id": "u005-savings",
     "name": "Westpac eSaver",
-    "balance": 24011.09,
+    "balance": 20211.09,
     "kind": "cash",
     "cardEnding": null
    }
@@ -429,7 +429,7 @@
   },
   "categoriesTotal": 4999.55,
   "netWorth": {
-   "assets": 35708.4,
+   "assets": 30095.6,
    "liabilities": 0
   },
   "recent": [
