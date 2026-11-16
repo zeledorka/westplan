@@ -1016,9 +1016,9 @@
     ],
     "unwanted_reduction_categories": []
   },
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "shocks": [],
-  "state_version": "0101105b99c4852962c137e8682299b2d77209c0d7be933b39d68187d9cefd04",
+  "state_version": "596084d8ffdf7815e438806de729f1919791bf85e4672050505490b64552016e",
   "uncertainty": [
     "Complete months inferred from transaction boundary dates, not statement coverage.",
     "Recurring dates/amounts and regular income are estimates from observed history.",

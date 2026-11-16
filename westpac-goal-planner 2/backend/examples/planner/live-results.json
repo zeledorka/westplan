@@ -1,0 +1,68 @@
+[
+  {
+    "scenario": "normal",
+    "live": true,
+    "generated": false,
+    "error": {
+      "code": "planner_provider_error",
+      "message": "Gemini is temporarily unavailable. No recommendation was substituted."
+    },
+    "metadata": {
+      "model": "gemini-3.8-flash",
+      "provider": "google_genai",
+      "model_calls": 1,
+      "tool_calls": 0,
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "response_ids": [],
+      "provider_model_versions": [],
+      "structured_validation_errors": 0,
+      "latency_ms": 11965
+    }
+  },
+  {
+    "scenario": "vet_paid",
+    "live": true,
+    "generated": false,
+    "error": {
+      "code": "planner_provider_error",
+      "message": "Gemini is temporarily unavailable. No recommendation was substituted."
+    },
+    "metadata": {
+      "model": "gemini-3.8-flash",
+      "provider": "google_genai",
+      "model_calls": 1,
+      "tool_calls": 0,
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "response_ids": [],
+      "provider_model_versions": [],
+      "structured_validation_errors": 0,
+      "latency_ms": 1821
+    }
+  },
+  {
+    "scenario": "vet_unpaid",
+    "live": true,
+    "generated": false,
+    "error": {
+      "code": "planner_timeout",
+      "message": "Gemini timed out. Your goals have not changed."
+    },
+    "metadata": {
+      "model": "gemini-3.8-flash",
+      "provider": "google_genai",
+      "model_calls": 1,
+      "tool_calls": 0,
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "response_ids": [],
+      "provider_model_versions": [],
+      "structured_validation_errors": 0,
+      "latency_ms": 28775
+    }
+  }
+]

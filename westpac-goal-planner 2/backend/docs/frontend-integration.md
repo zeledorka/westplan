@@ -88,7 +88,7 @@ Mutation origins are checked against the frontend origin (localhost/127.0.0.1 po
 | POST | `/api/goals/{goal_id}/proposals` | `{changes:{target?,allocated?,deadline?}, source:'user', expected_revision}` |
 | POST | `/api/proposals/{proposal_id}/decision` | `{decision:'approve'|'reject'|'snooze', confirmed, expected_revision}` |
 | GET | `/api/shocks` | Normalized shock context, not a diagnosis of hardship |
-| GET | `/api/planning-context` | Existing privacy-allowlisted schema 1.1, including goal versions |
+| GET | `/api/planning-context` | Privacy-allowlisted schema 1.2, including goal versions and adaptive events |
 
 Feedback actions are `useful`, `not_useful`, `dismiss`, `protect_category`, and `reject_adjustment`. Subscription actions are `request_cancellation`, `confirm_cancelled`, and `confirm_failed`. Goal kinds are `holiday`, `emergency_fund`, `purchase`, and `other`.
 

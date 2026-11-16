@@ -152,3 +152,10 @@ summary { cursor: pointer; padding: 8px 0; color: var(--navy); }
 progress { width: 100%; accent-color: var(--navy); }
 .card h3, .tx-desc { overflow-wrap: anywhere; }
 @media (max-width: 360px) { .contextbar label { display: grid; gap: 3px; } .contextbar select { max-width: 100%; } }
+
+/* Gemini drafts reuse the banking cards and remain contained on narrow screens. */
+.planner-conversation, .planner-draft, .planner-draft section { min-width: 0; }
+.planner-draft p, .planner-draft li, .planner-question { overflow-wrap: anywhere; }
+.planner-draft ul { padding-left: 20px; }
+.planner-conversation textarea { box-sizing: border-box; width: 100%; min-width: 0; font: inherit; padding: 10px; border: 1px solid var(--line); border-radius: 4px; resize: vertical; }
+.planner-conversation .card { margin: 12px 0; }

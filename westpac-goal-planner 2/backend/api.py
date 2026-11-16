@@ -24,6 +24,8 @@ from planning.service import BankingService
 from planning.store import DemoStore, StaleState
 from planning.demo import demo_transactions, AS_OF
 from planning.calculation_tools import required_contribution
+from planning.gemini import GeminiTransport, PlannerError
+from planning.planner_service import PlannerService
 
 ROOT = Path(__file__).resolve().parent
 Mode = Literal['customer', 'normal', 'vet_paid', 'vet_unpaid']
@@ -94,6 +96,12 @@ class SubscriptionInput(Mutation):
     action: Literal['request_cancellation','confirm_cancelled','confirm_failed']
 
 
+class ShockActionInput(Mutation):
+    action: Literal['acknowledge','confirm_expected','confirm_unexpected','dismiss','resolve','reopen']
+    evidence_version: str
+    remember_expected: StrictBool = False
+
+
 class SearchInput(Input):
     question: Annotated[str, Field(min_length=1,max_length=240)]
 
@@ -108,15 +116,32 @@ class Session:
     lock: RLock = field(default_factory=RLock)
 
 
-def create_app(db_path=None):
+class PlannerInput(Input):
+    goal_id: str
+    question: Annotated[str, Field(min_length=1,max_length=1600)]
+    request_id: Annotated[str, Field(min_length=1,max_length=80)]
+    expected_revision: Revision
+    session_id: str | None = None
+    protected_categories: list[str] = Field(default_factory=list,max_length=24)
+    background: StrictBool = False
+
+
+class PlannerRetryInput(Input):
+    expected_revision: Revision
+
+
+def create_app(db_path=None, *, planner_transport=None):
     db_path = Path(db_path or os.environ.get('BANKING_DB', ROOT/'.runtime/banking.sqlite'))
     db_path.parent.mkdir(parents=True, exist_ok=True)
     store = DemoStore(db_path)
+    planner = PlannerService(store,planner_transport or GeminiTransport())
+    app_planner = planner
     profiles = {u['user_id']:u for u in json.loads((ROOT/'data/mock_users.json').read_text())}
     ledger = {uid:load_transactions(ROOT/'data/mock_transactions.json', uid) for uid in profiles}
     sessions = {}
     app = FastAPI(title='Synthetic Banking Demo', version='1.0')
     app.state.store, app.state.sessions = store, sessions
+    app.state.planner = app_planner
     allowed_origins = set(os.environ.get('BANKING_ORIGINS','http://localhost:5173,http://127.0.0.1:5173').split(','))
 
     @app.middleware('http')
@@ -132,6 +157,10 @@ def create_app(db_path=None):
 
     def error(code, message, status):
         return JSONResponse({'error':{'code':code,'message':message}},status_code=status)
+
+    @app.exception_handler(PlannerError)
+    async def planner_error(_, exc):
+        return error(exc.code,exc.message,exc.status)
 
     @app.exception_handler(StaleState)
     async def stale(_, exc):
@@ -250,7 +279,8 @@ def create_app(db_path=None):
                 'categoriesTotal':round(month.essential+month.discretionary,2) if month else 0,
                 'recent':recent,'financial':{k:view['insights'][k] for k in
                     ('observation','income','spending','cashflow','budgets','bills_calendar','savings_finder','personalised_insights','uncertainty')},
-                'shocks':context['shocks'],'goals':goal_rows(view['goals'],raw['as_of']),
+                'shocks':[{k:v for k,v in e.items() if not k.startswith('_') and k!='transaction_ids'} for e in view['insights']['shocks']],
+                'shock_history':service.shock_history(uid),'goals':goal_rows(view['goals'],raw['as_of']),
                 'proposals':view['proposals'],'goal_history':service.goal_history(uid),
                 'subscriptions':view['subscriptions'],'categories':sorted(CATEGORIES),
                 'goal_available':round(sum(a['goal_available'] for a in balances),2),
@@ -357,11 +387,69 @@ def create_app(db_path=None):
     def subscription_action(subscription_id:str,body:SubscriptionInput,request:Request,s=Depends(selected)):
         return mutate(s,request,body,lambda uid,svc:svc.subscription_action(uid,subscription_id,body.action,confirmed=body.confirmed,expected_revision=body.expected_revision))
 
+    @app.post('/api/shocks/{event_ref}/action')
+    def shock_action(event_ref:str,body:ShockActionInput,request:Request,s=Depends(selected)):
+        return mutate(s,request,body,lambda uid,svc:svc.record_shock_action(uid,event_ref,**body.model_dump()))
+
     @app.post('/api/search')
     def search(body:SearchInput,s=Depends(selected)):
         with s.lock:
             uid,svc=bind(s)
             return svc.search(uid,body.question)
+
+    @app.get('/api/planner/status')
+    def planner_status(s=Depends(selected)):
+        return planner.status()
+
+    @app.post('/api/planner/assess')
+    def planner_assess(body:PlannerInput,request:Request,s=Depends(selected)):
+        with s.lock:
+            scope_check(s,request)
+            uid,svc=bind(s)
+            scope=s.scope
+        # Network calls run outside the session lock; changed scope invalidates their result.
+        authorised=lambda:s.scope==scope and s.expires>=time.time() and sessions.get(request.cookies.get('banking_session')) is s
+        values=body.model_dump(exclude={'background'})
+        if body.background:
+            return JSONResponse(planner.start(svc,uid,**values,still_authorised=authorised),status_code=202)
+        return planner.generate(svc,uid,**values,still_authorised=authorised)
+
+    @app.get('/api/planner/requests/{request_id}')
+    def planner_request(request_id:str,request:Request,s=Depends(selected)):
+        with s.lock:
+            scope_check(s,request);uid,svc=bind(s)
+        return planner.request_status(svc,uid,request_id)
+
+    @app.post('/api/planner/requests/{request_id}/cancel')
+    def planner_cancel(request_id:str,request:Request,s=Depends(selected)):
+        with s.lock:
+            scope_check(s,request);uid,_=bind(s)
+        return planner.cancel(uid,request_id)
+
+    @app.post('/api/planner/requests/{request_id}/retry')
+    def planner_retry(request_id:str,body:PlannerRetryInput,request:Request,s=Depends(selected)):
+        with s.lock:
+            scope_check(s,request);uid,svc=bind(s);scope=s.scope
+        authorised=lambda:s.scope==scope and s.expires>=time.time() and sessions.get(request.cookies.get('banking_session')) is s
+        return JSONResponse(planner.retry(svc,uid,request_id,expected_revision=body.expected_revision,still_authorised=authorised),status_code=202)
+
+    @app.get('/api/planner/sessions')
+    def planner_sessions(s=Depends(selected)):
+        with s.lock:
+            uid,svc=bind(s)
+            return planner.history(svc,uid)
+
+    @app.get('/api/planner/sessions/{session_id}')
+    def planner_session(session_id:str,s=Depends(selected)):
+        with s.lock:
+            uid,svc=bind(s)
+            return planner.history(svc,uid,session_id)
+
+    @app.get('/api/planner/drafts/{draft_id}')
+    def planner_draft(draft_id:str,s=Depends(selected)):
+        with s.lock:
+            uid,svc=bind(s)
+            return planner.draft(svc,uid,draft_id)
 
     return app
 

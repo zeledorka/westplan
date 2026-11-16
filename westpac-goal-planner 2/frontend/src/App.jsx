@@ -80,7 +80,7 @@ export default function App() {
     : tab === 'accounts' ? <Accounts />
     : tab === 'payments' ? <Payments />
     : tab === 'insights' ? <Insights onOpenGoals={openGoals} /> : <More />
-  return <BankContext.Provider value={{ ...bank, busy, mutate, refresh, signOut, openTool }}>
+  return <BankContext.Provider value={{ ...bank, busy, mutate, refresh, signOut, openTool, openTransactions: () => go('accounts') }}>
     <div className="phone">
       <div className="contextbar">
         <label>Mock customer<select aria-label="Mock customer" disabled={busy} value={bank.selected_customer} onChange={e => selectCustomer(e.target.value)}>

@@ -146,3 +146,29 @@ Open http://localhost:5173, select a synthetic customer, then use the labelled D
 Selector to demonstrate the normal, paid-vet or unpaid-vet shared ledger. Mock selection is
 not production authentication. Gemini and the independent checker are not connected; the
 UI offers manual goal changes and does not bypass validation for AI proposals.
+
+
+## Adaptive financial events (context schema 1.2)
+
+The integrated app now separates unusualness, potential cashflow impact and confirmed
+expectedness. It monitors regular income interruptions and sustained changes, and stores
+customer-scoped event acknowledgements and confirmations in the existing SQLite snapshots.
+The original six detector functions and savings calculations remain available unchanged.
+
+See [adaptive-shocks.md](backend/docs/adaptive-shocks.md) for thresholds, lifecycle semantics,
+REST actions, privacy changes, evaluation and limitations. Regenerate labelled fixtures with
+`python -m evaluation.run_shocks` from `backend`. These synthetic results are not real-world
+accuracy estimates. Gemini and the independent Safety Checker remain unimplemented.
+
+
+## Gemini adaptive goal-planning drafts
+
+The Goal Planner now calls the official backend-only Google Gen AI SDK, using the existing
+privacy context v1.2 and read-only Python calculations. Gemini composes strategies and can
+refine them through follow-up questions. Results remain `draft_unverified`; the independent
+Safety Checker is not implemented, and Gemini drafts cannot enter the approval/activation path.
+
+Configure repository-root `.env` using `.env.example`, then install backend requirements and
+restart the API. `GEMINI_MODEL` defaults to `gemini-3.8-flash`. No model call occurs on page load.
+See [Gemini planner architecture and API](backend/docs/gemini-planner.md) for limits, privacy,
+configuration, endpoints, optional live evaluation and provider-availability results.

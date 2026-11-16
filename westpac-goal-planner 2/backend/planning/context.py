@@ -15,7 +15,8 @@ def _select(source, fields):
 
 def build_planning_context(txns, *, as_of: date, goals=(), preferences=None,
                            accounts=(), pending_expenses=(), event_evidence=(),
-                           budget_limits=(), feedback=(), subscription_states=None):
+                           budget_limits=(), feedback=(), subscription_states=None,
+                           planned_expenses=(), event_states=None, known_holidays=()):
     preferences = preferences or Preferences()
     preferences = replace(preferences, protected_categories=tuple(sorted(
         set(preferences.protected_categories)|{b.category for b in budget_limits if b.protected})))
@@ -24,21 +25,17 @@ def build_planning_context(txns, *, as_of: date, goals=(), preferences=None,
         money(t.amount, signed=True)
         if t.balance_after is not None:
             money(t.balance_after, signed=True)
-    shocks = normalized_shocks(past, as_of=as_of)
     insights = banking_insights(past, as_of=as_of, accounts=accounts,
         protected_categories=preferences.protected_categories, limits=budget_limits,
         pending_expenses=pending_expenses, feedback=feedback,
-        subscription_states=subscription_states, shocks=shocks)
+        subscription_states=subscription_states, planned_expenses=planned_expenses,
+        event_evidence=event_evidence,event_states=event_states,known_holidays=known_holidays)
+    shocks = insights['shocks']
     posted_ids = {t.transaction_id for t in past}
-    evidence = {e.transaction_id: e for e in event_evidence if e.known_on <= as_of}
     for shock in shocks:
-        annotations = [evidence[i] for i in shock["transaction_ids"] if i in evidence]
-        shock["expense_kind"] = annotations[0].kind if len({e.kind for e in annotations}) == 1 else "unknown"
-        shock["unexpected_confirmed"] = any(e.unexpected for e in annotations)
-        shock["evidence_source"] = "explicit_user_or_scenario" if annotations else "detector_only"
         # Attribution on the SAME complete-month observation period. This is a numerical
         # counterfactual, not a suggested goal strategy and never another balance debit.
-        event_rows = [t for t in past if t.transaction_id in shock["transaction_ids"]]
+        event_rows = [t for t in past if t.transaction_id in shock["transaction_ids"] and t.is_expense]
         without = []
         for flow in insights["cashflow"]["monthly"]:
             rows = [t for t in event_rows if t.date.strftime("%Y-%m") == flow["month"]]
@@ -48,8 +45,7 @@ def build_planning_context(txns, *, as_of: date, goals=(), preferences=None,
         current = insights["cashflow"]["savings_capacity"]["comfortable"]
         shock["impact"]["comfortable_capacity_change_vs_excluding_event"] = (
             round(current - savings_capacity_from_flows(without).comfortable, 2) if event_rows else None)
-        shock["impact"]["current_projected_balance"] = (insights["cashflow"]["runway"]["projected_balance"]
-            if insights["cashflow"]["runway"] else None)
+        shock["impact"]["current_projected_balance"] = shock["impact"].get("projected_balance")
     pending = []
     seen = set()
     for e in pending_expenses:
@@ -115,7 +111,7 @@ def build_planning_context(txns, *, as_of: date, goals=(), preferences=None,
     if pending:
         uncertainty.append("Pending items linked to posted transactions or explicit bill references are reconciled; unlinked duplicates need user review.")
     return_payload = {
-        "schema_version": "1.1", "as_of": as_of.isoformat(), "currency": "AUD",
+        "schema_version": "1.2", "as_of": as_of.isoformat(), "currency": "AUD",
         "financial_insights": {
             "observation": observation, "income": income,
             "spending": {"monthly_essential": insights["spending"]["monthly_essential"],
@@ -133,11 +129,20 @@ def build_planning_context(txns, *, as_of: date, goals=(), preferences=None,
                                              "potentially_reducible_recurring_monthly", "assumption")),
                                "category": category(o["category"])} for o in insights["opportunities"]]},
         "shocks": [{**_select(s, ("date", "observed_on", "status", "event_amount", "detectors", "severity",
-                                    "confirmed_hardship", "classification", "unexpected_confirmed", "expense_kind", "evidence_source", "uncertainty")),
-                    "event_ref": f"event-{i + 1}", "categories": sorted({category(c) for c in s["categories"]}),
+                                    "confirmed_hardship", "classification", "unexpected_confirmed", "expense_kind", "evidence_source", "uncertainty",
+                                    "event_type", "detected_at", "detection_precision", "currency", "expectedness", "expectedness_source",
+                                    "statistical_anomaly", "potential_disruption", "confidence", "pattern_stage",
+                                    "lifecycle_status", "user_confirmation", "notification_required", "reassessment_required", "explanation", "questions")),
+                    "event_ref": "event-"+sha256(s["event_ref"].encode()).hexdigest()[:16], "categories": sorted({category(c) for c in s["categories"]}),
                     "evidence": [_select(e, ("detector", "score", "score_is_unbounded")) for e in s["evidence"]],
+                    "historical": {k:s['historical'][k] for k in ('category_observations','category_median','adaptive_floor','amount_vs_category_median','daily_purchase_count','baseline_daily_count','daily_count_threshold',
+                        'observations','typical_amount','expected_date','grace_end','arrival_date','expected_amount','received_amount',
+                        'shortfall','period_days','training_observations','missed_cycles','reduced_cycles','baseline_weekly','recent_weekly',
+                        'threshold','weeks','essential','previous_amount','recent_amount','earlier_income','recent_income',
+                        'earlier_cv','recent_cv','pressure_observations','due_date') if k in s['historical']},
                     "impact": _select(s["impact"], ("already_in_balance", "additional_future_debit", "observed_expense",
-                        "projected_buffer_shortfall", "savings_capacity_effect", "comfortable_capacity_change_vs_excluding_event", "current_projected_balance"))} for i, s in enumerate(shocks)],
+                        "projected_buffer_shortfall", "savings_capacity_effect", "comfortable_capacity_change_vs_excluding_event", "current_projected_balance", "current_balance", "protected_reserve", "upcoming_obligations", "projected_balance", "unreserved_projected_balance", "liquidity_ratio",
+                        "comfortable", "stretch", "monthly_surplus", "income_variability", "amounts_additive", "already_in_projection"))} for i, s in enumerate(shocks)],
         "pending_expenses": pending, "goals": goal_rows,
         "preferences": {"protected_categories": list(preferences.protected_categories),
                         "allow_deadline_extension": preferences.allow_deadline_extension,

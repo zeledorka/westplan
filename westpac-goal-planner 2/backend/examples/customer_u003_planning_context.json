@@ -703,27 +703,10 @@
     "personalised_insights": [
       {
         "actionable": false,
-        "category": "Groceries",
-        "confidence": "moderate",
-        "explanation": "Groceries spending increased compared with earlier complete months.",
-        "insight_ref": "insight-1",
-        "observation_period": {
-          "end": "2026-11-15",
-          "start": "2025-11-16"
-        },
-        "severity": "info",
-        "type": "spending_increase",
-        "values": {
-          "monthly_average": 957.18,
-          "recent_change": 295.95
-        }
-      },
-      {
-        "actionable": false,
         "category": "Shopping",
         "confidence": "moderate",
         "explanation": "Shopping spending increased compared with earlier complete months.",
-        "insight_ref": "insight-2",
+        "insight_ref": "insight-1",
         "observation_period": {
           "end": "2026-11-15",
           "start": "2025-11-16"
@@ -736,28 +719,11 @@
         }
       },
       {
-        "actionable": false,
-        "category": "Utilities",
-        "confidence": "moderate",
-        "explanation": "Utilities spending increased compared with earlier complete months.",
-        "insight_ref": "insight-3",
-        "observation_period": {
-          "end": "2026-11-15",
-          "start": "2025-11-16"
-        },
-        "severity": "info",
-        "type": "spending_increase",
-        "values": {
-          "monthly_average": 372.34,
-          "recent_change": 118.46
-        }
-      },
-      {
         "actionable": true,
         "category": "Transport",
         "confidence": "moderate",
         "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
-        "insight_ref": "insight-4",
+        "insight_ref": "insight-2",
         "observation_period": {
           "end": "2026-11-15",
           "start": "2025-11-16"
@@ -775,7 +741,7 @@
         "category": "Health",
         "confidence": "moderate",
         "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
-        "insight_ref": "insight-5",
+        "insight_ref": "insight-3",
         "observation_period": {
           "end": "2026-11-15",
           "start": "2025-11-16"
@@ -790,7 +756,43 @@
       },
       {
         "actionable": true,
+        "category": "Transport",
+        "confidence": "moderate",
+        "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
+        "insight_ref": "insight-4",
+        "observation_period": {
+          "end": "2026-11-15",
+          "start": "2025-11-16"
+        },
+        "severity": "advisory",
+        "type": "unusual_expense",
+        "values": {
+          "detector_count": 1,
+          "event_amount": 284.32,
+          "event_date": "2026-05-04"
+        }
+      },
+      {
+        "actionable": true,
         "category": "Entertainment",
+        "confidence": "moderate",
+        "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
+        "insight_ref": "insight-5",
+        "observation_period": {
+          "end": "2026-11-15",
+          "start": "2025-11-16"
+        },
+        "severity": "advisory",
+        "type": "unusual_expense",
+        "values": {
+          "detector_count": 1,
+          "event_amount": 513.54,
+          "event_date": "2026-05-25"
+        }
+      },
+      {
+        "actionable": true,
+        "category": "Transport",
         "confidence": "moderate",
         "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
         "insight_ref": "insight-6",
@@ -801,14 +803,14 @@
         "severity": "advisory",
         "type": "unusual_expense",
         "values": {
-          "detector_count": 1,
-          "event_amount": 175.87,
-          "event_date": "2026-04-29"
+          "detector_count": 2,
+          "event_amount": 890.0,
+          "event_date": "2026-06-17"
         }
       },
       {
         "actionable": true,
-        "category": "Transport",
+        "category": "Groceries",
         "confidence": "moderate",
         "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
         "insight_ref": "insight-7",
@@ -819,9 +821,9 @@
         "severity": "advisory",
         "type": "unusual_expense",
         "values": {
-          "detector_count": 2,
-          "event_amount": 890.0,
-          "event_date": "2026-06-17"
+          "detector_count": 1,
+          "event_amount": 1082.37,
+          "event_date": "2026-08-17"
         }
       },
       {
@@ -844,10 +846,64 @@
       },
       {
         "actionable": true,
+        "category": "Transport",
+        "confidence": "moderate",
+        "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
+        "insight_ref": "insight-9",
+        "observation_period": {
+          "end": "2026-11-15",
+          "start": "2025-11-16"
+        },
+        "severity": "advisory",
+        "type": "unusual_expense",
+        "values": {
+          "detector_count": 1,
+          "event_amount": 692.17,
+          "event_date": "2026-10-12"
+        }
+      },
+      {
+        "actionable": true,
+        "category": "Transport",
+        "confidence": "moderate",
+        "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
+        "insight_ref": "insight-10",
+        "observation_period": {
+          "end": "2026-11-15",
+          "start": "2025-11-16"
+        },
+        "severity": "advisory",
+        "type": "unusual_expense",
+        "values": {
+          "detector_count": 1,
+          "event_amount": 480.0,
+          "event_date": "2026-10-15"
+        }
+      },
+      {
+        "actionable": true,
+        "category": "Utilities",
+        "confidence": "moderate",
+        "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
+        "insight_ref": "insight-11",
+        "observation_period": {
+          "end": "2026-11-15",
+          "start": "2025-11-16"
+        },
+        "severity": "advisory",
+        "type": "unusual_expense",
+        "values": {
+          "detector_count": 1,
+          "event_amount": 345.04,
+          "event_date": "2026-10-21"
+        }
+      },
+      {
+        "actionable": true,
         "category": "Eating out",
         "confidence": "limited",
         "explanation": "Observed discretionary Eating out spending offers an area to review; no saving is guaranteed.",
-        "insight_ref": "insight-9",
+        "insight_ref": "insight-12",
         "observation_period": {
           "end": "2026-11-15",
           "start": "2025-11-16"
@@ -864,7 +920,7 @@
         "category": "Shopping",
         "confidence": "limited",
         "explanation": "Observed discretionary Shopping spending offers an area to review; no saving is guaranteed.",
-        "insight_ref": "insight-10",
+        "insight_ref": "insight-13",
         "observation_period": {
           "end": "2026-11-15",
           "start": "2025-11-16"
@@ -881,7 +937,7 @@
         "category": "Subscriptions",
         "confidence": "limited",
         "explanation": "Observed discretionary Subscriptions spending offers an area to review; no saving is guaranteed.",
-        "insight_ref": "insight-11",
+        "insight_ref": "insight-14",
         "observation_period": {
           "end": "2026-11-15",
           "start": "2025-11-16"
@@ -1446,20 +1502,25 @@
     "protected_categories": [],
     "unwanted_reduction_categories": []
   },
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "shocks": [
     {
       "categories": [
         "Transport"
       ],
-      "classification": "unusual_posted_spending",
+      "classification": "activity_pattern",
+      "confidence": "higher",
       "confirmed_hardship": false,
+      "currency": "AUD",
       "date": "2026-03-02",
+      "detected_at": "2026-03-08",
+      "detection_precision": "day",
       "detectors": [
         "category_spike"
       ],
       "event_amount": 378.86,
-      "event_ref": "event-1",
+      "event_ref": "event-75016fad604cac43",
+      "event_type": "activity_pattern",
       "evidence": [
         {
           "detector": "category_spike",
@@ -1468,34 +1529,72 @@
         }
       ],
       "evidence_source": "detector_only",
+      "expectedness": "unknown",
+      "expectedness_source": "insufficient_evidence",
       "expense_kind": "unknown",
+      "explanation": "Several purchases form an unusual activity pattern.",
+      "historical": {
+        "adaptive_floor": null,
+        "amount_vs_category_median": 1.36,
+        "baseline_weekly": 53.97,
+        "category_median": 66.76,
+        "category_observations": 25,
+        "recent_weekly": 378.86
+      },
       "impact": {
         "additional_future_debit": 0,
         "already_in_balance": true,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 0.0,
         "comfortable_capacity_change_vs_excluding_event": 0.0,
+        "current_balance": 2011.57,
         "current_projected_balance": 1825.57,
+        "income_variability": 0.1831,
+        "liquidity_ratio": 0.1585,
+        "monthly_surplus": 177.75,
         "observed_expense": 378.86,
+        "projected_balance": 1825.57,
         "projected_buffer_shortfall": null,
-        "savings_capacity_effect": "Included only when event month is complete; no extra subtraction."
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 0.0,
+        "unreserved_projected_balance": 1825.57,
+        "upcoming_obligations": 186.0
       },
+      "lifecycle_status": "new",
+      "notification_required": true,
       "observed_on": "2026-03-08",
+      "pattern_stage": "one_off",
+      "potential_disruption": "low",
+      "questions": [
+        "Was this expected?"
+      ],
+      "reassessment_required": false,
       "severity": "review",
+      "statistical_anomaly": true,
       "status": "posted",
-      "uncertainty": "Statistical anomaly does not establish necessity, surprise, fraud or hardship.",
-      "unexpected_confirmed": false
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
     },
     {
       "categories": [
         "Health"
       ],
-      "classification": "unusual_posted_spending",
+      "classification": "activity_pattern",
+      "confidence": "higher",
       "confirmed_hardship": false,
+      "currency": "AUD",
       "date": "2026-03-23",
+      "detected_at": "2026-03-24",
+      "detection_precision": "day",
       "detectors": [
         "category_spike"
       ],
       "event_amount": 120.45,
-      "event_ref": "event-2",
+      "event_ref": "event-df6f5f207ba756fd",
+      "event_type": "activity_pattern",
       "evidence": [
         {
           "detector": "category_spike",
@@ -1504,138 +1603,619 @@
         }
       ],
       "evidence_source": "detector_only",
+      "expectedness": "unknown",
+      "expectedness_source": "insufficient_evidence",
       "expense_kind": "unknown",
+      "explanation": "Several purchases form an unusual activity pattern.",
+      "historical": {
+        "adaptive_floor": null,
+        "amount_vs_category_median": 1.18,
+        "baseline_weekly": 0.0,
+        "category_median": 43.52,
+        "category_observations": 8,
+        "recent_weekly": 120.45
+      },
       "impact": {
         "additional_future_debit": 0,
         "already_in_balance": true,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 0.0,
         "comfortable_capacity_change_vs_excluding_event": 0.0,
+        "current_balance": 2011.57,
         "current_projected_balance": 1825.57,
+        "income_variability": 0.1831,
+        "liquidity_ratio": 0.0565,
+        "monthly_surplus": 177.75,
         "observed_expense": 120.45,
+        "projected_balance": 1825.57,
         "projected_buffer_shortfall": null,
-        "savings_capacity_effect": "Included only when event month is complete; no extra subtraction."
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 0.0,
+        "unreserved_projected_balance": 1825.57,
+        "upcoming_obligations": 186.0
       },
-      "observed_on": "2026-03-29",
+      "lifecycle_status": "new",
+      "notification_required": true,
+      "observed_on": "2026-03-24",
+      "pattern_stage": "one_off",
+      "potential_disruption": "low",
+      "questions": [
+        "Was this expected?"
+      ],
+      "reassessment_required": false,
       "severity": "review",
+      "statistical_anomaly": true,
       "status": "posted",
-      "uncertainty": "Statistical anomaly does not establish necessity, surprise, fraud or hardship.",
-      "unexpected_confirmed": false
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
+    },
+    {
+      "categories": [
+        "Transport"
+      ],
+      "classification": "sustained_spending_change",
+      "confidence": "moderate",
+      "confirmed_hardship": false,
+      "currency": "AUD",
+      "date": "2026-05-04",
+      "detected_at": "2026-05-17",
+      "detection_precision": "day",
+      "detectors": [
+        "sustained_category"
+      ],
+      "event_amount": 284.32,
+      "event_ref": "event-36332f7c40d317dd",
+      "event_type": "sustained_spending_change",
+      "evidence": [],
+      "evidence_source": "detector_only",
+      "expectedness": "unknown",
+      "expectedness_source": "insufficient_evidence",
+      "expense_kind": "unknown",
+      "explanation": "Category spending stayed above its own prior weekly baseline for several complete weeks.",
+      "historical": {
+        "baseline_weekly": 20.84,
+        "essential": true,
+        "recent_weekly": 142.16,
+        "threshold": 83.38,
+        "weeks": 2
+      },
+      "impact": {
+        "additional_future_debit": 0,
+        "already_in_balance": true,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 0.0,
+        "comfortable_capacity_change_vs_excluding_event": 0.0,
+        "current_balance": 2011.57,
+        "current_projected_balance": 1825.57,
+        "income_variability": 0.1831,
+        "liquidity_ratio": 0.1238,
+        "monthly_surplus": 177.75,
+        "observed_expense": 284.32,
+        "projected_balance": 1825.57,
+        "projected_buffer_shortfall": null,
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 0.0,
+        "unreserved_projected_balance": 1825.57,
+        "upcoming_obligations": 186.0
+      },
+      "lifecycle_status": "new",
+      "notification_required": true,
+      "observed_on": "2026-05-17",
+      "pattern_stage": "emerging",
+      "potential_disruption": "low",
+      "questions": [
+        "Was this expected?"
+      ],
+      "reassessment_required": false,
+      "severity": "review",
+      "statistical_anomaly": true,
+      "status": "posted",
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
     },
     {
       "categories": [
         "Entertainment"
       ],
-      "classification": "unusual_posted_spending",
+      "classification": "sustained_spending_change",
+      "confidence": "moderate",
       "confirmed_hardship": false,
-      "date": "2026-04-29",
+      "currency": "AUD",
+      "date": "2026-05-25",
+      "detected_at": "2026-06-07",
+      "detection_precision": "day",
       "detectors": [
-        "category_spike"
+        "sustained_category"
       ],
-      "event_amount": 175.87,
-      "event_ref": "event-3",
-      "evidence": [
-        {
-          "detector": "category_spike",
-          "score": 4.5,
-          "score_is_unbounded": false
-        }
-      ],
+      "event_amount": 513.54,
+      "event_ref": "event-65770977d13b0d72",
+      "event_type": "sustained_spending_change",
+      "evidence": [],
       "evidence_source": "detector_only",
+      "expectedness": "unknown",
+      "expectedness_source": "insufficient_evidence",
       "expense_kind": "unknown",
+      "explanation": "Category spending stayed above its own prior weekly baseline for several complete weeks.",
+      "historical": {
+        "baseline_weekly": 89.42,
+        "essential": false,
+        "recent_weekly": 256.77,
+        "threshold": 205.36,
+        "weeks": 2
+      },
       "impact": {
         "additional_future_debit": 0,
         "already_in_balance": true,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 0.0,
         "comfortable_capacity_change_vs_excluding_event": 0.0,
+        "current_balance": 2011.57,
         "current_projected_balance": 1825.57,
-        "observed_expense": 175.87,
+        "income_variability": 0.1831,
+        "liquidity_ratio": 0.2034,
+        "monthly_surplus": 177.75,
+        "observed_expense": 513.54,
+        "projected_balance": 1825.57,
         "projected_buffer_shortfall": null,
-        "savings_capacity_effect": "Included only when event month is complete; no extra subtraction."
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 0.0,
+        "unreserved_projected_balance": 1825.57,
+        "upcoming_obligations": 186.0
       },
-      "observed_on": "2026-05-03",
+      "lifecycle_status": "new",
+      "notification_required": true,
+      "observed_on": "2026-06-07",
+      "pattern_stage": "emerging",
+      "potential_disruption": "moderate",
+      "questions": [
+        "Was this expected?"
+      ],
+      "reassessment_required": false,
       "severity": "review",
+      "statistical_anomaly": true,
       "status": "posted",
-      "uncertainty": "Statistical anomaly does not establish necessity, surprise, fraud or hardship.",
-      "unexpected_confirmed": false
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
     },
     {
       "categories": [
         "Transport"
       ],
-      "classification": "unusual_posted_spending",
+      "classification": "transaction_anomaly",
+      "confidence": "higher",
       "confirmed_hardship": false,
+      "currency": "AUD",
       "date": "2026-06-17",
+      "detected_at": "2026-06-17",
+      "detection_precision": "day",
       "detectors": [
         "large_single_spend",
         "new_merchant_big_amount"
       ],
       "event_amount": 890.0,
-      "event_ref": "event-4",
+      "event_ref": "event-f1b58c3a3aef22a0",
+      "event_type": "transaction_anomaly",
       "evidence": [
         {
-          "detector": "new_merchant_big_amount",
-          "score": 2.97,
+          "detector": "large_single_spend",
+          "score": 50.99,
           "score_is_unbounded": false
         },
         {
-          "detector": "large_single_spend",
-          "score": 53.34,
+          "detector": "new_merchant_big_amount",
+          "score": 2.2912161466378334,
           "score_is_unbounded": false
         }
       ],
       "evidence_source": "detector_only",
+      "expectedness": "unknown",
+      "expectedness_source": "insufficient_evidence",
       "expense_kind": "unknown",
+      "explanation": "This amount differs from this customer's own spending history.",
+      "historical": {
+        "adaptive_floor": 388.44,
+        "amount_vs_category_median": 14.86,
+        "category_median": 59.89,
+        "category_observations": 43
+      },
       "impact": {
         "additional_future_debit": 0,
         "already_in_balance": true,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 0.0,
         "comfortable_capacity_change_vs_excluding_event": 0.0,
+        "current_balance": 2011.57,
         "current_projected_balance": 1825.57,
+        "income_variability": 0.1831,
+        "liquidity_ratio": 0.3067,
+        "monthly_surplus": 177.75,
         "observed_expense": 890.0,
+        "projected_balance": 1825.57,
         "projected_buffer_shortfall": null,
-        "savings_capacity_effect": "Included only when event month is complete; no extra subtraction."
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 0.0,
+        "unreserved_projected_balance": 1825.57,
+        "upcoming_obligations": 186.0
       },
+      "lifecycle_status": "new",
+      "notification_required": true,
       "observed_on": "2026-06-17",
+      "pattern_stage": "one_off",
+      "potential_disruption": "moderate",
+      "questions": [
+        "Was this expected?"
+      ],
+      "reassessment_required": false,
       "severity": "review",
+      "statistical_anomaly": true,
       "status": "posted",
-      "uncertainty": "Statistical anomaly does not establish necessity, surprise, fraud or hardship.",
-      "unexpected_confirmed": false
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
+    },
+    {
+      "categories": [
+        "Groceries"
+      ],
+      "classification": "sustained_spending_change",
+      "confidence": "moderate",
+      "confirmed_hardship": false,
+      "currency": "AUD",
+      "date": "2026-08-17",
+      "detected_at": "2026-09-13",
+      "detection_precision": "day",
+      "detectors": [
+        "sustained_category"
+      ],
+      "event_amount": 1082.37,
+      "event_ref": "event-7eabca7b4fd1b6f3",
+      "event_type": "sustained_spending_change",
+      "evidence": [],
+      "evidence_source": "detector_only",
+      "expectedness": "unknown",
+      "expectedness_source": "insufficient_evidence",
+      "expense_kind": "unknown",
+      "explanation": "Category spending stayed above its own prior weekly baseline for several complete weeks.",
+      "historical": {
+        "baseline_weekly": 150.91,
+        "essential": true,
+        "recent_weekly": 270.59,
+        "threshold": 213.57,
+        "weeks": 4
+      },
+      "impact": {
+        "additional_future_debit": 0,
+        "already_in_balance": true,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 0.0,
+        "comfortable_capacity_change_vs_excluding_event": 0.0,
+        "current_balance": 2011.57,
+        "current_projected_balance": 1825.57,
+        "income_variability": 0.1831,
+        "liquidity_ratio": 0.3498,
+        "monthly_surplus": 177.75,
+        "observed_expense": 1082.37,
+        "projected_balance": 1825.57,
+        "projected_buffer_shortfall": null,
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 0.0,
+        "unreserved_projected_balance": 1825.57,
+        "upcoming_obligations": 186.0
+      },
+      "lifecycle_status": "new",
+      "notification_required": true,
+      "observed_on": "2026-09-13",
+      "pattern_stage": "sustained",
+      "potential_disruption": "moderate",
+      "questions": [
+        "Was this expected?"
+      ],
+      "reassessment_required": false,
+      "severity": "review",
+      "statistical_anomaly": true,
+      "status": "posted",
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
     },
     {
       "categories": [
         "Transport"
       ],
-      "classification": "unusual_posted_spending",
+      "classification": "transaction_anomaly",
+      "confidence": "higher",
       "confirmed_hardship": false,
+      "currency": "AUD",
       "date": "2026-09-03",
+      "detected_at": "2026-09-03",
+      "detection_precision": "day",
       "detectors": [
         "large_single_spend"
       ],
       "event_amount": 3450.0,
-      "event_ref": "event-5",
+      "event_ref": "event-575f6c65bb4185c4",
+      "event_type": "transaction_anomaly",
       "evidence": [
         {
           "detector": "large_single_spend",
-          "score": 178.46,
+          "score": 174.24,
           "score_is_unbounded": false
         }
       ],
       "evidence_source": "detector_only",
+      "expectedness": "unknown",
+      "expectedness_source": "insufficient_evidence",
       "expense_kind": "unknown",
+      "explanation": "This amount differs from this customer's own spending history.",
+      "historical": {
+        "adaptive_floor": 68.67,
+        "amount_vs_category_median": 54.47,
+        "category_median": 63.34,
+        "category_observations": 57
+      },
       "impact": {
         "additional_future_debit": 0,
         "already_in_balance": true,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 0.0,
         "comfortable_capacity_change_vs_excluding_event": 0.0,
+        "current_balance": 2011.57,
         "current_projected_balance": 1825.57,
+        "income_variability": 0.1831,
+        "liquidity_ratio": 0.6317,
+        "monthly_surplus": 177.75,
         "observed_expense": 3450.0,
+        "projected_balance": 1825.57,
         "projected_buffer_shortfall": null,
-        "savings_capacity_effect": "Included only when event month is complete; no extra subtraction."
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 0.0,
+        "unreserved_projected_balance": 1825.57,
+        "upcoming_obligations": 186.0
       },
+      "lifecycle_status": "new",
+      "notification_required": true,
       "observed_on": "2026-09-03",
-      "severity": "review",
+      "pattern_stage": "one_off",
+      "potential_disruption": "high",
+      "questions": [
+        "Was this expected?"
+      ],
+      "reassessment_required": false,
+      "severity": "cashflow_risk",
+      "statistical_anomaly": true,
       "status": "posted",
-      "uncertainty": "Statistical anomaly does not establish necessity, surprise, fraud or hardship.",
-      "unexpected_confirmed": false
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
+    },
+    {
+      "categories": [
+        "Transport"
+      ],
+      "classification": "sustained_spending_change",
+      "confidence": "moderate",
+      "confirmed_hardship": false,
+      "currency": "AUD",
+      "date": "2026-10-12",
+      "detected_at": "2026-10-25",
+      "detection_precision": "day",
+      "detectors": [
+        "sustained_category"
+      ],
+      "event_amount": 692.17,
+      "event_ref": "event-91fc6d26ffb2ca74",
+      "event_type": "sustained_spending_change",
+      "evidence": [],
+      "evidence_source": "detector_only",
+      "expectedness": "unknown",
+      "expectedness_source": "insufficient_evidence",
+      "expense_kind": "unknown",
+      "explanation": "Category spending stayed above its own prior weekly baseline for several complete weeks.",
+      "historical": {
+        "baseline_weekly": 65.76,
+        "essential": true,
+        "recent_weekly": 346.09,
+        "threshold": 134.93,
+        "weeks": 2
+      },
+      "impact": {
+        "additional_future_debit": 0,
+        "already_in_balance": true,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 0.0,
+        "comfortable_capacity_change_vs_excluding_event": 0.0,
+        "current_balance": 2011.57,
+        "current_projected_balance": 1825.57,
+        "income_variability": 0.1831,
+        "liquidity_ratio": 0.256,
+        "monthly_surplus": 177.75,
+        "observed_expense": 692.17,
+        "projected_balance": 1825.57,
+        "projected_buffer_shortfall": null,
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 0.0,
+        "unreserved_projected_balance": 1825.57,
+        "upcoming_obligations": 186.0
+      },
+      "lifecycle_status": "new",
+      "notification_required": true,
+      "observed_on": "2026-10-25",
+      "pattern_stage": "emerging",
+      "potential_disruption": "moderate",
+      "questions": [
+        "Was this expected?"
+      ],
+      "reassessment_required": false,
+      "severity": "review",
+      "statistical_anomaly": true,
+      "status": "posted",
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
+    },
+    {
+      "categories": [
+        "Transport"
+      ],
+      "classification": "transaction_anomaly",
+      "confidence": "higher",
+      "confirmed_hardship": false,
+      "currency": "AUD",
+      "date": "2026-10-15",
+      "detected_at": "2026-10-15",
+      "detection_precision": "day",
+      "detectors": [
+        "large_single_spend"
+      ],
+      "event_amount": 480.0,
+      "event_ref": "event-1118af47b1892f34",
+      "event_type": "transaction_anomaly",
+      "evidence": [
+        {
+          "detector": "large_single_spend",
+          "score": 19.93,
+          "score_is_unbounded": false
+        }
+      ],
+      "evidence_source": "detector_only",
+      "expectedness": "unknown",
+      "expectedness_source": "insufficient_evidence",
+      "expense_kind": "unknown",
+      "explanation": "This amount differs from this customer's own spending history.",
+      "historical": {
+        "adaptive_floor": 67.98,
+        "amount_vs_category_median": 7.59,
+        "category_median": 63.28,
+        "category_observations": 64
+      },
+      "impact": {
+        "additional_future_debit": 0,
+        "already_in_balance": true,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 0.0,
+        "comfortable_capacity_change_vs_excluding_event": 0.0,
+        "current_balance": 2011.57,
+        "current_projected_balance": 1825.57,
+        "income_variability": 0.1831,
+        "liquidity_ratio": 0.1926,
+        "monthly_surplus": 177.75,
+        "observed_expense": 480.0,
+        "projected_balance": 1825.57,
+        "projected_buffer_shortfall": null,
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 0.0,
+        "unreserved_projected_balance": 1825.57,
+        "upcoming_obligations": 186.0
+      },
+      "lifecycle_status": "new",
+      "notification_required": true,
+      "observed_on": "2026-10-15",
+      "pattern_stage": "one_off",
+      "potential_disruption": "low",
+      "questions": [
+        "Was this expected?"
+      ],
+      "reassessment_required": false,
+      "severity": "review",
+      "statistical_anomaly": true,
+      "status": "posted",
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
+    },
+    {
+      "categories": [
+        "Utilities"
+      ],
+      "classification": "transaction_anomaly",
+      "confidence": "higher",
+      "confirmed_hardship": false,
+      "currency": "AUD",
+      "date": "2026-10-21",
+      "detected_at": "2026-10-21",
+      "detection_precision": "day",
+      "detectors": [
+        "large_single_spend"
+      ],
+      "event_amount": 345.04,
+      "event_ref": "event-235c148acb7a18af",
+      "event_type": "transaction_anomaly",
+      "evidence": [
+        {
+          "detector": "large_single_spend",
+          "score": 7.15,
+          "score_is_unbounded": false
+        }
+      ],
+      "evidence_source": "detector_only",
+      "expectedness": "unknown",
+      "expectedness_source": "insufficient_evidence",
+      "expense_kind": "unknown",
+      "explanation": "This amount differs from this customer's own spending history.",
+      "historical": {
+        "adaptive_floor": 67.98,
+        "amount_vs_category_median": 4.31,
+        "category_median": 79.99,
+        "category_observations": 29
+      },
+      "impact": {
+        "additional_future_debit": 0,
+        "already_in_balance": true,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 0.0,
+        "comfortable_capacity_change_vs_excluding_event": 0.0,
+        "current_balance": 2011.57,
+        "current_projected_balance": 1825.57,
+        "income_variability": 0.1831,
+        "liquidity_ratio": 0.1464,
+        "monthly_surplus": 177.75,
+        "observed_expense": 345.04,
+        "projected_balance": 1825.57,
+        "projected_buffer_shortfall": null,
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 0.0,
+        "unreserved_projected_balance": 1825.57,
+        "upcoming_obligations": 186.0
+      },
+      "lifecycle_status": "new",
+      "notification_required": true,
+      "observed_on": "2026-10-21",
+      "pattern_stage": "one_off",
+      "potential_disruption": "low",
+      "questions": [
+        "Was this expected?"
+      ],
+      "reassessment_required": false,
+      "severity": "review",
+      "statistical_anomaly": true,
+      "status": "posted",
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
     }
   ],
-  "state_version": "a9816dd319c07f8a5e197664c9dc1d104af9bf239cda0104d5e3549b6f095c17",
+  "state_version": "d15b4b4875fa34dafb21d2d36887c175239d92e1ea0240fb859f44a6deba48b5",
   "uncertainty": [
     "Complete months inferred from transaction boundary dates, not statement coverage.",
     "Recurring dates/amounts and regular income are estimates from observed history.",

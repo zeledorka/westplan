@@ -1,0 +1,648 @@
+{
+  "as_of": "2026-06-21",
+  "currency": "AUD",
+  "financial_insights": {
+    "balances": [
+      {
+        "balance": 150.0,
+        "designation_shortfall": 0,
+        "goal_available": 0,
+        "kind": "unknown",
+        "observed_on": "2026-06-21",
+        "protected": 0
+      },
+      {
+        "balance": 3400.0,
+        "designation_shortfall": 0,
+        "goal_available": 0,
+        "kind": "unknown",
+        "observed_on": "2026-06-21",
+        "protected": 0
+      }
+    ],
+    "bills_calendar": {
+      "items": [
+        {
+          "already_paid": true,
+          "amount_basis": "observed_posting",
+          "bill_ref": "bill-1",
+          "category": "Eating out",
+          "confidence": "higher",
+          "confirmed": false,
+          "date_kind": "observed_posting",
+          "essential": false,
+          "expected_amount": 180,
+          "expected_date": "2026-06-19",
+          "frequency": "weekly",
+          "period_days": 7,
+          "recurrence_source": "inferred",
+          "source": "posted_transaction",
+          "status": "paid"
+        },
+        {
+          "already_paid": false,
+          "amount_basis": "recent_median",
+          "bill_ref": "bill-2",
+          "category": "Eating out",
+          "confidence": "higher",
+          "confirmed": false,
+          "date_kind": "estimated",
+          "essential": false,
+          "expected_amount": 180,
+          "expected_date": "2026-06-26",
+          "frequency": "weekly",
+          "period_days": 7,
+          "recurrence_source": "inferred",
+          "source": "recurring_estimate",
+          "status": "upcoming"
+        },
+        {
+          "already_paid": false,
+          "amount_basis": "recent_median",
+          "bill_ref": "bill-3",
+          "category": "Eating out",
+          "confidence": "higher",
+          "confirmed": false,
+          "date_kind": "estimated",
+          "essential": false,
+          "expected_amount": 180,
+          "expected_date": "2026-07-03",
+          "frequency": "weekly",
+          "period_days": 7,
+          "recurrence_source": "inferred",
+          "source": "recurring_estimate",
+          "status": "upcoming"
+        },
+        {
+          "already_paid": false,
+          "amount_basis": "recent_median",
+          "bill_ref": "bill-4",
+          "category": "Eating out",
+          "confidence": "higher",
+          "confirmed": false,
+          "date_kind": "estimated",
+          "essential": false,
+          "expected_amount": 180,
+          "expected_date": "2026-07-10",
+          "frequency": "weekly",
+          "period_days": 7,
+          "recurrence_source": "inferred",
+          "source": "recurring_estimate",
+          "status": "upcoming"
+        },
+        {
+          "already_paid": false,
+          "amount_basis": "recent_median",
+          "bill_ref": "bill-5",
+          "category": "Eating out",
+          "confidence": "higher",
+          "confirmed": false,
+          "date_kind": "estimated",
+          "essential": false,
+          "expected_amount": 180,
+          "expected_date": "2026-07-17",
+          "frequency": "weekly",
+          "period_days": 7,
+          "recurrence_source": "inferred",
+          "source": "recurring_estimate",
+          "status": "upcoming"
+        }
+      ],
+      "summary_days": {
+        "14": {
+          "anticipated": 0,
+          "confirmed_due": 0,
+          "estimated_due": 360,
+          "total_expected": 360
+        },
+        "30": {
+          "anticipated": 0,
+          "confirmed_due": 0,
+          "estimated_due": 720,
+          "total_expected": 720
+        },
+        "7": {
+          "anticipated": 0,
+          "confirmed_due": 0,
+          "estimated_due": 180,
+          "total_expected": 180
+        }
+      }
+    },
+    "budgets": {
+      "categories": [
+        {
+          "category": "Eating out",
+          "discretionary_spent": 540,
+          "essential_spent": 0,
+          "monthly_limit": null,
+          "protected": false,
+          "remaining": null,
+          "remaining_is_cash_available": false,
+          "source": "unset",
+          "spent": 540,
+          "status": "unbudgeted",
+          "upcoming_obligations_this_month": 180
+        },
+        {
+          "category": "Groceries",
+          "discretionary_spent": 0,
+          "essential_spent": 2100,
+          "monthly_limit": null,
+          "protected": false,
+          "remaining": null,
+          "remaining_is_cash_available": false,
+          "source": "unset",
+          "spent": 2100,
+          "status": "unbudgeted",
+          "upcoming_obligations_this_month": 0
+        },
+        {
+          "category": "Pets",
+          "discretionary_spent": 0,
+          "essential_spent": 1850,
+          "monthly_limit": null,
+          "protected": false,
+          "remaining": null,
+          "remaining_is_cash_available": false,
+          "source": "unset",
+          "spent": 1850,
+          "status": "unbudgeted",
+          "upcoming_obligations_this_month": 0
+        },
+        {
+          "category": "Shopping",
+          "discretionary_spent": 60,
+          "essential_spent": 0,
+          "monthly_limit": null,
+          "protected": false,
+          "remaining": null,
+          "remaining_is_cash_available": false,
+          "source": "unset",
+          "spent": 60,
+          "status": "unbudgeted",
+          "upcoming_obligations_this_month": 0
+        }
+      ],
+      "month": "2026-06"
+    },
+    "cashflow": {
+      "average_surplus": 425.0,
+      "month_to_date_net": -1550,
+      "monthly": [
+        {
+          "discretionary": 800.0,
+          "essential": 2800.0,
+          "income": 4000.0,
+          "month": "2026-02",
+          "net": 400.0
+        },
+        {
+          "discretionary": 800.0,
+          "essential": 2975.0,
+          "income": 5000.0,
+          "month": "2026-03",
+          "net": 1225.0
+        },
+        {
+          "discretionary": 820.0,
+          "essential": 2975.0,
+          "income": 4000.0,
+          "month": "2026-04",
+          "net": 205.0
+        },
+        {
+          "discretionary": 980.0,
+          "essential": 3150.0,
+          "income": 4000.0,
+          "month": "2026-05",
+          "net": -130.0
+        }
+      ],
+      "runway": {
+        "additional_known_pending_due": 0,
+        "balance": 150.0,
+        "below_buffer_after_known_pending": true,
+        "below_default_buffer": true,
+        "buffer": 200,
+        "payday": "2026-06-22",
+        "projected_after_known_pending": 150.0,
+        "projected_balance": 150.0,
+        "recurring_bills_due": 0,
+        "window_end": "2026-06-21"
+      },
+      "savings_capacity": {
+        "centre": 521.67,
+        "comfortable": 396.74,
+        "ewma_w": 559.52,
+        "income_cap": 1275.0,
+        "mean_discretionary": 850.0,
+        "mean_income": 4250.0,
+        "mean_w": 521.67,
+        "sigma_w": 124.92,
+        "stretch": 566.74
+      }
+    },
+    "income": {
+      "change_vs_earlier_months": 333.33,
+      "confidence": "limited",
+      "confidence_basis": "History length and monthly variability; not a calibrated probability.",
+      "irregular_monthly_observed": 0.0,
+      "monthly_average": 4250.0,
+      "recent_three_month_average": 4333.33,
+      "regular_monthly_estimate": 4250.0,
+      "variability_cv": 0.1176
+    },
+    "observation": {
+      "complete_months": 4,
+      "first": "2026-01-05",
+      "last": "2026-06-21",
+      "transactions": 217
+    },
+    "opportunities": [
+      {
+        "assumption": "Review opportunity only; reducibility and cancellation terms unknown.",
+        "category": "Eating out",
+        "guaranteed_savings": 0,
+        "kind": "discretionary_review",
+        "observed_monthly_spend": 765.0,
+        "potentially_reducible_recurring_monthly": 782.68
+      },
+      {
+        "assumption": "Review opportunity only; reducibility and cancellation terms unknown.",
+        "category": "Shopping",
+        "guaranteed_savings": 0,
+        "kind": "discretionary_review",
+        "observed_monthly_spend": 85.0,
+        "potentially_reducible_recurring_monthly": 0
+      }
+    ],
+    "personalised_insights": [
+      {
+        "actionable": false,
+        "category": "Eating out",
+        "confidence": "moderate",
+        "explanation": "Eating out spending increased compared with earlier complete months.",
+        "insight_ref": "insight-1",
+        "observation_period": {
+          "end": "2026-06-21",
+          "start": "2026-01-05"
+        },
+        "severity": "info",
+        "type": "spending_increase",
+        "values": {
+          "monthly_average": 765.0,
+          "recent_change": 180.0
+        }
+      },
+      {
+        "actionable": true,
+        "category": "Pets",
+        "confidence": "moderate",
+        "explanation": "An unusual posted expense was observed; this alone does not establish hardship.",
+        "insight_ref": "insight-2",
+        "observation_period": {
+          "end": "2026-06-21",
+          "start": "2026-01-05"
+        },
+        "severity": "advisory",
+        "type": "unusual_expense",
+        "values": {
+          "detector_count": 1,
+          "event_amount": 1850,
+          "event_date": "2026-06-21"
+        }
+      },
+      {
+        "actionable": true,
+        "category": "Other",
+        "confidence": "moderate",
+        "explanation": "Upcoming obligations may leave the spending account below its cash buffer.",
+        "insight_ref": "insight-3",
+        "observation_period": {
+          "end": "2026-06-21",
+          "start": "2026-01-05"
+        },
+        "severity": "critical",
+        "type": "upcoming_cashflow_risk",
+        "values": {
+          "balance": 150.0,
+          "buffer": 200,
+          "obligations": 0,
+          "projected": 150.0
+        }
+      },
+      {
+        "actionable": true,
+        "category": "Eating out",
+        "confidence": "limited",
+        "explanation": "Observed discretionary Eating out spending offers an area to review; no saving is guaranteed.",
+        "insight_ref": "insight-4",
+        "observation_period": {
+          "end": "2026-06-21",
+          "start": "2026-01-05"
+        },
+        "severity": "info",
+        "type": "savings_review",
+        "values": {
+          "observed_monthly_spend": 765.0,
+          "requires_confirmation": true
+        }
+      },
+      {
+        "actionable": true,
+        "category": "Shopping",
+        "confidence": "limited",
+        "explanation": "Observed discretionary Shopping spending offers an area to review; no saving is guaranteed.",
+        "insight_ref": "insight-5",
+        "observation_period": {
+          "end": "2026-06-21",
+          "start": "2026-01-05"
+        },
+        "severity": "info",
+        "type": "savings_review",
+        "values": {
+          "observed_monthly_spend": 85.0,
+          "requires_confirmation": true
+        }
+      }
+    ],
+    "recurring": [
+      {
+        "amount_basis": "recent_median",
+        "category": "Eating out",
+        "confirmed_contract": false,
+        "essential": false,
+        "last_observed": "2026-06-19",
+        "next_expected": "2026-06-26",
+        "observations": 24,
+        "period_days": 7,
+        "recurrence": "inferred",
+        "typical_amount": 180,
+        "upcoming_dates": [
+          "2026-06-26",
+          "2026-07-03",
+          "2026-07-10",
+          "2026-07-17"
+        ]
+      }
+    ],
+    "savings_finder": [
+      {
+        "category": "Eating out",
+        "confidence": "limited",
+        "essential": false,
+        "evidence": {
+          "monthly_discretionary": 765.0
+        },
+        "kind": "discretionary_review",
+        "monthly_savings_range": {
+          "maximum": 0,
+          "minimum": 0
+        },
+        "opportunity_ref": "opportunity-1",
+        "protected": false,
+        "requires_confirmation": true,
+        "savings_range_basis": "No reduction assumed without review."
+      },
+      {
+        "category": "Shopping",
+        "confidence": "limited",
+        "essential": false,
+        "evidence": {
+          "monthly_discretionary": 85.0
+        },
+        "kind": "discretionary_review",
+        "monthly_savings_range": {
+          "maximum": 0,
+          "minimum": 0
+        },
+        "opportunity_ref": "opportunity-2",
+        "protected": false,
+        "requires_confirmation": true,
+        "savings_range_basis": "No reduction assumed without review."
+      },
+      {
+        "category": "Eating out",
+        "confidence": "moderate",
+        "essential": false,
+        "evidence": {
+          "minimum_observed": 720,
+          "monthly_average": 765.0,
+          "months": 4
+        },
+        "kind": "consistent_discretionary_spending",
+        "monthly_savings_range": {
+          "maximum": 45.0,
+          "minimum": 0
+        },
+        "opportunity_ref": "opportunity-3",
+        "protected": false,
+        "requires_confirmation": true,
+        "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+      },
+      {
+        "category": "Eating out",
+        "confidence": "moderate",
+        "essential": false,
+        "evidence": {
+          "observations": 24,
+          "period_days": 7,
+          "typical_payment": 180
+        },
+        "kind": "recurring_discretionary_review",
+        "monthly_savings_range": {
+          "maximum": 782.68,
+          "minimum": 0
+        },
+        "opportunity_ref": "opportunity-4",
+        "protected": false,
+        "requires_confirmation": true,
+        "savings_range_basis": "Observed cost or difference from this customer's own lower-spend months."
+      }
+    ],
+    "spending": {
+      "categories": [
+        {
+          "category": "Eating out",
+          "monthly_discretionary": 765.0,
+          "monthly_total": 765.0,
+          "recent_change": 180.0
+        },
+        {
+          "category": "Groceries",
+          "monthly_discretionary": 0.0,
+          "monthly_total": 2975.0,
+          "recent_change": 233.33
+        },
+        {
+          "category": "Shopping",
+          "monthly_discretionary": 85.0,
+          "monthly_total": 85.0,
+          "recent_change": -6.67
+        }
+      ],
+      "monthly_discretionary": 850.0,
+      "monthly_essential": 2975.0
+    }
+  },
+  "goals": [],
+  "pending_expenses": [],
+  "preferences": {
+    "allow_deadline_extension": true,
+    "allow_discretionary_changes": true,
+    "feedback_summary": {
+      "dismiss": 0,
+      "not_useful": 0,
+      "reject_adjustment": 0,
+      "useful": 0
+    },
+    "protected_categories": [],
+    "unwanted_reduction_categories": []
+  },
+  "schema_version": "1.2",
+  "shocks": [
+    {
+      "categories": [
+        "Pets"
+      ],
+      "classification": "transaction_anomaly",
+      "confidence": "higher",
+      "confirmed_hardship": false,
+      "currency": "AUD",
+      "date": "2026-06-21",
+      "detected_at": "2026-06-21",
+      "detection_precision": "day",
+      "detectors": [
+        "new_merchant_big_amount"
+      ],
+      "event_amount": 1850,
+      "event_ref": "event-5c07b68418478736",
+      "event_type": "transaction_anomaly",
+      "evidence": [
+        {
+          "detector": "new_merchant_big_amount",
+          "score": 1.7619047619047619,
+          "score_is_unbounded": false
+        }
+      ],
+      "evidence_source": "explicit_user_or_scenario",
+      "expectedness": "unexpected",
+      "expectedness_source": "explicit_user_or_scenario",
+      "expense_kind": "emergency_veterinary",
+      "explanation": "This amount differs from this customer's own spending history.",
+      "historical": {
+        "adaptive_floor": 1050.0,
+        "amount_vs_category_median": null,
+        "category_median": 0.0,
+        "category_observations": 0
+      },
+      "impact": {
+        "additional_future_debit": 0,
+        "already_in_balance": true,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 396.74,
+        "comfortable_capacity_change_vs_excluding_event": 0.0,
+        "current_balance": 150.0,
+        "current_projected_balance": 150.0,
+        "income_variability": 0.1176,
+        "liquidity_ratio": 0.925,
+        "monthly_surplus": 425.0,
+        "observed_expense": 1850,
+        "projected_balance": 150.0,
+        "projected_buffer_shortfall": null,
+        "protected_reserve": 0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 566.74,
+        "unreserved_projected_balance": 150.0,
+        "upcoming_obligations": 0
+      },
+      "lifecycle_status": "new",
+      "notification_required": true,
+      "observed_on": "2026-06-21",
+      "pattern_stage": "one_off",
+      "potential_disruption": "high",
+      "questions": [],
+      "reassessment_required": false,
+      "severity": "cashflow_risk",
+      "statistical_anomaly": true,
+      "status": "posted",
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": true,
+      "user_confirmation": "none"
+    },
+    {
+      "categories": [],
+      "classification": "liquidity_pressure",
+      "confidence": "moderate",
+      "confirmed_hardship": false,
+      "currency": "AUD",
+      "date": "2026-06-21",
+      "detected_at": "2026-06-21",
+      "detection_precision": "day",
+      "detectors": [
+        "runway"
+      ],
+      "event_amount": null,
+      "event_ref": "event-1ed15717f03b69a3",
+      "event_type": "liquidity_pressure",
+      "evidence": [],
+      "evidence_source": "detector_only",
+      "expectedness": "unknown",
+      "expectedness_source": "insufficient_evidence",
+      "expense_kind": "unknown",
+      "explanation": "Known recurring obligations may leave this account below its cash buffer.",
+      "historical": {
+        "pressure_observations": 1
+      },
+      "impact": {
+        "additional_future_debit": 0,
+        "already_in_balance": false,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 396.74,
+        "comfortable_capacity_change_vs_excluding_event": null,
+        "current_balance": 150.0,
+        "current_projected_balance": 150.0,
+        "income_variability": 0.1176,
+        "liquidity_ratio": null,
+        "monthly_surplus": 425.0,
+        "observed_expense": null,
+        "projected_balance": 150.0,
+        "projected_buffer_shortfall": 50.0,
+        "protected_reserve": 0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 566.74,
+        "unreserved_projected_balance": 150.0,
+        "upcoming_obligations": 0
+      },
+      "lifecycle_status": "new",
+      "notification_required": true,
+      "observed_on": "2026-06-21",
+      "pattern_stage": "emerging",
+      "potential_disruption": "high",
+      "questions": [
+        "Was this expected?"
+      ],
+      "reassessment_required": false,
+      "severity": "cashflow_risk",
+      "statistical_anomaly": false,
+      "status": "projection",
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
+    }
+  ],
+  "state_version": "08f487c960e680649453ee654760927f18a8d62d80c7d80813f5399abbb5d607",
+  "uncertainty": [
+    "Complete months inferred from transaction boundary dates, not statement coverage.",
+    "Recurring dates/amounts and regular income are estimates from observed history.",
+    "Source recurring flags are not confirmation of a contract.",
+    "Runway includes recurring bills only; excludes ordinary future spending and uncertain income.",
+    "Savings capacity excludes the incomplete current month and is not a liquidity guarantee.",
+    "Savings balances are unavailable for goals unless explicitly designated.",
+    "Loan balances and protected reserves require dated external snapshots.",
+    "Some account kinds/restrictions are unknown; provide dated account snapshots."
+  ]
+}

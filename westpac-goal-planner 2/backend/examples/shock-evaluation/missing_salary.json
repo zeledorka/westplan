@@ -1,0 +1,74 @@
+[
+  {
+    "event_ref": "bb42389e810de97b60e2fe27",
+    "event_type": "missing_income",
+    "date": "2026-06-22",
+    "observed_on": "2026-06-25",
+    "detected_at": "2026-06-25",
+    "detection_precision": "day",
+    "currency": "AUD",
+    "status": "income_missing",
+    "event_amount": 1000.0,
+    "categories": [
+      "Income"
+    ],
+    "transaction_ids": [],
+    "detectors": [
+      "income_schedule"
+    ],
+    "evidence": [],
+    "historical": {
+      "expected_date": "2026-06-22",
+      "grace_end": "2026-06-24",
+      "missed_cycles": 1,
+      "training_observations": 4,
+      "period_days": 7
+    },
+    "statistical_anomaly": true,
+    "potential_disruption": "high",
+    "expectedness": "unknown",
+    "expectedness_source": "insufficient_evidence",
+    "unexpected_confirmed": false,
+    "confirmed_hardship": false,
+    "confidence": "higher",
+    "pattern_stage": "emerging",
+    "severity": "cashflow_risk",
+    "classification": "missing_income",
+    "expense_kind": "unknown",
+    "evidence_source": "detector_only",
+    "lifecycle_status": "new",
+    "user_confirmation": "none",
+    "notification_required": true,
+    "reassessment_required": false,
+    "impact": {
+      "already_in_balance": false,
+      "already_in_projection": false,
+      "additional_future_debit": 0,
+      "observed_expense": null,
+      "projected_buffer_shortfall": null,
+      "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+      "current_balance": 600.0,
+      "protected_reserve": 0,
+      "upcoming_obligations": 360,
+      "projected_balance": 240.0,
+      "unreserved_projected_balance": 240.0,
+      "liquidity_ratio": 1.6667,
+      "comfortable": 396.74,
+      "stretch": 566.74,
+      "monthly_surplus": 425.0,
+      "income_variability": 0.1176,
+      "amounts_additive": false
+    },
+    "explanation": "A previously regular credit has not arrived after its expected window.",
+    "questions": [
+      "Has this income source changed, ended, or been paid elsewhere?"
+    ],
+    "uncertainty": "Recurring credits are inferred, not payroll contracts. Weekends and supplied holidays are handled; other public holidays are unknown.",
+    "_income_source": [
+      "cash",
+      "EMPLOYER PAYROLL"
+    ],
+    "_account_id": "cash",
+    "evidence_version": "62c820a7cba4e6edfdc03c6f"
+  }
+]

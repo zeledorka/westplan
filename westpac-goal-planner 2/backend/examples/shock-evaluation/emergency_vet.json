@@ -1,0 +1,141 @@
+[
+  {
+    "event_ref": "b5a47347f57ee32b62751704",
+    "event_type": "transaction_anomaly",
+    "date": "2026-06-21",
+    "observed_on": "2026-06-21",
+    "detected_at": "2026-06-21",
+    "detection_precision": "day",
+    "currency": "AUD",
+    "status": "posted",
+    "event_amount": 1850,
+    "categories": [
+      "Pets"
+    ],
+    "transaction_ids": [
+      "target"
+    ],
+    "detectors": [
+      "new_merchant_big_amount"
+    ],
+    "evidence": [
+      {
+        "detector": "new_merchant_big_amount",
+        "score": 1.7619047619047619,
+        "score_is_unbounded": false
+      }
+    ],
+    "historical": {
+      "category_observations": 0,
+      "category_median": 0.0,
+      "adaptive_floor": 1050.0,
+      "amount_vs_category_median": null
+    },
+    "statistical_anomaly": true,
+    "potential_disruption": "high",
+    "expectedness": "unexpected",
+    "expectedness_source": "explicit_user_or_scenario",
+    "unexpected_confirmed": true,
+    "confirmed_hardship": false,
+    "confidence": "higher",
+    "pattern_stage": "one_off",
+    "severity": "cashflow_risk",
+    "classification": "transaction_anomaly",
+    "expense_kind": "emergency_veterinary",
+    "evidence_source": "explicit_user_or_scenario",
+    "lifecycle_status": "new",
+    "user_confirmation": "none",
+    "notification_required": true,
+    "reassessment_required": false,
+    "impact": {
+      "already_in_balance": true,
+      "already_in_projection": false,
+      "additional_future_debit": 0,
+      "observed_expense": 1850,
+      "projected_buffer_shortfall": null,
+      "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+      "current_balance": 150.0,
+      "protected_reserve": 0,
+      "upcoming_obligations": 0,
+      "projected_balance": 150.0,
+      "unreserved_projected_balance": 150.0,
+      "liquidity_ratio": 0.925,
+      "comfortable": 396.74,
+      "stretch": 566.74,
+      "monthly_surplus": 425.0,
+      "income_variability": 0.1176,
+      "amounts_additive": false
+    },
+    "explanation": "This amount differs from this customer's own spending history.",
+    "questions": [],
+    "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+    "_account_id": "cash",
+    "_comparison_key": "a45b5aab58a220529656b8af",
+    "_legacy_event_refs": [
+      "3a09b724a6cfadf7"
+    ],
+    "evidence_version": "9d304c5d320e14eec2492140"
+  },
+  {
+    "event_ref": "f652347199a73ba747ff841e",
+    "event_type": "liquidity_pressure",
+    "date": "2026-06-21",
+    "observed_on": "2026-06-21",
+    "detected_at": "2026-06-21",
+    "detection_precision": "day",
+    "currency": "AUD",
+    "status": "projection",
+    "event_amount": null,
+    "categories": [],
+    "transaction_ids": [],
+    "detectors": [
+      "runway"
+    ],
+    "evidence": [],
+    "historical": {
+      "pressure_observations": 1
+    },
+    "statistical_anomaly": false,
+    "potential_disruption": "high",
+    "expectedness": "unknown",
+    "expectedness_source": "insufficient_evidence",
+    "unexpected_confirmed": false,
+    "confirmed_hardship": false,
+    "confidence": "moderate",
+    "pattern_stage": "emerging",
+    "severity": "cashflow_risk",
+    "classification": "liquidity_pressure",
+    "expense_kind": "unknown",
+    "evidence_source": "detector_only",
+    "lifecycle_status": "new",
+    "user_confirmation": "none",
+    "notification_required": true,
+    "reassessment_required": false,
+    "impact": {
+      "already_in_balance": false,
+      "already_in_projection": false,
+      "additional_future_debit": 0,
+      "observed_expense": null,
+      "projected_buffer_shortfall": 50.0,
+      "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+      "current_balance": 150.0,
+      "protected_reserve": 0,
+      "upcoming_obligations": 0,
+      "projected_balance": 150.0,
+      "unreserved_projected_balance": 150.0,
+      "liquidity_ratio": null,
+      "comfortable": 396.74,
+      "stretch": 566.74,
+      "monthly_surplus": 425.0,
+      "income_variability": 0.1176,
+      "amounts_additive": false
+    },
+    "explanation": "Known recurring obligations may leave this account below its cash buffer.",
+    "questions": [
+      "Was this expected?"
+    ],
+    "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+    "_account_id": "cash",
+    "evidence_version": "6173f3b2ed459e3a7c9a78d3"
+  }
+]

@@ -1072,80 +1072,141 @@
     ],
     "unwanted_reduction_categories": []
   },
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "shocks": [
     {
       "categories": [
         "Pets"
       ],
-      "classification": "unusual_posted_spending",
+      "classification": "transaction_anomaly",
+      "confidence": "higher",
       "confirmed_hardship": false,
+      "currency": "AUD",
       "date": "2026-09-30",
+      "detected_at": "2026-09-30",
+      "detection_precision": "day",
       "detectors": [
         "new_merchant_big_amount"
       ],
       "event_amount": 1850,
-      "event_ref": "event-1",
+      "event_ref": "event-dd7c6ba102c8fc98",
+      "event_type": "transaction_anomaly",
       "evidence": [
         {
           "detector": "new_merchant_big_amount",
-          "score": 6.17,
+          "score": 2.466666666666667,
           "score_is_unbounded": false
         }
       ],
       "evidence_source": "explicit_user_or_scenario",
+      "expectedness": "unexpected",
+      "expectedness_source": "explicit_user_or_scenario",
       "expense_kind": "emergency_veterinary",
+      "explanation": "This amount differs from this customer's own spending history.",
+      "historical": {
+        "adaptive_floor": 750.0,
+        "amount_vs_category_median": null,
+        "category_median": 0.0,
+        "category_observations": 0
+      },
       "impact": {
         "additional_future_debit": 0,
         "already_in_balance": true,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 490.73,
         "comfortable_capacity_change_vs_excluding_event": -409.27,
+        "current_balance": 150.0,
         "current_projected_balance": 150.0,
+        "income_variability": 0.0,
+        "liquidity_ratio": 0.925,
+        "monthly_surplus": 694.44,
         "observed_expense": 1850,
+        "projected_balance": 150.0,
         "projected_buffer_shortfall": null,
-        "savings_capacity_effect": "Included only when event month is complete; no extra subtraction."
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 590.73,
+        "unreserved_projected_balance": 150.0,
+        "upcoming_obligations": 0
       },
+      "lifecycle_status": "new",
+      "notification_required": true,
       "observed_on": "2026-09-30",
-      "severity": "review",
+      "pattern_stage": "one_off",
+      "potential_disruption": "high",
+      "questions": [],
+      "reassessment_required": false,
+      "severity": "cashflow_risk",
+      "statistical_anomaly": true,
       "status": "posted",
-      "uncertainty": "Statistical anomaly does not establish necessity, surprise, fraud or hardship.",
-      "unexpected_confirmed": true
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": true,
+      "user_confirmation": "none"
     },
     {
       "categories": [],
-      "classification": "cashflow_projection",
+      "classification": "liquidity_pressure",
+      "confidence": "moderate",
       "confirmed_hardship": false,
+      "currency": "AUD",
       "date": "2026-09-30",
+      "detected_at": "2026-09-30",
+      "detection_precision": "day",
       "detectors": [
         "runway"
       ],
       "event_amount": null,
-      "event_ref": "event-2",
-      "evidence": [
-        {
-          "detector": "runway",
-          "score": 50.0,
-          "score_is_unbounded": false
-        }
-      ],
+      "event_ref": "event-477f375bae20a3a9",
+      "event_type": "liquidity_pressure",
+      "evidence": [],
       "evidence_source": "detector_only",
+      "expectedness": "unknown",
+      "expectedness_source": "insufficient_evidence",
       "expense_kind": "unknown",
+      "explanation": "Known recurring obligations may leave this account below its cash buffer.",
+      "historical": {
+        "pressure_observations": 1
+      },
       "impact": {
         "additional_future_debit": 0,
         "already_in_balance": false,
+        "already_in_projection": false,
+        "amounts_additive": false,
+        "comfortable": 490.73,
         "comfortable_capacity_change_vs_excluding_event": null,
+        "current_balance": 150.0,
         "current_projected_balance": 150.0,
+        "income_variability": 0.0,
+        "liquidity_ratio": null,
+        "monthly_surplus": 694.44,
         "observed_expense": null,
+        "projected_balance": 150.0,
         "projected_buffer_shortfall": 50.0,
-        "savings_capacity_effect": "Included only when event month is complete; no extra subtraction."
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 590.73,
+        "unreserved_projected_balance": 150.0,
+        "upcoming_obligations": 0
       },
+      "lifecycle_status": "new",
+      "notification_required": true,
       "observed_on": "2026-09-30",
+      "pattern_stage": "emerging",
+      "potential_disruption": "high",
+      "questions": [
+        "Was this expected?"
+      ],
+      "reassessment_required": false,
       "severity": "cashflow_risk",
+      "statistical_anomaly": false,
       "status": "projection",
-      "uncertainty": "Statistical anomaly does not establish necessity, surprise, fraud or hardship.",
-      "unexpected_confirmed": false
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
     }
   ],
-  "state_version": "e68a98095209a06f5fbfe30316c99d21cab3dabdd3824910df01a007b8ad9ad1",
+  "state_version": "62477f4f7bd32c6908034cba4ca6c3c75b83e7ff15a3b9691218d290ef538018",
   "uncertainty": [
     "Complete months inferred from transaction boundary dates, not statement coverage.",
     "Recurring dates/amounts and regular income are estimates from observed history.",

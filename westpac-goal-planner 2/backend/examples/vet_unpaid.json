@@ -643,10 +643,28 @@
     "personalised_insights": [
       {
         "actionable": true,
+        "category": "Pets",
+        "confidence": "moderate",
+        "explanation": "A confirmed obligation is still outstanding.",
+        "insight_ref": "insight-1",
+        "observation_period": {
+          "end": "2026-09-30",
+          "start": "2026-01-01"
+        },
+        "severity": "advisory",
+        "type": "outstanding_obligation",
+        "values": {
+          "detector_count": 1,
+          "event_amount": 1850.0,
+          "event_date": "2026-09-30"
+        }
+      },
+      {
+        "actionable": true,
         "category": "Other",
         "confidence": "moderate",
         "explanation": "Upcoming obligations may leave the spending account below its cash buffer.",
-        "insight_ref": "insight-1",
+        "insight_ref": "insight-2",
         "observation_period": {
           "end": "2026-09-30",
           "start": "2026-01-01"
@@ -665,7 +683,7 @@
         "category": "Eating out",
         "confidence": "limited",
         "explanation": "Observed discretionary Eating out spending offers an area to review; no saving is guaranteed.",
-        "insight_ref": "insight-2",
+        "insight_ref": "insight-3",
         "observation_period": {
           "end": "2026-09-30",
           "start": "2026-01-01"
@@ -682,7 +700,7 @@
         "category": "Entertainment",
         "confidence": "limited",
         "explanation": "Observed discretionary Entertainment spending offers an area to review; no saving is guaranteed.",
-        "insight_ref": "insight-3",
+        "insight_ref": "insight-4",
         "observation_period": {
           "end": "2026-09-30",
           "start": "2026-01-01"
@@ -699,7 +717,7 @@
         "category": "Subscriptions",
         "confidence": "limited",
         "explanation": "Observed discretionary Subscriptions spending offers an area to review; no saving is guaranteed.",
-        "insight_ref": "insight-4",
+        "insight_ref": "insight-5",
         "observation_period": {
           "end": "2026-09-30",
           "start": "2026-01-01"
@@ -1073,9 +1091,71 @@
     ],
     "unwanted_reduction_categories": []
   },
-  "schema_version": "1.1",
-  "shocks": [],
-  "state_version": "47421773a473b5a411288c69cb8568068886fc2e0d7fe9182e59eb26ff1e9a93",
+  "schema_version": "1.2",
+  "shocks": [
+    {
+      "categories": [
+        "Pets"
+      ],
+      "classification": "outstanding_obligation",
+      "confidence": "higher",
+      "confirmed_hardship": false,
+      "currency": "AUD",
+      "date": "2026-09-30",
+      "detected_at": "2026-09-30",
+      "detection_precision": "day",
+      "detectors": [
+        "explicit_obligation"
+      ],
+      "event_amount": 1850.0,
+      "event_ref": "event-d2d12f4842faf067",
+      "event_type": "outstanding_obligation",
+      "evidence": [],
+      "evidence_source": "detector_only",
+      "expectedness": "expected",
+      "expectedness_source": "confirmed_bill",
+      "expense_kind": "unknown",
+      "explanation": "A confirmed obligation is still outstanding.",
+      "historical": {
+        "due_date": "2026-09-30"
+      },
+      "impact": {
+        "additional_future_debit": 1850.0,
+        "already_in_balance": false,
+        "already_in_projection": true,
+        "amounts_additive": false,
+        "comfortable": 900.0,
+        "comfortable_capacity_change_vs_excluding_event": null,
+        "current_balance": 2000.0,
+        "current_projected_balance": 150.0,
+        "income_variability": 0.0,
+        "liquidity_ratio": 0.925,
+        "monthly_surplus": 900.0,
+        "observed_expense": null,
+        "projected_balance": 150.0,
+        "projected_buffer_shortfall": null,
+        "protected_reserve": 0.0,
+        "savings_capacity_effect": "Posted expenses enter completed-month history once; no extra balance deduction.",
+        "stretch": 1000.0,
+        "unreserved_projected_balance": 150.0,
+        "upcoming_obligations": 1850.0
+      },
+      "lifecycle_status": "new",
+      "notification_required": true,
+      "observed_on": "2026-09-30",
+      "pattern_stage": "one_off",
+      "potential_disruption": "high",
+      "questions": [],
+      "reassessment_required": false,
+      "severity": "cashflow_risk",
+      "statistical_anomaly": false,
+      "status": "outstanding",
+      "uncertainty": "An anomaly is not confirmation of surprise, fraud or financial hardship.",
+      "unexpected_confirmed": false,
+      "user_confirmation": "none"
+    }
+  ],
+  "state_version": "5c0e207824f0b63735f0c96d284e6393c53cb45a7daf689c7c8a98ff171f2801",
   "uncertainty": [
     "Complete months inferred from transaction boundary dates, not statement coverage.",
     "Recurring dates/amounts and regular income are estimates from observed history.",

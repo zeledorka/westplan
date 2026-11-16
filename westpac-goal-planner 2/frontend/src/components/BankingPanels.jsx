@@ -1,6 +1,6 @@
 import { useBank, money, day, label } from '../data/mockBank.js'
 
-const monetaryFields = new Set(['monthly_average','recent_change','spent','monthly_limit','remaining','event_amount','balance','obligations','projected','buffer','observed_monthly_spend','monthly_discretionary','minimum_observed','monthly_std','typical_payment','previous_payment','current_payment'])
+const monetaryFields = new Set(['monthly_average','recent_change','spent','monthly_limit','remaining','event_amount','balance','obligations','projected','buffer','observed_monthly_spend','monthly_discretionary','minimum_observed','monthly_std','typical_payment','previous_payment','current_payment','current_balance','upcoming_obligations','projected_balance','unreserved_projected_balance','comfortable','category_median','adaptive_floor','expected_amount','received_amount','shortfall','baseline_weekly','recent_weekly','threshold','previous_amount','recent_amount','earlier_income','recent_income'])
 function evidenceValue(key, value) {
   if (value == null) return 'Unknown'
   if (typeof value === 'boolean') return value ? 'Yes' : 'No'

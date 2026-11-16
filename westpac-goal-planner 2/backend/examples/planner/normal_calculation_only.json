@@ -1,0 +1,57 @@
+{
+  "not_ai_generated": true,
+  "not_a_recommendation": true,
+  "purpose": "Deterministic arithmetic example; live Gemini generation was unavailable.",
+  "calculation": {
+    "calculation_ref": "calculation-1",
+    "plans": [
+      {
+        "goal_ref": "goal-1",
+        "goal_kind": "holiday",
+        "target": 6000.0,
+        "allocated": 1200.0,
+        "deadline": "2027-05-31",
+        "contribution": 600.0,
+        "frequency": "monthly",
+        "pause_months": 0,
+        "priority": null,
+        "periods": 8,
+        "required_per_period": 600.0,
+        "monthly_equivalent": 600.0,
+        "completion_date": "2027-05-30",
+        "completion_horizon_limited": false,
+        "projection": {
+          "projected_allocated": 6000.0,
+          "remaining": 0.0,
+          "target_reached": true,
+          "interest_assumed": 0
+        },
+        "meets_deadline": true,
+        "hypothetical_goal_changes": {}
+      }
+    ],
+    "aggregate_monthly_equivalent": 600.0,
+    "comfortable_capacity": 900.0,
+    "stretch_capacity": 1000.0,
+    "within_comfortable_capacity": true,
+    "within_stretch_capacity": true,
+    "current_projected_cash_after_known_obligations": 2000.0,
+    "funding_reserve_known": true,
+    "immediate_contribution_monthly_equivalent": 600.0,
+    "one_month_comparison": {
+      "monthly_surplus_after_contribution": 300.0,
+      "liquid_after_pending_reserve_and_contribution": 1400.0,
+      "assumption": "Simple proposed one-month contribution; no automatic approval or income guarantee."
+    },
+    "hypothetical_additional_expense": 0,
+    "hypothetical_additional_missing_income": 0,
+    "assumptions": [
+      "Principal only: no investment returns or invented income.",
+      "Regular contributions start one period after the as-of date plus the stated pause.",
+      "Fortnightly monthly equivalent is annualised at 26/12; deadlines use actual 14-day dates.",
+      "Known paid and unpaid expenses already enter the source context once. Additional shocks here are hypothetical only.",
+      "Cashflow is a one-month comparison, not a complete future balance forecast. Multiple possible funding accounts require clarification.",
+      "Goal allocations and protected reserves remain untouched. Priority is hypothetical, not an automatic funding rule."
+    ]
+  }
+}

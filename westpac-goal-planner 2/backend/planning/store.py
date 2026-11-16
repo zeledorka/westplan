@@ -6,7 +6,7 @@ from datetime import date
 
 def empty_state():
     return {'budgets':{},'corrections':{},'transaction_corrections':{},'feedback':[],
-            'protected_categories':[],'goals':{},'proposals':{},'subscriptions':{}}
+            'protected_categories':[],'goals':{},'proposals':{},'subscriptions':{},'shock_events':{}}
 
 
 class StaleState(ValueError):

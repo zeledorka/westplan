@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { useBank, money, day, label } from '../data/mockBank.js'
+import ShockEvents from '../components/ShockEvents.jsx'
+import GeminiPlanner from '../components/GeminiPlanner.jsx'
 import { FinancialFacts, InsightList } from '../components/BankingPanels.jsx'
 
 function GoalCard({ goal }) {
   const { mutate, busy } = useBank()
   const [editing, setEditing] = useState(false)
   return <article className="card pad"><div className="row"><h3>{label(goal.kind)} goal</h3><span className="tag">Version {goal.version}</span></div>
-    <strong>{money(goal.allocated)} allocated of {money(goal.target)}</strong><progress max="100" value={goal.progress_percent} aria-label="Goal progress" />
+    <p className="small muted">Current approved goal</p><strong>{money(goal.allocated)} allocated of {money(goal.target)}</strong><progress max="100" value={goal.progress_percent} aria-label="Goal progress" />
     <p>Deadline {day(goal.deadline)} · {goal.progress_percent}% funded</p><p className="small muted">Arithmetic only: {goal.contribution_periods} monthly periods, {money(goal.required_monthly)} per period. This is not an AI recommendation.</p>
     <button className="small-btn" onClick={() => setEditing(!editing)}>Propose my own goal change</button>
     {editing && <form onSubmit={async e => { e.preventDefault(); const f = new FormData(e.currentTarget); const ok = await mutate(`/goals/${goal.goal_id}/proposals`, { changes: { target: Number(f.get('target')), allocated: Number(f.get('allocated')), deadline: f.get('deadline') }, source: 'user' }, 'Your manual proposal is ready for review.'); if (ok) setEditing(false) }}>
@@ -18,15 +20,16 @@ function GoalCard({ goal }) {
   </article>
 }
 export default function GoalPlanner({ onBack }) {
-  const { goals, proposals, goal_history, mutate, busy, goal_available, scenario, shocks } = useBank()
+  const { goals, proposals, goal_history, mutate, busy, goal_available, scenario } = useBank()
   async function create(e) {
     e.preventDefault(); const f = new FormData(e.currentTarget)
     await mutate('/goals', { kind: f.get('kind'), target: Number(f.get('target')), allocated: Number(f.get('allocated')), deadline: f.get('deadline'), confirmed: true }, 'Goal created.')
   }
   return <div className="page"><header className="pagehead"><button className="backbtn" onClick={onBack}>← Back</button><h1>Goal planner</h1></header><div className="body grey">
-    <div className="card pad"><h3>AI proposes. Safety validates. You decide.</h3><p>Gemini is not connected. Only your own manual goal changes can be proposed here. AI proposals remain blocked without independent validation.</p>{scenario !== 'customer' && <p className="small muted">The holiday goal is seeded demo data in a separate sandbox.</p>}</div>
+    <div className="card pad"><h3>AI proposes. Safety validates. You decide.</h3><p>Gemini can analyse goals and create provisional drafts. The independent Safety Checker is not implemented, so Gemini drafts cannot be approved or activated. Your manual goal workflow remains available.</p>{scenario !== 'customer' && <p className="small muted">The holiday goal is seeded demo data in a separate sandbox.</p>}</div>
     <FinancialFacts />
-    {shocks.filter(s => s.status !== 'projection').slice(-3).map(s => <div className="card pad insight advisory" key={s.event_ref}><h3>Financial event: {label(s.expense_kind)}</h3><p>{money(s.event_amount)} · {day(s.date)} · {label(s.status)}</p><p className="small">{s.impact.already_in_balance ? 'Already included in balances; no future debit added.' : 'Projection only.'}</p></div>)}
+    <ShockEvents />
+    <GeminiPlanner />
     {!goals.length && <p>No goals yet. Create one below.</p>}{goals.map(g => <GoalCard key={`${g.goal_id}-${g.version}`} goal={g} />)}
     <details className="card pad"><summary>Create a goal</summary><form onSubmit={create}>
       <label className="field">Goal type<select name="kind"><option value="holiday">Holiday</option><option value="emergency_fund">Emergency fund</option><option value="purchase">Purchase</option><option value="other">Other</option></select></label>

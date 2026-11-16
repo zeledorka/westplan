@@ -60,7 +60,7 @@ class ApiTests(unittest.TestCase):
             self.assertEqual(response.status_code,200,response.text)
             self.assertEqual(response.json()['scope_version'],self.view['scope_version'])
         context=self.client.get('/api/planning-context')
-        self.assertEqual(context.json()['schema_version'],'1.1')
+        self.assertEqual(context.json()['schema_version'],'1.2')
         for secret in ('David','u003','account_id','transaction_id','description','GEMINI_API_KEY'):
             self.assertNotIn(secret,context.text)
 
@@ -186,3 +186,34 @@ class ApiTests(unittest.TestCase):
         for s in self.app.state.sessions.values():
             s.expires=0
         self.assertEqual(self.client.get('/api/overview').status_code,401)
+
+
+    def test_event_confirmation_persists_and_stale_evidence_is_rejected(self):
+        self.demo('vet_paid')
+        event=next(e for e in self.view['shocks'] if e['event_amount']==1850 and e['status']=='posted')
+        path='/api/shocks/'+event['event_ref']+'/action'
+        self.action(path,{'action':'confirm_expected','evidence_version':event['evidence_version'],
+                         'remember_expected':True,'confirmed':True},expected=200)
+        current=next(e for e in self.view['shocks'] if e['event_ref']==event['event_ref'])
+        self.assertEqual(current['expectedness'],'expected')
+        self.assertEqual(current['lifecycle_status'],'confirmed_expected')
+        self.assertFalse(current['notification_required'])
+        self.assertTrue(self.view['shock_history'])
+        self.view=self.client.get('/api/overview').json()
+        self.assertEqual(next(e for e in self.view['shocks'] if e['event_ref']==event['event_ref'])['expectedness'],'expected')
+        self.action(path,{'action':'dismiss','evidence_version':'old-evidence','confirmed':True},expected=409)
+        self.action(path,{'action':'reopen','evidence_version':event['evidence_version'],'confirmed':True},expected=200)
+        other=TestClient(self.app);self.login('u001',other)
+        other_view=other.get('/api/overview').json()
+        response=other.post(path,headers={'X-Context-Scope':other_view['scope_version']},json={
+            'action':'confirm_unexpected','evidence_version':event['evidence_version'],'confirmed':True,'expected_revision':other_view['revision']})
+        self.assertEqual(response.status_code,400)
+
+    def test_event_dismissal_does_not_remove_cashflow_risk_or_mutate_goal(self):
+        self.demo('vet_unpaid')
+        event=next(e for e in self.view['shocks'] if e['status']=='outstanding')
+        goals=self.view['goals']
+        self.action('/api/shocks/'+event['event_ref']+'/action',{'action':'dismiss','evidence_version':event['evidence_version'],'confirmed':True},expected=200)
+        self.assertEqual(self.view['goals'],goals)
+        self.assertEqual(self.view['financial']['cashflow']['runway']['projected_after_known_pending'],150)
+        self.assertTrue(any(i['type']=='upcoming_cashflow_risk' for i in self.view['financial']['personalised_insights']))

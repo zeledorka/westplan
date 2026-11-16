@@ -91,3 +91,19 @@ class PostedEventEvidence:
             raise ValueError("Unsupported event kind")
         if not isinstance(self.unexpected, bool):
             raise ValueError("unexpected must be a boolean")
+
+
+@dataclass(frozen=True)
+class PlannedExpense:
+    """Explicit pre-event plan linked to a transaction; amount/date alone are not identity."""
+    plan_id: str
+    transaction_id: str
+    amount: float
+    category: str
+    known_on: date
+    due: date
+
+    def __post_init__(self):
+        object.__setattr__(self, 'amount', money(self.amount))
+        if self.due < self.known_on:
+            raise ValueError('Plan due date precedes knowledge date')

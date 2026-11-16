@@ -35,10 +35,10 @@ class BankingService:
                                      transaction_corrections=state['transaction_corrections'])
         protected=set(state['protected_categories'])|{b['category'] for b in state['budgets'].values() if b['protected']}
         goals=[Goal(g['goal_id'],g['kind'],g['target'],g['allocated'],date.fromisoformat(g['deadline'])) for g in state['goals'].values()]
-        args={k:raw[k] for k in ('accounts','pending_expenses','event_evidence') if k in raw}
+        args={k:raw[k] for k in ('accounts','pending_expenses','event_evidence','planned_expenses','known_holidays') if k in raw}
         args.update(as_of=as_of,goals=goals,preferences=Preferences(protected_categories=tuple(sorted(protected))),
                     budget_limits=tuple(BudgetLimit(**b) for b in state['budgets'].values()),
-                    feedback=state['feedback'],subscription_states=state['subscriptions'])
+                    feedback=state['feedback'],subscription_states=state['subscriptions'],event_states=state.get('shock_events',{}))
         return txns,args
 
     def planning_context(self, customer):
@@ -57,7 +57,9 @@ class BankingService:
         txns,args=self._assemble(raw,state)
         view=banking_insights(txns,as_of=raw['as_of'],accounts=args.get('accounts',()),
             protected_categories=args['preferences'].protected_categories,limits=args['budget_limits'],
-            pending_expenses=args.get('pending_expenses',()),feedback=state['feedback'],subscription_states=state['subscriptions'])
+            pending_expenses=args.get('pending_expenses',()),feedback=state['feedback'],subscription_states=state['subscriptions'],
+            planned_expenses=args.get('planned_expenses',()),event_evidence=args.get('event_evidence',()),
+            event_states=state.get('shock_events',{}),known_holidays=args.get('known_holidays',()))
         return {'revision':revision,'insights':view,'goals':list(state['goals'].values()),
                 'proposals':list(state['proposals'].values()),'subscriptions':self.subscriptions(customer)}
 
@@ -107,7 +109,9 @@ class BankingService:
             txns,args=self._assemble(raw,state)
             base=banking_insights(txns,as_of=raw['as_of'],accounts=args.get('accounts',()),
                  protected_categories=args['preferences'].protected_categories,limits=args['budget_limits'],
-                 pending_expenses=args.get('pending_expenses',()),subscription_states=state['subscriptions'])
+                 pending_expenses=args.get('pending_expenses',()),subscription_states=state['subscriptions'],
+                 planned_expenses=args.get('planned_expenses',()),event_evidence=args.get('event_evidence',()),
+                 event_states=state.get('shock_events',{}),known_holidays=args.get('known_holidays',()))
             if insight_id not in {i['insight_id'] for i in base['personalised_insights']}:
                 raise ValueError('Unknown customer insight')
         def mutate(s):
@@ -240,3 +244,44 @@ class BankingService:
                     rows.append({**g,'recorded_on':day,'store_revision':revision})
                     seen.add(key)
         return rows
+
+
+    def record_shock_action(self, customer, event_ref, *, action, evidence_version,
+                            confirmed, expected_revision, remember_expected=False):
+        from finstats.event_lifecycle import ACTIONS
+        self._confirm(confirmed)
+        if action not in ACTIONS or not isinstance(remember_expected,bool):
+            raise ValueError('Unsupported event action')
+        if remember_expected and action!='confirm_expected':
+            raise ValueError('Only explicit expected confirmation can be remembered')
+        raw=self._inputs(customer)
+        def mutate(state):
+            events=self.banking_view(customer)['insights']['shocks']
+            current=next((e for e in events if e['event_ref']==event_ref),None)
+            if current is None:
+                raise ValueError('Unknown customer event')
+            if current['evidence_version']!=evidence_version:
+                raise StaleState('Event evidence changed; review the latest event before confirming')
+            states=state.setdefault('shock_events',{})
+            previous=states.get(event_ref,{})
+            if action=='reopen' and current['lifecycle_status']=='new':
+                raise ValueError('Event is already open')
+            expectation=('expected' if action=='confirm_expected' else 'unexpected' if action=='confirm_unexpected'
+                         else previous.get('expectedness','unknown'))
+            if action=='confirm_unexpected' and current['event_type'] in {'missing_income','delayed_income','reduced_income'}:
+                # This confirms surprise, not permanent loss or financial hardship.
+                expectation='unexpected'
+            states[event_ref]={'status':ACTIONS[action],'expectedness':expectation,
+                'evidence_version':evidence_version,'known_on':raw['as_of'].isoformat(),
+                'comparison_key':current.get('_comparison_key'), 'amount':current['event_amount'],
+                'event_date':current['date'],'transaction_ids':current['transaction_ids'],
+                'remember_expected':remember_expected if action=='confirm_expected' else False if action=='confirm_unexpected' else previous.get('remember_expected',False),
+                'history':previous.get('history',[])+[{'action':action,'on':raw['as_of'].isoformat(),
+                                                     'evidence_version':evidence_version}]}
+        return self._write(customer,expected_revision,mutate)
+
+    def shock_history(self, customer):
+        raw=self._inputs(customer)
+        _,state=self.store.read(customer,raw['as_of'])
+        return [{'event_ref':ref,**{key:value[key] for key in ('status','expectedness','known_on','event_date','history')}}
+                for ref,value in state.get('shock_events',{}).items()]

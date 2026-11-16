@@ -26,18 +26,24 @@ def personalised_insights(financial, *, budgets, calendar, opportunities, shocks
                 f"{category(b['category'])} spending is {'over' if b['status']=='over_budget' else 'approaching'} its monthly budget.",
                 'advisory','higher',True)
     for shock in shocks:
-        if shock['status']=='projection':
+        if shock['status']=='projection' or not shock.get('notification_required',True):
             continue  # Current cash-risk insight below supersedes historical projection alerts.
         bill_scores=[e['score'] for e in shock['evidence'] if e['detector']=='recurring_bill_change' and e['score'] is not None]
         kind=('recurring_bill_increase' if any(score>0 for score in bill_scores) else 'recurring_bill_change') if 'recurring_bill_change' in shock['detectors'] else 'unusual_expense'
         if 'burst' in shock['detectors']:
             kind='security_review'
+        income_event=shock.get('event_type') in {'missing_income','delayed_income','reduced_income','persistent_income_reduction','income_volatility_change'}
+        if income_event:
+            kind='income_interruption'
+        elif shock['status'] in {'outstanding','anticipated'}:
+            kind='outstanding_obligation'
         add(kind,shock['categories'][0] if len(shock['categories'])==1 else 'Other',shock['event_ref'],
             {'event_amount':shock['event_amount'],'event_date':shock['date'],'detector_count':len(shock['detectors'])},
-            'A recurring payment changed; review the observed amount.' if kind in {'recurring_bill_increase','recurring_bill_change'}
+            shock['explanation'] if income_event or kind=='outstanding_obligation' else 'A recurring payment changed; review the observed amount.' if kind in {'recurring_bill_increase','recurring_bill_change'}
             else 'Unusual purchase activity warrants a security review; fraud is not confirmed.' if kind=='security_review'
             else 'An unusual posted expense was observed; this alone does not establish hardship.',
             'critical' if kind=='security_review' else 'advisory','moderate',True)
+        out[-1]['_feedback_aliases']=[sha256((kind+key).encode()).hexdigest()[:24] for key in shock.get('_legacy_event_refs',[])]
     flow=financial['cashflow']
     runway=flow['runway']
     if runway:
@@ -68,7 +74,9 @@ def personalised_insights(financial, *, budgets, calendar, opportunities, shocks
             {'observed_monthly_spend':o['observed_monthly_spend'],'requires_confirmation':True},
             f"Observed discretionary {category(o['category'])} spending offers an area to review; no saving is guaranteed.",
             'info',o['confidence'],True)
-    latest={f['insight_id']:f['action'] for f in feedback if f['action'] in {'useful','not_useful','dismiss'}}
-    dismissed={key for key,action in latest.items() if action=='dismiss'}
-    disliked={key for key,action in latest.items() if action=='not_useful'}
-    return [i for i in out if i['severity']=='critical' or i['insight_id'] not in dismissed|disliked]
+    latest={f['insight_id']:(position,f['action']) for position,f in enumerate(feedback)
+            if f['action'] in {'useful','not_useful','dismiss'}}
+    def visible(insight):
+        actions=[latest[key] for key in [insight['insight_id']]+insight.get('_feedback_aliases',[]) if key in latest]
+        return insight['severity']=='critical' or not actions or max(actions)[1]=='useful'
+    return [{k:v for k,v in insight.items() if not k.startswith('_')} for insight in out if visible(insight)]

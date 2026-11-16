@@ -8,7 +8,8 @@ from .shock_context import normalized_shocks
 
 
 def banking_insights(txns, *, as_of, accounts=(), protected_categories=(), limits=(),
-                     pending_expenses=(), subscription_states=None, feedback=(), shocks=None):
+                     pending_expenses=(), subscription_states=None, feedback=(), shocks=None,
+                     planned_expenses=(), event_evidence=(), event_states=None, known_holidays=()):
     past=[t for t in txns if t.date<=as_of]
     protected=set(protected_categories)|{b.category for b in limits if b.protected}
     facts=financial_insights(past,as_of=as_of,accounts=accounts,protected_categories=protected)
@@ -27,7 +28,9 @@ def banking_insights(txns, *, as_of, accounts=(), protected_categories=(), limit
     facts['opportunities']=spending_opportunities(facts['spending']['categories'],active_bills,protected)
     opportunities=find_savings_opportunities(past,as_of=as_of,categories=facts['spending']['categories'],
         bills=active_bills,protected_categories=protected,subscription_states=subscription_states)
-    events=normalized_shocks(past,as_of=as_of) if shocks is None else shocks
+    events=normalized_shocks(past,as_of=as_of,accounts=accounts,pending_expenses=pending_expenses,
+        planned_expenses=planned_expenses,event_evidence=event_evidence,event_states=event_states,
+        known_holidays=known_holidays,facts=facts,calendar=calendar) if shocks is None else shocks
     facts.update(budgets=budgets,bills_calendar=calendar,savings_finder=opportunities,shocks=events)
     facts['personalised_insights']=personalised_insights(facts,budgets=budgets,calendar=calendar,
         opportunities=opportunities,shocks=events,feedback=feedback)
