@@ -6,7 +6,7 @@ These methods are not an HTTP authentication boundary; callers must bind identit
 from dataclasses import asdict
 from datetime import date
 from uuid import uuid4
-from .schemas import Goal, Preferences
+from .schemas import Goal, Preferences, PendingExpense
 from .context import build_planning_context
 from .store import StaleState
 from finstats.budgets import BudgetLimit
@@ -36,6 +36,8 @@ class BankingService:
         protected=set(state['protected_categories'])|{b['category'] for b in state['budgets'].values() if b['protected']}
         goals=[Goal(g['goal_id'],g['kind'],g['target'],g['allocated'],date.fromisoformat(g['deadline'])) for g in state['goals'].values()]
         args={k:raw[k] for k in ('accounts','pending_expenses','event_evidence','planned_expenses','known_holidays') if k in raw}
+        if state.get('presenter_events'):
+            args['pending_expenses']=tuple(args.get('pending_expenses',()))+tuple(PendingExpense(e['event_id'],e['amount'],e['category'],date.fromisoformat(e['known_on']),date.fromisoformat(e['due'])) for e in state['presenter_events'])
         args.update(as_of=as_of,goals=goals,preferences=Preferences(protected_categories=tuple(sorted(protected))),
                     budget_limits=tuple(BudgetLimit(**b) for b in state['budgets'].values()),
                     feedback=state['feedback'],subscription_states=state['subscriptions'],event_states=state.get('shock_events',{}))
@@ -45,6 +47,7 @@ class BankingService:
         raw=self._inputs(customer); revision,state=self.store.read(customer,raw['as_of'])
         txns,args=self._assemble(raw,state)
         ctx=build_planning_context(txns,**args)
+        ctx['recorded_goal_schedules']=[{'goal_ref':f'goal-{i+1}',**{k:g[k] for k in ('contribution','frequency','pause_months','schedule_as_of') if k in g}} for i,g in enumerate(state['goals'].values()) if 'contribution' in g]
         # Goal versions affect approval even when a value is reverted.
         from hashlib import sha256
         import json
@@ -124,6 +127,23 @@ class BankingService:
             if not duplicate:
                 s['feedback'].append(record)
         return self._write(customer,expected_revision,mutate)
+
+    def trigger_presenter_event(self, customer, *, goal_id, amount, kind, confirmed, expected_revision):
+        self._confirm(confirmed)
+        raw=self._inputs(customer)
+        _,state=self.store.read(customer,raw['as_of'])
+        if goal_id not in state['goals']:raise ValueError('Unknown customer goal')
+        if kind not in {'car_repair','unexpected_bill'} or not 0<amount<=100000:raise ValueError('Unsupported presenter event')
+        event_id=uuid4().hex
+        category='Transport' if kind=='car_repair' else 'Utilities'
+        event=PendingExpense(event_id,amount,category,raw['as_of'],raw['as_of'])
+        def apply(s):
+            s.setdefault('presenter_events',[]).append({'event_id':event.event_id,'goal_id':goal_id,'kind':kind,
+                'amount':event.amount,'category':category,'known_on':event.known_on.isoformat(),'due':event.due.isoformat(),'status':'unpaid'})
+            s.setdefault('presenter_notifications',[]).append({'id':event_id,'goal_id':goal_id,
+                'title':'Unexpected obligation: review your goal','message':f'A confirmed unpaid {kind.replace("_"," ")} of AUD {amount:.2f} is now included in the backend projection. Goal feasibility needs reassessment.',
+                'on':raw['as_of'].isoformat()})
+        return self._write(customer,expected_revision,apply)
 
     def create_goal(self, customer, goal, *, confirmed, expected_revision):
         self._confirm(confirmed)

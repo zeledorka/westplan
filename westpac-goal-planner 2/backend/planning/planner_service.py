@@ -87,7 +87,7 @@ class PlannerService:
         approved=[{'goal_ref':aliases[g['goal_id']],'version':g['version'],'target':g['target'],
                    'allocated':g['allocated'],'deadline':g['deadline']} for g in bank.goal_history(customer)[-12:] if g['goal_id'] in aliases]
         supplement={'temporary_protected_categories':list(protected_categories),'approved_goal_history':approved,
-                    'current_schedules_and_priorities':'Not recorded by the existing app; ask rather than invent a current contribution or priority.',
+                    'current_schedules_and_priorities':context.get('recorded_goal_schedules') or 'Not recorded by the existing app; ask rather than invent a current contribution or priority.',
                     'hypotheticals_do_not_change_the_actual_plan':True}
         record={**(previous if claimed else {}),'session_id':session_id,'request_id':request_id,'goal_id':goal_id,'intent':intent,
                 'created_at':now,'question':question,'financial_version':context['state_version']}

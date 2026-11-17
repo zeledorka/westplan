@@ -159,3 +159,11 @@ progress { width: 100%; accent-color: var(--navy); }
 .planner-draft ul { padding-left: 20px; }
 .planner-conversation textarea { box-sizing: border-box; width: 100%; min-width: 0; font: inherit; padding: 10px; border: 1px solid var(--line); border-radius: 4px; resize: vertical; }
 .planner-conversation .card { margin: 12px 0; }
+
+/* Local goal-adjustment simulation, scoped to its comparison and notification panels. */
+.demo-notification { display: grid; gap: 8px; width: 100%; text-align: left; margin-top: 10px; }
+.demo-event { margin-top: 16px; border-left: 4px solid var(--red); padding: 12px; background: #fff6f4; }
+.demo-comparison { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+.demo-comparison caption { text-align: left; font-weight: 700; margin-bottom: 8px; }
+.demo-comparison th, .demo-comparison td { text-align: left; padding: 8px 3px; border-bottom: 1px solid #ddd; overflow-wrap: anywhere; }
+.demo-comparison th { max-width: 110px; }

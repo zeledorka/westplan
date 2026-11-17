@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
 import { useBank, money, day, label } from '../data/mockBank.js'
+import { request } from '../api/client.js'
 import { createPlanner, calculatedOptions, planningProgress, safetySummary, safetyRevisionMessage } from '../api/planner.js'
 
 function Items({ title, values }) {
@@ -14,11 +15,18 @@ function Safety({ assessment, stale = false }) {
   </div>
 }
 function Draft({ record }) {
+  const { revision, scope_version, scenario, mutate, busy } = useBank()
+  const [decision, setDecision] = useState(record.draft?.review_decision || null)
+  const [decisionError,setDecisionError]=useState('')
+  const [selectedCalculation,setCalculation]=useState('')
   const draft = record.draft
   if (!draft) return <div><p role="alert">{record.status === 'interrupted' ? (record.progress?.reason === 'deadline_reached' ? 'Planning deadline reached' : 'Planning interrupted') : record.status === 'cancelled' ? 'Planning cancelled' : 'Previous request failed'}: {record.error?.message}</p>{record.safety_revision && <><p>{safetyRevisionMessage(record.safety_revision)}</p><Safety assessment={record.safety_revision.history?.[0]?.safety_assessment} stale={record.stale} /></>}</div>
+  const eligible=calculatedOptions(draft).filter(o=>o.safety?.status==='PASS')
+  const chosen=selectedCalculation || eligible.find(o=>o.recommended)?.calculation_ref || eligible[0]?.calculation_ref || ''
+  const canApprove=scenario==='integrated_demo' && !record.stale && draft.safety_assessment?.status==='PASS' && !!chosen
   return <article className="card pad planner-draft">
     <div className="row"><h3>{draft.model_generated ? `${draft.metadata?.provider === 'openrouter' ? 'OpenRouter' : 'Gemini'} assessment` : 'Simulated planner test output'}</h3><span className="tag">Provisional draft</span></div>
-    <p className="small muted">This draft cannot be activated, including when financial checks pass. The planner can make one bounded safety revision; financial changes require new Python calculations.</p>
+    <p className="small muted">Production activation remains disabled. In the isolated presenter sandbox, a human may apply an independently passing calculated schedule. The planner can make one bounded safety revision; financial changes require Python calculations.</p>
     {draft.safety_revision && <><p role="status">{safetyRevisionMessage(draft.safety_revision)}</p><details><summary>Safety revision history · {draft.safety_revision.revision_count} automatic revision(s)</summary>{draft.safety_revision.history.map((entry,i) => <p key={i}>{i === 0 ? 'Original assessment' : 'Revised assessment'}: {entry.safety_assessment.status}. New calculations: {entry.new_calculation_refs.join(', ') || 'none'}.</p>)}</details></>}
     {record.stale && <p role="alert">Financial facts have changed. This is an older draft; request a fresh assessment.</p>}
     <Safety assessment={draft.safety_assessment} stale={record.stale} />
@@ -44,6 +52,13 @@ function Draft({ record }) {
       <details><summary>Assumptions and calculation limits</summary><Items values={[...option.assumptions, ...option.calculation.assumptions]} /></details>
     </section>)}
     <Items title="Assumptions" values={draft.result.assumptions} />
+    <section className="card pad"><h3>Human review</h3>
+    {decision ? <div role="status"><strong>{decision.decision === 'approved' ? 'Approved and applied in the sandbox.' : 'Rejection persisted. The original goal is unchanged.'}</strong>{decision.after && <p>Contribution: {money(decision.before.contribution)} → {money(decision.after.contribution)} {decision.after.frequency}; deadline {day(decision.before.deadline)} → {day(decision.after.deadline)}.</p>}</div> : <>
+      {scenario==='integrated_demo' && eligible.length>0 && <label className="field">Calculated adjustment to approve<select value={chosen} onChange={e=>setCalculation(e.target.value)}>{eligible.map(o=><option key={o.calculation_ref} value={o.calculation_ref}>{o.title} · {o.calculation_ref}</option>)}</select></label>}
+      <button className="primary-btn" disabled={busy || !canApprove} onClick={async()=>{setDecisionError('');if(await mutate(`/presenter/drafts/${draft.draft_id}/approve`,{calculation_ref:chosen,confirmed:true},'AI adjustment approved and applied in the isolated sandbox.'))setDecision({decision:'approved'})}}>Approve and apply calculated adjustment</button>
+      {!canApprove && <p className="small">{scenario!=='integrated_demo' ? 'Approval is only enabled in the isolated presenter sandbox.' : record.stale ? 'This assessment is stale. Run a new assessment.' : 'Approval requires overall and selected-option PASS. BLOCK or unresolved REVISE cannot be overridden.'}</p>}
+      <button className="outline-btn" onClick={async()=>{try{const saved=await request(`/planner/drafts/${draft.draft_id}/reject`,{method:'POST',scope:scope_version,body:{expected_revision:revision,confirmed:true}});setDecision(saved)}catch(e){setDecisionError(e.message)}}}>Reject AI proposal</button>
+    </>}{decisionError && <p role="alert">{decisionError}</p>}</section>
   </article>
 }
 function Conversation({ goal }) {
@@ -74,6 +89,7 @@ function Conversation({ goal }) {
 export default function GeminiPlanner() {
   const { goals } = useBank()
   const [selected, setSelected] = useState('')
+  useEffect(()=>{const focus=e=>setSelected(e.detail);window.addEventListener('westplan-assess-goal',focus);return()=>window.removeEventListener('westplan-assess-goal',focus)},[])
   const goal = goals.find(g => g.goal_id === selected) || goals[0]
   return <section><h2>AI goal planner</h2><p>Explore strategies and follow-up questions. All AI results remain provisional drafts.</p>
     {!goal ? <p>Create a goal below to request an assessment.</p> : <>

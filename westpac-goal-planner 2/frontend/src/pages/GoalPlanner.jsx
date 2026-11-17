@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useBank, money, day, label } from '../data/mockBank.js'
+import IntegratedPresenter from '../components/IntegratedPresenter.jsx'
 import ShockEvents from '../components/ShockEvents.jsx'
 import GeminiPlanner from '../components/GeminiPlanner.jsx'
 import { FinancialFacts, InsightList } from '../components/BankingPanels.jsx'
@@ -9,7 +10,8 @@ function GoalCard({ goal }) {
   const [editing, setEditing] = useState(false)
   return <article className="card pad"><div className="row"><h3>{label(goal.kind)} goal</h3><span className="tag">Version {goal.version}</span></div>
     <p className="small muted">Current approved goal</p><strong>{money(goal.allocated)} allocated of {money(goal.target)}</strong><progress max="100" value={goal.progress_percent} aria-label="Goal progress" />
-    <p>Deadline {day(goal.deadline)} · {goal.progress_percent}% funded</p><p className="small muted">Arithmetic only: {goal.contribution_periods} monthly periods, {money(goal.required_monthly)} per period. This is not an AI recommendation.</p>
+    <p>{goal.contribution != null && <>Approved contribution {money(goal.contribution)} {goal.frequency} · pause {goal.pause_months || 0} months · </>}Deadline {day(goal.deadline)} · {goal.progress_percent}% funded</p><p className="small muted">Arithmetic only: {goal.contribution_periods} monthly periods, {money(goal.required_monthly)} per period. This is not an AI recommendation.</p>
+    {goal.contribution != null && <p><strong>Approved schedule: {money(goal.contribution)} {goal.frequency}</strong> · pause {goal.pause_months || 0} month(s) · effective {day(goal.schedule_as_of)}</p>}
     <button className="small-btn" onClick={() => setEditing(!editing)}>Propose my own goal change</button>
     {editing && <form onSubmit={async e => { e.preventDefault(); const f = new FormData(e.currentTarget); const ok = await mutate(`/goals/${goal.goal_id}/proposals`, { changes: { target: Number(f.get('target')), allocated: Number(f.get('allocated')), deadline: f.get('deadline') }, source: 'user' }, 'Your manual proposal is ready for review.'); if (ok) setEditing(false) }}>
       <label className="field">New target (AUD)<input name="target" type="number" min="0" step="0.01" required defaultValue={goal.target} /></label>
@@ -19,17 +21,18 @@ function GoalCard({ goal }) {
     </form>}
   </article>
 }
-export default function GoalPlanner({ onBack }) {
+export default function GoalPlanner({ onBack, onDemo }) {
   const { goals, proposals, goal_history, mutate, busy, goal_available, scenario } = useBank()
   async function create(e) {
     e.preventDefault(); const f = new FormData(e.currentTarget)
     await mutate('/goals', { kind: f.get('kind'), target: Number(f.get('target')), allocated: Number(f.get('allocated')), deadline: f.get('deadline'), confirmed: true }, 'Goal created.')
   }
-  return <div className="page"><header className="pagehead"><button className="backbtn" onClick={onBack}>← Back</button><h1>Goal planner</h1></header><div className="body grey">
-    <div className="card pad"><h3>AI proposes. Financial checks inform. You decide.</h3><p>The planner creates provisional drafts with independent financial-check findings. AI drafts cannot be approved or activated, even when the implemented checks pass. Your manual goal workflow remains available.</p>{scenario !== 'customer' && <p className="small muted">The holiday goal is seeded demo data in a separate sandbox.</p>}</div>
+  return <div className="page"><header className="pagehead"><button className="backbtn" onClick={onBack}>← Back</button><h1>Goal planner</h1></header><div className="body grey"><div className="card pad"><strong>Interactive presenter demo</strong><p className="small">Explore events, notifications and human approval using the actual backend and model. AI activation restrictions remain in force.</p><button className="primary-btn" onClick={onDemo}>Open Demo Mode</button></div>
+    <div className="card pad"><h3>AI proposes. Financial checks inform. You decide.</h3><p>The planner creates provisional drafts with independent financial-check findings. {scenario === 'integrated_demo' ? 'In this isolated sandbox, humans may approve and apply a calculated adjustment only after independent PASS.' : 'Production AI drafts cannot be activated.'} Your manual goal workflow remains available.</p>{scenario !== 'customer' && scenario !== 'integrated_demo' && <p className="small muted">The holiday goal is seeded demo data in a separate sandbox.</p>}</div>
+    {scenario === 'integrated_demo' && <IntegratedPresenter />}
     <FinancialFacts />
     <ShockEvents />
-    <GeminiPlanner />
+    <div id="ai-planner"><GeminiPlanner /></div>
     {!goals.length && <p>No goals yet. Create one below.</p>}{goals.map(g => <GoalCard key={`${g.goal_id}-${g.version}`} goal={g} />)}
     <details className="card pad"><summary>Create a goal</summary><form onSubmit={create}>
       <label className="field">Goal type<select name="kind"><option value="holiday">Holiday</option><option value="emergency_fund">Emergency fund</option><option value="purchase">Purchase</option><option value="other">Other</option></select></label>

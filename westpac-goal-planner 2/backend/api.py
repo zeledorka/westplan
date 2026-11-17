@@ -29,7 +29,7 @@ from planning.providers import configured_transport
 from planning.planner_service import PlannerService
 
 ROOT = Path(__file__).resolve().parent
-Mode = Literal['customer', 'normal', 'vet_paid', 'vet_unpaid']
+Mode = Literal['customer', 'normal', 'vet_paid', 'vet_unpaid', 'integrated_demo']
 Revision = Annotated[StrictInt, Field(ge=0)]
 Amount = Annotated[float, Field(ge=0, allow_inf_nan=False, strict=True)]
 
@@ -46,6 +46,7 @@ class SessionInput(Input):
 class ScenarioInput(Input):
     scenario: Mode
     reset: StrictBool = False
+    fixture: Literal['customer','stable_holiday'] = 'customer'
 
 
 class Mutation(Input):
@@ -103,6 +104,16 @@ class ShockActionInput(Mutation):
     remember_expected: StrictBool = False
 
 
+class DemoApprovalInput(Mutation):
+    calculation_ref: str
+
+
+class PresenterEventInput(Mutation):
+    goal_id: str
+    amount: Annotated[float, Field(gt=0,le=100000,allow_inf_nan=False,strict=True)]
+    kind: Literal['car_repair','unexpected_bill']
+
+
 class SearchInput(Input):
     question: Annotated[str, Field(min_length=1,max_length=240)]
 
@@ -112,6 +123,7 @@ class Session:
     customer: str
     expires: float
     scenario: str = 'customer'
+    presenter_fixture: str = 'customer'
     scope: str = field(default_factory=lambda: uuid4().hex)
     sandbox: str = field(default_factory=lambda: 'sandbox-'+uuid4().hex)
     lock: RLock = field(default_factory=RLock)
@@ -143,7 +155,9 @@ def create_app(db_path=None, *, planner_transport=None):
     app = FastAPI(title='Synthetic Banking Demo', version='1.0')
     app.state.store, app.state.sessions = store, sessions
     app.state.planner = app_planner
-    allowed_origins = set(os.environ.get('BANKING_ORIGINS','http://localhost:5173,http://127.0.0.1:5173').split(','))
+    allowed_origins = {value.strip() for value in os.environ.get('BANKING_ORIGINS','http://localhost:5173,http://127.0.0.1:5173').split(',') if value.strip()}
+    # Vite preserves the browser Origin when proxying the isolated local presenter demo.
+    allowed_origins |= {f'http://{host}:{port}' for host in ('127.0.0.1','localhost') for port in (5180,5181,8012)}
 
     @app.middleware('http')
     async def local_boundary(request, call_next):
@@ -197,13 +211,17 @@ def create_app(db_path=None, *, planner_transport=None):
             raise StaleState('Customer or scenario changed. Refresh before making changes.')
 
     def bind(s):
-        if s.scenario == 'customer':
-            uid = s.customer
+        if s.scenario in {'customer','integrated_demo'}:
+            uid = s.customer if s.scenario=='customer' else s.sandbox+'-'+s.customer
             def provider(customer):
                 if customer != uid:
                     raise ValueError('Customer scope mismatch')
-                profile=profiles[uid]
-                return {'txns':ledger[uid], 'as_of':date(2026,11,15),
+                profile=profiles[s.customer]
+                if s.scenario=='integrated_demo' and s.presenter_fixture=='stable_holiday':
+                    return {'txns':[replace(t,user_id=uid) for t in demo_transactions()], 'as_of':AS_OF,
+                        'accounts':(AccountSnapshot('demo-everyday','transaction',2000,date(2026,1,1)),
+                                    AccountSnapshot('demo-savings','savings',9300,AS_OF,8100,1200))}
+                return {'txns':[replace(t,user_id=uid) for t in ledger[s.customer]], 'as_of':date(2026,11,15),
                         'accounts':tuple(AccountSnapshot(a['account_id'],a['type'],a['balance'],date(2026,11,15))
                                          for a in profile['accounts'])}
         else:
@@ -228,6 +246,17 @@ def create_app(db_path=None, *, planner_transport=None):
                     state['goals']['demo-holiday']={'goal_id':'demo-holiday','kind':'holiday','target':6000,
                         'allocated':1200,'deadline':'2027-05-31','version':1}
                 store.update(uid,as_of=AS_OF,expected_revision=0,mutate=seed)
+        if s.scenario=='integrated_demo':
+            demo_as_of=AS_OF if s.presenter_fixture=='stable_holiday' else date(2026,11,15)
+            revision,_=store.read(uid,demo_as_of)
+            if revision==0:
+                _,original=store.read(s.customer,demo_as_of)
+                if s.presenter_fixture=='stable_holiday':
+                    from planning.store import empty_state
+                    original=empty_state()
+                def copy_state(state):
+                    state.update(json.loads(json.dumps(original)))
+                store.update(uid,as_of=demo_as_of,expected_revision=0,mutate=copy_state)
         return uid, BankingService(store,provider)  # No validator configured: AI proposals fail closed.
 
     def transactions(service, uid):
@@ -260,8 +289,8 @@ def create_app(db_path=None, *, planner_transport=None):
         corrected,_=service._assemble(raw,store.read(uid,raw['as_of'])[1])
         flows=monthly_flows(corrected,complete_months_only=False)
         month=next((f for f in flows if f.month==raw['as_of'].strftime('%Y-%m')),None)
-        profile=profiles[s.customer] if s.scenario=='customer' else {'first_name':'Holiday demo','persona':'Isolated synthetic veterinary scenario','property_value':0}
-        account_names={a['account_id']:a['name'] for a in profiles[s.customer]['accounts']} if s.scenario=='customer' else {'demo-everyday':'Westpac Choice','demo-savings':'Westpac eSaver'}
+        profile=profiles[s.customer] if s.scenario in {'customer','integrated_demo'} else {'first_name':'Holiday demo','persona':'Isolated synthetic veterinary scenario','property_value':0}
+        account_names={a['account_id']:a['name'] for a in profiles[s.customer]['accounts']} if s.scenario in {'customer','integrated_demo'} else {'demo-everyday':'Westpac Choice','demo-savings':'Westpac eSaver'}
         balances=view['insights']['balances']
         accounts=[{'id':a['account_id'],'name':account_names.get(a['account_id'],'Account'),
                    'kind':'loan' if a['kind']=='loan' else 'cash','balance':a['balance'],
@@ -269,6 +298,7 @@ def create_app(db_path=None, *, planner_transport=None):
         recent=transactions(service,uid)[:20]
         view['insights']['cashflow'] = context['financial_insights']['cashflow']
         return {'scope_version':s.scope,'scenario':s.scenario,'selected_customer':s.customer,
+                'presenter_fixture':s.presenter_fixture,'demo_approval_history':store.read(uid,raw['as_of'])[1].get('demo_approval_history',[]),
                 'revision':view['revision'],'state_version':context['state_version'],'as_of':raw['as_of'].isoformat(),
                 'firstName':profile['first_name'],'persona':profile['persona'],'accounts':accounts,
                 'cashFlow':{'since':raw['as_of'].replace(day=1).isoformat(),'income':month.income if month else 0,
@@ -283,6 +313,8 @@ def create_app(db_path=None, *, planner_transport=None):
                 'shocks':[{k:v for k,v in e.items() if not k.startswith('_') and k!='transaction_ids'} for e in view['insights']['shocks']],
                 'shock_history':service.shock_history(uid),'goals':goal_rows(view['goals'],raw['as_of']),
                 'proposals':view['proposals'],'goal_history':service.goal_history(uid),
+                'presenter_events':store.read(uid,raw['as_of'])[1].get('presenter_events',[]),
+                'notifications':store.read(uid,raw['as_of'])[1].get('presenter_notifications',[]),
                 'subscriptions':view['subscriptions'],'categories':sorted(CATEGORIES),
                 'goal_available':round(sum(a['goal_available'] for a in balances),2),
                 'ai_status':'Not connected; AI proposals require an independent validator.'}
@@ -322,6 +354,8 @@ def create_app(db_path=None, *, planner_transport=None):
             scope_check(s,request)
             if body.reset:
                 s.sandbox='sandbox-'+uuid4().hex
+            if body.fixture!=s.presenter_fixture and body.scenario=='integrated_demo':s.sandbox='sandbox-'+uuid4().hex
+            s.presenter_fixture=body.fixture
             s.scenario=body.scenario
             s.scope=uuid4().hex
             return overview(s)
@@ -370,6 +404,39 @@ def create_app(db_path=None, *, planner_transport=None):
     @app.post('/api/feedback')
     def feedback(body:FeedbackInput,request:Request,s=Depends(selected)):
         return mutate(s,request,body,lambda uid,svc:svc.record_feedback(uid,**body.model_dump()))
+
+    @app.post('/api/presenter/events')
+    def presenter_event(body:PresenterEventInput,request:Request,s=Depends(selected)):
+        if s.scenario!='integrated_demo':raise HTTPException(403,'Presenter events require the isolated integrated demo.')
+        return mutate(s,request,body,lambda uid,svc:svc.trigger_presenter_event(uid,**body.model_dump()))
+
+    @app.post('/api/presenter/drafts/{draft_id}/approve')
+    def approve_presenter_draft(draft_id:str,body:DemoApprovalInput,request:Request,s=Depends(selected)):
+        with s.lock:
+            scope_check(s,request)
+            if s.scenario!='integrated_demo':raise HTTPException(403,'Approval is only available in the isolated presenter sandbox')
+            if not body.confirmed:raise ValueError('Explicit confirmation required')
+            uid,svc=bind(s)
+            from planning.demo_approval import approve_demo
+            approve_demo(svc,planner,uid,draft_id,body.calculation_ref,expected_revision=body.expected_revision,actor=s.customer)
+            return overview(s)
+
+    @app.post('/api/planner/drafts/{draft_id}/reject')
+    def reject_draft(draft_id:str,body:Mutation,request:Request,s=Depends(selected)):
+        with s.lock:
+            scope_check(s,request);uid,svc=bind(s)
+            if not body.confirmed:raise ValueError('Explicit confirmation required')
+            if svc.store.read(uid,svc._inputs(uid)['as_of'])[0]!=body.expected_revision:raise StaleState('Financial revision changed')
+            draft=planner.draft(svc,uid,draft_id)
+            def reject(record):
+                if record.get('status')!='draft_unverified' or record.get('draft',{}).get('draft_id')!=draft_id:raise ValueError('Unknown reviewable draft')
+                if record.get('review_decision'):
+                    if record['review_decision']['decision']=='rejected':return record
+                    raise ValueError('An approved draft cannot be rejected retroactively')
+                decision={'decision':'rejected','by':s.customer,'at':time.time()}
+                return {**record,'review_decision':decision,'draft':{**record['draft'],'review_decision':decision}}
+            planner.store.alter(uid,draft['request_id'],reject)
+            return {'decision':'rejected','draft_id':draft_id,'persisted':True,'activation_allowed':False}
 
     @app.post('/api/goals')
     def create_goal(body:GoalInput,request:Request,s=Depends(selected)):
