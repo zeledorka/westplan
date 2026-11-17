@@ -1,9 +1,10 @@
 import Icon from '../components/Icon.jsx'
 import { SearchBar, SectionTitle, AccountCard, InProgress, MoneyTools } from '../components/ui.jsx'
+import { FinancialFacts, InsightList } from '../components/BankingPanels.jsx'
 import { useBank, money } from '../data/mockBank.js'
 
 export default function Home({ onOpenGoals }) {
-  const { firstName, accounts, netWorth, signOut } = useBank()
+  const { firstName, accounts, netWorth, signOut, openTool } = useBank()
   const total = netWorth.assets + netWorth.liabilities || 1
   return (
     <div className="page home">
@@ -16,7 +17,7 @@ export default function Home({ onOpenGoals }) {
           </span>
         </div>
         <p className="hero-q">How can we help you today?</p>
-        <SearchBar />
+        <button onClick={() => openTool('search')} aria-label="Open transaction search"><SearchBar /></button>
       </div>
       <div className="sheet">
         <SectionTitle>Favourite accounts</SectionTitle>
@@ -32,9 +33,11 @@ export default function Home({ onOpenGoals }) {
         <SectionTitle>Money tools</SectionTitle>
         <MoneyTools onOpenGoals={onOpenGoals} />
 
+        <FinancialFacts />
+        <SectionTitle link={false}>Personalised insights</SectionTitle><InsightList compact />
         <SectionTitle>Net worth</SectionTitle>
         <div className="card pad">
-          <b className="big navy">{money(netWorth.assets - netWorth.liabilities)}</b>
+          <b className="big navy">{money(netWorth.net)}</b>
           <div className="networth-bar"><i style={{ width: netWorth.assets / total * 100 + '%' }} /></div>
           <div className="row"><span>{money(netWorth.assets)}<br />in assets</span>
             <span style={{ textAlign: 'right' }}>{money(netWorth.liabilities)}<br />in liabilities</span></div>

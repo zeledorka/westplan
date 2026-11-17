@@ -1,0 +1,9 @@
+# HTTP adapter; financial calculations remain standard-library Python.
+fastapi==0.163.1
+uvicorn==0.54.0
+httpx==0.28.1
+pydantic>=2.9,<3
+
+# Official backend-only Gemini client and local environment configuration.
+google-genai==3.3.0
+python-dotenv>=1.0,<2

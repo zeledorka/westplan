@@ -23,4 +23,18 @@ from .shocks import (
 )
 from .stats import ewma, mad, mean, median, modified_z, quantile, rolling_mean, std
 
-__all__ = sorted(k for k in list(globals()) if not k.startswith("_") and k not in {"data", "savings", "shocks", "stats"})
+from .insights import financial_insights
+from .bills import bill_insights, recurring_series
+from .shock_context import normalized_shocks, expectedness_for
+from .income_shocks import detect_income_interruptions
+from .pattern_shocks import detect_persistent_changes
+
+from .banking import banking_insights
+from .budgets import BudgetLimit, budget_summary
+from .bills import bills_calendar
+from .categorisation import Classification, classify_transaction, classified_transactions
+from .opportunities import find_savings_opportunities
+from .personalised_insights import personalised_insights
+from .search import TransactionQuery, parse_question, search_transactions
+
+__all__ = sorted(k for k in list(globals()) if not k.startswith("_") and k not in {"data", "savings", "shocks", "stats", "insights", "bills", "opportunities", "shock_context", "banking", "budgets", "categorisation", "contracts", "search", "event_model", "event_lifecycle", "income_shocks", "pattern_shocks"})

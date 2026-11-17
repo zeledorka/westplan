@@ -98,9 +98,16 @@ h1, h2, h3, h4, p { margin: 0; }
 /* insights and more */
 .promo { overflow: hidden; }
 .promo-art { height: 130px; background: linear-gradient(135deg, #e9d3f7, #c79be8 55%, #991ad6); }
-.hscroll { display: flex; gap: 10px; overflow-x: auto; margin: 0 -18px; padding: 2px 18px; scrollbar-width: none; }
-.hscroll .tile { flex: 0 0 150px; }
-.hscroll.two-rows { display: grid; grid-template-rows: repeat(2, auto); grid-auto-flow: column; grid-auto-columns: 150px; }
+/* Products and Services use the available app width, without a scrolling track. */
+.body:has(> .hscroll) { min-width: 0; container-type: inline-size; }
+.hscroll, .hscroll.two-rows { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; min-width: 0; margin: 0; padding: 2px 0; }
+.hscroll .tile, .hscroll .tile > span { min-width: 0; overflow-wrap: anywhere; }
+@container (max-width: 379px) {
+  .hscroll, .hscroll.two-rows { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container (max-width: 259px) {
+  .hscroll, .hscroll.two-rows { grid-template-columns: minmax(0, 1fr); }
+}
 .popular h3 { font-size: 17px; }
 .popular p { font-size: 14px; }
 .popular-art { flex: 0 0 52px; height: 52px; border-radius: 12px; background: linear-gradient(135deg, #c79be8, #991ad6 60%, var(--red)); transform: rotate(-8deg); }
@@ -121,3 +128,42 @@ h1, h2, h3, h4, p { margin: 0; }
 .tx-desc { font-size: 15px; overflow-wrap: anywhere; }
 .tx b { white-space: nowrap; font-weight: 600; }
 .credit { color: #008000; }
+
+/* Live banking integration; existing brand/layout retained. */
+.contextbar { padding: 8px 14px; background: #f7f5fa; border-bottom: 1px solid var(--line); display: grid; gap: 6px; font-size: 12px; }
+.contextbar label { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.contextbar select { max-width: 245px; min-width: 0; padding: 5px; }
+.status { padding: 8px 14px; font-size: 13px; border-bottom: 1px solid var(--line); flex-shrink: 0; }
+.status button { text-decoration: underline; }
+.success { background: #eaf7ef; color: #175f35; }
+button:disabled { opacity: .5; cursor: wait; }
+.field { display: grid; gap: 5px; margin: 8px 0; }
+.field input, .field select, select { font: inherit; border: 1px solid #98989e; background: white; border-radius: 4px; padding: 9px; min-width: 0; max-width: 100%; }
+.actions { display: flex; flex-wrap: wrap; gap: 7px; }
+.small-btn { display: inline-block; border: 1px solid var(--navy); padding: 7px 10px; border-radius: 4px; font-size: 13px; margin: 4px 0; }
+.tag { background: #eeedf6; color: var(--navy); padding: 4px 6px; border-radius: 4px; font-size: 12px; }
+.insight.critical { border-left: 5px solid var(--red); }
+.insight.advisory { border-left: 5px solid #bb7c08; }
+.evidence { font-size: 13px; margin: 0; }
+.evidence div { display: flex; gap: 12px; justify-content: space-between; padding: 3px 0; }
+.evidence dt { color: var(--muted); text-transform: capitalize; }
+.evidence dd { margin: 0; text-align: right; }
+summary { cursor: pointer; padding: 8px 0; color: var(--navy); }
+progress { width: 100%; accent-color: var(--navy); }
+.card h3, .tx-desc { overflow-wrap: anywhere; }
+@media (max-width: 360px) { .contextbar label { display: grid; gap: 3px; } .contextbar select { max-width: 100%; } }
+
+/* Gemini drafts reuse the banking cards and remain contained on narrow screens. */
+.planner-conversation, .planner-draft, .planner-draft section { min-width: 0; }
+.planner-draft p, .planner-draft li, .planner-question { overflow-wrap: anywhere; }
+.planner-draft ul { padding-left: 20px; }
+.planner-conversation textarea { box-sizing: border-box; width: 100%; min-width: 0; font: inherit; padding: 10px; border: 1px solid var(--line); border-radius: 4px; resize: vertical; }
+.planner-conversation .card { margin: 12px 0; }
+
+/* Local goal-adjustment simulation, scoped to its comparison and notification panels. */
+.demo-notification { display: grid; gap: 8px; width: 100%; text-align: left; margin-top: 10px; }
+.demo-event { margin-top: 16px; border-left: 4px solid var(--red); padding: 12px; background: #fff6f4; }
+.demo-comparison { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+.demo-comparison caption { text-align: left; font-weight: 700; margin-bottom: 8px; }
+.demo-comparison th, .demo-comparison td { text-align: left; padding: 8px 3px; border-bottom: 1px solid #ddd; overflow-wrap: anywhere; }
+.demo-comparison th { max-width: 110px; }

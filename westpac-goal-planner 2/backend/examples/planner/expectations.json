@@ -1,0 +1,126 @@
+[
+  {
+    "name": "normal",
+    "question": "Can I achieve this holiday goal without using protected emergency savings? Compare another approach only if useful.",
+    "expectation": "Recognise that the required contribution is within historical capacity, keep protected funds unavailable, and avoid forcing a goal change. The actual current contribution is not recorded.",
+    "tags": [
+      "feasible",
+      "protected"
+    ]
+  },
+  {
+    "name": "vet_paid",
+    "question": "How do the latest financial facts affect this goal? What approach would you recommend?",
+    "expectation": "Recognise already-paid expense, current cash 150 and capacity 490.73; do not debit 1850 again. Address current liquidity and constrained contributions.",
+    "tags": [
+      "low_cash",
+      "paid"
+    ]
+  },
+  {
+    "name": "vet_unpaid",
+    "question": "How do the latest financial facts affect this goal? What approach would you recommend?",
+    "expectation": "Distinguish cash 2000 from committed 1850, projected 150, and historical capacity 900. Do not treat the unpaid bill as already posted or spend committed funds.",
+    "tags": [
+      "low_cash",
+      "outstanding"
+    ]
+  },
+  {
+    "name": "planned_holiday",
+    "question": "Assess this goal using the supplied income and event evidence. What uncertainties and alternatives matter?",
+    "expectation": "Unusual size remains review-worthy; an explicit pre-existing plan makes it expected and ample cash reduces disruption.",
+    "tags": [
+      "planned_holiday"
+    ]
+  },
+  {
+    "name": "missing_salary",
+    "question": "Assess this goal using the supplied income and event evidence. What uncertainties and alternatives matter?",
+    "expectation": "An established weekly credit is absent after its business-day grace window.",
+    "tags": [
+      "missing_salary"
+    ]
+  },
+  {
+    "name": "delayed_salary",
+    "question": "Assess this goal using the supplied income and event evidence. What uncertainties and alternatives matter?",
+    "expectation": "The regular credit arrives after grace; the missing episode becomes delayed, without another debit.",
+    "tags": [
+      "delayed_salary"
+    ]
+  },
+  {
+    "name": "reduced_salary",
+    "question": "Assess this goal using the supplied income and event evidence. What uncertainties and alternatives matter?",
+    "expectation": "A regular credit is 50% below its established amount, beyond the reduction tolerance.",
+    "tags": [
+      "reduced_salary"
+    ]
+  },
+  {
+    "name": "irregular_freelance",
+    "question": "Assess this goal using the supplied income and event evidence. What uncertainties and alternatives matter?",
+    "expectation": "Uneven timing and amounts do not establish a reliable missing-payday schedule.",
+    "tags": [
+      "irregular_freelance"
+    ]
+  },
+  {
+    "name": "persistent_essential_increase",
+    "question": "Assess this goal using the supplied income and event evidence. What uncertainties and alternatives matter?",
+    "expectation": "Several complete weeks of grocery costs exceed the prior weekly baseline.",
+    "tags": [
+      "persistent_essential_increase"
+    ]
+  },
+  {
+    "name": "affordable_unusual_purchase",
+    "question": "Assess this goal using the supplied income and event evidence. What uncertainties and alternatives matter?",
+    "expectation": "An unusual purchase against personal spending history; large liquid resources imply low disruption, expectedness unknown.",
+    "tags": [
+      "affordable_unusual_purchase"
+    ]
+  },
+  {
+    "name": "cash_straining_purchase",
+    "question": "Assess this goal using the supplied income and event evidence. What uncertainties and alternatives matter?",
+    "expectation": "The same unusual purchase consumes much more of available resources; expectedness remains unknown.",
+    "tags": [
+      "cash_straining_purchase"
+    ]
+  },
+  {
+    "name": "multiple_goals",
+    "question": "Consider my emergency fund as a higher priority than my holiday. Compare combined contributions without increasing the available capacity.",
+    "expectation": "Account for both goals, competing contributions and explicit priority; do not invent additional capacity or reallocate protected savings.",
+    "tags": [
+      "multiple"
+    ]
+  },
+  {
+    "name": "unrealistic_deadline",
+    "question": "Can I reach this goal by the requested deadline?",
+    "expectation": "Identify the lack of contribution periods and unreached target. Do not invent a lump sum; clarify or discuss a later date.",
+    "tags": [
+      "unachievable"
+    ]
+  },
+  {
+    "name": "no_material_change",
+    "question": "Hypothetically I contribute $600 each month. No financial circumstances changed. Is a change justified?",
+    "expectation": "Consider maintaining the feasible 600 monthly hypothesis; no change is a valid recommendation, without inventing an approved schedule.",
+    "tags": [
+      "no_change"
+    ]
+  },
+  {
+    "name": "protected_essentials",
+    "question": "I do not want to reduce groceries, health expenses or other essentials. What alternatives remain?",
+    "expectation": "Respect the refusal to cut essentials, discuss timing or contributions and uncertainty using the same constrained cashflow facts.",
+    "tags": [
+      "essentials",
+      "low_cash"
+    ]
+  }
+]

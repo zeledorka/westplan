@@ -1,0 +1,275 @@
+{
+  "scope": "Target-level review-worthy activity on 14 authored synthetic scenarios; unlabelled incidental events are reported separately.",
+  "not_real_world_accuracy": true,
+  "true_positives": 10,
+  "false_positives": 0,
+  "false_negatives": 0,
+  "true_negatives": 4,
+  "precision": 1.0,
+  "recall": 1.0,
+  "scenarios": [
+    {
+      "scenario": "emergency_vet",
+      "reason": "An explicitly annotated emergency and unusual essential debit; already reflected in cash.",
+      "label_positive": true,
+      "predicted_positive": true,
+      "expectedness_label": "unexpected",
+      "expectedness_observed": "unexpected",
+      "target_events": [
+        {
+          "event_ref": "b5a47347f57ee32b62751704",
+          "event_type": "transaction_anomaly",
+          "event_amount": 1850,
+          "detectors": [
+            "new_merchant_big_amount"
+          ],
+          "confidence": "higher",
+          "potential_disruption": "high",
+          "expectedness": "unexpected"
+        }
+      ],
+      "other_event_count": 1
+    },
+    {
+      "scenario": "planned_holiday",
+      "reason": "Unusual size remains review-worthy; an explicit pre-existing plan makes it expected and ample cash reduces disruption.",
+      "label_positive": true,
+      "predicted_positive": true,
+      "expectedness_label": "expected",
+      "expectedness_observed": "expected",
+      "target_events": [
+        {
+          "event_ref": "b5a47347f57ee32b62751704",
+          "event_type": "transaction_anomaly",
+          "event_amount": 2000,
+          "detectors": [
+            "new_merchant_big_amount"
+          ],
+          "confidence": "higher",
+          "potential_disruption": "low",
+          "expectedness": "expected"
+        }
+      ],
+      "other_event_count": 0
+    },
+    {
+      "scenario": "annual_insurance",
+      "reason": "An unchanged annual recurring premium is expected, without a new target anomaly.",
+      "label_positive": false,
+      "predicted_positive": false,
+      "expectedness_label": "expected",
+      "expectedness_observed": "expected",
+      "target_events": [],
+      "other_event_count": 0
+    },
+    {
+      "scenario": "ordinary_rent",
+      "reason": "An unchanged explicitly recurring rent debit is an ordinary obligation.",
+      "label_positive": false,
+      "predicted_positive": false,
+      "expectedness_label": "expected",
+      "expectedness_observed": "expected",
+      "target_events": [],
+      "other_event_count": 0
+    },
+    {
+      "scenario": "internal_transfer",
+      "reason": "Moving existing funds between own accounts is not new expense.",
+      "label_positive": false,
+      "predicted_positive": false,
+      "expectedness_label": null,
+      "expectedness_observed": null,
+      "target_events": [],
+      "other_event_count": 1
+    },
+    {
+      "scenario": "missing_salary",
+      "reason": "An established weekly credit is absent after its business-day grace window.",
+      "label_positive": true,
+      "predicted_positive": true,
+      "expectedness_label": null,
+      "expectedness_observed": "unknown",
+      "target_events": [
+        {
+          "event_ref": "bb42389e810de97b60e2fe27",
+          "event_type": "missing_income",
+          "event_amount": 1000.0,
+          "detectors": [
+            "income_schedule"
+          ],
+          "confidence": "higher",
+          "potential_disruption": "high",
+          "expectedness": "unknown"
+        }
+      ],
+      "other_event_count": 0
+    },
+    {
+      "scenario": "delayed_salary",
+      "reason": "The regular credit arrives after grace; the missing episode becomes delayed, without another debit.",
+      "label_positive": true,
+      "predicted_positive": true,
+      "expectedness_label": null,
+      "expectedness_observed": "unknown",
+      "target_events": [
+        {
+          "event_ref": "bb42389e810de97b60e2fe27",
+          "event_type": "delayed_income",
+          "event_amount": 1000.0,
+          "detectors": [
+            "income_schedule"
+          ],
+          "confidence": "higher",
+          "potential_disruption": "high",
+          "expectedness": "unknown"
+        }
+      ],
+      "other_event_count": 0
+    },
+    {
+      "scenario": "reduced_salary",
+      "reason": "A regular credit is 50% below its established amount, beyond the reduction tolerance.",
+      "label_positive": true,
+      "predicted_positive": true,
+      "expectedness_label": null,
+      "expectedness_observed": "unknown",
+      "target_events": [
+        {
+          "event_ref": "df5848154ee9c9945a923052",
+          "event_type": "reduced_income",
+          "event_amount": 500.0,
+          "detectors": [
+            "income_amount"
+          ],
+          "confidence": "higher",
+          "potential_disruption": "moderate",
+          "expectedness": "unknown"
+        }
+      ],
+      "other_event_count": 0
+    },
+    {
+      "scenario": "irregular_freelance",
+      "reason": "Uneven timing and amounts do not establish a reliable missing-payday schedule.",
+      "label_positive": false,
+      "predicted_positive": false,
+      "expectedness_label": null,
+      "expectedness_observed": null,
+      "target_events": [],
+      "other_event_count": 0
+    },
+    {
+      "scenario": "discretionary_burst",
+      "reason": "Twelve small same-day purchases exceed this account\u2019s normal daily frequency.",
+      "label_positive": true,
+      "predicted_positive": true,
+      "expectedness_label": null,
+      "expectedness_observed": "unknown",
+      "target_events": [
+        {
+          "event_ref": "d9ad81532c24352d50e3f65c",
+          "event_type": "activity_pattern",
+          "event_amount": 164,
+          "detectors": [
+            "burst",
+            "category_spike"
+          ],
+          "confidence": "higher",
+          "potential_disruption": "moderate",
+          "expectedness": "unknown"
+        }
+      ],
+      "other_event_count": 0
+    },
+    {
+      "scenario": "persistent_essential_increase",
+      "reason": "Several complete weeks of grocery costs exceed the prior weekly baseline.",
+      "label_positive": true,
+      "predicted_positive": true,
+      "expectedness_label": null,
+      "expectedness_observed": "unknown",
+      "target_events": [
+        {
+          "event_ref": "e1bb510db31c58210967b95e",
+          "event_type": "sustained_spending_change",
+          "event_amount": 5600,
+          "detectors": [
+            "large_single_spend",
+            "sustained_category"
+          ],
+          "confidence": "moderate",
+          "potential_disruption": "low",
+          "expectedness": "unknown"
+        }
+      ],
+      "other_event_count": 0
+    },
+    {
+      "scenario": "affordable_unusual_purchase",
+      "reason": "An unusual purchase against personal spending history; large liquid resources imply low disruption, expectedness unknown.",
+      "label_positive": true,
+      "predicted_positive": true,
+      "expectedness_label": "unknown",
+      "expectedness_observed": "unknown",
+      "target_events": [
+        {
+          "event_ref": "b5a47347f57ee32b62751704",
+          "event_type": "transaction_anomaly",
+          "event_amount": 500,
+          "detectors": [
+            "large_single_spend"
+          ],
+          "confidence": "higher",
+          "potential_disruption": "low",
+          "expectedness": "unknown"
+        }
+      ],
+      "other_event_count": 0
+    },
+    {
+      "scenario": "cash_straining_purchase",
+      "reason": "The same unusual purchase consumes much more of available resources; expectedness remains unknown.",
+      "label_positive": true,
+      "predicted_positive": true,
+      "expectedness_label": "unknown",
+      "expectedness_observed": "unknown",
+      "target_events": [
+        {
+          "event_ref": "b5a47347f57ee32b62751704",
+          "event_type": "transaction_anomaly",
+          "event_amount": 500,
+          "detectors": [
+            "large_single_spend"
+          ],
+          "confidence": "higher",
+          "potential_disruption": "high",
+          "expectedness": "unknown"
+        }
+      ],
+      "other_event_count": 1
+    },
+    {
+      "scenario": "overlapping_detectors",
+      "reason": "A single unusual purchase can trigger several methods but must retain one transaction-event identity.",
+      "label_positive": true,
+      "predicted_positive": true,
+      "expectedness_label": null,
+      "expectedness_observed": "unknown",
+      "target_events": [
+        {
+          "event_ref": "b5a47347f57ee32b62751704",
+          "event_type": "transaction_anomaly",
+          "event_amount": 2000,
+          "detectors": [
+            "large_single_spend",
+            "new_merchant_big_amount"
+          ],
+          "confidence": "higher",
+          "potential_disruption": "low",
+          "expectedness": "unknown"
+        }
+      ],
+      "other_event_count": 0
+    }
+  ]
+}
