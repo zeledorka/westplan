@@ -154,3 +154,30 @@ test('lost submission response preserves the request ID and recovers its existin
   assert.equal(p.getSnapshot().records[0].question, 'Original question')
   assert.equal(calls.filter(path => path === '/planner/assess').length, 1)
 })
+
+test('financial safety distinguishes unsafe recommendation from a passing alternative without enabling activation', async () => {
+  const { safetySummary } = await import('../src/api/planner.js')
+  const checked = { ...draft, safety_assessment: { status: 'REVISE', activation_allowed: true,
+    findings: [], strategies: [
+      { calculation_ref: 'calculation-1', status: 'PASS', findings: [] },
+      { calculation_ref: 'calculation-2', status: 'REVISE', findings: [{ code: 'NEGATIVE_PROJECTED_CASH', message: 'Cash comparison is negative.' }] },
+    ] } }
+  const options = calculatedOptions(checked)
+  assert.equal(options.find(o => o.recommended).safety.status, 'REVISE')
+  assert.equal(options[0].safety.status, 'PASS')
+  assert.equal(safetySummary(checked.safety_assessment).label, 'Needs revision')
+  assert.equal(safetySummary(checked.safety_assessment).actionable, false)
+  assert.equal(safetySummary({ status: 'PASS' }).actionable, false)
+  assert.equal(safetySummary(undefined).status, 'NOT_ASSESSED')
+  assert.equal(safetySummary({ status: 'unrecognised' }).status, 'NOT_ASSESSED')
+})
+
+test('safety revision progress and failure do not imply activation', async () => {
+  const { planningProgress, safetyRevisionMessage } = await import('../src/api/planner.js')
+  assert.equal(planningProgress({ progress: { status: 'checking_safety' } }), 'Checking financial safety.')
+  assert.equal(planningProgress({ progress: { status: 'rechecking_safety' } }), 'Rechecking revised plan.')
+  assert.match(planningProgress({ progress: { status: 'generating', stage: 'safety_tool_generation' } }), /Adjusting/)
+  assert.match(safetyRevisionMessage({ outcome: 'passed' }), /non-actionable draft/)
+  assert.match(safetyRevisionMessage({ outcome: 'still_requires_revision' }), /Could not produce/)
+  assert.match(safetyRevisionMessage({ outcome: 'interrupted' }), /preserved/)
+})

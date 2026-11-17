@@ -25,6 +25,7 @@ from planning.store import DemoStore, StaleState
 from planning.demo import demo_transactions, AS_OF
 from planning.calculation_tools import required_contribution
 from planning.gemini import GeminiTransport, PlannerError
+from planning.providers import configured_transport
 from planning.planner_service import PlannerService
 
 ROOT = Path(__file__).resolve().parent
@@ -134,7 +135,7 @@ def create_app(db_path=None, *, planner_transport=None):
     db_path = Path(db_path or os.environ.get('BANKING_DB', ROOT/'.runtime/banking.sqlite'))
     db_path.parent.mkdir(parents=True, exist_ok=True)
     store = DemoStore(db_path)
-    planner = PlannerService(store,planner_transport or GeminiTransport())
+    planner = PlannerService(store,planner_transport or configured_transport())
     app_planner = planner
     profiles = {u['user_id']:u for u in json.loads((ROOT/'data/mock_users.json').read_text())}
     ledger = {uid:load_transactions(ROOT/'data/mock_transactions.json', uid) for uid in profiles}

@@ -4,7 +4,7 @@
 
 The existing pipeline is retained: banking transactions → financial insights and shock events →
 privacy-minimised context v1.2 → one Gemini planner → read-only Python calculations →
-`draft_unverified` results. No independent Safety Checker is implemented. There is no route from
+`draft_unverified` results with independent deterministic MVP financial checks (see current policy below). There is no route from
 these drafts to approved goal changes, payments, transfers, subscriptions or account mutations.
 The existing `BankingService.propose_goal_change(source='planner')` guard is unchanged and still
 requires an independently configured validator. Draft IDs are absent from the existing approval
@@ -99,7 +99,7 @@ Only provider HTTP 503/504 errors are retried, with at most two retries for a fa
 Equal-jitter exponential backoff sleeps between half and all of a capped exponential delay:
 default ceilings are 1s, then 2s (4s cap). Each retry reuses that exact generation's conversation,
 completed Python results and configuration; it does not restart the assessment or replay tools.
-No retry occurs for 429, authentication/model/configuration errors, malformed output, other HTTP
+The later quota-interruption section supersedes this original policy for 429. No retry occurs for authentication/model/configuration errors, malformed output, other HTTP
 statuses or a local network timeout without a provider 503/504 response. Exhausted limits return
 an error rather than a fabricated recommendation.
 
@@ -407,9 +407,11 @@ remain capped at 30 seconds and clipped to the execution time remaining. A short
 loop is used in production; automated tests inject clocks/waits.
 
 Invalid credentials, unsupported models and invalid request schemas are not retried. A 429 is
-automatically retried only with valid Retry-After and no zero-quota evidence. Zero quota is never
-retried or made resumable. A nonzero rate limit without valid guidance is not automatically retried;
-checkpointed work can be resumed explicitly after a conservative 60-second minimum. A local network
+automatically retried for evidenced temporary limits or valid provider retry guidance, unless
+daily exhaustion, zero quota or an explicit project restriction is reported. Daily/zero quota
+retains checkpointed work for explicit resumption when availability changes. An unknown rate
+limit without valid guidance is not automatically retried; explicit resume has a conservative
+60-second minimum. See the quota-interruption section below for diagnostic details. A local network
 timeout is not automatically retried but can preserve a checkpoint for explicit resume. Provider,
 validation, cancellation and budget errors keep separate classifications and counters.
 
@@ -526,3 +528,123 @@ policy. Hypothetical/different future periods and negated statements are skipped
 unknown or ambiguous references/metrics are not guessed. Passing these checks does not select the
 best strategy, validate speculative income, establish affordability in all future periods or confer
 independent approval. Financial planning quality must be reported separately from technical validation.
+
+## Current independent Financial Safety Checker MVP
+
+This section supersedes historical statements that no independent checker exists. The checker is
+`planning/safety.py`, policy `financial-safety-mvp-1`. It is deterministic, read-only and independent
+of Gemini's self-assessment. `PlannerService` runs it after schema/narrative validation, before
+current-context/authorisation rechecks and draft persistence. The service supplies its own minimised
+context and the Python tool loop's authoritative ledger; no new endpoint accepts client financial
+facts or a client safety result. Assessment is persisted under `draft.safety_assessment`.
+
+Outcomes are per strategy and overall. Overall uses the worst proposed-strategy/global finding;
+one passing alternative cannot hide a failing recommendation. Findings carry an explainable code,
+outcome, severity, message and source numbers. The recommended strategy status is separate.
+
+- PASS: all applicable implemented checks completed with sufficient evidence. It is conditional on
+  the recorded facts and engine assumptions, not a guarantee of optimality or future affordability.
+- REVISE: aggregate monthly savings exceed stretch capacity; lie between comfortable/stretch without
+  established headroom; leave negative comparison cash, no monthly residual or cash below the source
+  buffer estimate; encounter income variability CV > 0.3; miss the evaluated deadline; or have a
+  declared outstanding/anticipated expense outside the evaluated projection. Outside-window expenses
+  are flagged without being invented as new debits. Paid expenses are not deducted again.
+- BLOCK: missing/non-finite/unsupported evidence, context/goal/reference mismatch, technical/narrative
+  invalidity, an unknown completion date, unfunded source obligations before new savings, uncovered
+  protected/designated balances, goal allocations not backed by designated savings, unknown account
+  restrictions, explicit essential-spending or unverified-funding dependencies,
+  or a deadline extension that conflicts with recorded preferences. Fewer than three observed complete
+  month buckets cannot PASS. Multi-goal totals are checked, but existing schedules are not recorded;
+  this MVP additionally blocks multi-goal PASS until those commitments can be established.
+
+Frequency normalisation, cash projection, reserve deductions and goal completion dates come from
+existing calculation outputs. The checker does not rerun financial tools or credit estimated
+spending reductions as certain funding. Monthly surplus is distinct from cash stock. The cash result
+is the existing contribution comparison on the short runway projection, not a complete future cash
+forecast; negative results need funding/timing revision, not a claim of inevitable future overdraft.
+The comfortable/stretched estimates and source buffer are contextual prototype policy inputs,
+not legal or mathematically absolute maximum contributions.
+
+AI activation is deliberately still disabled, including for PASS. The existing planner-source
+approval guard and manual user approval/versioning workflow are unchanged. Draft IDs are not
+inserted into executable proposals. New results remain `draft_unverified`; stale-context results
+are discarded by the existing service checks. Legacy drafts without an assessment display Not
+assessed, and stale history does not display a current PASS.
+
+Within the one-hour MVP, automatic safety revision is deferred (zero cycles, within the maximum of
+one). Narrative corrections and provider retries are unchanged and separate. Structured
+`revision_feedback` is persisted and included in the next explicitly requested conversation turn.
+That follow-up uses the existing planning tool loop; a changed schedule must have new Python
+calculation evidence and is checked again. No background inference is triggered by a safety finding.
+Within a technical wording correction, completed calculations remain reused. Cross-turn reuse of
+unchanged calculations is not added; explicit new assessments currently calculate their proposals
+again under current inputs. AI approval-path activation and automatic recalculation-aware safety
+revision are next steps, not partially enabled features.
+
+The existing planner UI shows overall and per-option PASS / REVISE / BLOCK labels, findings,
+capacity estimates and the separate cash/flow values. It never enables an activation button.
+Safety checks cannot establish undisclosed obligations, arbitrary natural-language funding claims
+or a complete future household budget; missing required data is blocked rather than guessed.
+
+## Current automatic safety revision
+
+This supersedes the MVP's deferred-automatic-revision statements above. Production assessments now
+invoke the same independent checker inside the existing agent after technical validation. PASS and
+BLOCK do not trigger a revision. REVISE supplies structured per-option findings, recommended versus
+alternative roles, currency/as-of/projection periods and authoritative numbers to Gemini. Gemini
+must reconsider the financial strategy, not merely claim safety in different prose.
+
+`GEMINI_MAX_SAFETY_REVISIONS=1` permits one cycle; accepted values are 0 or 1. It is independent of
+the two technical correction attempts and provider retries. A revision has up to two tool-generation
+rounds using the existing calculate_strategy/finish_planning tools, followed by a complete final
+proposal. Eight total function calls remain shared across initial planning and safety revision.
+The default `GEMINI_MAX_LOGICAL_GENERATIONS` is now 9 (accepted range 2–12): three initial tool rounds,
+one initial final, two shared narrative corrections, two safety tool rounds and one revised final.
+The 300-second deadline, 20 per-execution HTTP attempts, 40 per-session attempts and SDK attempts=1
+remain unchanged. Insufficient budget returns the original assessed non-actionable proposal/findings.
+
+Changed financial arguments produce new Python calculations and monotonically new references in the
+same ledger. Exact resolved requests (including frequency, pause, target, deadline, priority and
+hypothetical impacts) may reuse a completed calculation instead of replaying it. Previous results
+are never overwritten. A model-created calculation ref is rejected. Full schema/narrative/reference
+validation runs on the revised proposal, followed by the same independent checker; Gemini cannot
+supply or override that assessment. A still-failing revised proposal remains non-actionable.
+
+Drafts persist `safety_revision`: original/final proposal assessments, refs/new refs, revision count,
+outcome and failures. Checkpoints also preserve that state, processed tool-batch position, all prior
+calculations, signatures and pending generation config. A provider retry/resume continues the exact
+failed revision stage, rather than starting another safety cycle. Failed or interrupted requests
+retain public original findings separately from any completed draft; private checkpoint state is
+not exposed. Invalid revised output is not accepted as a draft. Stale-context and cancellation
+checks remain in place before publication. No new store table or second planning agent is used.
+
+UI statuses distinguish checking, adjusting, rechecking and an unsuccessful safety revision. The
+current revised proposal is shown with its independent findings; minimal history shows original
+and final outcomes plus new refs. AI activation remains disabled even after PASS. Exact reasoning
+quality and future affordability remain subject to the checker's documented MVP limitations.
+
+## Provider quota interruptions and resumption
+
+Google HTTP 429 handling inspects allowlisted `QuotaFailure` identifiers/values,
+`ErrorInfo` reasons and `RetryInfo.retryDelay`, alongside a valid `Retry-After`.
+Free-form errors, project subjects, consumer identifiers and financial data are not
+stored as provider diagnostics. Unknown quota type is reported as unknown.
+
+Explicit per-minute/per-second limits and unclassified errors with valid retry
+guidance use the existing bounded generation-level exponential backoff/jitter.
+Provider minimum delays are honoured. SDK retries remain disabled (`attempts=1`);
+provider retries do not consume narrative-correction or safety-revision allowances.
+If a wait exceeds the execution deadline, the pending call is checkpointed instead.
+
+Daily/zero-quota exhaustion does not automatically retry. The durable interrupted
+request retains its exact pending configuration, conversation, calculation ledger
+and safety findings. Explicit resume uses the existing request retry endpoint,
+wait gate, context/model checks and session caps. A confirmed requests-per-day
+quota uses the documented next midnight Pacific reset as an expected earliest
+reset, not a guarantee of availability. Zero quota has no inferred reset and
+requires quota availability to change. No billing settings are changed. Unknown
+429s require manual quota inspection before resuming. Never use a temporary
+session database for a live test that may need resumption.
+
+References: [Google rate limits](https://ai.google.dev/gemini-api/docs/rate-limits),
+[Google RetryInfo](https://cloud.google.com/php/docs/reference/common-protos/latest/Rpc.RetryInfo).

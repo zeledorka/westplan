@@ -45,7 +45,7 @@ class AgentResilienceTests(unittest.TestCase):
                 t.client.models.generate_content.side_effect=errors.APIError(429,details,response=httpx.Response(429,headers={'Retry-After':'10'}))
                 with self.assertRaises(PlannerError) as cm:t.generate([],types.GenerateContentConfig(),1000)
                 self.assertEqual(cm.exception.retryable,not zero)
-                self.assertEqual(cm.exception.resume_allowed,not zero)
+                self.assertTrue(cm.exception.resume_allowed) # Exhaustion still retains the checkpoint for explicit resumption.
                 self.assertEqual(cm.exception.retry_after_seconds,10)
 
     def test_retry_guidance_and_progress_preserve_correction(self):

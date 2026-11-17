@@ -102,16 +102,36 @@ export function createPlanner({ goalId, revision, scope, api = request, makeId =
 
 export function planningProgress(job) {
   const status = job?.status === 'connection_lost' ? 'connection_lost' : job?.progress?.status || job?.status
-  if (job?.cancel_requested || status === 'cancelling') return 'Cancellation requested. The current Google call may take up to 30 seconds to stop.'
+  if (job?.cancel_requested || status === 'cancelling') return 'Cancellation requested. Waiting for the current model request to return.'
   if (status === 'retrieving_completed') return 'The assessment already finished. Retrieving its validated draft.'
-  if (status === 'waiting') return `Gemini is temporarily unavailable. Waiting before the next attempt${job.progress?.next_retry_at ? ` at ${new Date(job.progress.next_retry_at * 1000).toLocaleTimeString()}` : ''}.`
-  if (status === 'retrying') return 'Gemini is temporarily unavailable. Retrying the current step; completed calculations are preserved.'
+  if (status === 'waiting') return `Waiting before the next model request${job.progress?.next_retry_at ? ` at ${new Date(job.progress.next_retry_at * 1000).toLocaleTimeString()}` : ''}.`
+  if (status === 'retrying') return 'The model provider is temporarily unavailable. Retrying the current step; completed calculations are preserved.'
   if (status === 'interrupted') return 'Planning was interrupted by provider availability or its finite deadline. You can explicitly resume it.'
   if (status === 'connection_lost') return 'Progress connection lost. The backend may still be running.'
-  return 'Gemini is generating and validating a draft using Python calculations.'
+  if (status === 'checking_safety') return 'Checking financial safety.'
+  if (status === 'rechecking_safety') return 'Rechecking revised plan.'
+  if (status === 'adjusting_safety' || job?.progress?.stage?.startsWith('safety_')) return 'Adjusting recommendation based on financial checks.'
+  return 'The model is generating and validating a draft using Python calculations.'
+}
+
+export function safetyRevisionMessage(revision) {
+  if (!revision) return ''
+  if (revision.outcome === 'passed') return 'Safety review complete. This remains a non-actionable draft.'
+  if (['failed', 'blocked', 'still_requires_revision', 'budget_exhausted', 'cancelled'].includes(revision.outcome)) return 'Could not produce a safe revised plan. Review the findings or explore alternatives.'
+  if (revision.outcome === 'interrupted') return 'Safety revision was interrupted. Original findings and completed calculations are preserved.'
+  return 'Adjusting recommendation based on financial checks.'
 }
 
 export function calculatedOptions(draft) {
   return draft.result.strategies.map(option => ({ ...option, recommended: option.calculation_ref === draft.result.recommended_ref,
+    safety: draft.safety_assessment?.strategies?.find(s => s.calculation_ref === option.calculation_ref),
     calculation: draft.calculations[option.calculation_ref] }))
+}
+
+export function safetySummary(assessment) {
+  const labels = { PASS: 'Passes implemented checks', REVISE: 'Needs revision', BLOCK: 'Cannot pass financial checks' }
+  const status = assessment?.status
+  return { status: labels[status] ? status : 'NOT_ASSESSED',
+    label: labels[status] || 'Not assessed by the financial checker',
+    findings: [...(assessment?.findings || [])], actionable: false }
 }

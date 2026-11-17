@@ -288,9 +288,9 @@ def correction_limit():
     """Small configurable ceiling; shared agent call/time budgets remain authoritative."""
     import os
     try:
-        value = int(os.getenv('GEMINI_MAX_CORRECTIONS', '2'))
+        value = int(os.getenv('GEMINI_MAX_CORRECTIONS', '4'))
     except (ValueError, OverflowError):
-        raise PlannerError('planner_configuration', 'Invalid GEMINI_MAX_CORRECTIONS; use 0, 1 or 2.', 503) from None
-    if not 0 <= value <= 2:
-        raise PlannerError('planner_configuration', 'Invalid GEMINI_MAX_CORRECTIONS; use 0, 1 or 2.', 503)
+        raise PlannerError('planner_configuration', 'Invalid GEMINI_MAX_CORRECTIONS; use an integer from 0 to 4.', 503) from None
+    if not 0 <= value <= 4:
+        raise PlannerError('planner_configuration', 'Invalid GEMINI_MAX_CORRECTIONS; use an integer from 0 to 4.', 503)
     return value

@@ -26,7 +26,7 @@ export default function GoalPlanner({ onBack }) {
     await mutate('/goals', { kind: f.get('kind'), target: Number(f.get('target')), allocated: Number(f.get('allocated')), deadline: f.get('deadline'), confirmed: true }, 'Goal created.')
   }
   return <div className="page"><header className="pagehead"><button className="backbtn" onClick={onBack}>← Back</button><h1>Goal planner</h1></header><div className="body grey">
-    <div className="card pad"><h3>AI proposes. Safety validates. You decide.</h3><p>Gemini can analyse goals and create provisional drafts. The independent Safety Checker is not implemented, so Gemini drafts cannot be approved or activated. Your manual goal workflow remains available.</p>{scenario !== 'customer' && <p className="small muted">The holiday goal is seeded demo data in a separate sandbox.</p>}</div>
+    <div className="card pad"><h3>AI proposes. Financial checks inform. You decide.</h3><p>The planner creates provisional drafts with independent financial-check findings. AI drafts cannot be approved or activated, even when the implemented checks pass. Your manual goal workflow remains available.</p>{scenario !== 'customer' && <p className="small muted">The holiday goal is seeded demo data in a separate sandbox.</p>}</div>
     <FinancialFacts />
     <ShockEvents />
     <GeminiPlanner />

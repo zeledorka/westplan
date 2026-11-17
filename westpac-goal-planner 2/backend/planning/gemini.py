@@ -1,8 +1,6 @@
 """Official Google SDK adapter. No SDK exceptions, requests or credentials are logged."""
 import os
 import math
-import re
-import json
 import time
 from email.utils import parsedate_to_datetime
 from dataclasses import dataclass
@@ -15,11 +13,13 @@ except ImportError:
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types, errors
+from .quota import quota_guidance
 
 class PlannerError(Exception):
-    def __init__(self, code, message, status=502, *, upstream_status=None, retry_after_seconds=None, retryable=None, resume_allowed=None):
+    def __init__(self, code, message, status=502, *, upstream_status=None, retry_after_seconds=None, retryable=None, resume_allowed=None, provider_details=None):
         self.code,self.message,self.status=code,message,status
         self.upstream_status=upstream_status
+        self.provider_details=provider_details
         self.retry_after_seconds=retry_after_seconds
         self.retryable=upstream_status in {503,504} if retryable is None else retryable
         self.resume_allowed=self.retryable if resume_allowed is None else resume_allowed
@@ -77,11 +77,8 @@ def retry_after(response, now=None):
             if stamp.tzinfo is None:return None
             seconds=max(0,stamp.timestamp()-(time.time() if now is None else now))
         except (ValueError,TypeError,OverflowError):return None
-    return seconds if math.isfinite(seconds) and 0<=seconds<=86400 else None
+    return seconds if math.isfinite(seconds) and 0<=seconds else None
 
-
-def zero_quota(details):
-    return bool(re.search(r'(?:limit|quotaValue)[\"\':=\s]+0(?:\D|$)',json.dumps(details)))
 
 
 class GeminiTransport:
@@ -110,7 +107,13 @@ class GeminiTransport:
             if code in {408,504}:
                 raise PlannerError('planner_timeout','Gemini timed out. Your goals have not changed.',504,upstream_status=code,retry_after_seconds=guidance) from None
             if code==429:
-                raise PlannerError('planner_rate_limited','Gemini quota or rate limit reached. Wait before trying again; zero quota requires a project/quota change.',429,upstream_status=429,retry_after_seconds=guidance,retryable=guidance is not None and not zero_quota(exc.details),resume_allowed=not zero_quota(exc.details)) from None
+                headers=getattr(getattr(exc,'response',None),'headers',{}) or {}
+                diagnostic,can_retry,delay=quota_guidance(exc.details,guidance,
+                    header_present='retry-after' in {str(k).lower() for k in headers})
+                raise PlannerError('planner_rate_limited',
+                    'Gemini quota or rate limit reached. Completed work is checkpointed; resume when quota is available.',
+                    429,upstream_status=429,retry_after_seconds=delay,retryable=can_retry,
+                    resume_allowed=True,provider_details=diagnostic) from None
             if code in {401,403,404}:
                 raise PlannerError('planner_configuration','Gemini rejected the configured key or model. Check the backend configuration.',503,upstream_status=code,retryable=False) from None
             raise PlannerError('planner_provider_error','Gemini is temporarily unavailable. No recommendation was substituted.',502,upstream_status=code,retry_after_seconds=guidance) from None

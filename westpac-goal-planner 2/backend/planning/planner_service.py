@@ -10,6 +10,8 @@ from .gemini import PlannerError, GenerationRetryPolicy, execution_deadline, bou
 from .proposal_validation import correction_limit
 from .checkpoint import unpack
 from .planner_store import PlannerStore
+from .safety import assess_draft, POLICY_VERSION
+from .safety_revision import safety_revision_limit
 from .store import StaleState
 from finstats.contracts import CATEGORIES
 
@@ -23,8 +25,9 @@ class PlannerService:
 
     def status(self):
         policy=GenerationRetryPolicy.from_environment()
-        return {'available':self.transport.available,'model':self.transport.model,'draft_only':True,
-                'independent_checker_available':False,'maximum_model_calls':bounded_setting('GEMINI_MAX_LOGICAL_GENERATIONS',6,2,8),'maximum_tool_calls':8,
+        return {'available':self.transport.available,'model':self.transport.model,'provider':getattr(self.transport,'provider','test_transport'),'minimum_request_interval_seconds':bounded_setting('PLANNER_MIN_REQUEST_INTERVAL_SECONDS',5,0,60),'draft_only':True,
+                'independent_checker_available':True,'safety_policy_version':POLICY_VERSION,'automatic_safety_revision':safety_revision_limit()>0,'maximum_safety_revisions':safety_revision_limit(),'ai_activation_enabled':False,
+                'maximum_model_calls':bounded_setting('GEMINI_MAX_LOGICAL_GENERATIONS',11,2,12),'maximum_tool_calls':8,
                 'maximum_generation_attempts':policy.max_attempts,'maximum_retries_per_call':policy.max_retries,
                 'execution_deadline_seconds':execution_deadline(),'maximum_session_generation_attempts':bounded_setting('GEMINI_MAX_SESSION_ATTEMPTS',40,1,96),'maximum_explicit_resumes':bounded_setting('GEMINI_MAX_RESUMES',2,0,3),'maximum_correction_attempts':correction_limit()}
 
@@ -55,13 +58,13 @@ class PlannerService:
         if claimed and previous.get('financial_version') and previous['financial_version']!=context['state_version']:
             self.store.alter(customer,request_id,lambda r:{**r,'status':'stale','checkpoint':None,'error':{'code':'stale_state','message':'Financial facts or goal versions changed. Start a new assessment.','status':409}})
             raise StaleState('Financial facts or goal versions changed. Start a new assessment.')
-        if claimed and previous.get('model') and previous['model']!=self.transport.model:
+        if claimed and (previous.get('model') and previous['model']!=self.transport.model or previous.get('provider',getattr(self.transport,'provider',None))!=getattr(self.transport,'provider',None)):
             raise PlannerError('planner_configuration','The configured model changed; start a fresh assessment.',409)
         history=[r for r in self.store.history(customer,session_id) if r['request_id']!=request_id] if session_id else []
         if session_id and (not history or any(r['goal_id']!=goal_id for r in history)):
             raise ValueError('Unknown planning session for this goal and customer')
         if len(history)>=6: raise PlannerError('planner_limit','This session reached six turns. Start a new assessment.',429)
-        if not self.transport.available: raise PlannerError('planner_unconfigured','Gemini is not configured on the backend. Banking and manual goals remain available.',503)
+        if not self.transport.available: raise PlannerError('planner_unconfigured','The selected model provider is not configured on the backend. Banking and manual goals remain available.',503)
         now=time.time()
         if self.store.count_recent(customer,now-3600,request_id)>=12 or self.cooldown and self.store.count_recent(customer,now-self.cooldown,request_id):
             raise PlannerError('planner_rate_limited','Please wait before requesting more planning. This demo allows twelve turns per hour.',429)
@@ -74,6 +77,7 @@ class PlannerService:
             if row['status']!='draft_unverified': continue
             draft=row['draft']
             recent.append({'question':row['question'],'answer':draft['result']['answer'][:1200],
+                'independent_safety_feedback':draft.get('safety_assessment',{}).get('revision_feedback'),
                 'strategies':[{'title':option['title'],'rationale':option['rationale'][:800],
                     'plans':[{k:plan[k] for k in ('goal_ref','contribution','frequency','pause_months','target','deadline','completion_date')}
                              for plan in draft['calculations'][option['calculation_ref']]['plans']]}
@@ -88,7 +92,7 @@ class PlannerService:
         record={**(previous if claimed else {}),'session_id':session_id,'request_id':request_id,'goal_id':goal_id,'intent':intent,
                 'created_at':now,'question':question,'financial_version':context['state_version']}
         record['request_input']={'goal_id':goal_id,'question':question,'request_id':request_id,'expected_revision':expected_revision,'session_id':input_session_id,'protected_categories':list(protected_categories)}
-        record.update(status='running',run_id=_run_id or uuid4().hex,model=self.transport.model,
+        record.update(status='running',run_id=_run_id or uuid4().hex,model=self.transport.model,provider=getattr(self.transport,'provider','test_transport'),
                       deadline_at=time.time()+max(0,deadline-time.monotonic()),lease_until=time.time()+45)
         run_id=record['run_id']
         # Claim synchronous requests too, so duplicate requests cannot repeat tool work.
@@ -121,7 +125,11 @@ class PlannerService:
         agent=None
         try:
             agent=GeminiPlanner(self.transport,timeout_seconds=max(0,deadline-time.monotonic()))
-            draft=agent.run(context,goal_ref=ref,question=question,history=recent,supplement=supplement,checkpoint=previous.get('checkpoint') if claimed else None,on_checkpoint=checkpoint,on_progress=progress,cancelled=cancelled)
+            def checker(candidate):
+                return assess_draft(candidate,context,candidate['baseline_calculations'],expected_goal_ref=ref)
+            draft=agent.run(context,goal_ref=ref,question=question,history=recent,supplement=supplement,checkpoint=previous.get('checkpoint') if claimed else None,on_checkpoint=checkpoint,on_progress=progress,cancelled=cancelled,safety_checker=checker)
+            draft['activation_allowed']=False  # PASS does not bypass the existing approval guard.
+            draft['metadata']['safety_status']=draft['safety_assessment']['status']
             # Recheck both authorised UI scope and actual context after the network call.
             if not still_authorised() or bank.planning_context(customer)['state_version']!=context['state_version']:
                 raise StaleState('Customer, scenario or financial facts changed during planning. Reassess with current information.')
@@ -130,14 +138,17 @@ class PlannerService:
             draft.update(session_id=session_id,request_id=request_id,goal_id=goal_id,goal_version=state['goals'][goal_id]['version'],
                          goal_versions={k:v['version'] for k,v in state['goals'].items()})
             if cancelled():raise PlannerError('planner_cancelled','Planning cancelled. Your goals have not changed.',409)
+            record.pop('safety_revision',None);record.pop('error',None)
             record.update(status='draft_unverified',draft=draft,checkpoint=None,progress={'status':'completed'})
             self.store.save(customer,record)
             return draft
         except StaleState:
+            if agent and agent.last_safety_revision:record['safety_revision']=agent.last_safety_revision
             record.pop('draft',None);record.update(status='stale',checkpoint=None,progress={'status':'stale'},error={'code':'stale_state','message':'Financial context or authorisation changed. Start a fresh assessment.','status':409})
             self.store.save(customer,record)
             raise
         except PlannerError as exc:
+            if agent and agent.last_safety_revision:record['safety_revision']=agent.last_safety_revision
             current=self.store.request(customer,request_id) or record
             cp=getattr(agent,'last_checkpoint',None) if agent else current.get('checkpoint')
             interrupted=bool(cp and (exc.resume_allowed or exc.code=='planner_limit'))
@@ -145,11 +156,12 @@ class PlannerService:
                 saved=unpack(cp['state'])
                 if not saved['pending'] and not (saved['ready'] and exc.code=='planner_limit' and agent.last_metrics['final_outcome']=='budget_exhausted'):interrupted=False
                 if saved['pending'] and saved['metrics']['model_calls']>=bounded_setting('GEMINI_MAX_SESSION_ATTEMPTS',40,1,96):interrupted=False
+                if agent and saved['metrics']['tool_calls']>agent.max_tool_calls:interrupted=False
             record={**record,'checkpoint':cp if interrupted else None}
             record.pop('draft',None)
             status='cancelled' if exc.code=='planner_cancelled' else 'interrupted' if interrupted else 'failed'
             error={'code':exc.code,'message':exc.message,'status':exc.status,'upstream_status':exc.upstream_status,
-                   'retry_after_seconds':exc.retry_after_seconds,'retryable':exc.retryable,'resume_allowed':exc.resume_allowed}
+                   'retry_after_seconds':exc.retry_after_seconds,'retryable':exc.retryable,'resume_allowed':exc.resume_allowed,'provider_details':exc.provider_details}
             reason='deadline_reached' if time.monotonic()>=deadline else 'provider_wait_exceeds_deadline' if exc.code=='planner_limit' and exc.retry_after_seconds else 'attempt_budget_exhausted' if exc.code=='planner_limit' else 'provider_unavailable' if interrupted else 'validation_or_permanent_failure'
             record.update(status=status,error=error,progress={'status':status,'reason':reason},
                           retry_not_before=time.time()+(exc.retry_after_seconds or (60 if exc.upstream_status==429 else 0)),
@@ -169,7 +181,7 @@ class PlannerService:
         records=self.store.history(customer,session_id)
         return {'sessions':[{'session_id':r['session_id'],'request_id':r['request_id'],'goal_id':r['goal_id'],
                 'question':r['question'],'status':r['status'],'draft':r.get('draft'),
-                'error':r.get('error'),'progress':r.get('progress',{}),'resumable':r['status']=='interrupted' and bool(r.get('checkpoint')),'stale':r['financial_version']!=context['state_version']} for r in records],
+                'error':r.get('error'),'safety_revision':r.get('safety_revision'),'progress':r.get('progress',{}),'resumable':r['status']=='interrupted' and bool(r.get('checkpoint')),'stale':r['financial_version']!=context['state_version']} for r in records],
                 'financial_version':context['state_version']}
 
     def draft(self, bank, customer, draft_id):
@@ -193,7 +205,8 @@ class PlannerService:
         public={'request_id':request_id,'session_id':record['session_id'],'goal_id':record['goal_id'],
                 'status':'completed' if record['status']=='draft_unverified' else record['status'],
                 'progress':record.get('progress',{}),'deadline_at':record.get('deadline_at'),
-                'error':record.get('error'),'stale':stale,'resumable':record['status']=='interrupted' and bool(record.get('checkpoint')) and not stale and record.get('resume_count',0)<bounded_setting('GEMINI_MAX_RESUMES',2,0,3),
+                'error':record.get('error'),'retry_not_before':record.get('retry_not_before'),'stale':stale,'resumable':record['status']=='interrupted' and bool(record.get('checkpoint')) and not stale and record.get('resume_count',0)<bounded_setting('GEMINI_MAX_RESUMES',2,0,3),
+                'safety_revision':record.get('safety_revision'),
                 'cancel_requested':bool(record.get('cancel_requested')),'poll_after_ms':5000 if record.get('progress',{}).get('status')=='waiting' else 2500}
         if record.get('draft'):public['draft']={**record['draft'],'stale':stale}
         return public
@@ -205,7 +218,7 @@ class PlannerService:
         if body['expected_revision']!=revision:raise StaleState('Financial state changed. Refresh before planning.')
         if body['goal_id'] not in state['goals']:raise ValueError('Unknown selected goal')
         if not body['question'].strip() or len(body['question'])>1600 or not request_id or len(request_id)>80:raise ValueError('Invalid planning request')
-        if not self.transport.available:raise PlannerError('planner_unconfigured','Gemini is not configured.',503)
+        if not self.transport.available:raise PlannerError('planner_unconfigured','The selected model provider is not configured.',503)
         if not set(body.get('protected_categories',()))<=CATEGORIES:raise ValueError('Unknown temporary protected category')
         body={**body,'question':private_text(body['question'])}
         intent=sha256(json.dumps([body['goal_id'],body['question'],body.get('session_id'),sorted(body.get('protected_categories',()))]).encode()).hexdigest()

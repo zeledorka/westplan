@@ -4,7 +4,9 @@ import json
 from pathlib import Path
 import time
 from planning.agent import GeminiPlanner
-from planning.gemini import GeminiTransport,PlannerError
+from planning.gemini import PlannerError
+from planning.providers import configured_transport
+from planning.safety import assess_draft
 from .planner_scenarios import cases,review
 
 
@@ -20,15 +22,17 @@ def main():
     all_cases=cases()
     (target/'expectations.json').write_text(json.dumps([{k:v for k,v in c.items() if k!='context'} for c in all_cases],indent=2)+'\n')
     if not args.live:
-        print('Wrote authored quality expectations. No Gemini API calls were made.');return
+        print('Wrote authored quality expectations. No model API calls were made.');return
     selected=[c for c in all_cases if c['name'] in args.cases]
     if len(selected)!=len(set(args.cases)):p.error('Unknown quality case')
-    transport=GeminiTransport();results=[]
+    transport=configured_transport();results=[]
     for index,case in enumerate(selected):
         if index and args.interval>0: time.sleep(min(60,args.interval))
         agent=GeminiPlanner(transport)
         try:
-            draft=agent.run(case['context'],goal_ref='goal-1',question=case['question'])
+            draft=agent.run(case['context'],goal_ref='goal-1',question=case['question'],
+                safety_checker=lambda d:assess_draft(d,case['context'],d['baseline_calculations'],expected_goal_ref='goal-1'),
+                on_checkpoint=lambda state:(target/(case['name']+'.checkpoint.json')).write_text(json.dumps(state,allow_nan=False)+'\n'))
             (target/(case['name']+'.json')).write_text(json.dumps(draft,indent=2,allow_nan=False)+'\n')
             result={**review(case,draft),'live':True,'generated':True,'metadata':draft['metadata']}
         except PlannerError as exc:
