@@ -12,7 +12,7 @@ from pydantic import ValidationError
 from .proposal_validation import validate_proposal, ProposalValidationError
 from .narrative import clauses
 
-POLICY_VERSION='financial-safety-mvp-1'
+POLICY_VERSION='financial-safety-mvp-4-dated-cash-funded'
 RANK={'PASS':0,'REVISE':1,'BLOCK':2}
 
 
@@ -44,8 +44,8 @@ def assess_draft(draft, context, calculation_ledger, *, expected_goal_ref):
             'automatic_revision_supported':False,'safety_revision_attempts':0,
             'limitations':[
                 'Checks cover recorded goals and source evidence, not undisclosed liabilities or guaranteed future income.',
-                'Cash is the existing one-month contribution comparison on the runway projection, not a full future funding forecast.',
-                'Current contribution schedules are not recorded; multi-goal commitments cannot be fully verified.',
+                'Liquidity uses a bounded dated forecast with explicit income/spending estimates; later affordability remains uncertain.',
+                'Multi-goal checks require recorded contribution schedules for every goal.',
                 'AI activation is disabled; bounded automatic revision is governed by the planner, not the checker.']}
     try:
         return _assess(draft,context,calculation_ledger,expected_goal_ref,result)
@@ -101,7 +101,17 @@ def _assess(draft,context,ledger,expected_goal_ref,result):
     if months<3:
         result['findings'].append(finding('INSUFFICIENT_OBSERVATION','BLOCK','At least three observed complete-month buckets are required by this MVP.',{'complete_months':months}))
     if len(goals)>1:
-        result['findings'].append(finding('UNKNOWN_EXISTING_GOAL_COMMITMENTS','BLOCK','All proposed goals are checked together, but existing contribution schedules are not recorded. Confirm existing commitments before proceeding.',{'recorded_goals':len(goals)}))
+        schedules=context.get('recorded_goal_schedules',[])
+        refs=[s.get('goal_ref') for s in schedules]
+        known=(len(refs)==len(set(refs)) and set(refs)==set(goals)
+               and all('contribution' in s and 'frequency' in s for s in schedules))
+        if known:
+            from .agent_models import GoalPlan
+            for s in schedules:
+                GoalPlan.model_validate({k:s[k] for k in ('goal_ref','contribution','frequency','pause_months') if k in s})
+        if not known:
+            result['findings'].append(finding('UNKNOWN_EXISTING_GOAL_COMMITMENTS','BLOCK',
+                'Record and assess existing contribution commitments before approving multiple goals.',{'recorded_goals':len(goals)}))
     if projected<0:
         result['findings'].append(finding('UNFUNDED_KNOWN_OBLIGATIONS','BLOCK','The source projection is already negative after known obligations, before new savings.',{'projected_after_known_obligations':projected,'confirmed_pending_due':pending,'recurring_due':recurring},'critical'))
     preferences=context['preferences']
@@ -138,7 +148,7 @@ def _assess(draft,context,ledger,expected_goal_ref,result):
         if round(sum(number(p['monthly_equivalent']) for p in plans),2)!=monthly:raise ValueError('Aggregate mismatch')
         comparison=calc['one_month_comparison'];residual=number(comparison['monthly_surplus_after_contribution']);liquid=number(comparison['liquid_after_pending_reserve_and_contribution'])
         row['evidence']={'currency':context['currency'],'as_of':context['as_of'],'runway_window_end':runway['window_end'],
-            'cash_basis':'Existing one-month contribution comparison; not a complete dated future forecast.',
+            'cash_basis':'Dated liquidity drives safety; the legacy scalar cash figure is diagnostic only.',
             'proposed_monthly':monthly,'immediate_monthly':immediate,'comfortable_capacity_monthly':comfortable,'stretch_capacity_monthly':stretch,
             'current_cash_balance':current,'cash_after_known_obligations':projected,'cash_after_contribution':liquid,
             'monthly_surplus_after_contribution':residual,'historical_monthly_essential':essential,
@@ -146,34 +156,91 @@ def _assess(draft,context,ledger,expected_goal_ref,result):
             'income_variability_cv':variability}
         row['evidence'].update(hypothetical_additional_expense=number(calc['hypothetical_additional_expense']),
                               hypothetical_additional_missing_income=number(calc['hypothetical_additional_missing_income']))
-        if monthly>stretch:
-            findings.append(finding('EXCEEDS_STRETCH_CAPACITY','REVISE','Proposed aggregate monthly savings exceed the calculated stretch capacity.',{'proposed_monthly':monthly,'stretch_capacity_monthly':stretch}))
-        elif monthly>comfortable:
-            findings.append(finding('HEADROOM_NOT_ESTABLISHED','REVISE','The contribution is between comfortable and stretch capacity. This MVP cannot establish sufficient headroom.',{'proposed_monthly':monthly,'comfortable_capacity_monthly':comfortable,'stretch_capacity_monthly':stretch},'medium'))
-        if liquid<0:
-            findings.append(finding('NEGATIVE_PROJECTED_CASH','REVISE','The existing cash comparison is negative after obligations, reserve and proposed savings. Funding/timing needs revision.',{'projected_cash':liquid,'cash_after_known_obligations':projected},'critical'))
-        elif immediate>0 and liquid<number(runway['buffer']):
-            findings.append(finding('LOW_CASH_HEADROOM','REVISE','The cash comparison is below the source engine buffer estimate. Confirm sufficient flexibility.',{'cash_after_contribution':liquid,'source_buffer_estimate':runway['buffer']},'medium'))
-        if residual<=0 and monthly>0:
+        cash_backed=False
+        dated=calc.get('dated_cashflow',{})
+        if not dated.get('available'):
+            findings.append(finding('DATED_EVIDENCE_UNAVAILABLE','BLOCK','Dated liquidity evidence is incomplete.',{'reasons':dated.get('reasons',[])}))
+        else:
+            from finstats.dated_cashflow import project_schedule, cash_funded_stress
+            from .agent_tools import add_months
+            from datetime import timedelta
+            as_of=date.fromisoformat(context['as_of']);dates={}
+            source=context.get('dated_cashflow_evidence',{})
+            if (source.get('as_of')!=context['as_of'] or number(source['starting_balance'])!=number(funding[0]['balance'])
+                    or number(source['protected_reserve'])!=number(funding[0]['protected']) or number(runway['balance'])!=number(funding[0]['balance'])
+                    or not 0<=(date.fromisoformat(source['end'])-as_of).days<=90):
+                raise ValueError('Dated source facts do not match authorised balances/date')
+            for p in plans:
+                from .agent_tools import strategy_dates
+                candidates,anchor=strategy_dates(context,p['goal_ref'],p['contribution'],p['frequency'],p['pause_months'])
+                if p.get('schedule_as_of')!=anchor.isoformat():raise ValueError('Schedule anchor mismatch')
+                dates[p['goal_ref']]=[d for d in candidates if d.isoformat()<=p['deadline']]
+            verified=project_schedule(context.get('dated_cashflow_evidence',{}),plans,dates,
+                runway_end=runway['window_end'],hypothetical_impact=calc['hypothetical_additional_expense']+calc['hypothetical_additional_missing_income'])
+            if verified!=dated:raise ValueError('Dated cashflow evidence mismatch')
+            stress=cash_funded_stress(source,plans,dates,runway_end=runway['window_end'],
+                hypothetical_impact=calc['hypothetical_additional_expense']+calc['hypothetical_additional_missing_income'])
+            if stress!=calc.get('cash_funded_stress'):raise ValueError('Cash-funded stress evidence mismatch')
+            volatility=number(cash['savings_capacity']['sigma_w'])
+            if volatility<0:raise ValueError('Invalid volatility reserve')
+            cash_backed=(monthly>0 and context.get('funding_confirmation',{}).get('reserves_confirmed') is True
+                and stress.get('available') is True and stress['full_schedule_covered'] is True
+                and stress['minimum_cash']>=stress['buffer']+volatility)
+            row['evidence']['cash_funded_stress']=stress
+            row['evidence']['finite_cash_funded_schedule']=cash_backed
+            row['evidence']['dated_cashflow']=dated
+            row['evidence']['legacy_scalar_cash_comparison']=liquid
+            row['evidence']['cash_after_contribution']=dated['minimum_cash']
+            if dated['minimum_cash']<0:
+                findings.append(finding('NEGATIVE_DATED_CASH','REVISE','Projected cash becomes negative on an evaluated date.',
+                    {'date':dated['minimum_date'],'cash':dated['minimum_cash']},'critical'))
+            elif monthly>0 and dated['minimum_cash']<dated['buffer']:
+                findings.append(finding('LOW_DATED_HEADROOM','REVISE','Dated cash falls below the retained liquidity buffer.',
+                    {'date':dated['minimum_date'],'cash':dated['minimum_cash'],'buffer':dated['buffer']}))
+        if monthly>0 and not cash['savings_capacity'].get('volatility_established',False):
+            findings.append(finding('VOLATILITY_EVIDENCE_INSUFFICIENT','BLOCK','Too few smoothed observations to establish volatility.'))
+        if monthly>0 and not cash_backed and not context.get('dated_cashflow_evidence',{}).get('income_evidence'):
+            findings.append(finding('RELIABLE_FUNDING_INCOME_UNAVAILABLE','BLOCK','Ongoing contributions need supported funding-account income or a complete current-cash proof.'))
+        if not cash_backed:
+            if monthly>stretch:
+                findings.append(finding('EXCEEDS_STRETCH_CAPACITY','REVISE','Proposed aggregate monthly savings exceed the calculated stretch capacity.',{'proposed_monthly':monthly,'stretch_capacity_monthly':stretch}))
+            elif monthly>comfortable:
+                findings.append(finding('HEADROOM_NOT_ESTABLISHED','REVISE','The contribution is between comfortable and stretch capacity. This MVP cannot establish sufficient headroom.',{'proposed_monthly':monthly,'comfortable_capacity_monthly':comfortable,'stretch_capacity_monthly':stretch},'medium'))
+        else:
+            findings.append(finding('FINITE_CASH_FUNDED_SCHEDULE','PASS','The complete finite schedule is backed by current cash without future income, while retaining confirmed reserves, the liquidity buffer and observed volatility allowance.',{'minimum_stress_cash':stress['minimum_cash'],'required_headroom':stress['buffer']+volatility,'through':stress['end']}))
+        # Legacy scalar comparison remains visible for compatibility, but cannot reject a
+        # contribution before its due date. Dated results above drive liquidity findings.
+        if residual<=0 and monthly>0 and not cash_backed:
             findings.append(finding('NO_MONTHLY_HEADROOM','REVISE','The proposed savings leave no positive monthly flow headroom for variation.',{'monthly_surplus_after_contribution':residual},'medium'))
-        if variability>.3 and monthly>0:
+        if variability>.3 and monthly>0 and not cash_backed:
             findings.append(finding('VARIABLE_INCOME_HEADROOM','REVISE','Observed income variability is high; this MVP cannot establish reliable contribution headroom.',{'income_variability_cv':variability,'mvp_caution_threshold':.3},'medium'))
         for p in plans:
             g=goals[p['goal_ref']]
+            if p['target']==p['allocated'] and p['contribution']>0:raise ValueError('A fully funded goal cannot require new regular contributions')
             if p['allocated']!=g['allocated'] or p['frequency'] not in {'monthly','fortnightly'}:raise ValueError('Unsupported source plan')
-            for key in ('contribution','required_per_period','target','allocated','monthly_equivalent'):
+            incomplete_pause=('required_per_period' in p and p['required_per_period'] is None
+                and dated.get('available') is True and type(p.get('periods')) is int and p['periods']==0
+                and not dates[p['goal_ref']] and p['completion_date'] is None
+                and p['meets_deadline'] is False and p['pause_months']>0)
+            for key in ('contribution','target','allocated','monthly_equivalent'):
                 if number(p[key])<0:raise ValueError('Invalid source amount')
+            if not incomplete_pause and number(p['required_per_period'])<0:raise ValueError('Invalid required contribution')
             if type(p['meets_deadline']) is not bool:raise ValueError('Unknown feasibility')
             date.fromisoformat(p['deadline'])
             if p['completion_date'] is None:
-                findings.append(finding('UNKNOWN_COMPLETION','BLOCK','The calculation cannot establish a completion date for this option.',{'goal_ref':p['goal_ref']}))
+                if incomplete_pause:
+                    findings.append(finding('INCOMPLETE_OPTION_SCHEDULE','REVISE',
+                        'This pause leaves no contribution dates, required payment or completion evidence. Remove this option or calculate a supported schedule.',
+                        {'goal_ref':p['goal_ref'],'deadline':p['deadline'],'periods':0,'required_per_period':None,'completion_date':None,'pause_months':p['pause_months']}))
+                else:
+                    findings.append(finding('UNKNOWN_COMPLETION','BLOCK','The calculation cannot establish a completion date for this option.',{'goal_ref':p['goal_ref']}))
             elif not p['meets_deadline']:
                 findings.append(finding('MISSES_EVALUATED_DEADLINE','REVISE','The calculated schedule misses its evaluated deadline. A sufficient deadline change requires a matching calculation and explicit later approval.',{'goal_ref':p['goal_ref'],'completion_date':p['completion_date'],'evaluated_deadline':p['deadline'],'required_per_period':p['required_per_period'],'proposed_per_period':p['contribution']}))
             if p['completion_date'] is not None:date.fromisoformat(p['completion_date'])
             if p['deadline']>g['deadline'] and not preferences['allow_deadline_extension']:
                 findings.append(finding('DEADLINE_PREFERENCE_CONFLICT','BLOCK','The proposed deadline extension conflicts with the recorded user preference.'))
         protected='|'.join(re.escape(c) for c in preferences['protected_categories'])
-        essentials='rent|mortgage|utilities|groceries|essential|debt payment'+('|'+protected if protected else '')
+        essentials='rent|mortgage|utilities|groceries|essential|debt payment|bnpl|loan repayment|credit card repayment'+('|'+protected if protected else '')
         patterns=[('ESSENTIAL_SPENDING_DEPENDENCY',r'\b(?:cut|reduce|skip|cancel|defer)\b.*?\b(?:'+essentials+r')\b',
                    'This option explicitly depends on reducing or deferring essential obligations. No validated reduction is established.'),
                   ('UNVERIFIED_FUNDING',r'\b(?:assume|rely|use|fund|tap)\w*\b.*?\b(?:bonus|extra income|additional income|external funding|protected reserves|emergency savings)\b',

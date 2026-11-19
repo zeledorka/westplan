@@ -15,7 +15,7 @@ from .agent_models import CalculationRequest, PlannerResult
 from .agent_tools import PlanningTools, calculation_error
 from .gemini import PlannerError, GenerationRetryPolicy, execution_deadline, bounded_setting
 from .financial_facts import financial_facts
-from .safety_revision import safety_revision_limit, signature, completed_signature, safety_feedback
+from .safety_revision import safety_revision_limit, signature, completed_signature, safety_feedback, revision_eligible
 from .proposal_validation import (validate_proposal, ProposalValidationError, Category,
                                   date_facts, deadline_issue, text_fields, correction_limit)
 
@@ -31,7 +31,7 @@ expense twice, add an existing pending bill twice, invent income, or treat an an
 Compare all goals together. Do not assume emergency savings are available to fund another goal.
 Current contribution schedules and priorities may be unrecorded: say so; use hypotheses, never invented facts.
 Respect protected essentials and temporary user preferences; discretionary opportunities are estimates, not guaranteed savings.
-Consider no change, uncertainty and genuine alternatives when justified. Strategies may combine arbitrary
+Maintaining a feasible schedule is valid. Alternatives are optional; omit options without complete supported Python evidence. Consider uncertainty and genuine alternatives when justified. Strategies may combine arbitrary
 contributions, frequencies, pauses, targets, deadlines, priorities and evidence-supported review actions.
 Do not force changes or alternatives if facts don't justify them. Ask for clarification when needed.
 Use calculate_strategy for every numerical option you present, including a baseline when clarifying.
@@ -47,7 +47,7 @@ must be labelled and calculated before it supports an option. A posted expense i
 Use completion_date as the actual calculated completion date and deadline as the requested deadline.
 Say "by the deadline" when meets_deadline is true. Say "on/exactly at the deadline" only when
 completion_date equals deadline. Schedule feasibility alone does not prove cashflow affordability.
-If either capacity or one_month_comparison is constrained, explain that constraint explicitly.
+If either historical capacity or dated_cashflow is constrained, explain that constraint explicitly. Use dated_cashflow for liquidity, never subtract a contribution before its due date. Its bounded horizon is not a guarantee of later affordability. BNPL and other existing repayments are committed obligations, not discretionary savings. Historical capacity is conservative guidance, not total savings. A complete finite cash_funded_stress proof credits no future income; only the independent checker can accept it as alternative funding evidence.
 Distinguish the historical monthly surplus (financial_insights.cashflow.average_surplus, before
 the proposed contribution) from comfortable_capacity/stretch_capacity (capacity estimates), and
 from one_month_comparison.monthly_surplus_after_contribution (the Python residual after the
@@ -168,6 +168,14 @@ class GeminiPlanner:
             safety=state.get('safety',safety)
             if metrics.get('last_request_started_at') is not None:
                 last_start=self.clock()-max(0,time.time()-metrics['last_request_started_at'])
+        self.last_validation_records=[]
+        for content in contents:
+            for part in getattr(content,'parts',None) or []:
+                if not part.text:continue
+                try:feedback=json.loads(part.text)
+                except ValueError:continue
+                if isinstance(feedback,dict) and feedback.get('task')=='Correct the complete proposal using the validation evidence below.':
+                    self.last_validation_records.append(deepcopy(feedback))
         for name,value in {'safety_revision_attempts':safety['revision_count'],'safety_checks':0,'safety_revision_calculation_calls':0,'safety_reused_calculation_refs':[]}.items():metrics.setdefault(name,value)
         run_start_attempts=metrics['model_calls']
         session_cap=bounded_setting('GEMINI_MAX_SESSION_ATTEMPTS',40,1,96)
@@ -233,7 +241,18 @@ class GeminiPlanner:
                 metrics['generation_attempts'].append(entry)
                 snapshot();progress('generating')
                 try:
-                    response=self.transport.generate(contents,config,max(1,min(30000,int(left*1000))))
+                    request_contents=contents
+                    final_builder=getattr(self.transport,'final_contents',None)
+                    if final_builder and ('final' in stage or 'correction' in stage):
+                        if 'final_request_contents' in pending:
+                            request_contents=[getattr(self.transport,'restore_content',types.Content.model_validate)(c) for c in pending['final_request_contents']]
+                            self.transport._final_route=next((getattr(c,'route',None) for c in reversed(contents) if getattr(c,'route',None)),None)
+                        else:
+                            errors=self.last_validation_records[-1]['validation_errors'] if 'correction' in stage and self.last_validation_records else []
+                            request_contents=final_builder(context,tools.calculations,goal_ref,private_text(question),contents,errors)
+                            pending['final_request_contents']=[c.model_dump(mode='python',exclude_none=True) for c in request_contents]
+                            snapshot()
+                    response=self.transport.generate(request_contents,config,max(1,min(30000,int(left*1000))))
                     check_cancel();entry['success']=True;break
                 except PlannerError as exc:
                     entry.update(success=False,error_code=exc.code,upstream_status=exc.upstream_status,latency_ms=round((self.clock()-attempt_started)*1000))
@@ -348,8 +367,9 @@ class GeminiPlanner:
                 dates=date_facts(tools.calculations)
                 instruction+=' Authoritative Python date facts (completion_date and deadline are distinct): '+json.dumps(dates,separators=(',',':'))
                 financial=financial_facts(context,tools.calculations)
-                instruction+=' authoritative_financial_facts (source-labelled values, periods and assumptions; never interchange flow and cash stock): '+json.dumps(financial,separators=(',',':'))
-                if phase in {'final','safety_final'} and pending is None and ready is None:
+                instruction+=' authoritative_financial_facts (source-labelled values, periods and assumptions; never interchange flow and cash stock): '+getattr(self.transport,'prompt_json',lambda value:json.dumps(value,separators=(',',':')))(financial)
+                if phase in {'final','safety_final'} and pending is None and ready is None and not any(
+                    part.text==instruction for content in contents for part in (getattr(content,'parts',None) or [])):
                     contents.append(types.Content(role='user',parts=[types.Part.from_text(text=instruction)]))
                 if phase in {'correction','safety_correction'}:final_config['system_instruction']+='\nCORRECTION PHASE: Return the corrected complete proposal using existing Python evidence. No tools.'
                 response=call(types.GenerateContentConfig(**final_config),stage=('safety_' if phase.startswith('safety_') else '')+(('structured_correction' if self.final_output_mode=='structured' else 'json_correction') if phase in {'correction','safety_correction'} else ('structured_final' if self.final_output_mode=='structured' else 'json_final')))
@@ -375,6 +395,8 @@ class GeminiPlanner:
                         metrics['wording_only_correction']=metrics['correction_succeeded'] and metrics['strategies_changed'] is False
                         break
                     except ProposalValidationError as exc:
+                        self.last_validation_records.append({'original_proposal':raw,'validation_errors':exc.feedback(),
+                            'authoritative_python_calculations':deepcopy(tools.calculations),'authoritative_financial_facts':deepcopy(financial)})
                         metrics['structured_validation_errors']+=1
                         if metrics['initial_output_valid'] is None: metrics['initial_output_valid']=False
                         categories={i.error_type.value for i in exc.issues}
@@ -424,7 +446,7 @@ class GeminiPlanner:
                 safety['new_calculation_refs']=entry['new_calculation_refs']
                 safety['outcome']='passed' if assessment['status']=='PASS' else 'blocked' if assessment['status']=='BLOCK' else 'still_requires_revision'
                 snapshot()
-                if assessment['status']!='REVISE' or safety['revision_count']>=safety['limit']:break
+                if not revision_eligible(assessment) or safety['revision_count']>=safety['limit']:break
                 if self.max_model_calls-metrics['logical_model_calls']<2 or metrics['tool_calls']>=self.max_tool_calls or self.retry_policy.max_attempts-(metrics['model_calls']-run_start_attempts)<2 or session_cap-metrics['model_calls']<2:
                     safety['outcome']='budget_exhausted';snapshot();break
                 contents.append(response.candidates[0].content if response.candidates and response.candidates[0].content else types.Content(role='model',parts=[types.Part.from_text(text=raw)]))

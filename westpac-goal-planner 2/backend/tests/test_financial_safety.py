@@ -35,7 +35,7 @@ class FinancialSafetyTests(unittest.TestCase):
         self.assertEqual(a,again);self.assertEqual(fixture,before)
         self.assertEqual(a['status'],'PASS');self.assertEqual(a['recommended_status'],'PASS')
         self.assertFalse(a['activation_allowed']);self.assertFalse(a['actionable'])
-        self.assertEqual(a['strategies'][0]['evidence']['cash_after_contribution'],1400)
+        self.assertEqual(a['strategies'][0]['evidence']['legacy_scalar_cash_comparison'],1400)
 
     def test_above_stretch_and_between_capacities_cannot_pass(self):
         for amount,code in [(1100,'EXCEEDS_STRETCH_CAPACITY'),(950,'HEADROOM_NOT_ESTABLISHED')]:
@@ -46,11 +46,11 @@ class FinancialSafetyTests(unittest.TestCase):
         fixture=self.make('vet_paid');fixture[0]['result']['assessment']='feasible'
         a=self.assess(fixture)
         self.assertEqual(a['status'],'REVISE')
-        self.assertIn('EXCEEDS_STRETCH_CAPACITY',self.codes(a));self.assertIn('NEGATIVE_PROJECTED_CASH',self.codes(a))
+        self.assertIn('EXCEEDS_STRETCH_CAPACITY',self.codes(a));self.assertIn('NEGATIVE_DATED_CASH',self.codes(a))
         evidence=a['strategies'][0]['evidence']
         self.assertEqual(evidence['proposed_monthly'],600)
         self.assertEqual(evidence['stretch_capacity_monthly'],590.73)
-        self.assertEqual(evidence['cash_after_contribution'],-450)
+        self.assertEqual(evidence['legacy_scalar_cash_comparison'],-450)
         self.assertGreater(evidence['monthly_surplus_after_contribution'],0)
 
     def test_unpaid_bill_reserves_cash_once_and_paid_is_not_deducted_twice(self):
@@ -58,7 +58,7 @@ class FinancialSafetyTests(unittest.TestCase):
         u=unpaid['strategies'][0]['evidence'];p=paid['strategies'][0]['evidence']
         self.assertEqual((u['current_cash_balance'],u['confirmed_pending_due'],u['cash_after_known_obligations']),(2000,1850,150))
         self.assertEqual((p['current_cash_balance'],p['confirmed_pending_due'],p['cash_after_known_obligations']),(150,0,150))
-        self.assertEqual(u['cash_after_contribution'],-450);self.assertEqual(p['cash_after_contribution'],-450)
+        self.assertEqual(u['legacy_scalar_cash_comparison'],-450);self.assertEqual(p['legacy_scalar_cash_comparison'],-450)
         self.assertEqual(u['expense_lifecycle'][0]['status'],'outstanding')
         self.assertEqual(p['expense_lifecycle'][0]['status'],'posted')
         self.assertNotEqual(unpaid['status'],'PASS');self.assertNotEqual(paid['status'],'PASS')
@@ -134,7 +134,7 @@ class FinancialSafetyTests(unittest.TestCase):
         a=self.assess(fixture)
         self.assertEqual(a['status'],'REVISE')
         self.assertIn('OBLIGATION_NOT_COVERED_BY_PROJECTION',self.codes(a))
-        self.assertEqual(a['strategies'][0]['evidence']['cash_after_contribution'],1400)
+        self.assertEqual(a['strategies'][0]['evidence']['legacy_scalar_cash_comparison'],1400)
 
     def test_income_variability_monthly_zero_headroom_and_frequency(self):
         fixture=self.make();fixture[1]['financial_insights']['income']['variability_cv']=.5
@@ -167,7 +167,7 @@ class SafetyPersistenceTests(unittest.TestCase):
         from tests.test_gemini_planner import PersistenceTests
         return PersistenceTests.ask(self,**kwargs)
 
-    def test_persisted_block_has_no_activation_and_manual_approval_still_works(self):
+    def test_persisted_block_has_no_activation_and_manual_approval_also_requires_safety(self):
         before=self.store.read(self.customer,AS_OF)
         draft=self.ask()
         self.assertEqual(draft['safety_assessment']['status'],'BLOCK') # Fixture has no transaction/income history.
@@ -177,8 +177,10 @@ class SafetyPersistenceTests(unittest.TestCase):
         with self.assertRaises(ValueError):self.bank.decide_proposal(self.customer,draft['draft_id'],'approve',confirmed=True,expected_revision=1)
         with self.assertRaises(ValueError):self.planner.draft(self.bank,'foreign',draft['draft_id'])
         proposal=self.bank.propose_goal_change(self.customer,'goal-id',{'target':5000},expected_revision=1,source='user')
-        self.bank.decide_proposal(self.customer,proposal['proposal_id'],'approve',confirmed=True,expected_revision=2)
-        self.assertEqual(self.store.read(self.customer,AS_OF)[1]['goals']['goal-id']['target'],5000)
+        from planning.goal_assessment import GoalSafetyError
+        with self.assertRaises(GoalSafetyError):
+            self.bank.decide_proposal(self.customer,proposal['proposal_id'],'approve',confirmed=True,expected_revision=2)
+        self.assertEqual(self.store.read(self.customer,AS_OF)[1]['goals']['goal-id']['target'],6000)
 
     def test_follow_up_transmits_feedback_and_changed_parameters_use_new_calculation(self):
         from tests.test_gemini_corrections import Scripted

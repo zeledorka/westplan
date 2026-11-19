@@ -21,6 +21,7 @@ from finstats.categorisation import classify_transaction
 from finstats.contracts import CATEGORIES
 from planning.schemas import AccountSnapshot, Goal, PendingExpense, PostedEventEvidence
 from planning.service import BankingService
+from planning.goal_assessment import GoalSafetyError, commitments_version
 from planning.store import DemoStore, StaleState
 from planning.demo import demo_transactions, AS_OF
 from planning.calculation_tools import required_contribution
@@ -71,17 +72,31 @@ class FeedbackInput(Mutation):
     category: str | None = None
 
 
+class SavingsDesignationInput(Mutation):
+    account_id: str
+    goal_available: Amount
+    protected: Amount
+    reserves_confirmed: StrictBool
+    expected_financial_version: str
+
+
 class GoalInput(Mutation):
     kind: Literal['holiday','emergency_fund','purchase','other']
     target: Amount
     allocated: Amount = 0
     deadline: date
+    contribution: Amount | None = None
+    frequency: Literal['monthly','fortnightly'] = 'monthly'
+    pause_months: Annotated[StrictInt, Field(ge=0, le=24)] = 0
 
 
 class GoalChanges(Input):
     target: Amount | None = None
     allocated: Amount | None = None
     deadline: date | None = None
+    contribution: Amount | None = None
+    frequency: Literal['monthly','fortnightly'] | None = None
+    pause_months: Annotated[StrictInt, Field(ge=0, le=24)] | None = None
 
 
 class ProposalInput(Input):
@@ -181,6 +196,11 @@ def create_app(db_path=None, *, planner_transport=None):
     async def stale(_, exc):
         return error('stale_state',str(exc),409)
 
+    @app.exception_handler(GoalSafetyError)
+    async def unsafe_goal(_, exc):
+        return JSONResponse({'error':{'code':'goal_safety_failed','message':str(exc),
+                                      'assessment':exc.assessment}},status_code=422)
+
     @app.exception_handler(ValueError)
     async def invalid(_, exc):
         return error('invalid_action',str(exc),400)
@@ -271,14 +291,13 @@ def create_app(db_path=None, *, planner_transport=None):
                          'essential':c.essential,'classification_source':c.source,'confidence':c.confidence,'uncertain':c.uncertain})
         return rows
 
-    def goal_rows(goals, as_of):
+    def goal_rows(goals, as_of, context):
         result=[]
         for g in goals:
-            deadline=date.fromisoformat(g['deadline'])
-            months=max(0,(deadline.year-as_of.year)*12+deadline.month-as_of.month)
-            arithmetic=required_contribution(target=g['target'],allocated=g['allocated'],months=months)
             result.append({**g,'progress_percent':round(min(100,g['allocated']/g['target']*100),2) if g['target'] else 100,
-                           'contribution_periods':months,'required_monthly':arithmetic['monthly_amount']})
+                           'contribution_periods':g.get('financial_assessment',{}).get('schedule',{}).get('periods'),
+                           'required_monthly':g.get('financial_assessment',{}).get('schedule',{}).get('required_per_period'),
+                           'assessment_current':g.get('financial_assessment',{}).get('status')=='PASS' and g.get('financial_assessment',{}).get('goal_version')==g['version'] and g.get('financial_assessment',{}).get('commitments_version')==commitments_version(context)})
         return result
 
     def overview(s):
@@ -311,12 +330,14 @@ def create_app(db_path=None, *, planner_transport=None):
                 'recent':recent,'financial':{k:view['insights'][k] for k in
                     ('observation','income','spending','cashflow','budgets','bills_calendar','savings_finder','personalised_insights','uncertainty')},
                 'shocks':[{k:v for k,v in e.items() if not k.startswith('_') and k!='transaction_ids'} for e in view['insights']['shocks']],
-                'shock_history':service.shock_history(uid),'goals':goal_rows(view['goals'],raw['as_of']),
+                'shock_history':service.shock_history(uid),'goals':goal_rows(view['goals'],raw['as_of'],context),
                 'proposals':view['proposals'],'goal_history':service.goal_history(uid),
                 'presenter_events':store.read(uid,raw['as_of'])[1].get('presenter_events',[]),
                 'notifications':store.read(uid,raw['as_of'])[1].get('presenter_notifications',[]),
                 'subscriptions':view['subscriptions'],'categories':sorted(CATEGORIES),
                 'goal_available':round(sum(a['goal_available'] for a in balances),2),
+                'savings_funding':service.savings_funding(uid),
+                'designation_reassessments':store.read(uid,raw['as_of'])[1].get('latest_designation_reassessments',[]),
                 'ai_status':'Not connected; AI proposals require an independent validator.'}
 
     @app.get('/api/health')
@@ -438,10 +459,23 @@ def create_app(db_path=None, *, planner_transport=None):
             planner.store.alter(uid,draft['request_id'],reject)
             return {'decision':'rejected','draft_id':draft_id,'persisted':True,'activation_allowed':False}
 
+    @app.post('/api/savings-designations')
+    def designate_savings(body:SavingsDesignationInput,request:Request,s=Depends(selected)):
+        return mutate(s,request,body,lambda uid,svc:svc.designate_savings(uid,body.account_id,body.goal_available,body.protected,
+            confirmed=body.confirmed,reserves_confirmed=body.reserves_confirmed,expected_revision=body.expected_revision,
+            expected_financial_version=body.expected_financial_version))
+
     @app.post('/api/goals')
     def create_goal(body:GoalInput,request:Request,s=Depends(selected)):
         goal=Goal(uuid4().hex,body.kind,body.target,body.allocated,body.deadline)
-        return mutate(s,request,body,lambda uid,svc:svc.create_goal(uid,goal,confirmed=body.confirmed,expected_revision=body.expected_revision))
+        return mutate(s,request,body,lambda uid,svc:svc.create_goal(uid,goal,confirmed=body.confirmed,expected_revision=body.expected_revision,contribution=body.contribution,frequency=body.frequency,pause_months=body.pause_months))
+
+    @app.post('/api/goals/preview')
+    def preview_goal(body:GoalInput,request:Request,s=Depends(selected)):
+        with s.lock:
+            scope_check(s,request);uid,service=bind(s)
+            goal=Goal(uuid4().hex,body.kind,body.target,body.allocated,body.deadline)
+            return service.preview_goal(uid,goal,expected_revision=body.expected_revision,contribution=body.contribution,frequency=body.frequency,pause_months=body.pause_months)
 
     @app.post('/api/goals/{goal_id}/proposals')
     def propose(goal_id:str,body:ProposalInput,request:Request,s=Depends(selected)):

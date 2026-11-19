@@ -4,9 +4,13 @@ The host supplies a customer-bound provider and (later) an independent validator
 These methods are not an HTTP authentication boundary; callers must bind identity.
 """
 from dataclasses import asdict
-from datetime import date
+from datetime import date, datetime, timezone
+from types import SimpleNamespace
+from decimal import Decimal, ROUND_CEILING
+from copy import deepcopy
+from .goal_assessment import assess_goal, GoalSafetyError, commitments_version
 from uuid import uuid4
-from .schemas import Goal, Preferences, PendingExpense
+from .schemas import Goal, Preferences, PendingExpense, money
 from .context import build_planning_context
 from .store import StaleState
 from finstats.budgets import BudgetLimit
@@ -38,6 +42,25 @@ class BankingService:
         args={k:raw[k] for k in ('accounts','pending_expenses','event_evidence','planned_expenses','known_holidays') if k in raw}
         if state.get('presenter_events'):
             args['pending_expenses']=tuple(args.get('pending_expenses',()))+tuple(PendingExpense(e['event_id'],e['amount'],e['category'],date.fromisoformat(e['known_on']),date.fromisoformat(e['due'])) for e in state['presenter_events'])
+        args['subscription_states']=state['subscriptions']
+        if state.get('savings_designations'):
+            pending=self._known_obligation_hold(raw,txns,args)
+            accounts=[]
+            for a in args.get('accounts',()):
+                d=state['savings_designations'].get(a.account_id)
+                if d:
+                    # Later balance declines must remain readable as shortfalls, not
+                    # silently erase the recorded reserve or invent replacement funds.
+                    fields=asdict(a)
+                    fields.update(protected=max(a.protected,d['protected']),goal_available=d['goal_available'])
+                    # Known obligations have first claim on unreserved funds. Historical
+                    # allocated savings remain visible; the checker detects any shortfall.
+                    from finstats.insights import financial_insights
+                    actual=next(b['balance'] for b in financial_insights(txns,as_of=as_of,accounts=(a,))['balances'] if b['account_id']==a.account_id)
+                    fields['goal_available']=min(d['goal_available'],max(0,actual-fields['protected']-pending))
+                    accounts.append(SimpleNamespace(**fields))
+                else:accounts.append(a)
+            args['accounts']=tuple(accounts)
         args.update(as_of=as_of,goals=goals,preferences=Preferences(protected_categories=tuple(sorted(protected))),
                     budget_limits=tuple(BudgetLimit(**b) for b in state['budgets'].values()),
                     feedback=state['feedback'],subscription_states=state['subscriptions'],event_states=state.get('shock_events',{}))
@@ -45,13 +68,32 @@ class BankingService:
 
     def planning_context(self, customer):
         raw=self._inputs(customer); revision,state=self.store.read(customer,raw['as_of'])
+        return self._planning_context(raw,state)
+
+    def _planning_context(self, raw, state):
         txns,args=self._assemble(raw,state)
         ctx=build_planning_context(txns,**args)
+        from .safety import POLICY_VERSION
+        ctx['financial_policy_version']=POLICY_VERSION
+        ctx['funding_confirmation']={'explicit_savings_designation':bool(state.get('savings_designations')),
+            'reserves_confirmed':all(d.get('reserves_confirmed') is True for d in state.get('savings_designations',{}).values()) if state.get('savings_designations') else False}
         ctx['recorded_goal_schedules']=[{'goal_ref':f'goal-{i+1}',**{k:g[k] for k in ('contribution','frequency','pause_months','schedule_as_of') if k in g}} for i,g in enumerate(state['goals'].values()) if 'contribution' in g]
+        ctx['goal_assessments']=[{'goal_ref':f'goal-{i+1}',
+            'status':g.get('financial_assessment',{}).get('status','unassessed'),
+            'assessed_goal_version':g.get('financial_assessment',{}).get('goal_version'),
+            'assessed_at':g.get('financial_assessment',{}).get('assessed_at'),
+            'last_assessed_capacity':g.get('financial_assessment',{}).get('calculation',{}).get('comfortable_capacity'),
+            'last_assessed_schedule':{k:g.get('financial_assessment',{}).get('schedule',{}).get(k) for k in ('contribution','frequency','deadline')},
+            'creation_assessment':g.get('creation_assessment'),
+            'legacy_unassessed':'creation_assessment' not in g} for i,g in enumerate(state['goals'].values())]
         # Goal versions affect approval even when a value is reverted.
         from hashlib import sha256
         import json
         ctx['goal_versions']=[{'goal_ref':f'goal-{i+1}','version':g['version']} for i,g in enumerate(state['goals'].values())]
+        fingerprint=commitments_version(ctx)
+        for summary,g in zip(ctx['goal_assessments'],state['goals'].values()):
+            a=g.get('financial_assessment',{})
+            summary['current_evidence_matches']=a.get('status')=='PASS' and a.get('goal_version')==g['version'] and a.get('commitments_version')==fingerprint
         ctx['state_version']=sha256(json.dumps({k:v for k,v in ctx.items() if k!='state_version'},sort_keys=True,allow_nan=False).encode()).hexdigest()
         return ctx
 
@@ -74,6 +116,91 @@ class BankingService:
     def _write(self, customer, expected_revision, mutate):
         raw=self._inputs(customer)
         return self.store.update(customer,as_of=raw['as_of'],expected_revision=expected_revision,mutate=mutate)
+
+    @staticmethod
+    def _known_obligation_hold(raw, txns, args):
+        """Reserve only obligations not already covered by usable funding cash.
+
+        Reuses the same dated spending/standing-payment evidence, without crediting
+        future income. A pending bill is not reserved in full in both accounts.
+        """
+        posted={t.transaction_id for t in txns}
+        pending=sum(e.amount for e in args.get('pending_expenses',()) if e.known_on<=raw['as_of'] and
+                    e.status=='unpaid' and e.transaction_id not in posted)
+        if not pending:return 0.0
+        from finstats.dated_cashflow import cashflow_evidence
+        from finstats.insights import financial_insights
+        facts=financial_insights(txns,as_of=raw['as_of'],accounts=args.get('accounts',()))
+        runway=facts['cashflow']['runway']
+        evidence=cashflow_evidence(txns,as_of=raw['as_of'],accounts=args.get('accounts',()),
+            pending_expenses=args.get('pending_expenses',()),subscription_states=args.get('subscription_states'),facts=facts)
+        if not runway or not evidence.get('available'):return pending
+        out=sum(e['amount'] for e in evidence['events'] if e['date']<=runway['window_end'] and
+                e['kind']!='income' and not (e['kind']=='obligation' and not e['estimated']))
+        days=max(0,(date.fromisoformat(runway['window_end'])-raw['as_of']).days)
+        usable=max(0,evidence['starting_balance']-evidence['protected_reserve']-evidence['buffer']-
+                     out-days*evidence['ordinary_daily_estimate'])
+        return float(Decimal(str(max(0,pending-usable))).quantize(Decimal('.01'),rounding=ROUND_CEILING))
+
+    def savings_funding(self, customer):
+        raw=self._inputs(customer);_,state=self.store.read(customer,raw['as_of'])
+        txns,args=self._assemble(raw,state)
+        from finstats.insights import financial_insights
+        facts=financial_insights(txns,as_of=raw['as_of'],accounts=args.get('accounts',()))
+        allocated=money(sum((Decimal(str(g['allocated'])) for g in state['goals'].values()),Decimal(0)))
+        obligations=self._known_obligation_hold(raw,txns,args)
+        rows=[]
+        for b in facts['balances']:
+            if b['kind']!='savings':continue
+            d=state.get('savings_designations',{}).get(b['account_id'])
+            rows.append({**b,'reserves_confirmed':bool(d and d.get('reserves_confirmed')),
+                'allocated_to_goals':allocated if d and d['goal_available']>0 else 0,'known_obligation_hold':obligations,
+                'unallocated_goal_pool':round(max(0,b['goal_available']-(allocated if d else 0)),2),
+                'uncommitted_balance':round(max(0,b['balance']-b['protected']-obligations-b['goal_available']),2) if d else None})
+        return rows
+
+    def designate_savings(self, customer, account_id, goal_available, protected, *, confirmed,
+                           reserves_confirmed, expected_revision, expected_financial_version):
+        self._confirm(confirmed)
+        if reserves_confirmed is not True:raise ValueError('Confirm your reserve and known obligations explicitly')
+        goal_available,protected=money(goal_available),money(protected)
+        raw=self._inputs(customer)
+        owned={a.account_id:a for a in raw.get('accounts',())}
+        if account_id not in owned or owned[account_id].kind!='savings':raise ValueError('Select your own supported savings account')
+        source=owned[account_id]
+        if protected<source.protected:raise ValueError('Source protected reserves cannot be reduced')
+        def apply(state):
+            context=self._planning_context(raw,state)
+            if context['state_version']!=expected_financial_version:raise StaleState('Financial context changed; review savings again')
+            active=state.get('savings_designations',{})
+            if any(aid!=account_id and d['goal_available']>0 for aid,d in active.items()):
+                raise ValueError('This version supports one designated funding savings account per customer')
+            txns,args=self._assemble(raw,state)
+            from finstats.insights import financial_insights
+            balance=next(b['balance'] for b in financial_insights(txns,as_of=raw['as_of'],accounts=(source,))['balances'] if b['account_id']==account_id)
+            if balance is None:raise ValueError('A dated source balance is required')
+            pending=self._known_obligation_hold(raw,txns,args)
+            if money(goal_available+protected+pending)>money(balance):raise ValueError('Designation exceeds balance after reserves and known outstanding obligations')
+            allocated=money(sum((Decimal(str(g['allocated'])) for g in state['goals'].values()),Decimal(0)))
+            # Single-source workflow: existing allocations must remain backed by this account.
+            if allocated>goal_available:raise ValueError('Existing goal allocations must remain backed')
+            before=deepcopy(active.get(account_id))
+            entry={'goal_available':goal_available,'protected':protected,'reserves_confirmed':True,
+                   'balance_observed':balance,'known_obligation_hold':pending,'allocated_at_confirmation':allocated,
+                   'as_of':raw['as_of'].isoformat(),'confirmed_at':datetime.now(timezone.utc).isoformat(),
+                   'financial_version':context['state_version']}
+            state.setdefault('savings_designations',{})[account_id]=entry
+            state.setdefault('savings_designation_history',[]).append({'account_id':account_id,'before':before,'after':deepcopy(entry),
+                'resulting_revision':expected_revision+1})
+            revised=self._planning_context(raw,state)
+            reassessments=[]
+            for i,g in enumerate(state['goals'].values()):
+                assessment=assess_goal(revised,f'goal-{i+1}',contribution=g.get('contribution'),
+                    frequency=g.get('frequency','monthly'),pause_months=g.get('pause_months',0))
+                # Reassessment never changes a goal, schedule or its prior approval.
+                reassessments.append({'goal_id':g['goal_id'],'goal_version':g['version'],'assessment':assessment})
+            state['latest_designation_reassessments']=reassessments
+        return self._write(customer,expected_revision,apply)
 
     def set_budget(self, customer, limit, *, confirmed, expected_revision):
         self._confirm(confirmed)
@@ -145,7 +272,34 @@ class BankingService:
                 'on':raw['as_of'].isoformat()})
         return self._write(customer,expected_revision,apply)
 
-    def create_goal(self, customer, goal, *, confirmed, expected_revision):
+    def _assess_candidate(self, customer, state, record, *, contribution=None, frequency='monthly', pause_months=0):
+        candidate=deepcopy(state)
+        candidate['goals'][record['goal_id']]=deepcopy(record)
+        context=self._planning_context(self._inputs(customer),candidate)
+        ref=f"goal-{list(candidate['goals']).index(record['goal_id'])+1}"
+        assessment=assess_goal(context,ref,contribution=contribution,frequency=frequency,pause_months=pause_months)
+        if assessment['status']!='PASS':raise GoalSafetyError(assessment)
+        schedule=assessment['schedule']
+        record.update({k:schedule[k] for k in ('contribution','frequency','pause_months')})
+        record['schedule_as_of']=schedule['schedule_as_of']
+        assessment['goal_version']=record['version']
+        record['financial_assessment']=assessment
+        record['funding_sources']=[{'account_id':aid,'allocated':record['allocated']} for aid,d in state.get('savings_designations',{}).items() if d['goal_available']>0 and record['allocated']>0]
+        candidate['goals'][record['goal_id']]=record
+        context['recorded_goal_schedules']=[{'goal_ref':f'goal-{i+1}',**{k:g[k] for k in ('contribution','frequency','pause_months','schedule_as_of') if k in g}} for i,g in enumerate(candidate['goals'].values()) if 'contribution' in g]
+        assessment['commitments_version']=commitments_version(context)
+        return record
+
+    def preview_goal(self, customer, goal, *, expected_revision, contribution=None, frequency='monthly', pause_months=0):
+        raw=self._inputs(customer);revision,state=self.store.read(customer,raw['as_of'])
+        if revision!=expected_revision:raise StaleState('State changed')
+        record=asdict(goal);record.update(deadline=goal.deadline.isoformat(),version=1)
+        candidate=deepcopy(state);candidate['goals'][goal.goal_id]=record
+        context=self._planning_context(raw,candidate)
+        ref=f"goal-{list(candidate['goals']).index(goal.goal_id)+1}"
+        return assess_goal(context,ref,contribution=contribution,frequency=frequency,pause_months=pause_months)
+
+    def create_goal(self, customer, goal, *, confirmed, expected_revision, contribution=None, frequency='monthly', pause_months=0):
         self._confirm(confirmed)
         if not isinstance(goal,Goal):
             raise ValueError('Goal input required')
@@ -155,8 +309,11 @@ class BankingService:
         def mutate(s):
             if goal.goal_id in s['goals']:
                 raise ValueError('Goal already exists')
-            self._check_allocation(customer,s,goal)
             record=asdict(goal);record['deadline']=goal.deadline.isoformat();record['version']=1
+            record=self._assess_candidate(customer,s,record,contribution=contribution,frequency=frequency,pause_months=pause_months)
+            a=record['financial_assessment']
+            record['creation_assessment']={k:deepcopy(a[k]) for k in ('status','goal_version','assessed_at','schedule','safety_assessment')}
+            record['creation_assessment']['comfortable_capacity']=a['calculation']['comfortable_capacity']
             s['goals'][goal.goal_id]=record
         return self._write(customer,expected_revision,mutate)
 
@@ -169,7 +326,7 @@ class BankingService:
             raise ValueError('Allocations exceed trusted designated savings')
 
     def propose_goal_change(self, customer, goal_id, changes, *, expected_revision, source='user'):
-        if source not in {'user','planner'} or not changes or set(changes)-{'target','allocated','deadline'}:
+        if source not in {'user','planner'} or not changes or set(changes)-{'target','allocated','deadline','contribution','frequency','pause_months'}:
             raise ValueError('Unsupported proposal')
         raw=self._inputs(customer); revision,state=self.store.read(customer,raw['as_of'])
         if revision!=expected_revision:
@@ -182,7 +339,13 @@ class BankingService:
         if goal.deadline<=raw['as_of']:
             raise ValueError('Deadline must be in the future')
         context=self.planning_context(customer)
-        clean={k:getattr(goal,k).isoformat() if k=='deadline' else getattr(goal,k) for k in changes}
+        from .agent_models import GoalPlan
+        schedule_changes={k:v for k,v in changes.items() if k in {'contribution','frequency','pause_months'}}
+        if schedule_changes:
+            GoalPlan.model_validate({'goal_ref':'goal-1','contribution':updated.get('contribution',0.0),
+                                     'frequency':updated.get('frequency','monthly'),'pause_months':updated.get('pause_months',0)})
+        clean={k:(getattr(goal,k).isoformat() if k=='deadline' else getattr(goal,k)) for k in changes if k not in schedule_changes}
+        clean.update(schedule_changes)
         if source=='planner':
             self._validate_proposal({'goal_ref':f"goal-{list(state['goals']).index(goal_id)+1}",'changes':clean},context)
         proposal={'proposal_id':uuid4().hex,'goal_id':goal_id,'goal_version':current['version'],
@@ -214,9 +377,14 @@ class BankingService:
                     self._validate_proposal({'goal_ref':f"goal-{list(s['goals']).index(p['goal_id'])+1}",'changes':p['changes']},context)
                 updated={**current,**p['changes']}
                 goal=Goal(updated['goal_id'],updated['kind'],updated['target'],updated['allocated'],date.fromisoformat(updated['deadline']))
-                self._check_allocation(customer,s,goal)
                 updated['version']=current['version']+1
-                s['goals'][p['goal_id']]=updated
+                # A target/date/allocation edit derives a fresh required schedule unless
+                # the customer explicitly proposed a contribution. Never retain stale approval.
+                explicit=p['changes'].get('contribution')
+                if explicit is None and set(p['changes']) <= {'frequency','pause_months'}:
+                    explicit=updated.get('contribution')
+                s['goals'][p['goal_id']]=self._assess_candidate(customer,s,updated,
+                    contribution=explicit,frequency=updated.get('frequency','monthly'),pause_months=updated.get('pause_months',0))
             p['status']={'approve':'approved','reject':'rejected','snooze':'snoozed'}[decision]
             p['decision_on']=raw['as_of'].isoformat()
             p['decisions'].append({'decision':decision,'on':p['decision_on']})

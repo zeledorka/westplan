@@ -187,13 +187,20 @@ class TransportTests(unittest.TestCase):
                 with self.assertRaises(PlannerError) as cm:t.generate([],types.GenerateContentConfig(),10)
                 self.assertEqual(cm.exception.code,code);self.assertNotIn('secret',cm.exception.message)
 
+def seed_legacy_goal(bank, customer, goal, expected_revision):
+    """Unassessed historical fixture; deliberately not a new-goal admission request."""
+    from dataclasses import asdict
+    record=asdict(goal);record.update(deadline=goal.deadline.isoformat(),version=1)
+    bank.store.update(customer,as_of=bank._inputs(customer)['as_of'],expected_revision=expected_revision,
+                      mutate=lambda state:state['goals'].update({goal.goal_id:record}))
+
 class PersistenceTests(unittest.TestCase):
     def setUp(self):
         self.temp=TemporaryDirectory();self.addCleanup(self.temp.cleanup)
         self.store=DemoStore(Path(self.temp.name)/'bank.sqlite');self.customer='customer'
         self.raw={'txns':[], 'as_of':AS_OF,'accounts':(AccountSnapshot('cash','transaction',2000,AS_OF),AccountSnapshot('s','savings',1200,AS_OF,goal_available=1200))}
         self.bank=BankingService(self.store,lambda customer:self.raw)
-        self.bank.create_goal(self.customer,Goal('goal-id','holiday',6000,1200,date(2027,5,31)),confirmed=True,expected_revision=0)
+        seed_legacy_goal(self.bank,self.customer,Goal('goal-id','holiday',6000,1200,date(2027,5,31)),0)
         self.mock=MockGemini();self.planner=PlannerService(self.store,self.mock,cooldown_seconds=0)
     def ask(self, **changes):
         return self.planner.generate(self.bank,self.customer,**{'goal_id':'goal-id','question':'What if I save less?','request_id':'request-1','expected_revision':1,**changes})
@@ -215,7 +222,7 @@ class PersistenceTests(unittest.TestCase):
         with self.assertRaises(ValueError):self.ask(goal_id='foreign')
     def test_changed_context_and_scope_reject_generation_and_mark_stored_draft_stale(self):
         d=self.ask()
-        self.bank.create_goal(self.customer,Goal('second','emergency_fund',1000,0,date(2027,5,31)),confirmed=True,expected_revision=1)
+        seed_legacy_goal(self.bank,self.customer,Goal('second','emergency_fund',1000,0,date(2027,5,31)),1)
         self.assertTrue(self.planner.draft(self.bank,self.customer,d['draft_id'])['stale'])
         with self.assertRaises(StaleState):self.ask(request_id='new')
         with self.assertRaises(StaleState):self.ask(request_id='scope-change',expected_revision=2,still_authorised=lambda:False)

@@ -41,12 +41,13 @@ function Draft({ record }) {
         <strong>{label(plan.goal_kind)} goal</strong>
         <p>{money(plan.contribution)} {plan.frequency} · {plan.pause_months ? `after a ${plan.pause_months}-month pause` : 'starting next contribution period'}</p>
         <p>Target {money(plan.target)} · deadline {day(plan.deadline)}</p>
-        <p>Required by this date: {money(plan.required_per_period)} per period. Estimated completion: {day(plan.completion_date)}.</p>
+        <p>Required by this date: {money(plan.required_per_period)} per period. Next contribution: {day(plan.next_contribution_date)}. Estimated completion: {day(plan.completion_date)}.</p>
         <p className="small">{plan.meets_deadline ? 'Reaches the target under these assumptions.' : 'Does not reach the target by this deadline.'}</p>
       </div>)}
       <p>Across all goals: {money(option.calculation.aggregate_monthly_equivalent)} monthly equivalent. Comfortable historical capacity: {money(option.calculation.comfortable_capacity)}. Stretch estimate: {money(option.calculation.stretch_capacity)}.</p>
       <p>Projected cash after known obligations, before proposed contributions: {money(option.calculation.current_projected_cash_after_known_obligations)}.</p>
-      {option.calculation.one_month_comparison && <p>One-month cash comparison after contributions: {money(option.calculation.one_month_comparison.liquid_after_pending_reserve_and_contribution)}. Monthly flow remaining after contributions: {money(option.calculation.one_month_comparison.monthly_surplus_after_contribution)}.</p>}
+      {option.calculation.one_month_comparison && <p>Legacy scalar comparison (not approval evidence): {money(option.calculation.one_month_comparison.liquid_after_pending_reserve_and_contribution)}. Monthly flow remaining after contributions: {money(option.calculation.one_month_comparison.monthly_surplus_after_contribution)}.</p>}
+      {option.calculation.dated_cashflow?.available && <p>Dated minimum cash: {money(option.calculation.dated_cashflow.minimum_cash)} on {day(option.calculation.dated_cashflow.minimum_date)}, forecast through {day(option.calculation.dated_cashflow.end)}. Includes estimated income and ordinary spending.</p>}
       <Items title="Proposed actions — not applied" values={option.proposed_actions} />
       <Items title="Benefits" values={option.benefits} /><Items title="Trade-offs" values={option.drawbacks} />
       <details><summary>Assumptions and calculation limits</summary><Items values={[...option.assumptions, ...option.calculation.assumptions]} /></details>

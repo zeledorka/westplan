@@ -6,19 +6,24 @@ can be activated, including one that passes the implemented financial checks.
 
 ## Configuration
 
-Keep the existing backend `.env` credentials. This implementation does not change `.env`.
-To select OpenRouter when you are ready, configure:
+Keep the existing backend `.env` credentials. The default provider/model is OpenRouter
+DeepSeek V3.2, configured as follows:
 
 ```dotenv
 PLANNER_PROVIDER=openrouter
-OPENROUTER_MODEL=nvidia/nemotron-3-ultra-550b-a55b:free
+OPENROUTER_MODEL=deepseek/deepseek-v3.2
+OPENROUTER_PROFILE=tools_json_text
+OPENROUTER_ALLOW_PAID=true
 OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
 ```
 
 `OPENROUTER_API_KEY` must already be set on the backend. Never put it in frontend variables.
-Restart the backend after changing the selected provider/model. With `PLANNER_PROVIDER`
-unset or `gemini`, the existing `GEMINI_API_KEY`, `GEMINI_MODEL` and final-output settings
-continue to apply. Merely configuring an OpenRouter key does not select OpenRouter.
+Restart the backend after changing the selected provider/model. With `PLANNER_PROVIDER=gemini`,
+the existing `GEMINI_API_KEY`, `GEMINI_MODEL` and final-output settings continue to apply.
+Nemotron remains available with `OPENROUTER_MODEL=nvidia/nemotron-3-ultra-550b-a55b:free`.
+Paid access is limited in code to the exact approved model `deepseek/deepseek-v3.2` and
+also requires `OPENROUTER_ALLOW_PAID=true`. That flag never authorizes other paid models.
+Free models still require verified zero-price endpoints even when the flag is true.
 
 Optional settings:
 
@@ -28,7 +33,7 @@ Optional settings:
 | `OPENROUTER_PROFILE=tools_structured` | Explicit opt-in | Requires an endpoint advertising both JSON Schema output and all required tool-choice modes. Local validation still runs. |
 | `OPENROUTER_REASONING_EFFORT` | `low` | Sent to endpoints advertising reasoning-effort support; supports none/minimal/low/medium/high, subject to endpoint acceptance. |
 | `PLANNER_MIN_REQUEST_INTERVAL_SECONDS` | `5` | Minimum start-to-start interval for real Gemini/OpenRouter requests; integer 0–60. Applies across tool, final, correction, revision and retry stages. |
-| `OPENROUTER_ALLOW_PAID` | `false` | Only exact `:free` model IDs with verified zero-price endpoints are accepted. Other model IDs require explicit `true`. |
+| `OPENROUTER_ALLOW_PAID` | `false` (enabled in `.env`) | Enables only the exact approved DeepSeek model; all other paid model IDs are rejected. |
 
 The base URL is restricted to the official HTTPS OpenRouter API. No automatic model-router,
 model fallback or provider fallback is enabled. Endpoint capabilities/prices are checked using

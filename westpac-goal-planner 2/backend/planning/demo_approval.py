@@ -3,6 +3,8 @@ from copy import deepcopy
 import json
 import sqlite3
 import time
+from datetime import datetime, timezone
+from .goal_assessment import commitments_version
 from .safety import assess_draft
 from .store import StaleState
 
@@ -56,7 +58,19 @@ def approve_demo(bank, planner, customer, draft_id, calculation_ref, *, expected
         before=deepcopy(state['goals'][goal_id])
         if plan['allocated']!=before['allocated']:raise ValueError('Goal allocation cannot change')
         after={**before,**{k:plan[k] for k in ('target','deadline','contribution','frequency','pause_months')},
-               'version':before['version']+1,'schedule_as_of':context['as_of']}
+               'version':before['version']+1,'schedule_as_of':plan['schedule_as_of']}
+        after['financial_assessment']={'status':'PASS','goal_version':after['version'],
+            'safety_assessment':assessment,'calculation':deepcopy(calculation),'calculation_ref':calculation_ref,
+            'schedule':deepcopy(plan),'financial_version':context['state_version'],
+            'financial_context':deepcopy(context),'assessed_at':datetime.now(timezone.utc).isoformat(),
+            'assumptions':calculation['assumptions']}
+        state['goals'][goal_id]=after
+        updated_context=deepcopy(context)
+        updated_context['goals']=[{k:g[k] for k in ('goal_ref','kind','target','allocated','deadline')} for g in context['goals']]
+        selected=next(g for g in updated_context['goals'] if g['goal_ref']==goal_ref)
+        selected.update({k:after[k] for k in ('target','deadline','allocated')})
+        updated_context['recorded_goal_schedules']=[{'goal_ref':f'goal-{i+1}',**{k:g[k] for k in ('contribution','frequency','pause_months','schedule_as_of') if k in g}} for i,g in enumerate(state['goals'].values()) if 'contribution' in g]
+        after['financial_assessment']['commitments_version']=commitments_version(updated_context)
         decision={'decision':'approved','by':actor,'at':time.time(),'draft_id':draft_id,
                   'calculation_ref':calculation_ref,'before':before,'after':after,
                   'safety_policy_version':assessment['policy_version'],'sandbox_only':True}

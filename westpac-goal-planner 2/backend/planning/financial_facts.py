@@ -49,7 +49,7 @@ def financial_facts(context, calculations):
             ('comfortable_capacity','comfortable_capacity','Historical comfortable monthly contribution estimate, not available cash.'),
             ('stretch_capacity','stretch_capacity','Historical stretch monthly contribution estimate, not guaranteed affordability.'),
             ('planned_monthly_contribution','aggregate_monthly_equivalent','Ongoing monthly equivalent including paused schedules.'),
-            ('immediate_monthly_contribution','immediate_contribution_monthly_equivalent','Immediate monthly equivalent; paused schedules contribute zero in this comparison.'),
+            ('immediate_monthly_contribution','immediate_contribution_monthly_equivalent','Legacy scalar monthly equivalent for unpaused schedules; not a debit at the assessment date.'),
             ('cash_after_known_obligations','current_projected_cash_after_known_obligations','Projection after known obligations, before proposed contribution and reserve comparison.'),
             ('within_comfortable_capacity','within_comfortable_capacity','Contribution capacity comparison only, not a cash-liquidity guarantee.'),
             ('within_stretch_capacity','within_stretch_capacity','Contribution capacity comparison only.')]:
@@ -58,8 +58,16 @@ def financial_facts(context, calculations):
         if calc['one_month_comparison']:
             for metric,key,meaning in [
                 ('monthly_surplus_after_contribution','monthly_surplus_after_contribution','Monthly net-flow residual; can be positive while cash balance is negative.'),
-                ('cash_after_contribution','liquid_after_pending_reserve_and_contribution','Cash balance after projected obligations, protected reserve, hypothetical impacts and immediate proposed contribution.')]:
+                ('legacy_scalar_cash_comparison','liquid_after_pending_reserve_and_contribution','Legacy non-dated diagnostic; not liquidity evidence for approval.')]:
                 calc_fact(metric,calc['one_month_comparison'][key],currency,meaning,ref+'.one_month_comparison.'+key)
+        dated=calc.get('dated_cashflow',{})
+        if dated.get('available'):
+            calc_fact('cash_after_contribution',dated['minimum_cash'],currency,
+                'Minimum dated cash after scheduled contributions, obligations, reserves and estimated ordinary spending; bounded forecast.',
+                ref+'.dated_cashflow.minimum_cash',{'as_of':as_of,'minimum_date':dated['minimum_date'],'through':dated['end'],'basis':'Bounded dated projection; not a full future balance forecast'})
+        elif 'dated_cashflow_evidence' not in context and calc['one_month_comparison']:
+            calc_fact('cash_after_contribution',calc['one_month_comparison']['liquid_after_pending_reserve_and_contribution'],currency,
+                'Historical legacy scalar comparison; no current dated evidence.',ref+'.one_month_comparison.liquid_after_pending_reserve_and_contribution')
         goals={}
         for plan in calc['plans']:
             goal=plan['goal_ref'];completion=plan['completion_date'];deadline=plan['deadline']

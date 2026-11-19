@@ -37,3 +37,11 @@ test('unavailable service errors stay readable', async () => {
   try { await assert.rejects(request('/overview'), e => e.status === 503 && e.message.includes('unavailable')) }
   finally { global.fetch = original }
 })
+
+test('failed goal admission preserves structured authoritative findings', async () => {
+  const original = global.fetch
+  const assessment = { status: 'REVISE', schedule: { contribution: 900 }, safety_assessment: { findings: [{ code: 'EXCEEDS_STRETCH_CAPACITY' }] } }
+  global.fetch = async () => ({ ok: false, status: 422, json: async () => ({ error: { message: 'Goal not approved', assessment } }) })
+  try { await assert.rejects(request('/goals'), error => error.status === 422 && error.assessment === assessment) }
+  finally { global.fetch = original }
+})

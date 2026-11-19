@@ -290,8 +290,10 @@ class CorrectionTests(unittest.TestCase):
             self.assertEqual(date_facts(tools.calculations)['calculation-1'][0]['deadline_relation'],relation)
 
     def test_configuration_and_duplicate_fields_fail_closed(self):
-        for value in ['-1','3','invalid']:
+        for value in ['-1','5','invalid']:
             with patch.dict(os.environ,{'GEMINI_MAX_CORRECTIONS':value}),self.assertRaises(PlannerError):GeminiPlanner(MockGemini())
+        with patch.dict(os.environ,{'GEMINI_MAX_CORRECTIONS':'4'}):
+            self.assertEqual(GeminiPlanner(MockGemini()).max_corrections,4)
         t=Scripted(['{"answer":"one","answer":"two"}']);agent=GeminiPlanner(t)
         with self.assertRaises(ProposalValidationError) as cm:agent.run(self.context,goal_ref='goal-1',question='Assess')
         self.assertFalse(cm.exception.recoverable);self.assertEqual(len(t.calls),2)

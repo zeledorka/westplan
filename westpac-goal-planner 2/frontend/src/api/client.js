@@ -1,5 +1,5 @@
 export class ApiError extends Error {
-  constructor(message, status) { super(message); this.status = status }
+  constructor(message, status, assessment) { super(message); this.status = status; this.assessment = assessment }
 }
 
 export async function request(path, { method = 'GET', body, scope, signal, keepalive = false } = {}) {
@@ -10,6 +10,6 @@ export async function request(path, { method = 'GET', body, scope, signal, keepa
     body: body !== undefined ? JSON.stringify(body) : undefined,
   })
   const result = await response.json().catch(() => ({}))
-  if (!response.ok) throw new ApiError(result.error?.message || 'The banking service is unavailable.', response.status)
+  if (!response.ok) throw new ApiError(result.error?.message || 'The banking service is unavailable.', response.status, result.error?.assessment)
   return result
 }

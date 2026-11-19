@@ -1,5 +1,6 @@
 """Deterministic import suggestions. Source categories win unless explicitly corrected."""
 from dataclasses import dataclass, replace
+import re
 from .data import normalize_merchant
 from .contracts import CATEGORIES
 
@@ -30,7 +31,30 @@ RULES = (
 )
 
 
+def committed_category(transaction):
+    if not transaction.is_expense:return None
+    if transaction.category in {'Buy Now Pay Later','Loan repayments'}:return transaction.category
+    # Transaction.merchant is cached; causal-history scans reuse the same rows many times.
+    merchant=getattr(transaction,'merchant',None)
+    if merchant is None:merchant=normalize_merchant(transaction.description)
+    if re.match(r'^(AFTERPAY|ZIP PAY|ZIP MONEY)( |$)',merchant):return 'Buy Now Pay Later'
+    if re.match(r'^(HOME LOAN REPAYMENT|BUSINESS LOAN REPAYMENT|CREDIT CARD REPAYMENT)( |$)',merchant):return 'Loan repayments'
+    return None
+
+
+def committed_transactions(txns):
+    """Normalise only evidenced repayments; preserve all other source classifications."""
+    rows=[]
+    for transaction in txns:
+        category=committed_category(transaction)
+        rows.append(replace(transaction,category=category,essential=True)
+            if category and (transaction.category!=category or not transaction.essential) else transaction)
+    return rows
+
+
 def classify_transaction(transaction, *, merchant_corrections=None, explicit_correction=None):
+    category=committed_category(transaction)
+    if category:return Classification(category,True,1,'committed_repayment',False)
     if explicit_correction is not None:
         c=explicit_correction
         if c['category'] not in CATEGORIES or not isinstance(c['essential'],bool):

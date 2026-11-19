@@ -270,9 +270,32 @@ class RecurringSeries:
         last = past[-1]
         if (as_of - last).days > self.period_days + self.tolerance_days:
             return []  # lapsed: a charge was missed, assume cancelled
+        import re
+        labelled=[re.search(r'\((\d+)/(\d+)\)',t.description) for t in self.occurrences]
+        remaining=None
+        if labelled and all(labelled) and len({m.group(2) for m in labelled})==1:
+            indices=[int(m.group(1)) for m in labelled]
+            if indices==sorted(set(indices)):
+                remaining=max(0,int(labelled[-1].group(2))-indices[-1])
+                if not remaining:return []
         end = as_of + timedelta(days=horizon_days)
+        from calendar import monthrange
+        observed=[t.date for t in self.occurrences if t.date<=as_of]
+        monthly=(len(observed)>=3 and 27<=self.period_days<=32 and
+            all((b.year-a.year)*12+b.month-a.month==1 for a,b in zip(observed,observed[1:])) and
+            (len({d.day for d in observed})==1 or all(d.day==monthrange(d.year,d.month)[1] for d in observed)))
+        if monthly:
+            month_end=all(d.day==monthrange(d.year,d.month)[1] for d in observed)
+            out=[];n=last.year*12+last.month
+            while True:
+                y,m=divmod(n,12);m+=1
+                d=date(y,m,monthrange(y,m)[1] if month_end else min(last.day,monthrange(y,m)[1]))
+                if d>end:return out
+                if d>as_of:out.append(d)
+                n+=1
         out, k = [], 1
         while True:
+            if remaining is not None and k>remaining:return out
             d = last + timedelta(days=round(k * self.period_days))
             if d > end:
                 return out

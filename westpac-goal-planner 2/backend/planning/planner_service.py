@@ -139,7 +139,7 @@ class PlannerService:
                          goal_versions={k:v['version'] for k,v in state['goals'].items()})
             if cancelled():raise PlannerError('planner_cancelled','Planning cancelled. Your goals have not changed.',409)
             record.pop('safety_revision',None);record.pop('error',None)
-            record.update(status='draft_unverified',draft=draft,checkpoint=None,progress={'status':'completed'})
+            record.update(status='draft_unverified',draft=draft,checkpoint=None,progress={'status':'completed'},validation_records=getattr(agent,'last_validation_records',[]))
             self.store.save(customer,record)
             return draft
         except StaleState:
@@ -148,6 +148,7 @@ class PlannerService:
             self.store.save(customer,record)
             raise
         except PlannerError as exc:
+            record['validation_records']=getattr(agent,'last_validation_records',[])
             if agent and agent.last_safety_revision:record['safety_revision']=agent.last_safety_revision
             current=self.store.request(customer,request_id) or record
             cp=getattr(agent,'last_checkpoint',None) if agent else current.get('checkpoint')
