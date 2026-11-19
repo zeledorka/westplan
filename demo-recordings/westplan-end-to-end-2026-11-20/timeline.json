@@ -1,0 +1,83 @@
+[
+  {
+    "time": "2026-11-19T17:05:19.435Z",
+    "image": "01-fresh-login.jpg",
+    "step": "01-fresh-login"
+  },
+  {
+    "time": "2026-11-19T17:06:25.601Z",
+    "image": "02-clean-goal-area.jpg",
+    "step": "02-clean-goal-area"
+  },
+  {
+    "time": "2026-11-19T17:06:29.360Z",
+    "image": "03-clean-banking-dashboard.jpg",
+    "step": "03-clean-banking-dashboard"
+  },
+  {
+    "time": "2026-11-19T17:06:38.366Z",
+    "image": "04-reserve-confirmation.jpg",
+    "step": "04-reserve-confirmation"
+  },
+  {
+    "time": "2026-11-19T17:07:42.246Z",
+    "image": "05-goal-entry.jpg",
+    "step": "05-goal-entry"
+  },
+  {
+    "time": "2026-11-19T17:08:32.951Z",
+    "image": "06-approved-goal-schedule.jpg",
+    "step": "06-approved-goal-schedule"
+  },
+  {
+    "time": "2026-11-19T17:08:32.960Z",
+    "step": "shock-click",
+    "amount": 1500,
+    "kind": "unexpected_bill"
+  },
+  {
+    "time": "2026-11-19T17:08:33.364Z",
+    "image": "07-shock-submitted.jpg",
+    "step": "07-shock-submitted"
+  },
+  {
+    "time": "2026-11-19T17:09:11.289Z",
+    "image": "08-automatic-shock-notification.jpg",
+    "step": "08-automatic-shock-notification"
+  },
+  {
+    "time": "2026-11-19T17:09:38.700Z",
+    "image": "09-automatic-ai-progress.jpg",
+    "step": "09-automatic-ai-progress"
+  },
+  {
+    "time": "2026-11-19T17:10:49.123Z",
+    "image": "10-python-calculations-and-final-generation.jpg",
+    "step": "10-python-calculations-and-final-generation"
+  },
+  {
+    "time": "2026-11-19T17:11:52.498Z",
+    "image": "11-automatic-recommendation-pass.jpg",
+    "step": "11-automatic-recommendation-pass"
+  },
+  {
+    "time": "2026-11-19T17:12:00.283Z",
+    "image": "12-genuine-model-recommendation.jpg",
+    "step": "12-genuine-model-recommendation"
+  },
+  {
+    "time": "2026-11-19T17:12:00.816Z",
+    "image": "13-sandbox-accept-submitted.jpg",
+    "step": "13-sandbox-accept-submitted"
+  },
+  {
+    "time": "2026-11-19T17:13:34.826Z",
+    "image": "14-approved-result-before-display-fix.jpg",
+    "step": "14-approved-result-before-display-fix"
+  },
+  {
+    "time": "2026-11-19T17:14:18.442Z",
+    "image": "15-approved-and-applied-in-sandbox.jpg",
+    "step": "15-approved-and-applied-in-sandbox"
+  }
+]

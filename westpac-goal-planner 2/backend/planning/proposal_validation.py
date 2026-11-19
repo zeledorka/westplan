@@ -182,9 +182,16 @@ def consistency_issues(result, calculations, context):
                 frequency = groups.get('frequency') or {'month': 'monthly', 'fortnight': 'fortnightly'}.get(groups.get('period'))
                 prefix=text[max(0,match.start()-30):match.start()].lower()
                 key='required_per_period' if re.search(r'\brequired(?:\s+(?:monthly|fortnightly))?\s*$',prefix) else 'monthly_equivalent' if re.search(r'\bmonthly equivalent\s*$',prefix) else 'contribution'
+                # An explicitly existing goal allocation is a stock, not a payment.
+                # A stated payment frequency still makes this a contribution claim.
+                if frequency is None and (
+                    re.search(r'\ballocated\s*$',prefix) and re.match(r'savings?\b',match[0],re.I)
+                    or re.search(r'\bgoal\s*$',prefix) and re.match(r'allocations?\b',match[0],re.I)
+                ):
+                    key='allocated'
                 expected = [Decimal(str(p[key])) for p in plans if p[key] is not None and (frequency is None or p['frequency'] == frequency.lower())]
                 if value not in expected:
-                    issue(Category.MONEY, 'The contribution amount/frequency must match this strategy\'s Python plans. Correct the wording; a different financial schedule requires a separately calculated strategy. Do not invent or recalculate amounts in prose.')
+                    issue(Category.MONEY, 'Existing goal allocation must match the Python plan; do not invent allocated funds.' if key=='allocated' else 'The contribution amount/frequency must match this strategy\'s Python plans. Correct the wording; a different financial schedule requires a separately calculated strategy. Do not invent or recalculate amounts in prose.')
         for match in surplus_claims:
             value=Decimal(match['amount'].replace(',','').replace('−','-'))
             expected=[context['financial_insights']['cashflow']['average_surplus']] if match['historical'] else [calculations[r]['one_month_comparison']['monthly_surplus_after_contribution'] for r in refs if calculations[r]['one_month_comparison'] is not None]

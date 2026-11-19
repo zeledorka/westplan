@@ -3,6 +3,7 @@ from dataclasses import asdict
 from datetime import date
 import math
 from .data import primary_account
+from .categorisation import committed_transactions
 from .savings import monthly_flows, savings_capacity
 from .stats import mean, std
 from .bills import bill_insights, recurring_series
@@ -11,7 +12,7 @@ from .opportunities import spending_opportunities
 
 
 def financial_insights(txns, *, as_of: date, accounts=(), protected_categories=()):
-    txns = sorted((t for t in txns if t.date <= as_of), key=lambda t: t.date)
+    txns = committed_transactions(sorted((t for t in txns if t.date <= as_of), key=lambda t: t.date))
     for t in txns:
         if isinstance(t.amount, bool) or not math.isfinite(t.amount):
             raise ValueError("Transactions require finite amounts")
@@ -89,7 +90,7 @@ def financial_insights(txns, *, as_of: date, accounts=(), protected_categories=(
                      "average_surplus": round(mean([f.net for f in flows]), 2),
                      "month_to_date_net": round(sum(t.amount for t in txns if t.type != "transfer"
                          and t.date.replace(day=1) == as_of.replace(day=1)), 2),
-                     "savings_capacity": {k: v for k, v in asdict(cap).items() if k not in {"months", "smoothed"}},
+                     "savings_capacity": {**{k: v for k, v in asdict(cap).items() if k not in {"months", "smoothed"}}, "smoothed_observations":len(cap.smoothed), "volatility_established":len(cap.smoothed)>=3},
                      "runway": runway},
         "recurring": bills, "balances": balances,
         "opportunities": spending_opportunities(cats, bills, protected_categories),

@@ -43,6 +43,23 @@ def add_months(day, count):
     year,month=divmod(n,12)
     return date(year,month+1,min(day.day,monthrange(year,month+1)[1]))
 
+def strategy_dates(context, goal_ref, contribution, frequency, pause_months):
+    """Retain an unchanged approved cadence; changed schedules begin at assessment."""
+    as_of=date.fromisoformat(context['as_of']);anchor=as_of
+    recorded=next((s for s in context.get('recorded_goal_schedules',[]) if s['goal_ref']==goal_ref),None)
+    if recorded and all(recorded.get(k,0 if k=='pause_months' else None)==v for k,v in
+                        [('contribution',contribution),('frequency',frequency),('pause_months',pause_months)]):
+        if not recorded.get('schedule_as_of'):
+            raise CalculationInputError('plans','schedule_anchor','Existing contribution dates are unknown; confirm the schedule before approval.')
+        if recorded.get('schedule_as_of'):
+            anchor=date.fromisoformat(recorded['schedule_as_of'])
+            if not add_months(as_of,-120)<=anchor<=as_of:
+                raise CalculationInputError('plans','schedule_anchor','Existing schedule date needs review.')
+    start=add_months(anchor,pause_months)
+    extra=max(0,(as_of.year-start.year)*12+as_of.month-start.month)
+    candidates=[add_months(start,i) for i in range(1,extra+122)] if frequency=='monthly' else [start+timedelta(days=14*i) for i in range(1,max(0,(as_of-start).days//14)+263)]
+    return [d for d in candidates if as_of<d<=add_months(as_of,120)],anchor
+
 class PlanningTools:
     def __init__(self, context):
         self.context=context
@@ -56,17 +73,19 @@ class PlanningTools:
             raise CalculationInputError('plans','goal_scope','Calculate every goal_ref from the authorised context exactly once; remove foreign or duplicate refs.')
         as_of=date.fromisoformat(self.context['as_of'])
         rows=[]
+        contribution_dates={}
         for plan in request.plans:
             goal=self.goals[plan.goal_ref]
             target=goal['target'] if plan.target is None else plan.target
             deadline=date.fromisoformat(goal['deadline']) if plan.deadline is None else plan.deadline
+            if target==goal['allocated'] and plan.contribution>0:
+                raise CalculationInputError('plans.contribution','already_funded','A fully funded target needs zero regular contributions; a higher target requires its own calculation.')
             if target<goal['allocated']:
                 raise CalculationInputError('plans.target','below_allocation','Target must not be below the authorised goal allocation.')
             if not as_of<deadline<=add_months(as_of,120):
                 raise CalculationInputError('plans.deadline','deadline_range','Deadline must be after the context as_of date and within the next ten years.')
-            start=add_months(as_of,plan.pause_months)
-            dates=[add_months(start,i) if plan.frequency=='monthly' else start+timedelta(days=14*i)
-                   for i in range(1,121 if plan.frequency=='monthly' else 262)]
+            dates,anchor=strategy_dates(self.context,plan.goal_ref,plan.contribution,plan.frequency,plan.pause_months)
+            contribution_dates[plan.goal_ref]=[d for d in dates if d<=deadline]
             periods=sum(d<=deadline for d in dates)
             # The existing routine is period arithmetic; its monthly label is remapped here.
             required=required_contribution(target=target,allocated=goal['allocated'],months=periods)['monthly_amount']
@@ -76,7 +95,8 @@ class PlanningTools:
             completion=(as_of if not remaining else dates[n-1] if n and n<=len(dates) else None)
             rows.append({'goal_ref':plan.goal_ref,'goal_kind':goal['kind'],'target':target,'allocated':goal['allocated'],
                 'deadline':deadline.isoformat(),'contribution':plan.contribution,'frequency':plan.frequency,
-                'pause_months':plan.pause_months,'priority':plan.priority,'periods':periods,
+                'pause_months':plan.pause_months,'priority':plan.priority,'periods':periods,'schedule_as_of':anchor.isoformat(),
+                'next_contribution_date':next((d.isoformat() for d in dates if d<=deadline),None) if plan.contribution and remaining else None,
                 'required_per_period':required,'monthly_equivalent':round(plan.contribution*(26/12 if plan.frequency=='fortnightly' else 1),2),
                 'completion_date':completion.isoformat() if completion else None,
                 'completion_horizon_limited':completion is None and plan.contribution>0,
@@ -104,10 +124,15 @@ class PlanningTools:
             'hypothetical_additional_expense':request.hypothetical_one_off_expense,
             'hypothetical_additional_missing_income':request.hypothetical_missing_income,
             'assumptions':['Principal only: no investment returns or invented income.',
-                'Regular contributions start one period after the as-of date plus the stated pause.',
+                'New schedules start one period after assessment plus pause; unchanged approved schedules retain their recorded anchor. Regular contributions continue to the stated deadline, matching the principal projection.',
                 'Fortnightly monthly equivalent is annualised at 26/12; deadlines use actual 14-day dates.',
                 'Known paid and unpaid expenses already enter the source context once. Additional shocks here are hypothetical only.',
-                'Cashflow is a one-month comparison, not a complete future balance forecast. Multiple possible funding accounts require clarification.',
+                'Dated liquidity is bounded to 90 days and uses explicit estimates; the legacy one-month scalar is diagnostic only. Multiple possible funding accounts require clarification.',
                 'Goal allocations and protected reserves remain untouched. Priority is hypothetical, not an automatic funding rule.']}
+        from finstats.dated_cashflow import project_schedule, cash_funded_stress
+        result['dated_cashflow']=project_schedule(self.context.get('dated_cashflow_evidence',{}),rows,contribution_dates,
+            runway_end=runway['window_end'] if runway else self.context['as_of'],hypothetical_impact=impact) if runway else {'available':False,'reasons':['Missing authorised runway evidence.']}
+        result['cash_funded_stress']=cash_funded_stress(self.context.get('dated_cashflow_evidence',{}),rows,contribution_dates,
+            runway_end=runway['window_end'] if runway else self.context['as_of'],hypothetical_impact=impact) if runway else {'available':False,'reasons':['Missing authorised runway evidence.']}
         self.calculations[ref]=result
         return result

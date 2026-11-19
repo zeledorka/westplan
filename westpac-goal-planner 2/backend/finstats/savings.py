@@ -19,6 +19,7 @@ from datetime import date
 from typing import Iterable
 
 from .data import Transaction
+from .categorisation import committed_transactions
 from .stats import ewma, mean, rolling_mean, std
 
 
@@ -64,7 +65,7 @@ def monthly_flows(txns: Iterable[Transaction], complete_months_only: bool = True
     Months with no transactions inside the covered range are kept as zeros.
     """
     accts = set(account_ids) if account_ids is not None else None
-    txns = [t for t in txns if accts is None or t.account_id in accts]
+    txns = committed_transactions([t for t in txns if accts is None or t.account_id in accts])
     if not txns:
         return []
     first, last = min(t.date for t in txns), max(t.date for t in txns)

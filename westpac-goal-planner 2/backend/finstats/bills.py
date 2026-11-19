@@ -15,7 +15,7 @@ def expected_payment(series):
     """Use a detected latest price step; otherwise retain the robust median estimate."""
     from .shocks import detect_recurring_bill_changes
     changes=detect_recurring_bill_changes([],series=[series])
-    if changes and changes[-1].date==series.last_date:
+    if changes and changes[-1].date==series.occurrences[-1].date:
         return changes[-1].amount, 'latest_detected_price_change'
     return round(series.typical_amount,2), 'recent_median'
 
@@ -35,7 +35,7 @@ def bill_insights(txns, as_of: date, horizon_days=30):
             "confirmed_contract": False,
             "essential": any(t.essential for t in s.occurrences),
             "observations": len(s.occurrences),
-            "last_observed": s.last_date.isoformat(),
+            "last_observed": s.occurrences[-1].date.isoformat(),
             "merchant": s.merchant,
         })
     return out
@@ -47,7 +47,7 @@ def subscription_id(account_id, merchant):
     return sha256((account_id + '\0' + merchant).encode()).hexdigest()[:20]
 
 
-def bills_calendar(txns, *, as_of: date, pending_expenses=(), subscription_states=None):
+def bills_calendar(txns, *, as_of: date, pending_expenses=(), subscription_states=None, horizon_days=30):
     """Paid history and upcoming occurrences. Explicit links reconcile one-off obligations."""
     from datetime import timedelta
     from hashlib import sha256
@@ -74,7 +74,7 @@ def bills_calendar(txns, *, as_of: date, pending_expenses=(), subscription_state
                       'expected_date': last.date.isoformat(), 'date_kind': 'observed_posting',
                       'expected_amount': round(last.spend, 2), 'amount_basis':'observed_posting', 'source': 'posted_transaction', 'already_paid': True})
         if not cancelled:
-            for d in s.upcoming(as_of, 30):
+            for d in s.upcoming(as_of, horizon_days):
                 bid = sha256((sid+d.isoformat()).encode()).hexdigest()[:20]
                 items.append({**common, 'bill_id': bid, 'status': 'upcoming', 'expected_date': d.isoformat(),
                               'date_kind': 'estimated', 'expected_amount': amount, 'amount_basis': basis,

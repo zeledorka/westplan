@@ -78,7 +78,7 @@ class SafetyRevisionTests(unittest.TestCase):
         self.assertEqual(d['baseline_calculations']['calculation-1']['plans'][0]['contribution'],1100)
         feedback=json.loads(t.calls[2][0][-1].parts[0].text)
         self.assertEqual(feedback['strategies'][0]['role'],'recommended')
-        self.assertEqual(feedback['strategies'][0]['authoritative_evidence']['currency'],'AUD')
+        self.assertEqual(feedback['strategies'][0]['authoritative_evidence_source'],'Prior Python result calculation-1')
         self.assertEqual(feedback['strategies'][0]['findings'][0]['code'],'EXCEEDS_STRETCH_CAPACITY')
         self.assertFalse(d['activation_allowed'])
 
@@ -146,7 +146,8 @@ class SafetyRevisionTests(unittest.TestCase):
         d,_,_=self.ask(t,ctx)
         p=d['calculations']['calculation-2']['plans'][0]
         self.assertEqual((p['contribution'],p['pause_months'],p['deadline']),(450,1,'2027-10-31'))
-        self.assertEqual(d['safety_assessment']['status'],'PASS')
+        self.assertEqual(d['safety_assessment']['status'],'REVISE')
+        self.assertLess(d['calculations']['calculation-2']['dated_cashflow']['minimum_cash'],200)
 
     def test_503_retries_exact_revision_call_not_whole_assessment(self):
         t=Transport(tool(plan(1100)),output(),PlannerError('planner_provider_error','Busy',502,upstream_status=503),tool(plan(600)),output(('calculation-2',)))
@@ -249,3 +250,33 @@ class SafetyRevisionPersistenceTests(unittest.TestCase):
         self.assertIsNone(final['draft']['safety_revision']['failure'])
         self.assertIsNone(final['error'])
         self.assertEqual(len(self.planner.transport.calls),1)
+
+
+class OptionalIncompleteRevisionTests(unittest.TestCase):
+    def test_incomplete_optional_block_can_be_removed_once_without_new_calculation(self):
+        ctx=demo_contexts()['normal']
+        initial=output(('calculation-1','calculation-2','calculation-3'))
+        t=Transport(tool(plan(600),plan(0,pause_months=1,deadline='2026-10-15'),plan(0)),initial,tool(),output())
+        clock=Clock();agent=GeminiPlanner(t,clock=clock,sleeper=clock.sleep,final_output_mode='json_text')
+        checker=lambda d:assess_draft(d,ctx,d['baseline_calculations'],expected_goal_ref='goal-1')
+        with patch.object(PlanningTools,'calculate_strategy',autospec=True,side_effect=PlanningTools.calculate_strategy) as calculate:
+            draft=agent.run(ctx,goal_ref='goal-1',question='Assess',safety_checker=checker)
+        self.assertEqual(calculate.call_count,3)
+        first=draft['safety_revision']['history'][0]['safety_assessment']
+        self.assertEqual(first['status'],'BLOCK');self.assertEqual(first['recommended_status'],'PASS')
+        self.assertEqual(first['strategies'][1]['status'],'REVISE')
+        self.assertIn('INCOMPLETE_OPTION_SCHEDULE',[f['code'] for f in first['strategies'][1]['findings']])
+        self.assertEqual(draft['safety_assessment']['status'],'PASS')
+        self.assertEqual(draft['metadata']['safety_revision_attempts'],1)
+        self.assertEqual(draft['metadata']['safety_revision_calculation_calls'],0)
+        self.assertEqual(set(draft['calculations']),{'calculation-1'})
+        self.assertEqual(set(draft['baseline_calculations']),{'calculation-1','calculation-2','calculation-3'})
+
+    def test_global_provenance_or_unsafe_recommendation_cannot_be_revised_as_optional(self):
+        from planning.safety_revision import revision_eligible
+        base={'status':'BLOCK','recommended_status':'PASS','findings':[],
+            'strategies':[{'status':'REVISE','findings':[{'code':'INCOMPLETE_OPTION_SCHEDULE','outcome':'REVISE'}]}]}
+        self.assertTrue(revision_eligible(base))
+        for change in ({'recommended_status':'BLOCK'},{'findings':[{'code':'MISSING_OR_INVALID_EVIDENCE','outcome':'BLOCK'}]},
+                       {'strategies':[{'status':'BLOCK','findings':[{'code':'ESSENTIAL_SPENDING_DEPENDENCY','outcome':'BLOCK'}]}]}):
+            self.assertFalse(revision_eligible({**base,**change}))

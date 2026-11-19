@@ -4,7 +4,7 @@ from decimal import Decimal, InvalidOperation
 CATEGORIES = frozenset({"Business expenses", "Donations", "Eating out", "Education",
     "Entertainment", "Groceries", "Health", "Housing", "Income", "Insurance", "Kids",
     "Loan repayments", "Shopping", "Subscriptions", "Tax", "Transfers", "Transport",
-    "Travel", "Utilities", "Pets", "Other"})
+    "Travel", "Utilities", "Pets", "Other", "Buy Now Pay Later"})
 
 
 def category(value):

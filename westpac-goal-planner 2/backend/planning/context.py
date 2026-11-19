@@ -4,6 +4,8 @@ from datetime import date, timedelta
 from hashlib import sha256
 import json
 from finstats.banking import banking_insights
+from finstats.categorisation import committed_transactions
+from finstats.dated_cashflow import cashflow_evidence
 from finstats.shock_context import normalized_shocks
 from finstats.savings import MonthlyFlow, savings_capacity_from_flows
 from .schemas import Preferences, category, money
@@ -20,7 +22,7 @@ def build_planning_context(txns, *, as_of: date, goals=(), preferences=None,
     preferences = preferences or Preferences()
     preferences = replace(preferences, protected_categories=tuple(sorted(
         set(preferences.protected_categories)|{b.category for b in budget_limits if b.protected})))
-    past = [t for t in txns if t.date <= as_of]
+    past = committed_transactions([t for t in txns if t.date <= as_of])
     for t in past:
         money(t.amount, signed=True)
         if t.balance_after is not None:
@@ -122,7 +124,7 @@ def build_planning_context(txns, *, as_of: date, goals=(), preferences=None,
                          "average_surplus": cashflow["average_surplus"],
                          "month_to_date_net": cashflow["month_to_date_net"],
                          "savings_capacity": _select(capacity, ("comfortable", "stretch", "centre", "ewma_w",
-                             "mean_w", "sigma_w", "income_cap", "mean_income", "mean_discretionary")),
+                             "mean_w", "sigma_w", "income_cap", "mean_income", "mean_discretionary", "smoothed_observations", "volatility_established")),
                          "runway": model_runway},
             "recurring": bills, "balances": balances,
             "opportunities": [{**_select(o, ("kind", "observed_monthly_spend", "guaranteed_savings",
@@ -207,6 +209,8 @@ def build_planning_context(txns, *, as_of: date, goals=(), preferences=None,
             projected_after_known_pending=round(runway['balance']-recurring_due-pending_due,2),
             below_default_buffer=runway['balance']-recurring_due<runway['buffer'],
             below_buffer_after_known_pending=runway['balance']-recurring_due-pending_due<runway['buffer'])
+    return_payload['dated_cashflow_evidence']=cashflow_evidence(past,as_of=as_of,accounts=accounts,
+        pending_expenses=pending_expenses,subscription_states=subscription_states,facts=insights)
     encoded = json.dumps(return_payload, sort_keys=True, allow_nan=False, separators=(',', ':'))
     return_payload["state_version"] = sha256(encoded.encode()).hexdigest()
     return return_payload

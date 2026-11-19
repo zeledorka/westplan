@@ -167,3 +167,9 @@ progress { width: 100%; accent-color: var(--navy); }
 .demo-comparison caption { text-align: left; font-weight: 700; margin-bottom: 8px; }
 .demo-comparison th, .demo-comparison td { text-align: left; padding: 8px 3px; border-bottom: 1px solid #ddd; overflow-wrap: anywhere; }
 .demo-comparison th { max-width: 110px; }
+
+/* Keep the active goal step compact within the existing banking cards. */
+.goal-create-form, .goal-event-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.goal-create-form .field, .goal-event-form .field { min-width: 0; margin: 0; }
+.goal-create-form > p, .goal-create-form > button, .goal-event-form > p, .goal-event-form > button { grid-column: 1 / -1; }
+.goal-create-form input, .goal-create-form select, .goal-event-form input, .goal-event-form select { width: 100%; min-width: 0; }

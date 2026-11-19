@@ -5,7 +5,7 @@ from decimal import Decimal
 
 NUM=r'[-−]?\d+(?:,\d{3})*(?:\.\d+)?'
 AMOUNT=rf'(?P<amount>[-−]?\s*(?:AUD\s*|A?\$\s*)?{NUM})(?!\d|\.\d)'
-METRIC=r'(?:(?:current|today.s|projected|immediate|one.month|remaining|available|post.contribution)\s+)*(?:(?:cash|account)(?:\s+(?:balance|residual|available|shortfall))?|balance|liquidity|(?:monthly\s+)(?:cashflow\s+)?(?:surplus|residual|deficit))'
+METRIC=r'(?:(?:current|today.s|projected|immediate|one.month|remaining|available|post.contribution)\s+)*(?:(?:transaction(?:\s+account)?|cash|account)(?:\s+(?:balance|residual|available|shortfall))?|balance|liquidity|(?:monthly\s+)(?:cashflow\s+)?(?:surplus|residual|deficit))'
 SIGN=r'positive|negative|zero|non-negative|nonnegative|non-positive|nonpositive|no'
 SIGN_BEFORE=re.compile(rf'\b(?P<sign>{SIGN})\s+(?P<metric>{METRIC})\b',re.I)
 SIGN_AFTER=re.compile(rf'\b(?P<metric>{METRIC})\s+(?:is|remains|will (?:be|remain)|would be)\s+(?P<sign>{SIGN})\b',re.I)
@@ -31,9 +31,12 @@ def clauses(text):
 
 def metric_name(phrase, statement):
     phrase=phrase.lower();statement=statement.lower()
+    if re.search(r'one.month|immediate',phrase) and not ('monthly' in phrase and re.search(r'surplus|residual|deficit',phrase)):return 'legacy_scalar_cash_comparison'
     if 'monthly' in phrase and re.search(r'surplus|residual|deficit',phrase):
         return 'historical_monthly_surplus' if re.search(r'\b(?:historical|average)\b',statement[:statement.find(phrase)+len(phrase)]) else 'monthly_surplus_after_contribution'
     if re.search(r'\b(?:current|today)\b',phrase):return 'current_cash_balance'
+    # A transaction-account balance is a current stock unless explicitly projected.
+    if 'transaction' in phrase and not re.search(r'projected|post.contribution',phrase) and not re.search(r'after.*(?:contribution|savings|obligations)',statement):return 'current_cash_balance'
     if re.search(r'\b(?:before (?:the |proposed )*(?:contribution|savings)|after (?:known |confirmed )*obligations)\b',statement) and not re.search(r'after.*(?:contribution|savings)',statement):return 'cash_after_known_obligations'
     return 'cash_after_contribution'
 
@@ -80,7 +83,8 @@ def narrative_issues(field, text, strategy_ref, all_refs, facts):
                     emit(statement,refs,candidates,'The identified '+metric+' claim contradicts Python. A monthly flow is not a cash balance; distinguish current, after-obligation and after-contribution amounts and acknowledge any cash shortfall.')
         # Explicit affordability/no-shortfall assertions only; do not judge which strategy is best.
         if re.search(r'\b(?:no (?:projected |immediate |one.month )?(?:cash(?:flow)? shortfall|liquidity deficit)|affordable (?:from|with) (?:the |current |available )*cash|cash covers (?:the )?contribution)\b',statement,re.I):
-            candidates=evidence('cash_after_contribution',refs)
+            legacy=bool(re.search(r'one.month|immediate|from current cash|with current cash|current cash covers',statement,re.I))
+            candidates=evidence('legacy_scalar_cash_comparison' if legacy else 'cash_after_contribution',refs)
             if candidates and all(f['value']<0 for f in candidates):
                 emit(statement,refs,candidates,'Python calculates a negative cash balance after contribution, so an explicit no-shortfall/cash-funded affordability claim is unsupported.')
         goals=[f for ref in refs for rows in facts['calculations'][ref]['goals'].values() for f in rows]

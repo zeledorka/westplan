@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { request } from './api/client.js'
+import GoalAssessment from './components/GoalAssessment.jsx'
 import { BankContext, day } from './data/mockBank.js'
 import { TabBar } from './components/ui.jsx'
 import Home from './pages/Home.jsx'
@@ -20,10 +21,11 @@ export default function App() {
   const [busy, setBusy] = useState(true)
   const [error, setError] = useState('')
   const [notice, setNotice] = useState('')
+  const [safetyFailure, setSafetyFailure] = useState(null)
   const sequence = useRef(0)
   async function refresh() {
     const seq = ++sequence.current
-    setBusy(true); setError('')
+    setBusy(true); setError(''); setSafetyFailure(null)
     try {
       const people = await request('/customers')
       if (seq === sequence.current) setCustomers(people.customers)
@@ -42,7 +44,7 @@ export default function App() {
   }, [demoMode])
   async function selectCustomer(id) {
     const seq = ++sequence.current
-    setBusy(true); setError(''); setNotice('')
+    setBusy(true); setError(''); setNotice(''); setSafetyFailure(null)
     try {
       await request('/session', { method: 'POST', body: { customer_id: id, demo_acknowledged: true } })
       let data = await request('/overview')
@@ -53,7 +55,7 @@ export default function App() {
   }
   async function mutate(path, body, message = 'Saved.', method = 'POST', includeRevision = true) {
     const seq = ++sequence.current
-    setBusy(true); setError(''); setNotice('')
+    setBusy(true); setError(''); setNotice(''); setSafetyFailure(null)
     try {
       const data = await request(path, { method, scope: bank.scope_version,
         body: { ...body, ...(includeRevision ? { expected_revision: bank.revision } : {}) } })
@@ -61,7 +63,7 @@ export default function App() {
       return true
     } catch (e) {
       if (seq === sequence.current) {
-        setError(e.message)
+        setError(e.message); setSafetyFailure(e.assessment || null)
         if (e.status === 409) { try { const latest = await request('/overview'); if (seq === sequence.current) setBank(latest) } catch { /* Keep the original actionable error visible. */ } }
         if (e.status === 401) setBank(null)
       }
@@ -69,7 +71,7 @@ export default function App() {
     } finally { if (seq === sequence.current) setBusy(false) }
   }
   async function signOut() {
-    sequence.current++; setBusy(true)
+    sequence.current++; setBusy(true); setSafetyFailure(null)
     try { await request('/session', { method: 'DELETE' }); setBank(null); setTool(null); setNotice(''); setError('') }
     catch (e) { setError(e.message) }
     finally { setBusy(false) }
@@ -87,7 +89,7 @@ export default function App() {
     : tab === 'accounts' ? <Accounts />
     : tab === 'payments' ? <Payments />
     : tab === 'insights' ? <Insights onOpenGoals={openGoals} /> : <More />
-  return <BankContext.Provider value={{ ...bank, busy, mutate, refresh, signOut, openTool, openTransactions: () => go('accounts') }}>
+  return <BankContext.Provider value={{ ...bank, busy, mutate, refresh, notify: setNotice, signOut, openTool, openTransactions: () => go('accounts') }}>
     <div className="phone">
       <div className="contextbar">
         <label>Mock customer<select aria-label="Mock customer" disabled={busy} value={bank.selected_customer} onChange={e => selectCustomer(e.target.value)}>
@@ -101,7 +103,7 @@ export default function App() {
         <p className="small muted">Synthetic snapshot · {day(bank.as_of)}</p>
         {bank.scenario !== 'customer' && bank.scenario !== 'integrated_demo' && <p className="small">Separate demo sandbox · <button className="link" disabled={busy} onClick={() => mutate('/scenario', { scenario: 'normal', reset: true }, 'Demo reset to normal.', 'POST', false)}>Reset demo to normal</button></p>}
       </div>
-      {demoMode && <p className="status">Integrated backend demo · <button onClick={exitDemo}>Exit Demo Mode</button></p>}{status}
+      {safetyFailure && <GoalAssessment assessment={safetyFailure} />}{demoMode && <p className="status">Integrated backend demo · <button onClick={exitDemo}>Exit Demo Mode</button></p>}{status}
       <main className="screen" key={`${bank.selected_customer}-${bank.scenario}-${tool || tab}`}>{content}</main>
       <TabBar tab={tab} onChange={go} />
     </div>

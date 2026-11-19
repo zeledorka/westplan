@@ -29,6 +29,19 @@ class FinancialNarrativeTests(unittest.TestCase):
         self.assertIn(Category.NARRATIVE,[i.error_type for i in cm.exception.issues])
         return cm.exception
 
+    def test_existing_goal_allocation_is_not_a_future_contribution(self):
+        for text in ('Allocated savings of AUD 1200 remain earmarked for the goal.',
+                     'Goal allocation of 1200 AUD remains designated.',
+                     'The goal uses allocated savings of 1200 AUD; contribute AUD 600 monthly.'):
+            with self.subTest(text=text):
+                self.validate(text,case='normal')
+        for text in ('Allocated savings of AUD 1201 remain earmarked for the goal.',
+                     'Goal allocation of 1201 AUD remains designated.',
+                     'Goal allocation of AUD 1200 monthly.',
+                     'Contribute AUD 1200 monthly.'):
+            with self.subTest(text=text),self.assertRaises(ProposalValidationError):
+                self.validate(text,case='normal')
+
     def test_facts_preserve_sources_values_units_periods_and_unknowns(self):
         ctx,ledger=self.evidence();before=deepcopy((ctx,ledger));facts=financial_facts(ctx,ledger)
         by={f['metric']:f for f in facts['context']}
@@ -36,7 +49,8 @@ class FinancialNarrativeTests(unittest.TestCase):
         self.assertEqual(by['cash_after_known_obligations']['value'],150)
         self.assertEqual(by['confirmed_pending_due']['value'],1850)
         rows={f['metric']:f for f in facts['calculations']['calculation-1']['facts']}
-        self.assertEqual(rows['cash_after_contribution']['value'],-450)
+        self.assertEqual(rows['cash_after_contribution']['value'],ledger['calculation-1']['dated_cashflow']['minimum_cash'])
+        self.assertEqual(rows['legacy_scalar_cash_comparison']['value'],-450)
         self.assertEqual(rows['monthly_surplus_after_contribution']['value'],300)
         self.assertEqual(rows['comfortable_capacity']['period']['months'],[r['month'] for r in ctx['financial_insights']['cashflow']['monthly']])
         for f in list(by.values())+list(rows.values()):
@@ -53,36 +67,62 @@ class FinancialNarrativeTests(unittest.TestCase):
     def test_positive_cash_when_negative_and_negative_when_positive(self):
         for text in ['You will still have positive cash available.','Preserving positive one-month liquidity.',
                      'The projected cash balance remains positive.','The one-month cash balance is zero.']:
-            self.rejected(text)
+            self.rejected(text,case='vet_paid')
         self.rejected('The projected cash balance is negative.',case='normal')
-        self.validate('The projected cash balance is negative.')
-        self.validate('The projected cash balance is −$450.')
-        self.validate('The projected cash balance is AUD -450.')
+        self.validate('The projected cash balance is negative.',case='vet_paid')
+        self.validate('The one-month cash balance is −$450.')
+        self.validate('The one-month cash balance is AUD -450.')
         self.validate('The projected cash balance is positive.',case='normal')
 
     def test_zero_monthly_flow_is_not_zero_cash_or_no_shortfall(self):
         self.rejected('Leaves zero immediate one-month cash residual after obligations and contributions in the upcoming month.',amount=900)
-        self.rejected('There is no cash shortfall.',amount=900)
-        self.validate('The monthly surplus after contribution is AUD 0. The projected cash balance is negative.',amount=900)
+        self.rejected('There is no one-month cash shortfall.',amount=900)
+        self.validate('The monthly surplus after contribution is AUD 0. The projected cash balance is positive.',amount=900)
 
     def test_current_and_projected_balances_are_not_interchangeable(self):
         self.validate('The current balance is AUD 2000. The projected cash after known obligations is AUD 150.')
-        self.validate('The current balance is positive, but the projected cash balance is negative.')
+        self.validate('The current balance is positive, but the one-month cash balance is negative.')
         self.rejected('The current balance is AUD 150.')
         self.rejected('The projected cash balance is AUD 2000.')
+
+    def test_transaction_balance_uses_current_stock_not_projected_minimum(self):
+        for label in ('transaction balance', 'transaction account balance', 'current account balance'):
+            with self.subTest(label=label):
+                self.validate('The '+label+' is AUD 2000.')
+                self.rejected('The '+label+' is AUD 150.')
+        self.validate('The transaction balance is positive, but the one-month cash balance is negative.')
+        ctx,ledger=self.evidence()
+        minimum=ledger['calculation-1']['dated_cashflow']['minimum_cash']
+        for template in ('The projected transaction balance is AUD {}.',
+                         'The projected transaction account balance is AUD {}.',
+                         'The transaction balance is AUD {} after contributions.',
+                         'The transaction account balance is AUD {} after contributions.'):
+            with self.subTest(template=template):
+                self.validate(template.format(minimum))
+                self.rejected(template.format(2000))
+
+    def test_allocations_and_protected_reserves_remain_separate_from_cash(self):
+        self.validate('Allocated savings of AUD 1200 remain earmarked for the goal.',case='normal')
+        with self.assertRaises(ProposalValidationError):
+            self.validate('Allocated savings of AUD 1201 remain earmarked for the goal.',case='normal')
+        ctx,ledger=self.evidence('normal')
+        reserves=sum(row.get('protected',0) for row in ctx['financial_insights']['balances'])
+        self.validate('Protected reserves of AUD '+str(reserves)+' remain untouched.',case='normal')
+        with self.assertRaises(ProposalValidationError):
+            self.validate('Protected reserves of AUD 987654321.01 remain untouched.',case='normal')
 
     def test_distinct_periods_conditionals_and_negation_do_not_false_positive(self):
         for text in ['After the next payday cash could be positive.',
                      'If income changes, projected cash might be positive.',
-                     'Current cash is positive; projected cash is negative.',
+                     'Current cash is positive; one-month cash is negative.',
                      'This does not leave positive one-month liquidity.',
                      'The historical monthly surplus is AUD 900. The monthly surplus after contribution is AUD 300.']:
             self.validate(text)
 
     def test_explicit_cash_affordability_is_not_capacity(self):
-        for text in ['The contribution is affordable from current cash.','Current cash covers the contribution.','There is no projected cash shortfall.']:
+        for text in ['The contribution is affordable from current cash.','Current cash covers the contribution.','There is no one-month cash shortfall.']:
             self.rejected(text)
-        self.validate('The schedule meets the deadline, but projected cash is negative; affordability remains uncertain.')
+        self.validate('The schedule meets the deadline, but projected cash is negative; affordability remains uncertain.',case='vet_paid')
 
     def test_paid_unpaid_and_double_debit_claims(self):
         self.rejected('The bill is already paid.')
@@ -141,12 +181,12 @@ class FinancialNarrativeTests(unittest.TestCase):
         self.assertEqual(draft['status'],'draft_unverified');self.assertFalse(draft['activation_allowed'])
 
     def test_failed_correction_stops_and_new_claim_is_revalidated(self):
-        bad=proposal(600);bad['strategies'][0]['rationale']='The projected cash balance is positive.'
-        t=Scripted([bad]*3);agent=GeminiPlanner(t,final_output_mode='json_text')
+        bad=proposal(600);bad['strategies'][0]['rationale']='The projected cash balance is negative.'
+        t=Scripted([bad]*3);agent=GeminiPlanner(t,final_output_mode='json_text',max_corrections=2)
         with self.assertRaises(ProposalValidationError):agent.run(self.contexts['vet_unpaid'],goal_ref='goal-1',question='Assess')
         self.assertEqual(agent.last_metrics['correction_attempts'],2)
         self.assertFalse(agent.last_metrics['success'])
-        edited=deepcopy(bad);edited['strategies'][0]['rationale']='The projected cash balance is negative.';edited['strategies'][0]['contribution']=500
+        edited=deepcopy(bad);edited['strategies'][0]['rationale']='The projected cash balance is positive.';edited['strategies'][0]['contribution']=500
         t=Scripted([bad,edited]);agent=GeminiPlanner(t)
         with self.assertRaises(ProposalValidationError):agent.run(self.contexts['vet_unpaid'],goal_ref='goal-1',question='Assess')
         self.assertTrue(agent.last_metrics['new_calculations_required'])

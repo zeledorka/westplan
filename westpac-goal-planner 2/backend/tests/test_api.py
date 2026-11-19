@@ -128,6 +128,7 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(response.status_code,409)
 
     def test_goal_create_edit_approval_history_and_rejection(self):
+        self.action('/api/scenario',{'scenario':'integrated_demo','reset':True,'fixture':'stable_holiday'},expected=200)
         self.action('/api/goals',{'kind':'holiday','target':3000,'allocated':0,'deadline':'2027-07-15','confirmed':True},expected=200)
         goal=self.view['goals'][0]
         self.action('/api/goals/'+goal['goal_id']+'/proposals',{'changes':{'target':3500,'deadline':'2027-08-15'}},expected=200)

@@ -13,7 +13,7 @@ from planning.agent_tools import PlanningTools
 from planning.checkpoint import pack, unpack
 from planning.demo import demo_contexts
 from planning.gemini import GenerationRetryPolicy, PlannerError
-from planning.openrouter import OpenRouterTransport, strict_json
+from planning.openrouter import OpenRouterTransport, OpenRouterResponse, strict_json
 from planning.providers import configured_transport
 from planning.safety import assess_draft
 from tests.test_gemini_planner import output, MockGemini
@@ -47,6 +47,52 @@ def tools(amount, prefix='initial', *, finish=True, reasoning=None):
     calls = [call(prefix+'-calc', 'calculate_strategy', {'plans': [{'goal_ref': 'goal-1', 'contribution': amount}]})]
     if finish:calls.append(call(prefix+'-finish', 'finish_planning', {}))
     return completion(calls=calls, reason='tool_calls', reasoning=reasoning)
+
+
+class FencedJSONTests(unittest.TestCase):
+    def response(self, text):
+        payload = completion()
+        payload['choices'][0]['message']['content'] = text
+        return OpenRouterResponse(payload, 'test-route')
+
+    def test_single_fence_preserves_values_raw_evidence_and_restore(self):
+        body = '{"id":"calculation-1","amount":50.00,"unknown":null,"enabled":false}'
+        for fence in ('```json\n'+body+'\n```', ' \n```\r\n'+body+'\r\n```\n '):
+            with self.subTest(fence=fence):
+                response = self.response(fence)
+                self.assertEqual(response.text, body)
+                self.assertEqual(response.raw_text, fence)
+                saved = response.model_dump()
+                self.assertEqual(saved['formatting_normalization'], 'single_json_markdown_fence')
+                self.assertEqual(saved['openrouter_response']['choices'][0]['message']['content'], fence)
+                restored = OpenRouterResponse(saved['openrouter_response'], saved['route'])
+                self.assertEqual(restored.text, body)
+                self.assertEqual(restored.model_dump(), saved)
+        raw = self.response(body)
+        self.assertEqual(raw.text, body)
+        self.assertIsNone(raw.formatting_normalization)
+
+    def test_invalid_wrappers_and_unsupported_json_are_not_normalized(self):
+        cases = ['```json\n{}', '{}\n```', 'Here:\n```json\n{}\n```',
+                 '```json\n{}\n```\nDone', '```json\n{}\n```\n```json\n{}\n```',
+                 '```python\n{}\n```', '```json\n{broken}\n```',
+                 '```json\n{"x":NaN}\n```', '```json\n{"x":Infinity}\n```',
+                 '```json\n{"x":1e999}\n```', '```json\n{"x":1,"x":2}\n```']
+        for text in cases:
+            with self.subTest(text=text):
+                response = self.response(text)
+                self.assertEqual(response.text, text)
+                self.assertIsNone(response.formatting_normalization)
+                with self.assertRaises(ValueError): strict_json(response.text)
+
+    def test_fenced_schema_invalid_content_is_still_rejected(self):
+        from planning.proposal_validation import validate_proposal, ProposalValidationError
+        ctx = demo_contexts()['normal']
+        calculation = PlanningTools(ctx).calculate_strategy({'plans':[{'goal_ref':'goal-1','contribution':600}]})
+        response = self.response('```json\n{"unsupported":true}\n```')
+        self.assertIsNotNone(response.formatting_normalization)
+        with self.assertRaises(ProposalValidationError):
+            validate_proposal(response.text, {calculation['calculation_ref']:calculation}, ctx)
 
 
 class OpenRouterTests(unittest.TestCase):
@@ -98,18 +144,61 @@ class OpenRouterTests(unittest.TestCase):
             with patch.dict(os.environ, change), self.assertRaises(PlannerError):
                 configured_transport(None) if 'PLANNER_PROVIDER' in change else OpenRouterTransport(None)
 
+    def test_deepseek_defaults_and_paid_model_allowlist(self):
+        with patch.dict(os.environ, {'OPENROUTER_API_KEY':'offline-key', 'OPENROUTER_ALLOW_PAID':'true'}, clear=True):
+            transport=configured_transport(None);self.addCleanup(transport.client.close)
+            self.assertEqual(transport.provider,'openrouter')
+            self.assertEqual(transport.model,'deepseek/deepseek-v3.2')
+            self.assertEqual(transport.profile,'tools_json_text')
+            self.assertTrue(transport.allow_paid)
+            for model in ('vendor/paid','deepseek/deepseek-v3.2-special','openrouter/auto'):
+                with patch.dict(os.environ,{'OPENROUTER_MODEL':model}),self.assertRaises(PlannerError):
+                    OpenRouterTransport(None)
+            with patch.dict(os.environ,{'OPENROUTER_ALLOW_PAID':'false'}),self.assertRaises(PlannerError):
+                OpenRouterTransport(None)
+            with patch.dict(os.environ,{'OPENROUTER_MODEL':'nvidia/nemotron-3-ultra-550b-a55b:free'}):
+                free=OpenRouterTransport(None);self.addCleanup(free.client.close)
+                self.assertFalse(free.allow_paid)
+            with patch.dict(os.environ,{'PLANNER_PROVIDER':'gemini'}):
+                self.assertEqual(configured_transport(None).provider,'google_genai')
+
+    def test_fenced_final_and_ready_checkpoint_replay_do_not_spend_corrections(self):
+        payload = completion(output())
+        original = '```json\n'+payload['choices'][0]['message']['content']+'\n```'
+        payload['choices'][0]['message']['content'] = original
+        transport = self.transport(tools(600), payload)
+        saved = []
+        draft = self.ask(self.agent(transport), on_checkpoint=lambda cp:saved.append(deepcopy(cp)))
+        self.assertEqual(draft['safety_assessment']['status'], 'PASS')
+        checkpoint = saved[-1]
+        state = unpack(checkpoint['state'])
+        self.assertEqual(state['ready']['formatting_normalization'], 'single_json_markdown_fence')
+        self.assertEqual(state['ready']['openrouter_response']['choices'][0]['message']['content'], original)
+        state['metrics']['correction_attempts'] = 4
+        checkpoint['state'] = pack(state)
+        before = deepcopy(checkpoint)
+        with patch.object(transport, 'generate', side_effect=AssertionError('No new request')):
+            recovered = self.ask(self.agent(transport), checkpoint=checkpoint)
+        self.assertEqual(recovered['safety_assessment']['status'], 'PASS')
+        self.assertEqual(recovered['metadata']['correction_attempts'], 4)
+        self.assertEqual(recovered['metadata']['model_calls'], draft['metadata']['model_calls'])
+        self.assertEqual(recovered['baseline_calculations'], draft['baseline_calculations'])
+        self.assertEqual(checkpoint, before)
+
     def test_complete_loop_multiple_calls_matched_ids_and_reasoning(self):
         reasoning = [{'type': 'reasoning.encrypted', 'data': 'opaque', 'signature': 'unaltered'}]
         t = self.transport(tools(600, reasoning=reasoning), completion(output()))
-        draft = self.ask(self.agent(t))
+        a=self.agent(t);draft = self.ask(a)
         self.assertEqual(draft['safety_assessment']['status'], 'PASS')
         self.assertFalse(draft['activation_allowed']);self.assertTrue(draft['model_generated'])
         self.assertEqual(draft['metadata']['provider'], 'openrouter')
         self.assertEqual(draft['metadata']['reasoning_tokens'], 20)
         self.assertEqual(draft['metadata']['reported_cost'], 0)
         messages = self.requests[1]['messages']
-        self.assertEqual(next(m for m in messages if m['role'] == 'assistant')['reasoning_details'], reasoning)
-        self.assertEqual([m['tool_call_id'] for m in messages if m['role'] == 'tool'], ['initial-calc', 'initial-finish'])
+        self.assertEqual([m['role'] for m in messages],['system','user'])
+        saved=unpack(a.last_checkpoint['state'])['contents']
+        self.assertEqual(next(c['openrouter_message'] for c in saved if 'openrouter_message'in c)['reasoning_details'],reasoning)
+        self.assertEqual([p['function_response']['id'] for c in saved for p in c.get('parts',[]) if 'function_response'in p],['initial-calc','initial-finish'])
         self.assertEqual(self.requests[0]['tool_choice'], 'required')
         self.assertEqual(self.requests[1]['tool_choice'], 'none')
         self.assertNotIn('response_format', self.requests[1])
@@ -171,11 +260,13 @@ class OpenRouterTests(unittest.TestCase):
             with self.assertRaises(PlannerError):self.ask(a,on_checkpoint=interrupt)
             cp=json.loads(json.dumps(a.last_checkpoint))
             t2=self.transport(completion(output()))
-            draft=self.ask(self.agent(t2),checkpoint=cp)
+            recovered=self.agent(t2);draft=self.ask(recovered,checkpoint=cp)
         self.assertEqual(calculate.call_count,1)
         self.assertEqual(len(self.requests),1)
         self.assertEqual(draft['metadata']['total_tokens'],250)
-        self.assertEqual(next(m for m in self.requests[0]['messages'] if m['role']=='assistant')['reasoning_details'],reasoning)
+        self.assertEqual([m['role'] for m in self.requests[0]['messages']],['system','user'])
+        saved=unpack(recovered.last_checkpoint['state'])['contents']
+        self.assertEqual(next(c['openrouter_message'] for c in saved if 'openrouter_message'in c)['reasoning_details'],reasoning)
 
     def test_http_200_provider_errors_are_not_successful_responses(self):
         for payload in [{'error':{'code':503,'message':'PRIVATE'}},
@@ -315,3 +406,164 @@ class OpenRouterTests(unittest.TestCase):
 
 
 if __name__ == '__main__':unittest.main()
+
+
+class WireCompactionTests(unittest.TestCase):
+    @staticmethod
+    def expand(value):
+        shared=value.get('_shared_values',{})
+        def merge(a,b):
+            out=deepcopy(a)
+            for k,v in b.items():
+                out[k]=merge(out[k],v) if isinstance(out.get(k),dict) and isinstance(v,dict) else deepcopy(v)
+            return out
+        def walk(v):
+            if isinstance(v,list):return [walk(x) for x in v]
+            if not isinstance(v,dict):return v
+            if set(v)=={'_shared_text'}:return shared[v['_shared_text']]
+            if set(v)=={'_table_fields','_table_rows'}:return [walk(dict(zip(v['_table_fields'],r))) for r in v['_table_rows']]
+            fields={k:walk(x) for k,x in v.items() if k not in {'_shared_fields','_shared_values','_wire_format'}}
+            return merge(shared[v['_shared_fields']],fields) if '_shared_fields' in v else fields
+        return walk(value)
+
+    def test_nested_common_financial_values_roundtrip_without_mutating_ledger(self):
+        from planning.openrouter import compact_json
+        common={'assumptions':['Estimated spending; not guaranteed.']*20,'period':{'as_of':'2026-11-15','basis':'observed'},'reserve':1000.0}
+        original={'calculation_ref':'calculation-1','rows':[{**deepcopy(common),'cash':i,'nested':{'same':common,'different':i}} for i in range(8)]}
+        before=deepcopy(original);encoded=compact_json(original)
+        self.assertLess(len(encoded),len(json.dumps(original))*.7)
+        self.assertEqual(json.dumps(self.expand(json.loads(encoded)),sort_keys=True),json.dumps(original,sort_keys=True))
+        self.assertEqual(original,before)
+
+    def test_booleans_and_numbers_are_not_shared_as_equal(self):
+        from planning.openrouter import compact_json
+        original={'rows':[{'flag':v,'long':'x'*1200} for v in (True,1,1.0,False)]}
+        self.assertEqual(json.dumps(self.expand(json.loads(compact_json(original))),sort_keys=True),json.dumps(original,sort_keys=True))
+
+    def test_reserved_input_keys_cannot_impersonate_wire_references(self):
+        from planning.openrouter import compact_json
+        original={'rows':[{'_shared_fields':'untrusted','note':'x'*1000}]*5}
+        self.assertEqual(json.loads(compact_json(original)),original)
+
+    def test_native_reasoning_and_tool_ids_remain_exact(self):
+        from planning.openrouter import NativeMessage
+        native=NativeMessage({'role':'assistant','content':'unchanged','reasoning_details':[{'opaque':'signature'}],
+            'tool_calls':[call('same-id','calculate_strategy',{})]},'nvidia')
+        before=deepcopy(native.message)
+        t=object.__new__(OpenRouterTransport)
+        result={'calculation_ref':'calculation-1','rows':[{'assumptions':'x'*1500,'cash':n} for n in range(5)]}
+        messages,route=t._messages([native,types.Content(role='user',parts=[types.Part(function_response=types.FunctionResponse(name='calculate_strategy',id='same-id',response=result))])])
+        self.assertEqual(messages[0],before);self.assertEqual(native.message,before)
+        self.assertEqual(messages[1]['tool_call_id'],'same-id')
+        self.assertEqual(self.expand(json.loads(messages[1]['content'])),result)
+
+
+class CorrectionWireTests(unittest.TestCase):
+    def test_feedback_keeps_scoped_errors_without_repeating_draft_or_ledger(self):
+        from planning.openrouter import correction_feedback,compact_json
+        original={'task':'Correct the complete proposal using the validation evidence below.',
+            'original_proposal':'x'*50000,'authoritative_python_calculations':{'calculation-1':{'large':'x'*50000}},
+            'authoritative_financial_facts':{'large':'x'*50000},'authoritative_date_facts':{'large':'x'*50000},
+            'validation_errors':[{'field':'answer','error_type':'monetary_claim_mismatch','original_claim':'x'*50000,
+                'calculation_ref':'calculation-1','authoritative_values':{'cash':3172.81},'correction_required':'Quote the computed dated minimum.'}]}
+        before=deepcopy(original);lean=correction_feedback(original)
+        self.assertLess(len(compact_json(lean)),2000)
+        self.assertEqual(lean['authoritative_calculation_refs'],['calculation-1'])
+        self.assertEqual(lean['validation_errors'][0]['authoritative_values'],{'cash':3172.81})
+        self.assertNotIn('original_proposal',lean);self.assertNotIn('original_claim',lean['validation_errors'][0])
+        self.assertEqual(original,before)
+
+    def test_earlier_feedback_is_superseded_without_changing_native_output(self):
+        from planning.openrouter import NativeMessage
+        t=object.__new__(OpenRouterTransport)
+        feedback={'task':'Correct the complete proposal using the validation evidence below.','validation_errors':[],
+            'original_proposal':'rejected','authoritative_python_calculations':{'calculation-1':{}}}
+        native=NativeMessage({'role':'assistant','content':'```json\n{}\n```','reasoning_details':[{'opaque':'preserved'}]},'siliconflow/fp8')
+        contents=[]
+        for _ in range(2):contents += [native,types.Content(role='user',parts=[types.Part.from_text(text=json.dumps(feedback))])]
+        messages,_=t._messages(contents)
+        self.assertEqual(messages[0],native.message);self.assertEqual(messages[2],native.message)
+        self.assertIn('superseded',messages[1]['content'])
+        self.assertEqual(json.loads(messages[3]['content'])['authoritative_calculation_refs'],['calculation-1'])
+
+    def test_only_superseded_unsigned_drafts_are_compacted(self):
+        from planning.openrouter import NativeMessage
+        t=object.__new__(OpenRouterTransport)
+        feedback={'task':'Correct the complete proposal using the validation evidence below.','validation_errors':[]}
+        old=NativeMessage({'role':'assistant','content':'old rejected draft','reasoning':None},'siliconflow/fp8')
+        latest=NativeMessage({'role':'assistant','content':'latest complete draft','reasoning':None},'siliconflow/fp8')
+        user=types.Content(role='user',parts=[types.Part.from_text(text=json.dumps(feedback))])
+        messages,_=t._messages([old,user,latest,user])
+        self.assertIn('superseded',messages[0]['content'])
+        self.assertEqual(messages[2]['content'],'latest complete draft')
+        self.assertEqual(old.message['content'],'old rejected draft')
+
+    def test_terminal_rejected_output_retains_precise_validation_records(self):
+        from tests.test_gemini_corrections import Scripted
+        from planning.proposal_validation import ProposalValidationError
+        raw='```json\n'+json.dumps(output())+'\n```'
+        agent=GeminiPlanner(Scripted([raw],amount=600),max_corrections=0)
+        with self.assertRaises(ProposalValidationError):agent.run(demo_contexts()['normal'],goal_ref='goal-1',question='Assess')
+        self.assertEqual(agent.last_validation_records[-1]['original_proposal'],raw)
+        self.assertEqual(agent.last_validation_records[-1]['validation_errors'][0]['error_type'],'response_format')
+        self.assertIn('calculation-1',agent.last_validation_records[-1]['authoritative_python_calculations'])
+
+
+class CalculationWireReuseTests(unittest.TestCase):
+    def test_unchanged_tool_result_references_prior_complete_evidence(self):
+        from planning.openrouter import tool_wire
+        first={'calculation_ref':'calculation-1','plans':[{'contribution':50}], 'assumptions':['Estimated spending']*30}
+        before=deepcopy(first);prior={};self.assertEqual(tool_wire(first,prior),first)
+        reused=tool_wire(deepcopy(first),prior)
+        self.assertEqual(reused['calculation_ref'],'calculation-1')
+        self.assertIn('unchanged_result_source',reused);self.assertEqual(first,before)
+
+    def test_changed_financial_outputs_and_inputs_are_not_borrowed(self):
+        from planning.openrouter import tool_wire
+        first={'calculation_ref':'calculation-1','plans':[{'contribution':50}], 'assumptions':['Estimated spending']*30,
+            'dated_cashflow':{'minimum_cash':3172.81,'timeline':[{'date':'2026-11-29','cash':3172.81}]}}
+        prior={};tool_wire(first,prior);second=deepcopy(first);second['calculation_ref']='calculation-2';second['plans'][0]['contribution']=0;second['dated_cashflow']['minimum_cash']=3222.81;second['dated_cashflow']['timeline'][0]['cash']=3222.81
+        value=tool_wire(second,prior)
+        self.assertEqual(value['plans'],second['plans']);self.assertEqual(value['dated_cashflow']['minimum_cash'],3222.81)
+        self.assertEqual(prior['calculation-1'],first);self.assertEqual(prior['calculation-2'],second)
+
+    def test_final_facts_are_referenced_only_when_old_values_are_preserved(self):
+        from planning.openrouter import dedupe_final_facts
+        def message(facts,dates):return {'role':'user','content':'Now produce the final structured draft. Same instructions. Authoritative Python date facts (completion_date and deadline are distinct): '+json.dumps(dates)+' authoritative_financial_facts (source-labelled values, periods and assumptions; never interchange flow and cash stock): '+json.dumps(facts)}
+        old={'version':1,'context':[{'cash':100}],'calculations':{'calculation-1':{'cash':100,'assumptions':['estimated']}}}
+        new=deepcopy(old);new['calculations']['calculation-2']={'cash':90}
+        messages=[message(old,{'calculation-1':[]}),message(new,{'calculation-1':[],'calculation-2':[]})]
+        dedupe_final_facts(messages);self.assertIn('supplied once',messages[0]['content'])
+        new['calculations']['calculation-1']['cash']=99
+        messages=[message(old,{'calculation-1':[]}),message(new,{'calculation-1':[],'calculation-2':[]})];original=deepcopy(messages)
+        dedupe_final_facts(messages);self.assertEqual(messages,original)
+
+
+class CompactFinalStageTests(unittest.TestCase):
+    def test_fresh_payload_reuses_authoritative_values_and_bounded_errors(self):
+        from planning.openrouter import NativeMessage,expand_wire
+        context=demo_contexts()['normal'];context['goal_versions']={'goal-1':1}
+        tools=PlanningTools(context);calc=tools.calculate_strategy({'plans':[{'goal_ref':'goal-1','contribution':600.0}]})
+        native=NativeMessage({'role':'assistant','content':None,'reasoning_details':[{'opaque':'preserved'}],
+            'tool_calls':[call('original-id','calculate_strategy',{})]},'nvidia')
+        history=[native,types.Content(role='user',parts=[types.Part(function_response=types.FunctionResponse(name='calculate_strategy',id='original-id',response=calc))])]
+        before=deepcopy((context,tools.calculations,native.message));t=object.__new__(OpenRouterTransport)
+        errors=[{'field':'answer','error_type':'financial_narrative_mismatch','original_claim':'rejected '*10000,'authoritative_values':{'cash':123},'correction_required':'Use the exact source.'}]
+        fresh=t.final_contents(context,tools.calculations,'goal-1','Assess',history,errors)
+        self.assertEqual(len(fresh),1);self.assertEqual(fresh[0].role,'user')
+        payload=expand_wire(json.loads(fresh[0].parts[0].text))
+        self.assertEqual(payload['authoritative_calculations'],tools.calculations)
+        self.assertEqual(payload['financial_context']['goal_versions'],{'goal-1':1})
+        self.assertNotIn('original_claim',payload['validation_errors'][0])
+        self.assertNotIn('reasoning_details',fresh[0].parts[0].text)
+        self.assertEqual((context,tools.calculations,native.message),before)
+        with self.assertRaises(ValueError):t.final_contents(context,tools.calculations,'goal-1','Assess',[native])
+        with self.assertRaises(PlannerError):t.final_contents(context,{'wrong-ref':calc},'goal-1','Assess',history)
+
+    def test_fresh_reasoning_is_archived_but_not_transplanted_into_tool_history(self):
+        from planning.openrouter import NativeMessage
+        native=NativeMessage({'role':'assistant','content':'Final answer','reasoning_details':[{'opaque':'new-conversation-signature'}]},'nvidia',True)
+        t=object.__new__(OpenRouterTransport);saved=native.model_dump();restored=t.restore_content(saved)
+        messages,_=t._messages([restored])
+        self.assertNotIn('reasoning_details',messages[0]);self.assertEqual(saved['openrouter_message']['reasoning_details'],[{'opaque':'new-conversation-signature'}])
+        self.assertTrue(restored.isolated_final)

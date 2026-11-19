@@ -5,6 +5,7 @@ import csv
 import json
 import re
 from dataclasses import dataclass
+from functools import cached_property
 from datetime import date, datetime
 from pathlib import Path
 from typing import Iterable
@@ -23,6 +24,11 @@ class Transaction:
     account_id: str = ""
     user_id: str = ""
     transaction_id: str = ""
+
+    @cached_property
+    def merchant(self) -> str:
+        """Stable merchant key shared by recurrence and event-context readers."""
+        return normalize_merchant(self.description)
 
     @property
     def is_expense(self) -> bool:

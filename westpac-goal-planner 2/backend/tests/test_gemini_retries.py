@@ -160,7 +160,8 @@ class RetryTests(unittest.TestCase):
             store=DemoStore(Path(folder)/'retry.sqlite')
             raw={'txns':[],'as_of':day,'accounts':(AccountSnapshot('cash','transaction',2000,day),)}
             bank=BankingService(store,lambda customer:raw)
-            bank.create_goal('customer',Goal('goal','holiday',6000,0,date(2027,5,31)),confirmed=True,expected_revision=0)
+            from tests.test_gemini_planner import seed_legacy_goal
+            seed_legacy_goal(bank,'customer',Goal('goal','holiday',6000,0,date(2027,5,31)),0)
             before=store.read('customer',day)
             transport=TransientFinal([503]*10);service=PlannerService(store,transport,cooldown_seconds=0)
             def ask(request_id):

@@ -8,7 +8,7 @@ from .gemini import GeminiTransport, PlannerError
 def configured_transport(env_file=Path(__file__).resolve().parents[3]/'.env'):
     if env_file is not None:
         load_dotenv(env_file, override=False)
-    provider = os.getenv('PLANNER_PROVIDER', 'gemini')
+    provider = os.getenv('PLANNER_PROVIDER', 'openrouter')
     if provider == 'gemini':
         return GeminiTransport(env_file=None)
     if provider == 'openrouter':
