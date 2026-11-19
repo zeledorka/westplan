@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { request } from '../api/client.js'
 import GoalAssessment from '../components/GoalAssessment.jsx'
 import SavingsFunding from '../components/SavingsFunding.jsx'
@@ -29,6 +29,10 @@ function GoalCard({ goal }) {
 }
 export default function GoalPlanner({ onBack, onDemo }) {
   const { goals, proposals, goal_history, mutate, busy, goal_available, scenario, revision, scope_version } = useBank()
+  const [creating, setCreating] = useState(false)
+  const [autoRequest, setAutoRequest] = useState(null)
+  const [workflowActive, setWorkflowActive] = useState(false)
+  useEffect(()=>{document.querySelector('main.screen')?.scrollTo({top:0,behavior:'smooth'})},[goals.length,workflowActive])
   const [preview, setPreview] = useState(null)
   const [previewError, setPreviewError] = useState('')
   const [previewBusy, setPreviewBusy] = useState(false)
@@ -36,29 +40,39 @@ export default function GoalPlanner({ onBack, onDemo }) {
     e.preventDefault(); const f = new FormData(e.currentTarget)
     if (e.nativeEvent.submitter?.value === 'preview') {
       setPreviewBusy(true); setPreviewError(''); setPreview(null)
-      try { setPreview(await request('/goals/preview',{method:'POST',scope:scope_version,body:{kind:f.get('kind'),target:Number(f.get('target')),allocated:Number(f.get('allocated')),deadline:f.get('deadline'),confirmed:true,expected_revision:revision}})) }
+      try { setPreview(await request('/goals/preview',{method:'POST',scope:scope_version,body:{kind:f.get('kind'),target:Number(f.get('target')),allocated:Number(f.get('allocated')),deadline:f.get('deadline'),frequency:f.get('frequency'),...(f.get('contribution')===''?{}:{contribution:Number(f.get('contribution'))}),confirmed:true,expected_revision:revision}})) }
       catch (error) { setPreviewError(error.message) }
       finally { setPreviewBusy(false) }
       return
     }
     setPreview(null)
-    await mutate('/goals', { kind: f.get('kind'), target: Number(f.get('target')), allocated: Number(f.get('allocated')), deadline: f.get('deadline'), confirmed: true }, 'Goal created.')
+    if (await mutate('/goals', { kind: f.get('kind'), target: Number(f.get('target')), allocated: Number(f.get('allocated')), deadline: f.get('deadline'), frequency:f.get('frequency'), ...(f.get('contribution')===''?{}:{contribution:Number(f.get('contribution'))}), confirmed: true }, 'Goal created and safety-assessed. Your approved schedule is shown below.')) setCreating(false)
   }
-  return <div className="page"><header className="pagehead"><button className="backbtn" onClick={onBack}>← Back</button><h1>Goal planner</h1></header><div className="body grey"><div className="card pad"><strong>Interactive presenter demo</strong><p className="small">Explore events, notifications and human approval using the actual backend and model. AI activation restrictions remain in force.</p><button className="primary-btn" onClick={onDemo}>Open Demo Mode</button></div>
-    <div className="card pad"><h3>AI proposes. Financial checks inform. You decide.</h3><p>The planner creates provisional drafts with independent financial-check findings. {scenario === 'integrated_demo' ? 'In this isolated sandbox, humans may approve and apply a calculated adjustment only after independent PASS.' : 'Production AI drafts cannot be activated.'} Your manual goal workflow remains available.</p>{scenario !== 'customer' && scenario !== 'integrated_demo' && <p className="small muted">The holiday goal is seeded demo data in a separate sandbox.</p>}</div>
-    {scenario === 'integrated_demo' && <IntegratedPresenter />}
-    <FinancialFacts />
-    <SavingsFunding />
-    <ShockEvents />
-    <div id="ai-planner"><GeminiPlanner /></div>
-    {!goals.length && <p>No goals yet. Create one below.</p>}{goals.map(g => <GoalCard key={`${g.goal_id}-${g.version}`} goal={g} />)}
-    <details className="card pad"><summary>Create a goal</summary><form onSubmit={create} onChange={() => setPreview(null)}>
+  return <div className="page"><header className="pagehead"><button className="backbtn" onClick={onBack}>← Back</button><h1>Goal planning</h1></header><div className="body grey">
+    {scenario !== 'integrated_demo' && <div className="row"><span className="small">Financial checks apply to every goal.</span><button className="small-btn" onClick={onDemo}>Use isolated demo</button></div>}
+    {(!goals.length || creating) && <>
+    <section className="card pad goal-create"><h2>Create a goal</h2><details key={revision}><summary>Savings designation · {money(goal_available)} available for goals</summary><SavingsFunding /></details><form className="goal-create-form" onSubmit={create} onChange={() => setPreview(null)}>
       <label className="field">Goal type<select name="kind"><option value="holiday">Holiday</option><option value="emergency_fund">Emergency fund</option><option value="purchase">Purchase</option><option value="other">Other</option></select></label>
       <label className="field">Target (AUD)<input required name="target" type="number" min="0" step="0.01" /></label>
       <label className="field">Already allocated (AUD)<input required name="allocated" type="number" min="0" step="0.01" defaultValue="0" /></label>
+      <label className="field">Deadline<input required name="deadline" type="date" /></label>
+      <label className="field">Contribution frequency<select name="frequency" defaultValue="monthly"><option value="monthly">Monthly</option><option value="fortnightly">Fortnightly</option></select></label>
+      <label className="field">Contribution (optional)<input name="contribution" type="number" min="0" step="0.01" placeholder="Calculate required amount" /></label>
       <p className="small muted">Total explicitly designated goal savings: {money(goal_available)}. Allocations across goals cannot exceed this pool.</p>
-      <label className="field">Deadline<input required name="deadline" type="date" /></label><button name="action" value="preview" disabled={busy || previewBusy}>Check feasibility</button><button name="action" value="create" className="primary-btn" disabled={busy || previewBusy}>Assess and create goal</button>
-    </form>{previewError && <p role="alert">{previewError}</p>}<GoalAssessment assessment={preview} /></details>
+      <button name="action" value="preview" disabled={busy || previewBusy}>Check feasibility</button><button name="action" value="create" className="primary-btn" disabled={busy || previewBusy}>Assess and create goal</button>
+    </form>{previewError && <p role="alert">{previewError}</p>}<GoalAssessment assessment={preview} />{goals.length>0 && <button className="link" onClick={()=>setCreating(false)}>Return to existing goals</button>}</section>
+    </>}
+    {!creating && goals.length>0 && <>
+      {scenario === 'integrated_demo' ? <IntegratedPresenter collapsed={workflowActive} onAssessment={request=>{setWorkflowActive(true);setAutoRequest(request)}} /> : goals.map(g=><GoalCard key={`${g.goal_id}-${g.version}`} goal={g} />)}
+      <div id="ai-planner"><GeminiPlanner compact={scenario==='integrated_demo'} autoRequest={autoRequest} onAutoStarted={()=>setAutoRequest(null)} /></div>
+      {!workflowActive && <button className="small-btn" disabled={busy} onClick={()=>setCreating(true)}>Create another goal</button>}
+    </>}
+    <details className="card pad"><summary>Banking insights, funding and goal tools</summary>
+      <button className="small-btn" disabled={busy} onClick={()=>setCreating(true)}>Create another goal</button>
+      <FinancialFacts />
+      <SavingsFunding />
+      <ShockEvents />
+      {scenario==='integrated_demo' && goals.map(g=><GoalCard key={`${g.goal_id}-${g.version}`} goal={g} />)}
     <h2>Proposal review</h2>{!proposals.length && <p>No proposals awaiting review.</p>}{proposals.map(p => <div className="card pad" key={p.proposal_id}><h3>{p.source === 'user' ? 'Your manual change' : 'AI proposal — validation required'}</h3><p>{label(p.status)}</p>
       <p>{Object.entries(p.changes).map(([k, v]) => `${label(k)}: ${k === 'deadline' ? day(v) : ['target','allocated','contribution'].includes(k) ? money(v) : v}`).join(' · ')}</p>
       {['pending', 'snoozed'].includes(p.status) && <div className="actions">{['approve', 'reject', 'snooze'].map(decision => <button className="small-btn" key={decision} disabled={busy || (decision === 'approve' && p.source !== 'user')} onClick={() => mutate(`/proposals/${p.proposal_id}/decision`, { decision, confirmed: true }, `Proposal ${decision === 'approve' ? 'approved' : decision === 'reject' ? 'rejected' : 'snoozed'}.`)}>{label(decision)}</button>)}</div>}
@@ -66,5 +80,6 @@ export default function GoalPlanner({ onBack, onDemo }) {
     </div>)}
     <details><summary>Goal change history</summary>{!goal_history.length && <p>No recorded goal changes.</p>}{goal_history.map(g => <div className="card pad" key={`${g.goal_id}-${g.version}`}><strong>{label(g.kind)} · version {g.version}</strong><p>{money(g.target)} target · {money(g.allocated)} allocated · deadline {day(g.deadline)}</p><p className="small muted">Recorded {day(g.recorded_on)}</p></div>)}</details>
     <h2>Relevant insights</h2><InsightList compact />
+    </details>
   </div></div>
 }

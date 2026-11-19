@@ -181,3 +181,25 @@ test('safety revision progress and failure do not imply activation', async () =>
   assert.match(safetyRevisionMessage({ outcome: 'still_requires_revision' }), /Could not produce/)
   assert.match(safetyRevisionMessage({ outcome: 'interrupted' }), /preserved/)
 })
+
+test('recorded event starts one assessment with current revision and a fresh conversation', async () => {
+  const {planner,calls}=setup();await planner.load();planner.selectSession('old-conversation')
+  const event={eventId:'recorded-event',goalId:'goal',question:'Review the recorded expense'}
+  assert.equal(await planner.assessEvent(event),true)
+  assert.equal(await planner.assessEvent(event),false)
+  const requests=calls.filter(([path])=>path==='/planner/assess')
+  assert.equal(requests.length,1)
+  assert.equal(requests[0][1].body.session_id,null)
+  assert.equal(requests[0][1].body.expected_revision,7)
+  assert.equal(requests[0][1].body.question,event.question)
+})
+test('automatic assessment rejects foreign goals and unavailable or unready providers', async () => {
+  const {planner,calls}=setup()
+  const event={eventId:'event',goalId:'goal',question:'Review recorded shock'}
+  assert.equal(await planner.assessEvent(event),false)
+  await planner.load()
+  assert.equal(await planner.assessEvent({...event,goalId:'different-goal'}),false)
+  assert.equal(calls.filter(([path])=>path==='/planner/assess').length,0)
+  const unavailable=setup(path=>path==='/planner/status'?{available:false}:undefined)
+  await unavailable.planner.load();assert.equal(await unavailable.planner.assessEvent(event),false)
+})

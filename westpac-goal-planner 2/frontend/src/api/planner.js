@@ -11,6 +11,7 @@ export function createPlanner({ goalId, revision, scope, api = request, makeId =
   let state = { loading: true, pending: false, error: '', status: null, records: [], sessionId: null, requestId: null, job: null }
   let alive = true, activeQuestion = ''
   const listeners = new Set(), abort = new AbortController()
+  const assessedEvents = new Set()
   const update = patch => { if (alive) { state = { ...state, ...patch }; listeners.forEach(fn => fn()) } }
   const stop = id => api(`/planner/requests/${encodeURIComponent(id)}/cancel`, { method: 'POST', scope, keepalive: true }).catch(() => null)
   function completed(draft, question, id) {
@@ -46,6 +47,12 @@ export function createPlanner({ goalId, revision, scope, api = request, makeId =
     subscribe(fn) { listeners.add(fn); return () => listeners.delete(fn) },
     dispose() { const id = state.pending && state.requestId; alive = false; abort.abort(); listeners.clear(); if (id) void stop(id) },
     selectSession(sessionId) { update({ sessionId: sessionId || null, error: '' }) },
+    async assessEvent(event) {
+      if (!event?.eventId || event.goalId !== goalId || state.loading || state.pending || !state.status?.available || assessedEvents.has(event.eventId)) return false
+      assessedEvents.add(event.eventId)
+      update({ sessionId: null, error: '' })
+      return this.send(event.question)
+    },
     async load() {
       try {
         const [status, history] = await Promise.all([api('/planner/status', { signal: abort.signal }), api('/planner/sessions', { signal: abort.signal })])

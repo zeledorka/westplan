@@ -20,6 +20,7 @@ export default function Home({ onOpenGoals }) {
         <button onClick={() => openTool('search')} aria-label="Open transaction search"><SearchBar /></button>
       </div>
       <div className="sheet">
+        <button className="card pad row" onClick={onOpenGoals}><span><strong>Goal Planning</strong><br /><span className="small muted">Create a goal · check feasibility · review your plan</span></span><Icon name="chevron" color="var(--red)" /></button>
         <SectionTitle>Favourite accounts</SectionTitle>
         {accounts.filter(a => a.kind === 'cash').map(a => <AccountCard key={a.id} a={a} />)}
         <div className="row links">
